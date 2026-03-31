@@ -1,0 +1,16 @@
+{
+  "name": "med-jp",
+  "version": "1.0.0",
+  "description": "Local real-time medical interpreter — English ↔ Japanese using Ollama",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "setup": "ollama create med-interpreter -f modelfile/Modelfile"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fuse.js": "^7.1.0",
+    "wanakana": "^5.3.1"
+  }
+}
