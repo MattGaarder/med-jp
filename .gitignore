@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.log
+*.gz
+*.zip
+data/JMdict_b.xml
+data/vocab-enhanced.json
