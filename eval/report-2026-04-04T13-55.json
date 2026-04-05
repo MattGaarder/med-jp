@@ -1,0 +1,1046 @@
+{
+  "meta": {
+    "timestamp": "2026-04-04T13:55:32.601Z",
+    "skipLLM": false,
+    "totalMs": 159557
+  },
+  "results": [
+    {
+      "id": "dizzy-minor",
+      "label": "Mild dizziness — patient downplaying symptom",
+      "input": "JAP: chotto memai surun desu kedo, taishita koto nai to omoimasu.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "chotto memai surun desu kedo, taishita koto nai to omoimasu.",
+      "tokens": [
+        {
+          "reason": "whitelist",
+          "input": "chotto",
+          "output": "chotto"
+        },
+        {
+          "reason": "whitelist",
+          "input": "memai",
+          "output": "memai"
+        },
+        {
+          "reason": "whitelist",
+          "input": "surun",
+          "output": "surun"
+        },
+        {
+          "reason": "whitelist",
+          "input": "desu",
+          "output": "desu"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kedo",
+          "output": "kedo"
+        },
+        {
+          "reason": "whitelist",
+          "input": "taishita",
+          "output": "taishita"
+        },
+        {
+          "reason": "whitelist",
+          "input": "koto",
+          "output": "koto"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "nai",
+          "output": "nai"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "to",
+          "output": "to"
+        },
+        {
+          "reason": "conjugation:omou",
+          "input": "omoimasu",
+          "output": "omoimasu"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.5739,
+          "semanticScore": 0.8299,
+          "romaji": "messeeji",
+          "kana": "メッセージ",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "message"
+          ],
+          "tags": [
+            "gai1",
+            "ichi1"
+          ],
+          "frequency": 0.3
+        },
+        {
+          "score": 0.5469,
+          "semanticScore": 0.8211,
+          "romaji": "tasuku",
+          "kana": "タスク",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "task"
+          ],
+          "tags": [
+            "gai1"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.5467,
+          "semanticScore": 0.8209,
+          "romaji": "akushidento",
+          "kana": "アクシデント",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "accident"
+          ],
+          "tags": [
+            "gai1"
+          ],
+          "frequency": 0.2
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.6839,
+          "romaji": "shinainodehanaika",
+          "kana": "しないのではないか",
+          "kanji": "",
+          "meanings": [
+            "I think something won't something",
+            "probably something isn't something"
+          ]
+        }
+      ],
+      "glossaryInjected": "GRAMMATICAL PARTICLES DETECTED:\n- to: means and / with, or marks a quotation\n\nKEY VERBS DETECTED (root forms for reference):\n- omoimasu → dictionary form: omou (to think)\n\nMEDICAL GLOSSARY HINTS:\n- term: messeeji\n  reading: messeeji\n  meaning: message\n  type: n\n  tags: gai1, ichi1\n\n- term: tasuku\n  reading: tasuku\n  meaning: task\n  type: n\n  tags: gai1\n\n- term: akushidento\n  reading: akushidento\n  meaning: accident\n  type: n\n  tags: gai1\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: shinainodehanaika  (shinainodehanaika)\n  nuance: I think something won't something, probably something isn't something",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nGRAMMATICAL PARTICLES DETECTED:\n- to: means and / with, or marks a quotation\n\nKEY VERBS DETECTED (root forms for reference):\n- omoimasu → dictionary form: omou (to think)\n\nMEDICAL GLOSSARY HINTS:\n- term: messeeji\n  reading: messeeji\n  meaning: message\n  type: n\n  tags: gai1, ichi1\n\n- term: tasuku\n  reading: tasuku\n  meaning: task\n  type: n\n  tags: gai1\n\n- term: akushidento\n  reading: akushidento\n  meaning: accident\n  type: n\n  tags: gai1\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: shinainodehanaika  (shinainodehanaika)\n  nuance: I think something won't something, probably something isn't something\nInput: chotto memai surun desu kedo, taishita koto nai to omoimasu.\nOutput: /no_think",
+      "llmOutput": "I feel a little dizzy, but I think it's nothing serious.",
+      "durationMs": 19592,
+      "error": null
+    },
+    {
+      "id": "return-to-work",
+      "label": "Non-medical — scheduling / social phrase",
+      "input": "JAP: kyou wa doumo arigatou gozaimasu. kono ato shigoto modoranaikya ikenai node, jikan kakaranai to iin desu ga.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "kyou wa doumo arigatou gozaimasu. kono ato shigoto modoranakereba ikenai node, jikan kakaranai to iin desu ga.",
+      "tokens": [
+        {
+          "reason": "whitelist",
+          "input": "kyou",
+          "output": "kyou"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "wa",
+          "output": "wa"
+        },
+        {
+          "reason": "whitelist",
+          "input": "doumo",
+          "output": "doumo"
+        },
+        {
+          "reason": "whitelist",
+          "input": "arigatou",
+          "output": "arigatou"
+        },
+        {
+          "reason": "whitelist",
+          "input": "gozaimasu",
+          "output": "gozaimasu"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kono",
+          "output": "kono"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ato",
+          "output": "ato"
+        },
+        {
+          "reason": "whitelist",
+          "input": "shigoto",
+          "output": "shigoto"
+        },
+        {
+          "reason": "passthrough",
+          "input": "modoranakereba",
+          "output": "modoranakereba"
+        },
+        {
+          "reason": "whitelist",
+          "input": "ikenai",
+          "output": "ikenai"
+        },
+        {
+          "reason": "whitelist",
+          "input": "node",
+          "output": "node"
+        },
+        {
+          "reason": "whitelist",
+          "input": "jikan",
+          "output": "jikan"
+        },
+        {
+          "reason": "conjugation:kakaru",
+          "input": "kakaranai",
+          "output": "kakaranai"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "to",
+          "output": "to"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "iin",
+          "output": "iin"
+        },
+        {
+          "reason": "whitelist",
+          "input": "desu",
+          "output": "desu"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ga",
+          "output": "ga"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.5441,
+          "semanticScore": 0.8426,
+          "romaji": "taimuwaaku",
+          "kana": "タイムワーク",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "timework"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.5413,
+          "semanticScore": 0.8391,
+          "romaji": "sagyoujikan",
+          "kana": "さぎょうじかん",
+          "kanji": "作業時間",
+          "domain": "",
+          "meanings": [
+            "working hours"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.5392,
+          "semanticScore": 0.8115,
+          "romaji": "kinmujikan",
+          "kana": "きんむじかん",
+          "kanji": "勤務時間",
+          "domain": "",
+          "meanings": [
+            "office hours",
+            "business hours",
+            "working hours"
+          ],
+          "tags": [
+            "spec1"
+          ],
+          "frequency": 0.2
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7493,
+          "romaji": "gokurousama",
+          "kana": "ごくろうさま",
+          "kanji": "ご苦労様",
+          "meanings": [
+            "thank you for your hard work",
+            "I appreciate your efforts"
+          ]
+        }
+      ],
+      "glossaryInjected": "GRAMMATICAL PARTICLES DETECTED:\n- to: means and / with, or marks a quotation\n- ga: marks the grammatical subject\n\nKEY VERBS DETECTED (root forms for reference):\n- kakaranai → dictionary form: kakaru (to span)\n\nMEDICAL GLOSSARY HINTS:\n- term: taimuwaaku\n  reading: taimuwaaku\n  meaning: timework\n  type: n\n  tags: none\n\n- term: 作業時間\n  reading: さぎょうじかん / sagyoujikan\n  meaning: working hours\n  type: n\n  tags: none\n\n- term: 勤務時間\n  reading: きんむじかん / kinmujikan\n  meaning: office hours, business hours, working hours\n  type: n\n  tags: spec1\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: ご苦労様  (ごくろうさま / gokurousama)\n  nuance: thank you for your hard work, I appreciate your efforts",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nGRAMMATICAL PARTICLES DETECTED:\n- to: means and / with, or marks a quotation\n- ga: marks the grammatical subject\n\nKEY VERBS DETECTED (root forms for reference):\n- kakaranai → dictionary form: kakaru (to span)\n\nMEDICAL GLOSSARY HINTS:\n- term: taimuwaaku\n  reading: taimuwaaku\n  meaning: timework\n  type: n\n  tags: none\n\n- term: 作業時間\n  reading: さぎょうじかん / sagyoujikan\n  meaning: working hours\n  type: n\n  tags: none\n\n- term: 勤務時間\n  reading: きんむじかん / kinmujikan\n  meaning: office hours, business hours, working hours\n  type: n\n  tags: spec1\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: ご苦労様  (ごくろうさま / gokurousama)\n  nuance: thank you for your hard work, I appreciate your efforts\nInput: kyou wa doumo arigatou gozaimasu. kono ato shigoto modoranakereba ikenai node, jikan kakaranai to iin desu ga.\nOutput: /no_think",
+      "llmOutput": "Today, thank you very much. After this, I must repay the work, so I cannot take time off.",
+      "durationMs": 16267,
+      "error": null
+    },
+    {
+      "id": "headache-persistent",
+      "label": "Persistent headache — fragmented speech",
+      "input": "JAP: iwaretayouni yatteru n desu kedo ne. nanka okashii na tte. zutto zutsu ga tsudzuite.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "iwaretayouni yatteiru n desu kedo ne. nanka okashii na tte. zutto zutsuu ga tsudzuite.",
+      "tokens": [
+        {
+          "reason": "passthrough",
+          "input": "iwaretayouni",
+          "output": "iwaretayouni"
+        },
+        {
+          "reason": "conjugation:yau",
+          "input": "yatteiru",
+          "output": "yatteiru"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "n",
+          "output": "n"
+        },
+        {
+          "reason": "whitelist",
+          "input": "desu",
+          "output": "desu"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kedo",
+          "output": "kedo"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ne",
+          "output": "ne"
+        },
+        {
+          "reason": "whitelist",
+          "input": "nanka",
+          "output": "nanka"
+        },
+        {
+          "reason": "whitelist",
+          "input": "okashii",
+          "output": "okashii"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "na",
+          "output": "na"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "tte",
+          "output": "tte"
+        },
+        {
+          "reason": "whitelist",
+          "input": "zutto",
+          "output": "zutto"
+        },
+        {
+          "reason": "correction",
+          "input": "zutsu",
+          "output": "zutsuu"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ga",
+          "output": "ga"
+        },
+        {
+          "reason": "passthrough",
+          "input": "tsudzuite",
+          "output": "tsudzuite"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.5438,
+          "semanticScore": 0.8173,
+          "romaji": "yuuzaa",
+          "kana": "ユーザー",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "user"
+          ],
+          "tags": [
+            "gai1"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.5361,
+          "semanticScore": 0.8076,
+          "romaji": "sezu",
+          "kana": "せず",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "without doing"
+          ],
+          "tags": [
+            "spec1",
+            "form"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.5334,
+          "semanticScore": 0.8043,
+          "romaji": "yoreba",
+          "kana": "よれば",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "according to"
+          ],
+          "tags": [
+            "spec1"
+          ],
+          "frequency": 0.2
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7425,
+          "romaji": "ijou",
+          "kana": "いじょう",
+          "kanji": "異状",
+          "meanings": [
+            "something wrong",
+            "something unusual",
+            "abnormality"
+          ]
+        }
+      ],
+      "glossaryInjected": "GRAMMATICAL PARTICLES DETECTED:\n- ga: marks the grammatical subject\n\nMEDICAL GLOSSARY HINTS:\n- term: yuuzaa\n  reading: yuuzaa\n  meaning: user\n  type: n\n  tags: gai1\n\n- term: sezu\n  reading: sezu\n  meaning: without doing\n  type: exp\n  tags: spec1, form\n\n- term: yoreba\n  reading: yoreba\n  meaning: according to\n  type: exp\n  tags: spec1\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 異状  (いじょう / ijou)\n  nuance: something wrong, something unusual, abnormality",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nGRAMMATICAL PARTICLES DETECTED:\n- ga: marks the grammatical subject\n\nMEDICAL GLOSSARY HINTS:\n- term: yuuzaa\n  reading: yuuzaa\n  meaning: user\n  type: n\n  tags: gai1\n\n- term: sezu\n  reading: sezu\n  meaning: without doing\n  type: exp\n  tags: spec1, form\n\n- term: yoreba\n  reading: yoreba\n  meaning: according to\n  type: exp\n  tags: spec1\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 異状  (いじょう / ijou)\n  nuance: something wrong, something unusual, abnormality\nInput: iwaretayouni yatteiru n desu kedo ne. nanka okashii na tte. zutto zutsuu ga tsudzuite.\nOutput: /no_think",
+      "llmOutput": "It seems like I'm supposed to be doing something, but... something feels strange. My headache has been going on for a long time.",
+      "durationMs": 15759,
+      "error": null
+    },
+    {
+      "id": "cancer-anxiety",
+      "label": "Blood test results — cancer anxiety / insomnia",
+      "input": "JAP: ketsueki kensa no kekka, itsu wakarimasu ka? moshi gan dattara tte kangaeru to fuan de yoru mo nemurena.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "ketsueki kensa no kekka, itsu wakarimasu ka? moshi gan dattara tte kangaeru to fuan de yoru mo nemurena.",
+      "tokens": [
+        {
+          "reason": "whitelist",
+          "input": "ketsueki",
+          "output": "ketsueki"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kensa",
+          "output": "kensa"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "no",
+          "output": "no"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kekka",
+          "output": "kekka"
+        },
+        {
+          "reason": "whitelist",
+          "input": "itsu",
+          "output": "itsu"
+        },
+        {
+          "reason": "whitelist",
+          "input": "wakarimasu",
+          "output": "wakarimasu"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ka",
+          "output": "ka"
+        },
+        {
+          "reason": "whitelist",
+          "input": "moshi",
+          "output": "moshi"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "gan",
+          "output": "gan"
+        },
+        {
+          "reason": "whitelist",
+          "input": "dattara",
+          "output": "dattara"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "tte",
+          "output": "tte"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kangaeru",
+          "output": "kangaeru"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "to",
+          "output": "to"
+        },
+        {
+          "reason": "whitelist",
+          "input": "fuan",
+          "output": "fuan"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "de",
+          "output": "de"
+        },
+        {
+          "reason": "whitelist",
+          "input": "yoru",
+          "output": "yoru"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "mo",
+          "output": "mo"
+        },
+        {
+          "reason": "passthrough",
+          "input": "nemurena",
+          "output": "nemurena"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.8935,
+          "semanticScore": 0.8044,
+          "romaji": "kekka",
+          "kana": "けっか",
+          "kanji": "結果",
+          "domain": "",
+          "meanings": [
+            "result",
+            "consequence",
+            "outcome"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf01"
+          ],
+          "frequency": 1
+        },
+        {
+          "score": 0.5507,
+          "semanticScore": 0.8509,
+          "romaji": "tesutokekka",
+          "kana": "テストけっか",
+          "kanji": "テスト結果",
+          "domain": "computing",
+          "meanings": [
+            "test results"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.5421,
+          "semanticScore": 0.8162,
+          "romaji": "kekkaron",
+          "kana": "けっかろん",
+          "kanji": "結果論",
+          "domain": "",
+          "meanings": [
+            "hindsight-based opinion"
+          ],
+          "tags": [
+            "news2",
+            "nf41"
+          ],
+          "frequency": 0.196
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7863,
+          "romaji": "kentou",
+          "kana": "けんとう",
+          "kanji": "検討",
+          "meanings": [
+            "consideration",
+            "examination",
+            "investigation"
+          ]
+        }
+      ],
+      "glossaryInjected": "GRAMMATICAL PARTICLES DETECTED:\n- no: indicates possessive or relationship (of)\n- to: means and / with, or marks a quotation\n- de: marks location of action, or means (by way of)\n- mo: means also or too\n\nMEDICAL GLOSSARY HINTS:\n- term: 結果\n  reading: けっか / kekka\n  meaning: result, consequence, outcome, effect\n  type: n, adv, vs, vi\n  tags: ichi1, news1, nf01\n\n- term: テスト結果 [computing]\n  reading: テストけっか / tesutokekka\n  meaning: test results\n  type: n\n  tags: none\n\n- term: 結果論\n  reading: けっかろん / kekkaron\n  meaning: hindsight-based opinion\n  type: n\n  tags: news2, nf41\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 検討  (けんとう / kentou)\n  nuance: consideration, examination, investigation",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nGRAMMATICAL PARTICLES DETECTED:\n- no: indicates possessive or relationship (of)\n- to: means and / with, or marks a quotation\n- de: marks location of action, or means (by way of)\n- mo: means also or too\n\nMEDICAL GLOSSARY HINTS:\n- term: 結果\n  reading: けっか / kekka\n  meaning: result, consequence, outcome, effect\n  type: n, adv, vs, vi\n  tags: ichi1, news1, nf01\n\n- term: テスト結果 [computing]\n  reading: テストけっか / tesutokekka\n  meaning: test results\n  type: n\n  tags: none\n\n- term: 結果論\n  reading: けっかろん / kekkaron\n  meaning: hindsight-based opinion\n  type: n\n  tags: news2, nf41\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 検討  (けんとう / kentou)\n  nuance: consideration, examination, investigation\nInput: ketsueki kensa no kekka, itsu wakarimasu ka? moshi gan dattara tte kangaeru to fuan de yoru mo nemurena.\nOutput: /no_think",
+      "llmOutput": "What is the result of the blood test, and when will I know? If I have cancer, I think about it, and I can't sleep because I'm worried.",
+      "durationMs": 17365,
+      "error": null
+    },
+    {
+      "id": "chest-pain-eng",
+      "label": "ENG→JP — abbreviated English notes",
+      "input": "ENG: patient chest pain radiating left arm since morning",
+      "direction": "ENG→JP",
+      "preprocessedInput": "patient chest pain radiating left arm since morning",
+      "tokens": [],
+      "ragHits": [],
+      "toneHits": [],
+      "glossaryInjected": "(none — no RAG hits or grammar hints)",
+      "prompt": "TASK: Translate the following English medical input into one formal clinical Japanese sentence.\n\nRULES:\n- Silently correct grammar and fill in implied meaning.\n- Use natural, formal clinical Japanese.\n- Add readings in parentheses (ふりがな) only for rare or difficult kanji.\n- Output ONLY the Japanese sentence — no labels, no explanation, no English.\n\nEXAMPLES:\nInput: patient chest pain\nOutput: 患者は胸痛（きょうつう）を訴えています。\n\nInput: no allergy\nOutput: 既知のアレルギーはありません。\n\nInput: tumour small no spread\nOutput: 腫瘍（しゅよう）は小さく、転移（てんい）は認められません。\n\nInput: high fever three days\nOutput: 3日間の高熱が続いています。\n\nInput: leg stiff wednesday taking prescription\nOutput: 水曜日から処方された薬を服用しており、足がこわばっています。\n\nNOW TRANSLATE:\nInput: patient chest pain radiating left arm since morning\nOutput: /no_think",
+      "llmOutput": "患者は今朝から左腕（ひだりうで）に痛みが放散（ほうさん）する胸痛（きょうつう）を訴えています。",
+      "durationMs": 13812,
+      "error": null
+    },
+    {
+      "id": "fever-three-days",
+      "label": "ENG→JP — fever duration notes",
+      "input": "ENG: high fever three days, no allergy, taking paracetamol",
+      "direction": "ENG→JP",
+      "preprocessedInput": "high fever three days, no allergy, taking paracetamol",
+      "tokens": [],
+      "ragHits": [],
+      "toneHits": [],
+      "glossaryInjected": "(none — no RAG hits or grammar hints)",
+      "prompt": "TASK: Translate the following English medical input into one formal clinical Japanese sentence.\n\nRULES:\n- Silently correct grammar and fill in implied meaning.\n- Use natural, formal clinical Japanese.\n- Add readings in parentheses (ふりがな) only for rare or difficult kanji.\n- Output ONLY the Japanese sentence — no labels, no explanation, no English.\n\nEXAMPLES:\nInput: patient chest pain\nOutput: 患者は胸痛（きょうつう）を訴えています。\n\nInput: no allergy\nOutput: 既知のアレルギーはありません。\n\nInput: tumour small no spread\nOutput: 腫瘍（しゅよう）は小さく、転移（てんい）は認められません。\n\nInput: high fever three days\nOutput: 3日間の高熱が続いています。\n\nInput: leg stiff wednesday taking prescription\nOutput: 水曜日から処方された薬を服用しており、足がこわばっています。\n\nNOW TRANSLATE:\nInput: high fever three days, no allergy, taking paracetamol\nOutput: /no_think",
+      "llmOutput": "3 日間の高熱があり、既知のアレルギーはなく、パラセタモールを服用しています。",
+      "durationMs": 13176,
+      "error": null
+    },
+    {
+      "id": "leg-stiff",
+      "label": "ENG→JP — misspelled abbreviations",
+      "input": "ENG: leg stiff wednesday taking persription",
+      "direction": "ENG→JP",
+      "preprocessedInput": "leg stiff wednesday taking prescription",
+      "tokens": [],
+      "ragHits": [],
+      "toneHits": [],
+      "glossaryInjected": "(none — no RAG hits or grammar hints)",
+      "prompt": "TASK: Translate the following English medical input into one formal clinical Japanese sentence.\n\nRULES:\n- Silently correct grammar and fill in implied meaning.\n- Use natural, formal clinical Japanese.\n- Add readings in parentheses (ふりがな) only for rare or difficult kanji.\n- Output ONLY the Japanese sentence — no labels, no explanation, no English.\n\nEXAMPLES:\nInput: patient chest pain\nOutput: 患者は胸痛（きょうつう）を訴えています。\n\nInput: no allergy\nOutput: 既知のアレルギーはありません。\n\nInput: tumour small no spread\nOutput: 腫瘍（しゅよう）は小さく、転移（てんい）は認められません。\n\nInput: high fever three days\nOutput: 3日間の高熱が続いています。\n\nInput: leg stiff wednesday taking prescription\nOutput: 水曜日から処方された薬を服用しており、足がこわばっています。\n\nNOW TRANSLATE:\nInput: leg stiff wednesday taking prescription\nOutput: /no_think",
+      "llmOutput": "水曜日から処方された薬を服用しており、足がこわばっています。",
+      "durationMs": 13698,
+      "error": null
+    },
+    {
+      "id": "misspelled-romaji",
+      "label": "JAP — heavy misspelling stress test",
+      "input": "JAP: ahsi ga zutsuu de atma mo itai desu",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "ashi ga zutsuu de atma mo itai desu",
+      "tokens": [
+        {
+          "reason": "correction",
+          "input": "ahsi",
+          "output": "ashi"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ga",
+          "output": "ga"
+        },
+        {
+          "reason": "whitelist",
+          "input": "zutsuu",
+          "output": "zutsuu"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "de",
+          "output": "de"
+        },
+        {
+          "reason": "passthrough",
+          "input": "atma",
+          "output": "atma"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "mo",
+          "output": "mo"
+        },
+        {
+          "reason": "whitelist",
+          "input": "itai",
+          "output": "itai"
+        },
+        {
+          "reason": "whitelist",
+          "input": "desu",
+          "output": "desu"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.5721,
+          "semanticScore": 0.8527,
+          "romaji": "shitai",
+          "kana": "したい",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "want to do"
+          ],
+          "tags": [
+            "spec1"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.5639,
+          "semanticScore": 0.8424,
+          "romaji": "sezu",
+          "kana": "せず",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "without doing"
+          ],
+          "tags": [
+            "spec1",
+            "form"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.5562,
+          "semanticScore": 0.8578,
+          "romaji": "uizu",
+          "kana": "ウィズ",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "with"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.8151,
+          "romaji": "kudasai",
+          "kana": "ください",
+          "kanji": "下さい",
+          "meanings": [
+            "please give me",
+            "please do for me"
+          ]
+        }
+      ],
+      "glossaryInjected": "GRAMMATICAL PARTICLES DETECTED:\n- ga: marks the grammatical subject\n- de: marks location of action, or means (by way of)\n- mo: means also or too\n\nMEDICAL GLOSSARY HINTS:\n- term: shitai\n  reading: shitai\n  meaning: want to do\n  type: adj-i\n  tags: spec1\n\n- term: sezu\n  reading: sezu\n  meaning: without doing\n  type: exp\n  tags: spec1, form\n\n- term: uizu\n  reading: uizu\n  meaning: with\n  type: exp\n  tags: none\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 下さい  (ください / kudasai)\n  nuance: please give me, please do for me",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nGRAMMATICAL PARTICLES DETECTED:\n- ga: marks the grammatical subject\n- de: marks location of action, or means (by way of)\n- mo: means also or too\n\nMEDICAL GLOSSARY HINTS:\n- term: shitai\n  reading: shitai\n  meaning: want to do\n  type: adj-i\n  tags: spec1\n\n- term: sezu\n  reading: sezu\n  meaning: without doing\n  type: exp\n  tags: spec1, form\n\n- term: uizu\n  reading: uizu\n  meaning: with\n  type: exp\n  tags: none\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 下さい  (ください / kudasai)\n  nuance: please give me, please do for me\nInput: ashi ga zutsuu de atma mo itai desu\nOutput: /no_think",
+      "llmOutput": "My leg hurts and my head hurts too.",
+      "durationMs": 17548,
+      "error": null
+    },
+    {
+      "id": "postop-pain",
+      "label": "JAP — post-operative pain follow-up",
+      "input": "JAP: shujutsu ato kara zutto itai n desu. itami dome nonde mo amari kikanai mitai de.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "shujutsu ato kara zutto itai n desu. itami dome nonde mo amari kikanai mitai de.",
+      "tokens": [
+        {
+          "reason": "whitelist",
+          "input": "shujutsu",
+          "output": "shujutsu"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ato",
+          "output": "ato"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kara",
+          "output": "kara"
+        },
+        {
+          "reason": "whitelist",
+          "input": "zutto",
+          "output": "zutto"
+        },
+        {
+          "reason": "whitelist",
+          "input": "itai",
+          "output": "itai"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "n",
+          "output": "n"
+        },
+        {
+          "reason": "whitelist",
+          "input": "desu",
+          "output": "desu"
+        },
+        {
+          "reason": "whitelist",
+          "input": "itami",
+          "output": "itami"
+        },
+        {
+          "reason": "whitelist",
+          "input": "dome",
+          "output": "dome"
+        },
+        {
+          "reason": "conjugation:nomu",
+          "input": "nonde",
+          "output": "nonde"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "mo",
+          "output": "mo"
+        },
+        {
+          "reason": "whitelist",
+          "input": "amari",
+          "output": "amari"
+        },
+        {
+          "reason": "conjugation:kiku",
+          "input": "kikanai",
+          "output": "kikanai"
+        },
+        {
+          "reason": "whitelist",
+          "input": "mitai",
+          "output": "mitai"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "de",
+          "output": "de"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.5544,
+          "semanticScore": 0.8055,
+          "romaji": "shisutemu",
+          "kana": "システム",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "system"
+          ],
+          "tags": [
+            "gai1",
+            "ichi1"
+          ],
+          "frequency": 0.3
+        },
+        {
+          "score": 0.5409,
+          "semanticScore": 0.8137,
+          "romaji": "shitai",
+          "kana": "したい",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "want to do"
+          ],
+          "tags": [
+            "spec1"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.5403,
+          "semanticScore": 0.8129,
+          "romaji": "sezu",
+          "kana": "せず",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "without doing"
+          ],
+          "tags": [
+            "spec1",
+            "form"
+          ],
+          "frequency": 0.2
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7964,
+          "romaji": "itai",
+          "kana": "いたい",
+          "kanji": "痛い",
+          "meanings": [
+            "painful",
+            "sore",
+            "cringy"
+          ]
+        }
+      ],
+      "glossaryInjected": "GRAMMATICAL PARTICLES DETECTED:\n- mo: means also or too\n- de: marks location of action, or means (by way of)\n\nKEY VERBS DETECTED (root forms for reference):\n- nonde → dictionary form: nomu (to drink)\n- kikanai → dictionary form: kiku (to be effective)\n\nMEDICAL GLOSSARY HINTS:\n- term: shisutemu\n  reading: shisutemu\n  meaning: system\n  type: n\n  tags: gai1, ichi1\n\n- term: shitai\n  reading: shitai\n  meaning: want to do\n  type: adj-i\n  tags: spec1\n\n- term: sezu\n  reading: sezu\n  meaning: without doing\n  type: exp\n  tags: spec1, form\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 痛い  (いたい / itai)\n  nuance: painful, sore, cringy",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nGRAMMATICAL PARTICLES DETECTED:\n- mo: means also or too\n- de: marks location of action, or means (by way of)\n\nKEY VERBS DETECTED (root forms for reference):\n- nonde → dictionary form: nomu (to drink)\n- kikanai → dictionary form: kiku (to be effective)\n\nMEDICAL GLOSSARY HINTS:\n- term: shisutemu\n  reading: shisutemu\n  meaning: system\n  type: n\n  tags: gai1, ichi1\n\n- term: shitai\n  reading: shitai\n  meaning: want to do\n  type: adj-i\n  tags: spec1\n\n- term: sezu\n  reading: sezu\n  meaning: without doing\n  type: exp\n  tags: spec1, form\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 痛い  (いたい / itai)\n  nuance: painful, sore, cringy\nInput: shujutsu ato kara zutto itai n desu. itami dome nonde mo amari kikanai mitai de.\nOutput: /no_think",
+      "llmOutput": "It has been painful since after the surgery. It seems like the pain medicine I drink is not very effective.",
+      "durationMs": 15880,
+      "error": null
+    },
+    {
+      "id": "allergy-query",
+      "label": "JAP — allergy declaration",
+      "input": "JAP: penicirin ni arerugi arimasu. mae ni nonda toki ni hosshin ga demashita.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "penikirin ni arerugii arimasu. mae ni nonda toki ni hosshin ga demashita.",
+      "tokens": [
+        {
+          "reason": "passthrough",
+          "input": "penicirin",
+          "output": "penikirin"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ni",
+          "output": "ni"
+        },
+        {
+          "reason": "fuzzy",
+          "input": "arerugi",
+          "output": "arerugii"
+        },
+        {
+          "reason": "whitelist",
+          "input": "arimasu",
+          "output": "arimasu"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "mae",
+          "output": "mae"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ni",
+          "output": "ni"
+        },
+        {
+          "reason": "conjugation:nomu",
+          "input": "nonda",
+          "output": "nonda"
+        },
+        {
+          "reason": "whitelist",
+          "input": "toki",
+          "output": "toki"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ni",
+          "output": "ni"
+        },
+        {
+          "reason": "whitelist",
+          "input": "hosshin",
+          "output": "hosshin"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "ga",
+          "output": "ga"
+        },
+        {
+          "reason": "conjugation:deru",
+          "input": "demashita",
+          "output": "demashita"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.5516,
+          "semanticScore": 0.827,
+          "romaji": "kogitoerugosumu",
+          "kana": "コギトエルゴスム",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "cogito, ergo sum",
+            "I think",
+            "therefore I am"
+          ],
+          "tags": [
+            "gai1",
+            "quote"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.5486,
+          "semanticScore": 0.8482,
+          "romaji": "rojikarushinkingu",
+          "kana": "ロジカルシンキング",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "logical thinking"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.5476,
+          "semanticScore": 0.822,
+          "romaji": "deshouka",
+          "kana": "でしょうか",
+          "kanji": "",
+          "domain": "",
+          "meanings": [
+            "don't you think?",
+            "indicates question"
+          ],
+          "tags": [
+            "spec1",
+            "pol"
+          ],
+          "frequency": 0.2
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.6479,
+          "romaji": "dakke",
+          "kana": "だっけ",
+          "kanji": "",
+          "meanings": [
+            "was it?",
+            "I think it was ...",
+            "if I've got it right"
+          ]
+        }
+      ],
+      "glossaryInjected": "GRAMMATICAL PARTICLES DETECTED:\n- ni: marks target, location, time, or indirect object\n- ga: marks the grammatical subject\n\nKEY VERBS DETECTED (root forms for reference):\n- nonda → dictionary form: nomu (to drink)\n- demashita → dictionary form: deru (to leave)\n\nMEDICAL GLOSSARY HINTS:\n- term: kogitoerugosumu\n  reading: kogitoerugosumu\n  meaning: cogito, ergo sum, I think, therefore I am\n  type: exp\n  tags: gai1, quote\n\n- term: rojikarushinkingu\n  reading: rojikarushinkingu\n  meaning: logical thinking\n  type: n\n  tags: none\n\n- term: deshouka\n  reading: deshouka\n  meaning: don't you think?, indicates question\n  type: exp\n  tags: spec1, pol\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: dakke  (dakke)\n  nuance: was it?, I think it was ..., if I've got it right",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nGRAMMATICAL PARTICLES DETECTED:\n- ni: marks target, location, time, or indirect object\n- ga: marks the grammatical subject\n\nKEY VERBS DETECTED (root forms for reference):\n- nonda → dictionary form: nomu (to drink)\n- demashita → dictionary form: deru (to leave)\n\nMEDICAL GLOSSARY HINTS:\n- term: kogitoerugosumu\n  reading: kogitoerugosumu\n  meaning: cogito, ergo sum, I think, therefore I am\n  type: exp\n  tags: gai1, quote\n\n- term: rojikarushinkingu\n  reading: rojikarushinkingu\n  meaning: logical thinking\n  type: n\n  tags: none\n\n- term: deshouka\n  reading: deshouka\n  meaning: don't you think?, indicates question\n  type: exp\n  tags: spec1, pol\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: dakke  (dakke)\n  nuance: was it?, I think it was ..., if I've got it right\nInput: penikirin ni arerugii arimasu. mae ni nonda toki ni hosshin ga demashita.\nOutput: /no_think",
+      "llmOutput": "I have a penicillin allergy. I had a reaction when I drank it before.",
+      "durationMs": 16460,
+      "error": null
+    }
+  ]
+}

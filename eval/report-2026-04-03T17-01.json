@@ -1,0 +1,844 @@
+{
+  "meta": {
+    "timestamp": "2026-04-03T17:01:42.670Z",
+    "skipLLM": false,
+    "totalMs": 147589
+  },
+  "results": [
+    {
+      "id": "dizzy-minor",
+      "label": "Mild dizziness — patient downplaying symptom",
+      "input": "JAP: chotto memai surun desu kedo, taishita koto nai to omoimasu.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "chotto memai surun desu kedo, taishita koto nai to omoimasu.",
+      "tokens": [
+        {
+          "reason": "exact match (whitelist)",
+          "input": "chotto",
+          "output": "chotto"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "memai",
+          "output": "memai"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "surun",
+          "output": "surun"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "desu",
+          "output": "desu"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "kedo",
+          "output": "kedo"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "taishita",
+          "output": "taishita"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "koto",
+          "output": "koto"
+        },
+        {
+          "reason": "exact match (conjugation of omou)",
+          "input": "omoimasu",
+          "output": "omoimasu"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.6699,
+          "romaji": "masakatohaomouga",
+          "kana": "まさかとはおもうが",
+          "kanji": "まさかとは思うが",
+          "meanings": [
+            "I doubt it, but...",
+            "I find it hard to believe, but...",
+            "it's a long shot, but..."
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.6602,
+          "romaji": "toiukotohanai",
+          "kana": "ということはない",
+          "kanji": "と言うことはない",
+          "meanings": [
+            "it is not possible (to, that)",
+            "there is no such thing as"
+          ],
+          "tags": [
+            "uk"
+          ],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.6565,
+          "romaji": "nakuhanai",
+          "kana": "なくはない",
+          "kanji": "",
+          "meanings": [
+            "not without",
+            "it's not that..",
+            "slightly"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        }
+      ],
+      "glossaryInjected": "(none)",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: まさかとは思うが\n  reading: まさかとはおもうが / masakatohaomouga\n  meaning: I doubt it, but..., I find it hard to believe, but..., it's a long shot, but...\n  notes: none\n\n- term: と言うことはない\n  reading: ということはない / toiukotohanai\n  meaning: it is not possible (to, that), there is no such thing as\n  notes: uk\n\n- term: nakuhanai\n  reading: nakuhanai\n  meaning: not without, it's not that.., slightly, somewhat, in some respects\n  notes: none\nInput: chotto memai surun desu kedo, taishita koto nai to omoimasu.\nOutput: /no_think",
+      "llmOutput": "I feel a little dizzy, but I don't think it's a serious problem.",
+      "durationMs": 17376,
+      "error": null
+    },
+    {
+      "id": "return-to-work",
+      "label": "Non-medical — scheduling / social phrase",
+      "input": "JAP: kyou wa doumo arigatou gozaimasu. kono ato shigoto modoranaikya ikenai node, jikan kakaranai to iin desu ga.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "kyou wa doumo arigatou gozaimasu. kono ato shigoto modoranakereba ikenai node, jikan kakaranai to iin desu ga.",
+      "tokens": [
+        {
+          "reason": "exact match (whitelist)",
+          "input": "kyou",
+          "output": "kyou"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "doumo",
+          "output": "doumo"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "arigatou",
+          "output": "arigatou"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "gozaimasu",
+          "output": "gozaimasu"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "kono",
+          "output": "kono"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "shigoto",
+          "output": "shigoto"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "ikenai",
+          "output": "ikenai"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "node",
+          "output": "node"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "jikan",
+          "output": "jikan"
+        },
+        {
+          "reason": "exact match (conjugation of kakaru)",
+          "input": "kakaranai",
+          "output": "kakaranai"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "desu",
+          "output": "desu"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.6466,
+          "romaji": "atogatsukaeru",
+          "kana": "あとがつかえる",
+          "kanji": "後がつかえる",
+          "meanings": [
+            "to make (someone) wait",
+            "to take more time (than anticipated)"
+          ],
+          "tags": [
+            "id"
+          ],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.6434,
+          "romaji": "shoyoujikan",
+          "kana": "しょようじかん",
+          "kanji": "所要時間",
+          "meanings": [
+            "time required",
+            "time taken",
+            "necessary time"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.6419,
+          "romaji": "itomamonaku",
+          "kana": "いとまもなく",
+          "kanji": "暇もなく",
+          "meanings": [
+            "without losing time (e.g. to do)",
+            "without even time for (doing something)"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        }
+      ],
+      "glossaryInjected": "(none)",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 後がつかえる\n  reading: あとがつかえる / atogatsukaeru\n  meaning: to make (someone) wait, to take more time (than anticipated)\n  notes: id\n\n- term: 所要時間\n  reading: しょようじかん / shoyoujikan\n  meaning: time required, time taken, necessary time\n  notes: none\n\n- term: 暇もなく\n  reading: いとまもなく / itomamonaku\n  meaning: without losing time (e.g. to do), without even time for (doing something)\n  notes: none\nInput: kyou wa doumo arigatou gozaimasu. kono ato shigoto modoranakereba ikenai node, jikan kakaranai to iin desu ga.\nOutput: /no_think",
+      "llmOutput": "Hello, thank you very much today. I must return to work after this, so I cannot take more time.",
+      "durationMs": 15749,
+      "error": null
+    },
+    {
+      "id": "headache-persistent",
+      "label": "Persistent headache — fragmented speech",
+      "input": "JAP: iwaretayouni yatteru n desu kedo ne. nanka okashii na tte. zutto zutsu ga tsudzuite.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "iwaretayouni yatteiru n desu kedo ne. nanka okashii na tte. zutto zutsuu ga tsudzuite.",
+      "tokens": [
+        {
+          "reason": "exact match (conjugation of yau)",
+          "input": "yatteiru",
+          "output": "yatteiru"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "desu",
+          "output": "desu"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "kedo",
+          "output": "kedo"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "nanka",
+          "output": "nanka"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "okashii",
+          "output": "okashii"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "zutto",
+          "output": "zutto"
+        },
+        {
+          "reason": "exact match (correction)",
+          "input": "zutsu",
+          "output": "zutsuu"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.8099,
+          "romaji": "tsune",
+          "kana": "つね",
+          "kanji": "常",
+          "meanings": [
+            "usual state of things"
+          ],
+          "tags": [],
+          "frequency": 0.946
+        },
+        {
+          "score": 0.7059,
+          "romaji": "tsunezune",
+          "kana": "つねづね",
+          "kanji": "常々",
+          "meanings": [
+            "always",
+            "usually"
+          ],
+          "tags": [],
+          "frequency": 0.438
+        },
+        {
+          "score": 0.6467,
+          "romaji": "tsutsu",
+          "kana": "つつ",
+          "kanji": "",
+          "meanings": [
+            "while",
+            "even though",
+            "despite"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        }
+      ],
+      "glossaryInjected": "(none)",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 常\n  reading: つね / tsune\n  meaning: usual state of things\n  notes: none\n\n- term: 常々\n  reading: つねづね / tsunezune\n  meaning: always, usually\n  notes: none\n\n- term: tsutsu\n  reading: tsutsu\n  meaning: while, even though, despite\n  notes: none\nInput: iwaretayouni yatteiru n desu kedo ne. nanka okashii na tte. zutto zutsuu ga tsudzuite.\nOutput: /no_think",
+      "llmOutput": "It seems like I'm doing it, but... something feels strange. My headache has been going on for a long time.",
+      "durationMs": 15342,
+      "error": null
+    },
+    {
+      "id": "cancer-anxiety",
+      "label": "Blood test results — cancer anxiety / insomnia",
+      "input": "JAP: ketsueki kensa no kekka, itsu wakarimasu ka? moshi gan dattara tte kangaeru to fuan de yoru mo nemurena.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "ketsueki kensa no kekka, itsu wakarimasu ka? moshi gan dattara tte kangaeru to fuan de yoru mo nemurena.",
+      "tokens": [
+        {
+          "reason": "exact match (whitelist)",
+          "input": "ketsueki",
+          "output": "ketsueki"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "kensa",
+          "output": "kensa"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "kekka",
+          "output": "kekka"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "itsu",
+          "output": "itsu"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "wakarimasu",
+          "output": "wakarimasu"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "moshi",
+          "output": "moshi"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "dattara",
+          "output": "dattara"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "kangaeru",
+          "output": "kangaeru"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "fuan",
+          "output": "fuan"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "yoru",
+          "output": "yoru"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.7986,
+          "romaji": "kenen",
+          "kana": "けねん",
+          "kanji": "懸念",
+          "meanings": [
+            "worry",
+            "fear",
+            "anxiety"
+          ],
+          "tags": [],
+          "frequency": 1
+        },
+        {
+          "score": 0.6195,
+          "romaji": "sakiyukifuan",
+          "kana": "さきゆきふあん",
+          "kanji": "先行き不安",
+          "meanings": [
+            "uncertainty about the future",
+            "concern about future prospects"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.6178,
+          "romaji": "fuanshin",
+          "kana": "ふあんしん",
+          "kanji": "不安心",
+          "meanings": [
+            "uneasiness",
+            "uncertainty",
+            "anxiety"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        }
+      ],
+      "glossaryInjected": "(none)",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 懸念\n  reading: けねん / kenen\n  meaning: worry, fear, anxiety, concern\n  notes: none\n\n- term: 先行き不安\n  reading: さきゆきふあん / sakiyukifuan\n  meaning: uncertainty about the future, concern about future prospects\n  notes: none\n\n- term: 不安心\n  reading: ふあんしん / fuanshin\n  meaning: uneasiness, uncertainty, anxiety, apprehension, restlessness, insecurity, suspense, fear\n  notes: none\nInput: ketsueki kensa no kekka, itsu wakarimasu ka? moshi gan dattara tte kangaeru to fuan de yoru mo nemurena.\nOutput: /no_think",
+      "llmOutput": "What time will I know the results of the blood test? If I think I might have cancer, I can't sleep because I'm worried.",
+      "durationMs": 15245,
+      "error": null
+    },
+    {
+      "id": "chest-pain-eng",
+      "label": "ENG→JP — abbreviated English notes",
+      "input": "ENG: patient chest pain radiating left arm since morning",
+      "direction": "ENG→JP",
+      "preprocessedInput": "patient chest pain radiating left arm since morning",
+      "tokens": [],
+      "ragHits": [
+        {
+          "score": 0.7046,
+          "romaji": "kyoutsuu",
+          "kana": "きょうつう",
+          "kanji": "胸痛",
+          "meanings": [
+            "chest pain"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.6832,
+          "romaji": "munegakurushii",
+          "kana": "むねがくるしい",
+          "kanji": "胸が苦しい",
+          "meanings": [
+            "have a pain in one's chest"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.6531,
+          "romaji": "angiina",
+          "kana": "アンギーナ",
+          "kanji": "",
+          "meanings": [
+            "angina"
+          ],
+          "tags": [
+            "med",
+            "medicine"
+          ],
+          "frequency": 0.1
+        }
+      ],
+      "glossaryInjected": "(none)",
+      "prompt": "TASK: Translate the following English medical input into one formal clinical Japanese sentence.\n\nRULES:\n- Silently correct grammar and fill in implied meaning.\n- Use natural, formal clinical Japanese.\n- Add readings in parentheses (ふりがな) only for rare or difficult kanji.\n- Output ONLY the Japanese sentence — no labels, no explanation, no English.\n\nEXAMPLES:\nInput: patient chest pain\nOutput: 患者は胸痛（きょうつう）を訴えています。\n\nInput: no allergy\nOutput: 既知のアレルギーはありません。\n\nInput: tumour small no spread\nOutput: 腫瘍（しゅよう）は小さく、転移（てんい）は認められません。\n\nInput: high fever three days\nOutput: 3日間の高熱が続いています。\n\nInput: leg stiff wednesday taking prescription\nOutput: 水曜日から処方された薬を服用しており、足がこわばっています。\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 胸痛\n  reading: きょうつう / kyoutsuu\n  meaning: chest pain\n  notes: none\n\n- term: 胸が苦しい\n  reading: むねがくるしい / munegakurushii\n  meaning: have a pain in one's chest\n  notes: none\n\n- term: angiina\n  reading: angiina\n  meaning: angina\n  notes: med, medicine\nInput: patient chest pain radiating left arm since morning\nOutput: /no_think",
+      "llmOutput": "患者は今朝から左腕（ひだりうで）に痛みが走っている胸痛（きょうつう）を訴えています。",
+      "durationMs": 13862,
+      "error": null
+    },
+    {
+      "id": "fever-three-days",
+      "label": "ENG→JP — fever duration notes",
+      "input": "ENG: high fever three days, no allergy, taking paracetamol",
+      "direction": "ENG→JP",
+      "preprocessedInput": "high fever three days, no allergy, taking paracetamol",
+      "tokens": [],
+      "ragHits": [
+        {
+          "score": 0.685,
+          "romaji": "genetsuzai",
+          "kana": "げねつざい",
+          "kanji": "解熱剤",
+          "meanings": [
+            "fever medicine",
+            "antipyretic",
+            "antifebrile"
+          ],
+          "tags": [
+            "pharm",
+            "pharmacology"
+          ],
+          "frequency": 0.229
+        },
+        {
+          "score": 0.6672,
+          "romaji": "netsubyou",
+          "kana": "ねつびょう",
+          "kanji": "熱病",
+          "meanings": [
+            "fever",
+            "febrile disease"
+          ],
+          "tags": [],
+          "frequency": 0.146
+        },
+        {
+          "score": 0.6618,
+          "romaji": "genetsu",
+          "kana": "げねつ",
+          "kanji": "解熱",
+          "meanings": [
+            "lowering a fever",
+            "alleviation of fever"
+          ],
+          "tags": [],
+          "frequency": 0.183
+        }
+      ],
+      "glossaryInjected": "(none)",
+      "prompt": "TASK: Translate the following English medical input into one formal clinical Japanese sentence.\n\nRULES:\n- Silently correct grammar and fill in implied meaning.\n- Use natural, formal clinical Japanese.\n- Add readings in parentheses (ふりがな) only for rare or difficult kanji.\n- Output ONLY the Japanese sentence — no labels, no explanation, no English.\n\nEXAMPLES:\nInput: patient chest pain\nOutput: 患者は胸痛（きょうつう）を訴えています。\n\nInput: no allergy\nOutput: 既知のアレルギーはありません。\n\nInput: tumour small no spread\nOutput: 腫瘍（しゅよう）は小さく、転移（てんい）は認められません。\n\nInput: high fever three days\nOutput: 3日間の高熱が続いています。\n\nInput: leg stiff wednesday taking prescription\nOutput: 水曜日から処方された薬を服用しており、足がこわばっています。\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 解熱剤\n  reading: げねつざい / genetsuzai\n  meaning: fever medicine, antipyretic, antifebrile\n  notes: pharm, pharmacology\n\n- term: 熱病\n  reading: ねつびょう / netsubyou\n  meaning: fever, febrile disease\n  notes: none\n\n- term: 解熱\n  reading: げねつ / genetsu\n  meaning: lowering a fever, alleviation of fever\n  notes: none\nInput: high fever three days, no allergy, taking paracetamol\nOutput: /no_think",
+      "llmOutput": "3 日間の高熱（こうねつ）があり、アレルギーはありません。パラセタモールを服用しています。",
+      "durationMs": 13328,
+      "error": null
+    },
+    {
+      "id": "leg-stiff",
+      "label": "ENG→JP — misspelled abbreviations",
+      "input": "ENG: leg stiff wednesday taking persription",
+      "direction": "ENG→JP",
+      "preprocessedInput": "leg stiff wednesday taking prescription",
+      "tokens": [],
+      "ragHits": [
+        {
+          "score": 0.7613,
+          "romaji": "kouchoku",
+          "kana": "こうちょく",
+          "kanji": "硬直",
+          "meanings": [
+            "stiffening",
+            "rigidity",
+            "rigor"
+          ],
+          "tags": [],
+          "frequency": 0.717
+        },
+        {
+          "score": 0.6297,
+          "romaji": "kowabari",
+          "kana": "こわばり",
+          "kanji": "強張り",
+          "meanings": [
+            "stiffness",
+            "tightness"
+          ],
+          "tags": [
+            "uk"
+          ],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.6295,
+          "romaji": "gowagowa",
+          "kana": "ごわごわ",
+          "kanji": "強強",
+          "meanings": [
+            "stiff",
+            "starchy"
+          ],
+          "tags": [
+            "on-mim",
+            "uk"
+          ],
+          "frequency": 0.1
+        }
+      ],
+      "glossaryInjected": "(none)",
+      "prompt": "TASK: Translate the following English medical input into one formal clinical Japanese sentence.\n\nRULES:\n- Silently correct grammar and fill in implied meaning.\n- Use natural, formal clinical Japanese.\n- Add readings in parentheses (ふりがな) only for rare or difficult kanji.\n- Output ONLY the Japanese sentence — no labels, no explanation, no English.\n\nEXAMPLES:\nInput: patient chest pain\nOutput: 患者は胸痛（きょうつう）を訴えています。\n\nInput: no allergy\nOutput: 既知のアレルギーはありません。\n\nInput: tumour small no spread\nOutput: 腫瘍（しゅよう）は小さく、転移（てんい）は認められません。\n\nInput: high fever three days\nOutput: 3日間の高熱が続いています。\n\nInput: leg stiff wednesday taking prescription\nOutput: 水曜日から処方された薬を服用しており、足がこわばっています。\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 硬直\n  reading: こうちょく / kouchoku\n  meaning: stiffening, rigidity, rigor, stiffness, ossification, petrification\n  notes: none\n\n- term: 強張り\n  reading: こわばり / kowabari\n  meaning: stiffness, tightness\n  notes: uk\n\n- term: 強強\n  reading: ごわごわ / gowagowa\n  meaning: stiff, starchy\n  notes: on-mim, uk\nInput: leg stiff wednesday taking prescription\nOutput: /no_think",
+      "llmOutput": "水曜日から処方された薬を服用しており、足が硬直（こうちょく）しています。",
+      "durationMs": 13077,
+      "error": null
+    },
+    {
+      "id": "misspelled-romaji",
+      "label": "JAP — heavy misspelling stress test",
+      "input": "JAP: ahsi ga zutsuu de atma mo itai desu",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "ashi ga zutsuu de atma mo itai desu",
+      "tokens": [
+        {
+          "reason": "exact match (correction)",
+          "input": "ahsi",
+          "output": "ashi"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "zutsuu",
+          "output": "zutsuu"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "itai",
+          "output": "itai"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "desu",
+          "output": "desu"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.7056,
+          "romaji": "imademo",
+          "kana": "いまでも",
+          "kanji": "今でも",
+          "meanings": [
+            "even now",
+            "still",
+            "as yet"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.7053,
+          "romaji": "atashi",
+          "kana": "あたし",
+          "kanji": "私",
+          "meanings": [
+            "I",
+            "me"
+          ],
+          "tags": [
+            "fem",
+            "uk"
+          ],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.7037,
+          "romaji": "atai",
+          "kana": "あたい",
+          "kanji": "私",
+          "meanings": [
+            "I",
+            "me"
+          ],
+          "tags": [
+            "fem",
+            "chn",
+            "uk"
+          ],
+          "frequency": 0.1
+        }
+      ],
+      "glossaryInjected": "(none)",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 今でも\n  reading: いまでも / imademo\n  meaning: even now, still, as yet\n  notes: none\n\n- term: 私\n  reading: あたし / atashi\n  meaning: I, me\n  notes: fem, uk\n\n- term: 私\n  reading: あたい / atai\n  meaning: I, me\n  notes: fem, chn, uk\nInput: ashi ga zutsuu de atma mo itai desu\nOutput: /no_think",
+      "llmOutput": "My leg hurts and my head hurts too.",
+      "durationMs": 14150,
+      "error": null
+    },
+    {
+      "id": "postop-pain",
+      "label": "JAP — post-operative pain follow-up",
+      "input": "JAP: shujutsu ato kara zutto itai n desu. itami dome nonde mo amari kikanai mitai de.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "shujutsu ato kara zutto itai n desu. itami dome nonde mo amari kikanai mitai de.",
+      "tokens": [
+        {
+          "reason": "exact match (whitelist)",
+          "input": "shujutsu",
+          "output": "shujutsu"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "kara",
+          "output": "kara"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "zutto",
+          "output": "zutto"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "itai",
+          "output": "itai"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "desu",
+          "output": "desu"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "itami",
+          "output": "itami"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "dome",
+          "output": "dome"
+        },
+        {
+          "reason": "exact match (conjugation of nomu)",
+          "input": "nonde",
+          "output": "nonde"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "amari",
+          "output": "amari"
+        },
+        {
+          "reason": "exact match (conjugation of kiku)",
+          "input": "kikanai",
+          "output": "kikanai"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "mitai",
+          "output": "mitai"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.7427,
+          "romaji": "itami",
+          "kana": "いたみ",
+          "kanji": "痛み",
+          "meanings": [
+            "pain",
+            "ache",
+            "soreness"
+          ],
+          "tags": [],
+          "frequency": 0.588
+        },
+        {
+          "score": 0.6509,
+          "romaji": "tsuuyouwokanjinai",
+          "kana": "つうようをかんじない",
+          "kanji": "痛痒を感じない",
+          "meanings": [
+            "to neither itch nor feel pain",
+            "to not be affected by something",
+            "to not feel the effects of something"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.6454,
+          "romaji": "itamiiru",
+          "kana": "いたみいる",
+          "kanji": "痛み入る",
+          "meanings": [
+            "to be greatly obliged",
+            "to be very sorry"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        }
+      ],
+      "glossaryInjected": "(none)",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 痛み\n  reading: いたみ / itami\n  meaning: pain, ache, soreness, grief, distress, damage, injury, wear, bruise, break\n  notes: none\n\n- term: 痛痒を感じない\n  reading: つうようをかんじない / tsuuyouwokanjinai\n  meaning: to neither itch nor feel pain, to not be affected by something, to not feel the effects of something\n  notes: none\n\n- term: 痛み入る\n  reading: いたみいる / itamiiru\n  meaning: to be greatly obliged, to be very sorry\n  notes: none\nInput: shujutsu ato kara zutto itai n desu. itami dome nonde mo amari kikanai mitai de.\nOutput: /no_think",
+      "llmOutput": "Since surgery, it has always hurt. Even when I take painkillers, it seems like they don't work very well.",
+      "durationMs": 14924,
+      "error": null
+    },
+    {
+      "id": "allergy-query",
+      "label": "JAP — allergy declaration",
+      "input": "JAP: penicirin ni arerugi arimasu. mae ni nonda toki ni hosshin ga demashita.",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "penikirin ni arerugii arimasu. mae ni nonda toki ni hosshin ga demashita.",
+      "tokens": [
+        {
+          "reason": "fuzzy match",
+          "input": "arerugi",
+          "output": "arerugii"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "arimasu",
+          "output": "arimasu"
+        },
+        {
+          "reason": "exact match (conjugation of nomu)",
+          "input": "nonda",
+          "output": "nonda"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "toki",
+          "output": "toki"
+        },
+        {
+          "reason": "exact match (whitelist)",
+          "input": "hosshin",
+          "output": "hosshin"
+        },
+        {
+          "reason": "exact match (conjugation of deru)",
+          "input": "demashita",
+          "output": "demashita"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.8157,
+          "romaji": "izen",
+          "kana": "いぜん",
+          "kanji": "以前",
+          "meanings": [
+            "before",
+            "prior to",
+            "ago"
+          ],
+          "tags": [],
+          "frequency": 1
+        },
+        {
+          "score": 0.8122,
+          "romaji": "zenkai",
+          "kana": "ぜんかい",
+          "kanji": "前回",
+          "meanings": [
+            "previous time",
+            "last time",
+            "previous installment"
+          ],
+          "tags": [],
+          "frequency": 1
+        },
+        {
+          "score": 0.6359,
+          "romaji": "koremadeni",
+          "kana": "これまでに",
+          "kanji": "此れ迄に",
+          "meanings": [
+            "before now",
+            "hitherto"
+          ],
+          "tags": [
+            "uk"
+          ],
+          "frequency": 0.1
+        }
+      ],
+      "glossaryInjected": "(none)",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 以前\n  reading: いぜん / izen\n  meaning: before, prior to, ago, the past, before, previously, former times\n  notes: none\n\n- term: 前回\n  reading: ぜんかい / zenkai\n  meaning: previous time, last time, previous installment, previous instalment, previous session\n  notes: none\n\n- term: 此れ迄に\n  reading: これまでに / koremadeni\n  meaning: before now, hitherto\n  notes: uk\nInput: penikirin ni arerugii arimasu. mae ni nonda toki ni hosshin ga demashita.\nOutput: /no_think",
+      "llmOutput": "I have a penicillin allergy. When I took it before, my throat swelled up.",
+      "durationMs": 14534,
+      "error": null
+    }
+  ]
+}

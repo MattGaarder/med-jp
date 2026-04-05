@@ -381,3 +381,54 @@ Fine-tune a LoRA adapter on a curated parallel corpus of medical (EN, JA) senten
 
 **10. Web / mobile front-end**  
 Expose the interpreter as a local HTTP server (`/translate` endpoint). A minimal React Native or PWA interface could run on a tablet at a hospital bedside — camera for reading printed forms, mic for voice, display for output.
+
+---
+
+## Lexical Intelligence System
+
+We have upgraded the vocabulary system into a production-grade linguistic and semantic engine. Rather than relying on a simplified dataset, the new pipeline extracts rich data directly from the JMdict XML.
+
+### 1. Data Extraction Pipeline (`scripts/build-lexicon.js`)
+This script processes the 58MB `data/JMdict_b.xml` file to seamlessly compile a localized `data/vocab-enhanced.jsonl` vector dictionary without exceeding limited Node memory parameters.
+- **Parsing**: Streams the XML, bypassing entity limits by manually identifying DOCTYPE tags and matching native `<field>` and `<misc>` XML entities (e.g. `med` → `medicine`) using a robust built-in entity map based on the JMdict DTD.
+- **Linguistic Data**: Extracts Kana, Kanji, Meanings, Part of Speech, and Priority tags.
+- **Kana → Romaji**: Uses WanaKana to generate Romaji for reliable searching.
+- **Frequency Calculation**: Derives a normalized frequency score (`0.0` to `1.0`) from `nfXX`, `ichi1`, and `news1` markers.
+- **Embeddings**: Generates a `combinedText` string and calls `qwen3-embedding:latest` via Ollama REST API to compute vector embeddings.
+
+**Usage:**
+```bash
+# Test with the first 10 entries
+node scripts/build-lexicon.js --test
+
+# Run full pipeline (Requires `qwen3-embedding:latest` pulled in Ollama)
+node scripts/build-lexicon.js
+```
+
+### 2. Example Output Entry (`vocab-enhanced.jsonl`)
+```jsonl
+{
+  "romaji": "bouken",
+  "kana": "ぼうけん",
+  "kanji": "剖検",
+  "meanings": ["autopsy", "necropsy"],
+  "pos": ["n", "vs"],
+  "tags": ["medicine"],
+  "priority": ["ichi1", "news1"],
+  "frequency": 0.82,
+  "combinedText": "bouken autopsy necropsy medicine",
+  "embedding": [0.015, -0.022, 0.841, "..."]
+}
+```
+
+### 3. Hybrid Search (`src/hybridSearch.js`)
+The `hybridSearch(queryText, queryEmbedding, dataset)` function powers retrieval by blending three weighted factors:
+1. **Fuzzy Search (40%)**: `fuse.js` over romaji, kana, kanji, and meanings.
+2. **Semantic Search (40%)**: Cosine similarity against the localized Ollama vector embeddings.
+3. **Frequency (20%)**: The extracted frequency usage score.
+
+**Usage:**
+```bash
+# Tests a sample hybrid query against the enhanced vocab dataset
+node test-hybrid.js
+```

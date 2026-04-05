@@ -1,0 +1,538 @@
+{
+  "meta": {
+    "timestamp": "2026-04-04T20:23:34.854Z",
+    "skipLLM": false,
+    "totalMs": 23724
+  },
+  "results": [
+    {
+      "id": "case-01-appetite",
+      "label": "Fragmented appetite & medication request",
+      "input": "JAP: wakatta waktta jya sono kusuri o kudasi ima ni mo watashi ni mo kigata no nai desu kara",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "wakatta waktta ja sono kusuri o kudasai ima ni mo watashi ni mo kigata no nai desu kara",
+      "tokens": [
+        {
+          "reason": "deinflect:wakaru",
+          "input": "wakatta",
+          "output": "wakatta",
+          "meta": {
+            "competition": [
+              {
+                "item": "wakatta(->wakaru)",
+                "type": "deinflect",
+                "adj": "0.0124",
+                "freq": "1110.4"
+              },
+              {
+                "item": "wakatta(->wakatsu)",
+                "type": "deinflect",
+                "adj": "0.0140",
+                "freq": "970.8"
+              }
+            ],
+            "reasons": [
+              [
+                17
+              ]
+            ],
+            "type": 2
+          }
+        },
+        {
+          "reason": "deinflect:waku",
+          "input": "waktta",
+          "output": "waktta",
+          "meta": {
+            "competition": [
+              {
+                "item": "waktta(->waku)",
+                "type": "deinflect",
+                "adj": "0.0119",
+                "freq": "1161.0"
+              }
+            ],
+            "reasons": [
+              [
+                17
+              ]
+            ],
+            "type": 2
+          }
+        },
+        {
+          "reason": "hepburn",
+          "input": "jya",
+          "output": "ja",
+          "meta": {
+            "competition": [
+              {
+                "item": "ja",
+                "type": "hepburn",
+                "adj": "0.0100",
+                "freq": "0.1"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "sono",
+          "output": "sono",
+          "meta": {
+            "competition": [
+              {
+                "item": "sono",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1461.0"
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1461.0"
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1461.0"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "kusuri",
+          "output": "kusuri",
+          "meta": {
+            "competition": [
+              {
+                "item": "kusuri",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1161.0"
+              },
+              {
+                "item": "kusuri",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1161.0"
+              },
+              {
+                "item": "kusari",
+                "type": "fuzzy",
+                "adj": "0.0119",
+                "freq": "1300.8"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "o",
+          "output": "o"
+        },
+        {
+          "reason": "fuzzy",
+          "input": "kudasi",
+          "output": "kudasai",
+          "meta": {
+            "competition": [
+              {
+                "item": "kudasai",
+                "type": "fuzzy",
+                "adj": "0.0111",
+                "freq": "1470.8"
+              },
+              {
+                "item": "kudasaru",
+                "type": "fuzzy",
+                "adj": "0.0113",
+                "freq": "1520.8"
+              },
+              {
+                "item": "kudari",
+                "type": "fuzzy",
+                "adj": "0.0113",
+                "freq": "1371.0"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "ima",
+          "output": "ima",
+          "meta": {
+            "competition": [
+              {
+                "item": "ima",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1081.0"
+              },
+              {
+                "item": "ima",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1081.0"
+              },
+              {
+                "item": "ima",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1081.0"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "ni",
+          "output": "ni",
+          "meta": {
+            "competition": [
+              {
+                "item": "ni",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1171.0"
+              },
+              {
+                "item": "ni",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1171.0"
+              },
+              {
+                "item": "ni",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1171.0"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "mo",
+          "output": "mo",
+          "meta": {
+            "competition": [
+              {
+                "item": "mo",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1010.6"
+              },
+              {
+                "item": "mo",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1010.6"
+              },
+              {
+                "item": "mo",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1010.6"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "watashi",
+          "output": "watashi",
+          "meta": {
+            "competition": [
+              {
+                "item": "watashi",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1191.0"
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1191.0"
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1191.0"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "ni",
+          "output": "ni",
+          "meta": {
+            "competition": [
+              {
+                "item": "ni",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1171.0"
+              },
+              {
+                "item": "ni",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1171.0"
+              },
+              {
+                "item": "ni",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1171.0"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "mo",
+          "output": "mo",
+          "meta": {
+            "competition": [
+              {
+                "item": "mo",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1010.6"
+              },
+              {
+                "item": "mo",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1010.6"
+              },
+              {
+                "item": "mo",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1010.6"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "kigata",
+          "output": "kigata",
+          "meta": {
+            "competition": [
+              {
+                "item": "kigata",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1.0"
+              },
+              {
+                "item": "kogata",
+                "type": "fuzzy",
+                "adj": "0.0133",
+                "freq": "1151.0"
+              },
+              {
+                "item": "higata",
+                "type": "fuzzy",
+                "adj": "0.0159",
+                "freq": "950.8"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "no",
+          "output": "no",
+          "meta": {
+            "competition": [
+              {
+                "item": "no",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1511.0"
+              },
+              {
+                "item": "no",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1511.0"
+              },
+              {
+                "item": "no",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1511.0"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "nai",
+          "output": "nai",
+          "meta": {
+            "competition": [
+              {
+                "item": "nai",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1050.2"
+              },
+              {
+                "item": "nai",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1050.2"
+              },
+              {
+                "item": "nai",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1050.2"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "desu",
+          "output": "desu",
+          "meta": {
+            "competition": [
+              {
+                "item": "desu",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "100.2"
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "100.2"
+              },
+              {
+                "item": "desuku",
+                "type": "fuzzy",
+                "adj": "0.0005",
+                "freq": "100.2"
+              }
+            ]
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "kara",
+          "output": "kara",
+          "meta": {
+            "competition": [
+              {
+                "item": "kara",
+                "type": "exact",
+                "adj": "0.0000",
+                "freq": "1171.0"
+              },
+              {
+                "item": "kara",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1171.0"
+              },
+              {
+                "item": "kara",
+                "type": "fuzzy",
+                "adj": "0.0000",
+                "freq": "1171.0"
+              }
+            ]
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.919,
+          "semanticScore": 0.8363,
+          "romaji": "kusuri",
+          "kana": "くすり",
+          "kanji": "薬",
+          "domain": "",
+          "meanings": [
+            "medicine",
+            "pharmaceuticals",
+            "legal drugs"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf04"
+          ],
+          "frequency": 1
+        },
+        {
+          "score": 0.8199,
+          "semanticScore": 0.8155,
+          "romaji": "shohousen",
+          "kana": "しょほうせん",
+          "kanji": "処方箋",
+          "domain": "medicine",
+          "meanings": [
+            "prescription"
+          ],
+          "tags": [
+            "news2",
+            "nf39",
+            "spec1"
+          ],
+          "frequency": 0.338
+        },
+        {
+          "score": 0.6757,
+          "semanticScore": 0.8154,
+          "romaji": "yakkyoku",
+          "kana": "やっきょく",
+          "kanji": "薬局",
+          "domain": "",
+          "meanings": [
+            "pharmacy",
+            "drugstore",
+            "chemist's shop"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf16"
+          ],
+          "frequency": 0.867
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7935,
+          "romaji": "kudasai",
+          "kana": "ください",
+          "kanji": "下さい",
+          "meanings": [
+            "please give me",
+            "please do for me"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- term: 薬\n  reading: くすり / kusuri\n  meaning: medicine, pharmaceuticals, legal drugs, pill\n  type: n\n  tags: ichi1, news1, nf04\n\n- term: 処方箋 [medicine]\n  reading: しょほうせん / shohousen\n  meaning: prescription\n  type: n\n  tags: news2, nf39, spec1\n\n- term: 薬局\n  reading: やっきょく / yakkyoku\n  meaning: pharmacy, drugstore, chemist's shop, hospital pharmacy\n  type: n\n  tags: ichi1, news1, nf16\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 下さい  (ください / kudasai)\n  nuance: please give me, please do for me",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 薬\n  reading: くすり / kusuri\n  meaning: medicine, pharmaceuticals, legal drugs, pill\n  type: n\n  tags: ichi1, news1, nf04\n\n- term: 処方箋 [medicine]\n  reading: しょほうせん / shohousen\n  meaning: prescription\n  type: n\n  tags: news2, nf39, spec1\n\n- term: 薬局\n  reading: やっきょく / yakkyoku\n  meaning: pharmacy, drugstore, chemist's shop, hospital pharmacy\n  type: n\n  tags: ichi1, news1, nf16\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 下さい  (ください / kudasai)\n  nuance: please give me, please do for me\nInput: wakatta waktta ja sono kusuri o kudasai ima ni mo watashi ni mo kigata no nai desu kara\nOutput: /no_think",
+      "llmOutput": "I understood, please give me that medicine now, because there is no way for me to do anything else.",
+      "durationMs": 23723,
+      "error": null
+    }
+  ]
+}

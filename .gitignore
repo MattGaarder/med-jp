@@ -5,3 +5,11 @@ node_modules/
 *.zip
 data/JMdict_b.xml
 data/vocab-enhanced.json
+data/vocab-enhanced.jsonl
+data/vocab.db
+data/vocab.db-wal
+data/vocab.json
+data/vocab-v3.jsonl
+data/metadata.json
+data/hnsw.index
+data

@@ -5,12 +5,20 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "setup": "ollama create med-interpreter -f modelfile/Modelfile"
+    "start": "node --max-old-space-size=6144 src/index.js",
+    "setup": "ollama create med-interpreter -f modelfile/Modelfile",
+    "build-index": "node scripts/build-index.js",
+    "build-sqlite": "node scripts/build-sqlite.js",
+    "eval": "node scripts/eval.js",
+    "eval:quick": "node scripts/eval.js --no-llm",
+    "eval:case": "node scripts/eval.js --cases="
   },
   "dependencies": {
+    "better-sqlite3": "^12.8.0",
     "dotenv": "^16.4.5",
+    "fast-xml-parser": "^5.5.9",
     "fuse.js": "^7.1.0",
+    "hnswlib-node": "^3.0.0",
     "wanakana": "^5.3.1"
   }
 }

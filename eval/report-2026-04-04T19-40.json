@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "timestamp": "2026-04-04T19:40:29.766Z",
+    "skipLLM": false,
+    "totalMs": 23291
+  },
+  "results": [
+    {
+      "id": "case-01-appetite",
+      "label": "Fragmented appetite & medication request",
+      "input": "JAP: wakatta waktta jya sono kusuri o kudasi ima ni mo watashi ni mo kigata no nai desu kara",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "wakatta waktta ja sono kusuri o kudashi ima ni mo watashi ni mo kigata no nai desu kara",
+      "tokens": [
+        {
+          "reason": "deinflect:wakaru",
+          "input": "wakatta",
+          "output": "wakatta",
+          "meta": {
+            "reasons": [
+              [
+                17
+              ]
+            ],
+            "type": 2,
+            "score": 272.4375
+          }
+        },
+        {
+          "reason": "deinflect:waku",
+          "input": "waktta",
+          "output": "waktta",
+          "meta": {
+            "reasons": [
+              [
+                17
+              ]
+            ],
+            "type": 2,
+            "score": 293
+          }
+        },
+        {
+          "reason": "whitelist",
+          "input": "jya",
+          "output": "ja"
+        },
+        {
+          "reason": "whitelist",
+          "input": "sono",
+          "output": "sono"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kusuri",
+          "output": "kusuri"
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "o",
+          "output": "o"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kudasi",
+          "output": "kudashi"
+        },
+        {
+          "reason": "whitelist",
+          "input": "ima",
+          "output": "ima"
+        },
+        {
+          "reason": "whitelist",
+          "input": "ni",
+          "output": "ni"
+        },
+        {
+          "reason": "whitelist",
+          "input": "mo",
+          "output": "mo"
+        },
+        {
+          "reason": "whitelist",
+          "input": "watashi",
+          "output": "watashi"
+        },
+        {
+          "reason": "whitelist",
+          "input": "ni",
+          "output": "ni"
+        },
+        {
+          "reason": "whitelist",
+          "input": "mo",
+          "output": "mo"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kigata",
+          "output": "kigata"
+        },
+        {
+          "reason": "whitelist",
+          "input": "no",
+          "output": "no"
+        },
+        {
+          "reason": "whitelist",
+          "input": "nai",
+          "output": "nai"
+        },
+        {
+          "reason": "whitelist",
+          "input": "desu",
+          "output": "desu"
+        },
+        {
+          "reason": "whitelist",
+          "input": "kara",
+          "output": "kara"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.9223,
+          "semanticScore": 0.8404,
+          "romaji": "kusuri",
+          "kana": "くすり",
+          "kanji": "薬",
+          "domain": "",
+          "meanings": [
+            "medicine",
+            "pharmaceuticals",
+            "legal drugs"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf04"
+          ],
+          "frequency": 1
+        },
+        {
+          "score": 0.8253,
+          "semanticScore": 0.8222,
+          "romaji": "shohousen",
+          "kana": "しょほうせん",
+          "kanji": "処方箋",
+          "domain": "medicine",
+          "meanings": [
+            "prescription"
+          ],
+          "tags": [
+            "news2",
+            "nf39",
+            "spec1"
+          ],
+          "frequency": 0.338
+        },
+        {
+          "score": 0.6584,
+          "semanticScore": 0.8136,
+          "romaji": "shin'yaku",
+          "kana": "しんやく",
+          "kanji": "新薬",
+          "domain": "",
+          "meanings": [
+            "new medicine",
+            "new drug"
+          ],
+          "tags": [
+            "news1",
+            "nf15"
+          ],
+          "frequency": 0.787
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.6668,
+          "romaji": "dochirademonai",
+          "kana": "どちらでもない",
+          "kanji": "",
+          "meanings": [
+            "neither"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- term: 薬\n  reading: くすり / kusuri\n  meaning: medicine, pharmaceuticals, legal drugs, pill\n  type: n\n  tags: ichi1, news1, nf04\n\n- term: 処方箋 [medicine]\n  reading: しょほうせん / shohousen\n  meaning: prescription\n  type: n\n  tags: news2, nf39, spec1\n\n- term: 新薬\n  reading: しんやく / shin'yaku\n  meaning: new medicine, new drug\n  type: n\n  tags: news1, nf15\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: dochirademonai  (dochirademonai)\n  nuance: neither",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 薬\n  reading: くすり / kusuri\n  meaning: medicine, pharmaceuticals, legal drugs, pill\n  type: n\n  tags: ichi1, news1, nf04\n\n- term: 処方箋 [medicine]\n  reading: しょほうせん / shohousen\n  meaning: prescription\n  type: n\n  tags: news2, nf39, spec1\n\n- term: 新薬\n  reading: しんやく / shin'yaku\n  meaning: new medicine, new drug\n  type: n\n  tags: news1, nf15\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: dochirademonai  (dochirademonai)\n  nuance: neither\nInput: wakatta waktta ja sono kusuri o kudashi ima ni mo watashi ni mo kigata no nai desu kara\nOutput: /no_think",
+      "llmOutput": "I understood, but if I give you that medicine now, it won't be suitable for me either.",
+      "durationMs": 23291,
+      "error": null
+    }
+  ]
+}

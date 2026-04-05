@@ -13,8 +13,8 @@ import { generate }     from './ollamaClient.js';
  * @returns {AsyncGenerator<string>} - Yields output text chunks.
  */
 export async function* interpret(rawInput) {
-  console.log(`\x1b[90m[interpreter] Building prompt...\x1b[0m`);
-  const { direction, prompt } = buildPrompt(rawInput);
+  console.log(`\x1b[90m[interpreter] Building Sequence (RAG + Prompt)...\x1b[0m`);
+  const { direction, prompt } = await buildPrompt(rawInput);
   
   // Extract just the Input line from the prompt template to show the user the preprocessed romaji
   const preprocessedMatch = prompt.match(/NOW TRANSLATE:\nInput: (.*?)\nOutput/s);
