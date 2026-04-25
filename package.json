@@ -15,8 +15,9 @@
   },
   "dependencies": {
     "better-sqlite3": "^12.8.0",
+    "cheerio": "^1.2.0",
     "dotenv": "^16.4.5",
-    "fast-xml-parser": "^5.5.9",
+    "fast-xml-parser": "^5.5.11",
     "fuse.js": "^7.1.0",
     "hnswlib-node": "^3.0.0",
     "wanakana": "^5.3.1"

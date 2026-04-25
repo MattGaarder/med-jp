@@ -1,0 +1,3075 @@
+{
+  "meta": {
+    "timestamp": "2026-04-06T14:47:51.201Z",
+    "skipLLM": false,
+    "totalMs": 22573
+  },
+  "results": [
+    {
+      "id": "case-09-leg-numbness",
+      "label": "Diagnostic tests for numbness",
+      "input": "JAP: kensa ga hitsuyou desu. ashi no shibire no ga gein waranai desu w. gein no kekka dettara wo kitsutomerraru deshou",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "kensa ga hitsuyou desu ashi no shibire no ga geinou kawaranai desu w geinou no kekka dattara wo kitsutomerraru deshou",
+      "tokens": [
+        {
+          "reason": "exact",
+          "input": "kensa",
+          "output": "kensa",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kensa",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1181,
+                "adjustedScore": -47.24,
+                "meaning": "inspection e.g. customs, factory",
+                "semanticBoost": 0,
+                "finalScore": -47.24
+              },
+              {
+                "item": "kensa",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1181,
+                "adjustedScore": -27.240000000000002,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:47.2 + U:0)",
+                "meaning": "inspection e.g. customs, factory",
+                "semanticBoost": 0,
+                "finalScore": -27.240000000000002
+              },
+              {
+                "item": "kensa",
+                "root": "kensa",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 1181,
+                "adjustedScore": -18.240000000000002,
+                "breakdown": "(B:25 + D:4.0 - F:47.2)",
+                "meaning": "inspection e.g. customs, factory",
+                "meta": {
+                  "reasons": [],
+                  "type": 62719,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": -18.240000000000002
+              },
+              {
+                "item": "kensatsu",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1181,
+                "adjustedScore": -12.227350889359329,
+                "breakdown": "(B:20 + D:0.0 + L:15 - F:47.2 + U:0)",
+                "meaning": "criminal investigation",
+                "semanticBoost": 0,
+                "finalScore": -12.227350889359329
+              },
+              {
+                "item": "kensaku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 950.7875,
+                "adjustedScore": -8.018850889359328,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:38.0 + U:0)",
+                "meaning": "looking up e.g. a word in a dictionary",
+                "semanticBoost": 0,
+                "finalScore": -8.018850889359328
+              },
+              {
+                "item": "kensatsukan",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 990.8708333333333,
+                "adjustedScore": 10.37781577730734,
+                "breakdown": "(B:20 + D:0.0 + L:30 - F:39.6 + U:0)",
+                "meaning": "public prosecutor",
+                "semanticBoost": 0,
+                "finalScore": 10.37781577730734
+              },
+              {
+                "item": "kensatsuchou",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 950.7875,
+                "adjustedScore": 16.981149110640672,
+                "breakdown": "(B:20 + D:0.0 + L:35 - F:38.0 + U:0)",
+                "meaning": "Public Prosecutors Office",
+                "semanticBoost": 0,
+                "finalScore": 16.981149110640672
+              },
+              {
+                "item": "kessan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1181,
+                "adjustedScore": 24.97655269759087,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:47.2 + U:0)",
+                "meaning": "settlement of accounts",
+                "semanticBoost": 0,
+                "finalScore": 24.97655269759087
+              },
+              {
+                "item": "kensaku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 29.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:0.0 + U:0)",
+                "meaning": "making a plan",
+                "semanticBoost": 0,
+                "finalScore": 29.972649110640674
+              },
+              {
+                "item": "kensaku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 29.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:0.0 + U:0)",
+                "meaning": "grinding",
+                "semanticBoost": 0,
+                "finalScore": 29.972649110640674
+              },
+              {
+                "item": "kensaku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 29.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:0.0 + U:0)",
+                "meaning": "suggestion",
+                "semanticBoost": 0,
+                "finalScore": 29.972649110640674
+              },
+              {
+                "item": "kensaku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 29.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:0.0 + U:0)",
+                "meaning": "cord",
+                "semanticBoost": 0,
+                "finalScore": 29.972649110640674
+              },
+              {
+                "item": "kensa",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1181,
+                "adjustedScore": 29.97655269759087,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:47.2 + U:0)",
+                "meaning": "inspection e.g. customs, factory",
+                "semanticBoost": 0,
+                "finalScore": 29.97655269759087
+              },
+              {
+                "item": "kensa",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1181,
+                "adjustedScore": 29.97655269759087,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:47.2 + U:0)",
+                "meaning": "inspection e.g. customs, factory",
+                "semanticBoost": 0,
+                "finalScore": 29.97655269759087
+              },
+              {
+                "item": "kessai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1010.9125,
+                "adjustedScore": 31.780052697590868,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:40.4 + U:0)",
+                "meaning": "settlement of an account",
+                "semanticBoost": 0,
+                "finalScore": 31.780052697590868
+              },
+              {
+                "item": "kessai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1010.9125,
+                "adjustedScore": 31.780052697590868,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:40.4 + U:0)",
+                "meaning": "settlement of an account",
+                "semanticBoost": 0,
+                "finalScore": 31.780052697590868
+              },
+              {
+                "item": "kessaku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1070.9291666666668,
+                "adjustedScore": 34.3793860309242,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:42.8 + U:0)",
+                "meaning": "masterpiece",
+                "semanticBoost": 0,
+                "finalScore": 34.3793860309242
+              },
+              {
+                "item": "kensatsu",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 34.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:15 - F:0.0 + U:0)",
+                "meaning": "ticket inspection",
+                "semanticBoost": 0,
+                "finalScore": 34.972649110640674
+              },
+              {
+                "item": "kensatsu",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 34.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:15 - F:0.0 + U:0)",
+                "meaning": "discernment",
+                "semanticBoost": 0,
+                "finalScore": 34.972649110640674
+              },
+              {
+                "item": "kensatsu",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1181,
+                "adjustedScore": 34.97655269759087,
+                "breakdown": "(B:45 + D:27.2 + L:10 - F:47.2 + U:0)",
+                "meaning": "criminal investigation",
+                "semanticBoost": 0,
+                "finalScore": 34.97655269759087
+              },
+              {
+                "item": "kessai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 870.6208333333333,
+                "adjustedScore": 37.39171936425754,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:34.8 + U:0)",
+                "meaning": "sanction",
+                "semanticBoost": 0,
+                "finalScore": 37.39171936425754
+              },
+              {
+                "item": "kessai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 870.6208333333333,
+                "adjustedScore": 37.39171936425754,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:34.8 + U:0)",
+                "meaning": "sanction",
+                "semanticBoost": 0,
+                "finalScore": 37.39171936425754
+              },
+              {
+                "item": "kensaku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 950.7875,
+                "adjustedScore": 39.18505269759087,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:38.0 + U:0)",
+                "meaning": "looking up e.g. a word in a dictionary",
+                "semanticBoost": 0,
+                "finalScore": 39.18505269759087
+              },
+              {
+                "item": "kensatsukan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 990.8708333333333,
+                "adjustedScore": 57.58171936425754,
+                "breakdown": "(B:45 + D:27.2 + L:25 - F:39.6 + U:0)",
+                "meaning": "public prosecutor",
+                "semanticBoost": 0,
+                "finalScore": 57.58171936425754
+              },
+              {
+                "item": "kessai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "religious abstinence",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kessai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "blood debt",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kessai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "religious abstinence",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kessai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "blood debt",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kensaku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "making a plan",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kensaku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "grinding",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kensaku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "suggestion",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kensaku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "cord",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kuensan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "citric acid",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kensatsu",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 82.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:10 - F:0.0 + U:0)",
+                "meaning": "ticket inspection",
+                "semanticBoost": 0,
+                "finalScore": 82.17655269759086
+              },
+              {
+                "item": "kensatsu",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 82.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:10 - F:0.0 + U:0)",
+                "meaning": "discernment",
+                "semanticBoost": 0,
+                "finalScore": 82.17655269759086
+              }
+            ],
+            "competition": [
+              {
+                "item": "kensa",
+                "type": "exact",
+                "adj": "-47.2400",
+                "freq": "1181.0"
+              },
+              {
+                "item": "kensa",
+                "type": "fuzzy",
+                "adj": "-27.2400",
+                "freq": "1181.0"
+              },
+              {
+                "item": "kensa(->kensa)",
+                "type": "deinflect",
+                "adj": "-18.2400",
+                "freq": "1181.0"
+              }
+            ],
+            "winner": {
+              "item": "kensa",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1181,
+              "adjustedScore": -47.24,
+              "meaning": "inspection e.g. customs, factory",
+              "semanticBoost": 0,
+              "finalScore": -47.24
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ga",
+          "output": "ga",
+          "meta": {
+            "kana": "が"
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "hitsuyou",
+          "output": "hitsuyou",
+          "meta": {
+            "candidates": [
+              {
+                "item": "hitsuyou",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1191,
+                "adjustedScore": -47.64,
+                "meaning": "necessary",
+                "semanticBoost": 0,
+                "finalScore": -47.64
+              },
+              {
+                "item": "hitsuyou",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1191,
+                "adjustedScore": -27.64,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:47.6 + U:0)",
+                "meaning": "necessary",
+                "semanticBoost": 0,
+                "finalScore": -27.64
+              },
+              {
+                "item": "hitsuyousei",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1071,
+                "adjustedScore": -7.82735088935933,
+                "breakdown": "(B:20 + D:0.0 + L:15 - F:42.8 + U:0)",
+                "meaning": "necessity",
+                "semanticBoost": 0,
+                "finalScore": -7.82735088935933
+              },
+              {
+                "item": "hitsuyou",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.1111111111111111,
+                "freqScore": 1191,
+                "adjustedScore": 17.17481481481481,
+                "breakdown": "(B:45 + D:14.8 + L:5 - F:47.6 + U:0)",
+                "meaning": "necessary",
+                "semanticBoost": 0,
+                "finalScore": 17.17481481481481
+              },
+              {
+                "item": "hitsuyoujouken",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 800.5291666666667,
+                "adjustedScore": 17.991482443974007,
+                "breakdown": "(B:20 + D:0.0 + L:30 - F:32.0 + U:0)",
+                "meaning": "necessary condition",
+                "semanticBoost": 0,
+                "finalScore": 17.991482443974007
+              },
+              {
+                "item": "hitsuyousei",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.1111111111111111,
+                "freqScore": 1071,
+                "adjustedScore": 26.974814814814806,
+                "breakdown": "(B:45 + D:14.8 + L:10 - F:42.8 + U:0)",
+                "meaning": "necessity",
+                "semanticBoost": 0,
+                "finalScore": 26.974814814814806
+              },
+              {
+                "item": "hitsuyoukeihi",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 44.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:25 - F:0.0 + U:0)",
+                "meaning": "necessary expenses",
+                "semanticBoost": 0,
+                "finalScore": 44.972649110640674
+              },
+              {
+                "item": "hitsuyoumemori",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 49.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:30 - F:0.0 + U:0)",
+                "meaning": "required memory size",
+                "semanticBoost": 0,
+                "finalScore": 49.972649110640674
+              },
+              {
+                "item": "hitsuyoujouken",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.1111111111111111,
+                "freqScore": 800.5291666666667,
+                "adjustedScore": 52.793648148148144,
+                "breakdown": "(B:45 + D:14.8 + L:25 - F:32.0 + U:0)",
+                "meaning": "necessary condition",
+                "semanticBoost": 0,
+                "finalScore": 52.793648148148144
+              },
+              {
+                "item": "hitsuyoukeihi",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.1111111111111111,
+                "freqScore": 1,
+                "adjustedScore": 79.7748148148148,
+                "breakdown": "(B:45 + D:14.8 + L:20 - F:0.0 + U:0)",
+                "meaning": "necessary expenses",
+                "semanticBoost": 0,
+                "finalScore": 79.7748148148148
+              },
+              {
+                "item": "hitsuyoumemori",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.1111111111111111,
+                "freqScore": 1,
+                "adjustedScore": 84.7748148148148,
+                "breakdown": "(B:45 + D:14.8 + L:25 - F:0.0 + U:0)",
+                "meaning": "required memory size",
+                "semanticBoost": 0,
+                "finalScore": 84.7748148148148
+              }
+            ],
+            "competition": [
+              {
+                "item": "hitsuyou",
+                "type": "exact",
+                "adj": "-47.6400",
+                "freq": "1191.0"
+              },
+              {
+                "item": "hitsuyou",
+                "type": "fuzzy",
+                "adj": "-27.6400",
+                "freq": "1191.0"
+              },
+              {
+                "item": "hitsuyousei",
+                "type": "fuzzy",
+                "adj": "-7.8274",
+                "freq": "1071.0"
+              }
+            ],
+            "winner": {
+              "item": "hitsuyou",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1191,
+              "adjustedScore": -47.64,
+              "meaning": "necessary",
+              "semanticBoost": 0,
+              "finalScore": -47.64
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "desu",
+          "output": "desu",
+          "meta": {
+            "candidates": [
+              {
+                "item": "desu",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": -14.008,
+                "meaning": "be",
+                "semanticBoost": 0,
+                "finalScore": -14.008
+              },
+              {
+                "item": "desu",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": -10.004,
+                "meaning": "death",
+                "semanticBoost": 0,
+                "finalScore": -10.004
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": 5.992000000000001,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:4.0 + U:-10)",
+                "meaning": "be",
+                "semanticBoost": 0,
+                "finalScore": 5.992000000000001
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": 9.995999999999999,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:-10)",
+                "meaning": "death",
+                "semanticBoost": 0,
+                "finalScore": 9.995999999999999
+              },
+              {
+                "item": "desuku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 26.004649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:4.0 + U:0)",
+                "meaning": "desk",
+                "semanticBoost": 0,
+                "finalScore": 26.004649110640674
+              },
+              {
+                "item": "desukara",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 36.00464911064067,
+                "breakdown": "(B:20 + D:0.0 + L:20 - F:4.0 + U:0)",
+                "meaning": "so",
+                "semanticBoost": 0,
+                "finalScore": 36.00464911064067
+              },
+              {
+                "item": "desumatchi",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 49.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:30 - F:0.0 + U:0)",
+                "meaning": "death match",
+                "semanticBoost": 0,
+                "finalScore": 49.972649110640674
+              },
+              {
+                "item": "desukutoppu",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 54.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:35 - F:0.0 + U:0)",
+                "meaning": "desktop",
+                "semanticBoost": 0,
+                "finalScore": 54.972649110640674
+              },
+              {
+                "item": "desugiru",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 630.1208333333333,
+                "adjustedScore": 70.57225430666331,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:25.2 + U:0)",
+                "meaning": "to stick out too much",
+                "semanticBoost": 0,
+                "finalScore": 70.57225430666331
+              },
+              {
+                "item": "desuku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 81.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:4.0 + U:0)",
+                "meaning": "desk",
+                "semanticBoost": 0,
+                "finalScore": 81.76908763999664
+              },
+              {
+                "item": "deisuku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 86.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:10 - F:4.0 + U:0)",
+                "meaning": "disk",
+                "semanticBoost": 0,
+                "finalScore": 86.76908763999664
+              },
+              {
+                "item": "desukara",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 91.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:4.0 + U:0)",
+                "meaning": "so",
+                "semanticBoost": 0,
+                "finalScore": 91.76908763999664
+              },
+              {
+                "item": "desukara",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 91.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:4.0 + U:0)",
+                "meaning": "so",
+                "semanticBoost": 0,
+                "finalScore": 91.76908763999664
+              },
+              {
+                "item": "deisukabaa",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 101.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:25 - F:4.0 + U:0)",
+                "meaning": "discover",
+                "semanticBoost": 0,
+                "finalScore": 101.76908763999664
+              },
+              {
+                "item": "desumatchi",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 105.73708763999663,
+                "breakdown": "(B:45 + D:35.8 + L:25 - F:0.0 + U:0)",
+                "meaning": "death match",
+                "semanticBoost": 0,
+                "finalScore": 105.73708763999663
+              },
+              {
+                "item": "deisukaunto",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 106.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:30 - F:4.0 + U:0)",
+                "meaning": "discount",
+                "semanticBoost": 0,
+                "finalScore": 106.76908763999664
+              },
+              {
+                "item": "desukutoppu",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 110.73708763999663,
+                "breakdown": "(B:45 + D:35.8 + L:30 - F:0.0 + U:0)",
+                "meaning": "desktop",
+                "semanticBoost": 0,
+                "finalScore": 110.73708763999663
+              },
+              {
+                "item": "deisukasshon",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 111.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:35 - F:4.0 + U:0)",
+                "meaning": "discussion",
+                "semanticBoost": 0,
+                "finalScore": 111.76908763999664
+              }
+            ],
+            "competition": [
+              {
+                "item": "desu",
+                "type": "exact",
+                "adj": "-14.0080",
+                "freq": "100.2"
+              },
+              {
+                "item": "desu",
+                "type": "exact",
+                "adj": "-10.0040",
+                "freq": "0.1"
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "adj": "5.9920",
+                "freq": "100.2"
+              }
+            ],
+            "winner": {
+              "item": "desu",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 100.2,
+              "adjustedScore": -14.008,
+              "meaning": "be",
+              "semanticBoost": 0,
+              "finalScore": -14.008
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "ashi",
+          "output": "ashi",
+          "meta": {
+            "candidates": [
+              {
+                "item": "ashi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1190.9916666666668,
+                "adjustedScore": -47.63966666666667,
+                "meaning": "foot",
+                "semanticBoost": 0,
+                "finalScore": -47.63966666666667
+              },
+              {
+                "item": "ashi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 960.175,
+                "adjustedScore": -38.407,
+                "meaning": "common reed Phragmites australis",
+                "semanticBoost": 0,
+                "finalScore": -38.407
+              },
+              {
+                "item": "ashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1190.9916666666668,
+                "adjustedScore": -27.63966666666667,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:47.6 + U:0)",
+                "meaning": "foot",
+                "semanticBoost": 0,
+                "finalScore": -27.63966666666667
+              },
+              {
+                "item": "ashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1190.9916666666668,
+                "adjustedScore": -27.63966666666667,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:47.6 + U:0)",
+                "meaning": "foot",
+                "semanticBoost": 0,
+                "finalScore": -27.63966666666667
+              },
+              {
+                "item": "ashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 960.175,
+                "adjustedScore": -18.406999999999996,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:38.4 + U:0)",
+                "meaning": "common reed Phragmites australis",
+                "semanticBoost": 0,
+                "finalScore": -18.406999999999996
+              },
+              {
+                "item": "ashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 960.175,
+                "adjustedScore": -18.406999999999996,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:38.4 + U:0)",
+                "meaning": "common reed Phragmites australis",
+                "semanticBoost": 0,
+                "finalScore": -18.406999999999996
+              },
+              {
+                "item": "ashi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": -0.004,
+                "meaning": "bad",
+                "semanticBoost": 0,
+                "finalScore": -0.004
+              },
+              {
+                "item": "ashi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": -0.004,
+                "meaning": "assistant",
+                "semanticBoost": 0,
+                "finalScore": -0.004
+              },
+              {
+                "item": "ashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": 19.996,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:0)",
+                "meaning": "bad",
+                "semanticBoost": 0,
+                "finalScore": 19.996
+              },
+              {
+                "item": "ashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": 19.996,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:0)",
+                "meaning": "assistant",
+                "semanticBoost": 0,
+                "finalScore": 19.996
+              },
+              {
+                "item": "ashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": 19.996,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:0)",
+                "meaning": "bad",
+                "semanticBoost": 0,
+                "finalScore": 19.996
+              },
+              {
+                "item": "ashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": 19.996,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:0)",
+                "meaning": "assistant",
+                "semanticBoost": 0,
+                "finalScore": 19.996
+              },
+              {
+                "item": "ashi",
+                "root": "ashi",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 0.1,
+                "adjustedScore": 28.996,
+                "breakdown": "(B:25 + D:4.0 - F:0.0)",
+                "meaning": "assistant",
+                "meta": {
+                  "reasons": [],
+                  "type": 62719,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": 28.996
+              },
+              {
+                "item": "ashisuto",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 36.00464911064067,
+                "breakdown": "(B:20 + D:0.0 + L:20 - F:4.0 + U:0)",
+                "meaning": "assistance",
+                "semanticBoost": 0,
+                "finalScore": 36.00464911064067
+              },
+              {
+                "item": "ashisutanto",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 51.00464911064067,
+                "breakdown": "(B:20 + D:0.0 + L:35 - F:4.0 + U:0)",
+                "meaning": "assistant",
+                "semanticBoost": 0,
+                "finalScore": 51.00464911064067
+              },
+              {
+                "item": "ashidooshisu",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 59.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:40 - F:0.0 + U:0)",
+                "meaning": "acidosis",
+                "semanticBoost": 0,
+                "finalScore": 59.972649110640674
+              }
+            ],
+            "competition": [
+              {
+                "item": "ashi",
+                "type": "exact",
+                "adj": "-47.6397",
+                "freq": "1191.0"
+              },
+              {
+                "item": "ashi",
+                "type": "exact",
+                "adj": "-38.4070",
+                "freq": "960.2"
+              },
+              {
+                "item": "ashi",
+                "type": "fuzzy",
+                "adj": "-27.6397",
+                "freq": "1191.0"
+              }
+            ],
+            "winner": {
+              "item": "ashi",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1190.9916666666668,
+              "adjustedScore": -47.63966666666667,
+              "meaning": "foot",
+              "semanticBoost": 0,
+              "finalScore": -47.63966666666667
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "no",
+          "output": "no",
+          "meta": {
+            "kana": "の"
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "shibire",
+          "output": "shibire",
+          "meta": {
+            "candidates": [
+              {
+                "item": "shibire",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 250.1,
+                "adjustedScore": -10.004,
+                "meaning": "numbness",
+                "semanticBoost": 0,
+                "finalScore": -10.004
+              },
+              {
+                "item": "shibire",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1,
+                "adjustedScore": -0.04,
+                "meaning": "sweetbread",
+                "semanticBoost": 0,
+                "finalScore": -0.04
+              },
+              {
+                "item": "shiire",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1080.95,
+                "adjustedScore": 3.359969886241558,
+                "breakdown": "(B:20 + D:21.6 + L:5 - F:43.2 + U:0)",
+                "meaning": "buying of stock, materials, etc.",
+                "semanticBoost": 0,
+                "finalScore": 3.359969886241558
+              },
+              {
+                "item": "shibire",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 250.1,
+                "adjustedScore": 9.996,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:10.0 + U:0)",
+                "meaning": "numbness",
+                "semanticBoost": 0,
+                "finalScore": 9.996
+              },
+              {
+                "item": "shiireru",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 870.5666666666667,
+                "adjustedScore": 11.775303219574887,
+                "breakdown": "(B:20 + D:21.6 + L:5 - F:34.8 + U:0)",
+                "meaning": "to buy stock, materials, etc.",
+                "semanticBoost": 0,
+                "finalScore": 11.775303219574887
+              },
+              {
+                "item": "shibire",
+                "root": "shibireru",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 350.2,
+                "adjustedScore": 14.992,
+                "breakdown": "(B:25 + D:4.0 - F:14.0)",
+                "meaning": "to become numb",
+                "meta": {
+                  "reasons": [
+                    [
+                      28
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": 14.992
+              },
+              {
+                "item": "shibireru",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 350.2,
+                "adjustedScore": 16.004649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:14.0 + U:0)",
+                "meaning": "to become numb",
+                "semanticBoost": 0,
+                "finalScore": 16.004649110640674
+              },
+              {
+                "item": "shibire",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1,
+                "adjustedScore": 19.96,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:0)",
+                "meaning": "sweetbread",
+                "semanticBoost": 0,
+                "finalScore": 19.96
+              },
+              {
+                "item": "shibireru",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.125,
+                "freqScore": 350.2,
+                "adjustedScore": 53.66966952966369,
+                "breakdown": "(B:45 + D:17.7 + L:5 - F:14.0 + U:0)",
+                "meaning": "to become numb",
+                "semanticBoost": 0,
+                "finalScore": 53.66966952966369
+              },
+              {
+                "item": "shibireru",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.125,
+                "freqScore": 350.2,
+                "adjustedScore": 53.66966952966369,
+                "breakdown": "(B:45 + D:17.7 + L:5 - F:14.0 + U:0)",
+                "meaning": "to become numb",
+                "semanticBoost": 0,
+                "finalScore": 53.66966952966369
+              },
+              {
+                "item": "shibire",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.125,
+                "freqScore": 250.1,
+                "adjustedScore": 57.67366952966369,
+                "breakdown": "(B:45 + D:17.7 + L:5 - F:10.0 + U:0)",
+                "meaning": "numbness",
+                "semanticBoost": 0,
+                "finalScore": 57.67366952966369
+              },
+              {
+                "item": "shibire",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.125,
+                "freqScore": 250.1,
+                "adjustedScore": 57.67366952966369,
+                "breakdown": "(B:45 + D:17.7 + L:5 - F:10.0 + U:0)",
+                "meaning": "numbness",
+                "semanticBoost": 0,
+                "finalScore": 57.67366952966369
+              },
+              {
+                "item": "shibire",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.125,
+                "freqScore": 1,
+                "adjustedScore": 67.63766952966368,
+                "breakdown": "(B:45 + D:17.7 + L:5 - F:0.0 + U:0)",
+                "meaning": "sweetbread",
+                "semanticBoost": 0,
+                "finalScore": 67.63766952966368
+              },
+              {
+                "item": "shibire",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.125,
+                "freqScore": 1,
+                "adjustedScore": 67.63766952966368,
+                "breakdown": "(B:45 + D:17.7 + L:5 - F:0.0 + U:0)",
+                "meaning": "sweetbread",
+                "semanticBoost": 0,
+                "finalScore": 67.63766952966368
+              },
+              {
+                "item": "shibiriankontorooru",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 97.58996988624156,
+                "breakdown": "(B:20 + D:21.6 + L:60 - F:4.0 + U:0)",
+                "meaning": "civilian control of the military",
+                "semanticBoost": -15,
+                "finalScore": 82.58996988624156
+              }
+            ],
+            "competition": [
+              {
+                "item": "shibire",
+                "type": "exact",
+                "adj": "-10.0040",
+                "freq": "250.1"
+              },
+              {
+                "item": "shibire",
+                "type": "exact",
+                "adj": "-0.0400",
+                "freq": "1.0"
+              },
+              {
+                "item": "shiire",
+                "type": "fuzzy",
+                "adj": "3.3600",
+                "freq": "1081.0"
+              }
+            ],
+            "winner": {
+              "item": "shibire",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 250.1,
+              "adjustedScore": -10.004,
+              "meaning": "numbness",
+              "semanticBoost": 0,
+              "finalScore": -10.004
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "no",
+          "output": "no",
+          "meta": {
+            "kana": "の"
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ga",
+          "output": "ga",
+          "meta": {
+            "kana": "が"
+          }
+        },
+        {
+          "reason": "fuzzy",
+          "input": "gein",
+          "output": "geinou",
+          "meta": {
+            "candidates": [
+              {
+                "item": "geinou",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1151,
+                "adjustedScore": -16.027350889359326,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:46.0 + U:0)",
+                "meaning": "public entertainment",
+                "semanticBoost": -15,
+                "finalScore": -31.027350889359326
+              },
+              {
+                "item": "geinin",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 920.725,
+                "adjustedScore": -6.816350889359327,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:36.8 + U:0)",
+                "meaning": "TV comedian",
+                "semanticBoost": 0,
+                "finalScore": -6.816350889359327
+              },
+              {
+                "item": "gein",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": -4.008,
+                "meaning": "gain",
+                "semanticBoost": 0,
+                "finalScore": -4.008
+              },
+              {
+                "item": "geiniku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 800.475,
+                "adjustedScore": 2.993649110640675,
+                "breakdown": "(B:20 + D:0.0 + L:15 - F:32.0 + U:0)",
+                "meaning": "whale meat",
+                "semanticBoost": 0,
+                "finalScore": 2.993649110640675
+              },
+              {
+                "item": "gein",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": 15.992,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:4.0 + U:0)",
+                "meaning": "gain",
+                "semanticBoost": 0,
+                "finalScore": 15.992
+              },
+              {
+                "item": "geinou",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 1151,
+                "adjustedScore": 39.73708763999664,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:46.0 + U:0)",
+                "meaning": "public entertainment",
+                "semanticBoost": -15,
+                "finalScore": 24.737087639996638
+              },
+              {
+                "item": "geinoujin",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 41.00464911064067,
+                "breakdown": "(B:20 + D:0.0 + L:25 - F:4.0 + U:0)",
+                "meaning": "entertainer",
+                "semanticBoost": 0,
+                "finalScore": 41.00464911064067
+              },
+              {
+                "item": "geinin",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 920.725,
+                "adjustedScore": 48.948087639996636,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:36.8 + U:0)",
+                "meaning": "TV comedian",
+                "semanticBoost": 0,
+                "finalScore": 48.948087639996636
+              },
+              {
+                "item": "geiniku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 800.475,
+                "adjustedScore": 58.75808763999664,
+                "breakdown": "(B:45 + D:35.8 + L:10 - F:32.0 + U:0)",
+                "meaning": "whale meat",
+                "semanticBoost": 0,
+                "finalScore": 58.75808763999664
+              },
+              {
+                "item": "gein",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 81.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:4.0 + U:0)",
+                "meaning": "gain",
+                "semanticBoost": 0,
+                "finalScore": 81.76908763999664
+              },
+              {
+                "item": "geinoujin",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 96.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:20 - F:4.0 + U:0)",
+                "meaning": "entertainer",
+                "semanticBoost": 0,
+                "finalScore": 96.76908763999664
+              }
+            ],
+            "competition": [
+              {
+                "item": "geinou",
+                "type": "fuzzy",
+                "adj": "-16.0274",
+                "freq": "1151.0"
+              },
+              {
+                "item": "geinin",
+                "type": "fuzzy",
+                "adj": "-6.8164",
+                "freq": "920.7"
+              },
+              {
+                "item": "gein",
+                "type": "exact",
+                "adj": "-4.0080",
+                "freq": "100.2"
+              }
+            ],
+            "winner": {
+              "item": "geinou",
+              "type": "fuzzy",
+              "distance": 0.001,
+              "freqScore": 1151,
+              "adjustedScore": -16.027350889359326,
+              "breakdown": "(B:20 + D:0.0 + L:10 - F:46.0 + U:0)",
+              "meaning": "public entertainment",
+              "semanticBoost": -15,
+              "finalScore": -31.027350889359326
+            },
+            "semanticBoost": -15,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "reason": "fuzzy",
+          "input": "waranai",
+          "output": "kawaranai",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kawaranai",
+                "type": "fuzzy",
+                "distance": 0.04,
+                "freqScore": 1071,
+                "adjustedScore": -9.64,
+                "breakdown": "(B:20 + D:3.2 + L:10 - F:42.8 + U:0)",
+                "meaning": "constant",
+                "semanticBoost": 0,
+                "finalScore": -9.64
+              },
+              {
+                "item": "waranai",
+                "root": "waru",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 890.6083333333333,
+                "adjustedScore": -6.6243333333333325,
+                "breakdown": "(B:25 + D:4.0 - F:35.6)",
+                "meaning": "to divide",
+                "meta": {
+                  "reasons": [
+                    [
+                      18
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": -6.6243333333333325
+              },
+              {
+                "item": "naranai",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 37.589969886241555,
+                "breakdown": "(B:20 + D:21.6 + L:0 - F:4.0 + U:0)",
+                "meaning": "cannot help feeling",
+                "semanticBoost": -15,
+                "finalScore": 22.589969886241555
+              },
+              {
+                "item": "kawaranai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.165,
+                "freqScore": 1071,
+                "adjustedScore": 33.969326735298665,
+                "breakdown": "(B:45 + D:26.8 + L:5 - F:42.8 + U:0)",
+                "meaning": "constant",
+                "semanticBoost": 0,
+                "finalScore": 33.969326735298665
+              },
+              {
+                "item": "kawaranai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.165,
+                "freqScore": 1071,
+                "adjustedScore": 33.969326735298665,
+                "breakdown": "(B:45 + D:26.8 + L:5 - F:42.8 + U:0)",
+                "meaning": "constant",
+                "semanticBoost": 0,
+                "finalScore": 33.969326735298665
+              },
+              {
+                "item": "kudaranai",
+                "type": "fuzzy",
+                "distance": 0.18285714285714286,
+                "freqScore": 350.2,
+                "adjustedScore": 47.26920133923687,
+                "breakdown": "(B:20 + D:31.3 + L:10 - F:14.0 + U:0)",
+                "meaning": "trivial",
+                "semanticBoost": 0,
+                "finalScore": 47.26920133923687
+              },
+              {
+                "item": "tamaranai",
+                "type": "fuzzy",
+                "distance": 0.18285714285714286,
+                "freqScore": 350.2,
+                "adjustedScore": 47.26920133923687,
+                "breakdown": "(B:20 + D:31.3 + L:10 - F:14.0 + U:0)",
+                "meaning": "intolerable",
+                "semanticBoost": 0,
+                "finalScore": 47.26920133923687
+              },
+              {
+                "item": "waranattou",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1,
+                "adjustedScore": 56.55796988624156,
+                "breakdown": "(B:20 + D:21.6 + L:15 - F:0.0 + U:0)",
+                "meaning": "straw-wrapped natto",
+                "semanticBoost": 0,
+                "finalScore": 56.55796988624156
+              }
+            ],
+            "competition": [
+              {
+                "item": "kawaranai",
+                "type": "fuzzy",
+                "adj": "-9.6400",
+                "freq": "1071.0"
+              },
+              {
+                "item": "waranai(->waru)",
+                "type": "deinflect",
+                "adj": "-6.6243",
+                "freq": "890.6"
+              },
+              {
+                "item": "kawaranai",
+                "type": "repair:doubling:fuzzy",
+                "adj": "33.9693",
+                "freq": "1071.0"
+              }
+            ],
+            "winner": {
+              "item": "kawaranai",
+              "type": "fuzzy",
+              "distance": 0.04,
+              "freqScore": 1071,
+              "adjustedScore": -9.64,
+              "breakdown": "(B:20 + D:3.2 + L:10 - F:42.8 + U:0)",
+              "meaning": "constant",
+              "semanticBoost": 0,
+              "finalScore": -9.64
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "desu",
+          "output": "desu",
+          "meta": {
+            "candidates": [
+              {
+                "item": "desu",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": -14.008,
+                "meaning": "be",
+                "semanticBoost": 0,
+                "finalScore": -14.008
+              },
+              {
+                "item": "desu",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": -10.004,
+                "meaning": "death",
+                "semanticBoost": 0,
+                "finalScore": -10.004
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": 5.992000000000001,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:4.0 + U:-10)",
+                "meaning": "be",
+                "semanticBoost": 0,
+                "finalScore": 5.992000000000001
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": 9.995999999999999,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:-10)",
+                "meaning": "death",
+                "semanticBoost": 0,
+                "finalScore": 9.995999999999999
+              },
+              {
+                "item": "desuku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 26.004649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:4.0 + U:0)",
+                "meaning": "desk",
+                "semanticBoost": 0,
+                "finalScore": 26.004649110640674
+              },
+              {
+                "item": "desukara",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 36.00464911064067,
+                "breakdown": "(B:20 + D:0.0 + L:20 - F:4.0 + U:0)",
+                "meaning": "so",
+                "semanticBoost": 0,
+                "finalScore": 36.00464911064067
+              },
+              {
+                "item": "desumatchi",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 49.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:30 - F:0.0 + U:0)",
+                "meaning": "death match",
+                "semanticBoost": 0,
+                "finalScore": 49.972649110640674
+              },
+              {
+                "item": "desukutoppu",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 54.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:35 - F:0.0 + U:0)",
+                "meaning": "desktop",
+                "semanticBoost": 0,
+                "finalScore": 54.972649110640674
+              },
+              {
+                "item": "desugiru",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 630.1208333333333,
+                "adjustedScore": 70.57225430666331,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:25.2 + U:0)",
+                "meaning": "to stick out too much",
+                "semanticBoost": 0,
+                "finalScore": 70.57225430666331
+              },
+              {
+                "item": "desuku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 81.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:4.0 + U:0)",
+                "meaning": "desk",
+                "semanticBoost": 0,
+                "finalScore": 81.76908763999664
+              },
+              {
+                "item": "deisuku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 86.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:10 - F:4.0 + U:0)",
+                "meaning": "disk",
+                "semanticBoost": 0,
+                "finalScore": 86.76908763999664
+              },
+              {
+                "item": "desukara",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 91.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:4.0 + U:0)",
+                "meaning": "so",
+                "semanticBoost": 0,
+                "finalScore": 91.76908763999664
+              },
+              {
+                "item": "desukara",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 91.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:4.0 + U:0)",
+                "meaning": "so",
+                "semanticBoost": 0,
+                "finalScore": 91.76908763999664
+              },
+              {
+                "item": "deisukabaa",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 101.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:25 - F:4.0 + U:0)",
+                "meaning": "discover",
+                "semanticBoost": 0,
+                "finalScore": 101.76908763999664
+              },
+              {
+                "item": "desumatchi",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 105.73708763999663,
+                "breakdown": "(B:45 + D:35.8 + L:25 - F:0.0 + U:0)",
+                "meaning": "death match",
+                "semanticBoost": 0,
+                "finalScore": 105.73708763999663
+              },
+              {
+                "item": "deisukaunto",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 106.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:30 - F:4.0 + U:0)",
+                "meaning": "discount",
+                "semanticBoost": 0,
+                "finalScore": 106.76908763999664
+              },
+              {
+                "item": "desukutoppu",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 110.73708763999663,
+                "breakdown": "(B:45 + D:35.8 + L:30 - F:0.0 + U:0)",
+                "meaning": "desktop",
+                "semanticBoost": 0,
+                "finalScore": 110.73708763999663
+              },
+              {
+                "item": "deisukasshon",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 111.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:35 - F:4.0 + U:0)",
+                "meaning": "discussion",
+                "semanticBoost": 0,
+                "finalScore": 111.76908763999664
+              }
+            ],
+            "competition": [
+              {
+                "item": "desu",
+                "type": "exact",
+                "adj": "-14.0080",
+                "freq": "100.2"
+              },
+              {
+                "item": "desu",
+                "type": "exact",
+                "adj": "-10.0040",
+                "freq": "0.1"
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "adj": "5.9920",
+                "freq": "100.2"
+              }
+            ],
+            "winner": {
+              "item": "desu",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 100.2,
+              "adjustedScore": -14.008,
+              "meaning": "be",
+              "semanticBoost": 0,
+              "finalScore": -14.008
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "reason": "skipped (too short)",
+          "input": "w",
+          "output": "w"
+        },
+        {
+          "reason": "fuzzy",
+          "input": "gein",
+          "output": "geinou",
+          "meta": {
+            "candidates": [
+              {
+                "item": "geinou",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1151,
+                "adjustedScore": -16.027350889359326,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:46.0 + U:0)",
+                "meaning": "public entertainment",
+                "semanticBoost": -15,
+                "finalScore": -31.027350889359326
+              },
+              {
+                "item": "geinin",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 920.725,
+                "adjustedScore": -6.816350889359327,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:36.8 + U:0)",
+                "meaning": "TV comedian",
+                "semanticBoost": 0,
+                "finalScore": -6.816350889359327
+              },
+              {
+                "item": "gein",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": -4.008,
+                "meaning": "gain",
+                "semanticBoost": 0,
+                "finalScore": -4.008
+              },
+              {
+                "item": "geiniku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 800.475,
+                "adjustedScore": 2.993649110640675,
+                "breakdown": "(B:20 + D:0.0 + L:15 - F:32.0 + U:0)",
+                "meaning": "whale meat",
+                "semanticBoost": 0,
+                "finalScore": 2.993649110640675
+              },
+              {
+                "item": "gein",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": 15.992,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:4.0 + U:0)",
+                "meaning": "gain",
+                "semanticBoost": 0,
+                "finalScore": 15.992
+              },
+              {
+                "item": "geinou",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 1151,
+                "adjustedScore": 39.73708763999664,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:46.0 + U:0)",
+                "meaning": "public entertainment",
+                "semanticBoost": -15,
+                "finalScore": 24.737087639996638
+              },
+              {
+                "item": "geinoujin",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 41.00464911064067,
+                "breakdown": "(B:20 + D:0.0 + L:25 - F:4.0 + U:0)",
+                "meaning": "entertainer",
+                "semanticBoost": 0,
+                "finalScore": 41.00464911064067
+              },
+              {
+                "item": "geinin",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 920.725,
+                "adjustedScore": 48.948087639996636,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:36.8 + U:0)",
+                "meaning": "TV comedian",
+                "semanticBoost": 0,
+                "finalScore": 48.948087639996636
+              },
+              {
+                "item": "geiniku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 800.475,
+                "adjustedScore": 58.75808763999664,
+                "breakdown": "(B:45 + D:35.8 + L:10 - F:32.0 + U:0)",
+                "meaning": "whale meat",
+                "semanticBoost": 0,
+                "finalScore": 58.75808763999664
+              },
+              {
+                "item": "gein",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 81.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:4.0 + U:0)",
+                "meaning": "gain",
+                "semanticBoost": 0,
+                "finalScore": 81.76908763999664
+              },
+              {
+                "item": "geinoujin",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 96.76908763999664,
+                "breakdown": "(B:45 + D:35.8 + L:20 - F:4.0 + U:0)",
+                "meaning": "entertainer",
+                "semanticBoost": 0,
+                "finalScore": 96.76908763999664
+              }
+            ],
+            "competition": [
+              {
+                "item": "geinou",
+                "type": "fuzzy",
+                "adj": "-16.0274",
+                "freq": "1151.0"
+              },
+              {
+                "item": "geinin",
+                "type": "fuzzy",
+                "adj": "-6.8164",
+                "freq": "920.7"
+              },
+              {
+                "item": "gein",
+                "type": "exact",
+                "adj": "-4.0080",
+                "freq": "100.2"
+              }
+            ],
+            "winner": {
+              "item": "geinou",
+              "type": "fuzzy",
+              "distance": 0.001,
+              "freqScore": 1151,
+              "adjustedScore": -16.027350889359326,
+              "breakdown": "(B:20 + D:0.0 + L:10 - F:46.0 + U:0)",
+              "meaning": "public entertainment",
+              "semanticBoost": -15,
+              "finalScore": -31.027350889359326
+            },
+            "semanticBoost": -15,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "no",
+          "output": "no",
+          "meta": {
+            "kana": "の"
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "kekka",
+          "output": "kekka",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kekka",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1191,
+                "adjustedScore": -47.64,
+                "meaning": "result",
+                "semanticBoost": -15,
+                "finalScore": -62.64
+              },
+              {
+                "item": "kekka",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1191,
+                "adjustedScore": -27.64,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:47.6 + U:0)",
+                "meaning": "result",
+                "semanticBoost": -15,
+                "finalScore": -42.64
+              },
+              {
+                "item": "kekka",
+                "root": "kekka",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 1191,
+                "adjustedScore": -18.64,
+                "breakdown": "(B:25 + D:4.0 - F:47.6)",
+                "meaning": "result",
+                "meta": {
+                  "reasons": [],
+                  "type": 62719,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": -15,
+                "finalScore": -33.64
+              },
+              {
+                "item": "kekkan",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1141,
+                "adjustedScore": -20.627350889359327,
+                "breakdown": "(B:20 + D:0.0 + L:5 - F:45.6 + U:0)",
+                "meaning": "defect",
+                "semanticBoost": 0,
+                "finalScore": -20.627350889359327
+              },
+              {
+                "item": "kekkan",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1100.9916666666668,
+                "adjustedScore": -19.027017556025996,
+                "breakdown": "(B:20 + D:0.0 + L:5 - F:44.0 + U:0)",
+                "meaning": "blood vessel",
+                "semanticBoost": 0,
+                "finalScore": -19.027017556025996
+              },
+              {
+                "item": "kekka",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": -0.004,
+                "meaning": "before the Emperor",
+                "semanticBoost": -15,
+                "finalScore": -15.004
+              },
+              {
+                "item": "kekkaku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1100.9916666666668,
+                "adjustedScore": -14.027017556025996,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:44.0 + U:0)",
+                "meaning": "tuberculosis",
+                "semanticBoost": 0,
+                "finalScore": -14.027017556025996
+              },
+              {
+                "item": "kekkai",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 710.3416666666667,
+                "adjustedScore": -3.4010175560259945,
+                "breakdown": "(B:20 + D:0.0 + L:5 - F:28.4 + U:0)",
+                "meaning": "burst e.g. dam, embankment, levee",
+                "semanticBoost": 0,
+                "finalScore": -3.4010175560259945
+              },
+              {
+                "item": "kekka",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1,
+                "adjustedScore": -0.04,
+                "meaning": "cutting class",
+                "semanticBoost": 0,
+                "finalScore": -0.04
+              },
+              {
+                "item": "kekka",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1,
+                "adjustedScore": -0.04,
+                "meaning": "river breaking through its dikes",
+                "semanticBoost": 0,
+                "finalScore": -0.04
+              },
+              {
+                "item": "kekka",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": -0.004,
+                "meaning": "lotus position meditation and yoga posture",
+                "semanticBoost": 0,
+                "finalScore": -0.004
+              },
+              {
+                "item": "kekka",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": 19.996,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:0)",
+                "meaning": "before the Emperor",
+                "semanticBoost": -15,
+                "finalScore": 4.995999999999999
+              },
+              {
+                "item": "kekkaron",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 640.1958333333333,
+                "adjustedScore": 9.404815777307341,
+                "breakdown": "(B:20 + D:0.0 + L:15 - F:25.6 + U:0)",
+                "meaning": "hindsight-based opinion",
+                "semanticBoost": 0,
+                "finalScore": 9.404815777307341
+              },
+              {
+                "item": "kekkai",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 0.1,
+                "adjustedScore": 25.008649110640672,
+                "breakdown": "(B:20 + D:0.0 + L:5 - F:0.0 + U:0)",
+                "meaning": "fixing boundaries for religious practices",
+                "semanticBoost": -15,
+                "finalScore": 10.008649110640672
+              },
+              {
+                "item": "kekka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1191,
+                "adjustedScore": 29.57655269759087,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:47.6 + U:0)",
+                "meaning": "result",
+                "semanticBoost": -15,
+                "finalScore": 14.57655269759087
+              },
+              {
+                "item": "kekka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1191,
+                "adjustedScore": 29.57655269759087,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:47.6 + U:0)",
+                "meaning": "result",
+                "semanticBoost": -15,
+                "finalScore": 14.57655269759087
+              },
+              {
+                "item": "kekka",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1,
+                "adjustedScore": 19.96,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:0)",
+                "meaning": "cutting class",
+                "semanticBoost": 0,
+                "finalScore": 19.96
+              },
+              {
+                "item": "kekka",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1,
+                "adjustedScore": 19.96,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:0)",
+                "meaning": "river breaking through its dikes",
+                "semanticBoost": 0,
+                "finalScore": 19.96
+              },
+              {
+                "item": "kekka",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": 19.996,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:0.0 + U:0)",
+                "meaning": "lotus position meditation and yoga posture",
+                "semanticBoost": 0,
+                "finalScore": 19.996
+              },
+              {
+                "item": "kekkan",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 24.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:5 - F:0.0 + U:0)",
+                "meaning": "missing volume e.g. of a set of books",
+                "semanticBoost": 0,
+                "finalScore": 24.972649110640674
+              },
+              {
+                "item": "kekkan",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 24.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:5 - F:0.0 + U:0)",
+                "meaning": "empty government position",
+                "semanticBoost": 0,
+                "finalScore": 24.972649110640674
+              },
+              {
+                "item": "kekkan",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 24.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:5 - F:0.0 + U:0)",
+                "meaning": "blood, sweat and tears",
+                "semanticBoost": 0,
+                "finalScore": 24.972649110640674
+              },
+              {
+                "item": "kekkai",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 24.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:5 - F:0.0 + U:0)",
+                "meaning": "blood clot",
+                "semanticBoost": 0,
+                "finalScore": 24.972649110640674
+              },
+              {
+                "item": "kekkan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1141,
+                "adjustedScore": 26.57655269759087,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:45.6 + U:0)",
+                "meaning": "defect",
+                "semanticBoost": 0,
+                "finalScore": 26.57655269759087
+              },
+              {
+                "item": "kekkan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1141,
+                "adjustedScore": 26.57655269759087,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:45.6 + U:0)",
+                "meaning": "defect",
+                "semanticBoost": 0,
+                "finalScore": 26.57655269759087
+              },
+              {
+                "item": "kekkan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1100.9916666666668,
+                "adjustedScore": 28.1768860309242,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:44.0 + U:0)",
+                "meaning": "blood vessel",
+                "semanticBoost": 0,
+                "finalScore": 28.1768860309242
+              },
+              {
+                "item": "kekkan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1100.9916666666668,
+                "adjustedScore": 28.1768860309242,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:44.0 + U:0)",
+                "meaning": "blood vessel",
+                "semanticBoost": 0,
+                "finalScore": 28.1768860309242
+              },
+              {
+                "item": "kekka",
+                "root": "kekka",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 1,
+                "adjustedScore": 28.96,
+                "breakdown": "(B:25 + D:4.0 - F:0.0)",
+                "meaning": "cutting class",
+                "meta": {
+                  "reasons": [],
+                  "type": 62719,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": 28.96
+              },
+              {
+                "item": "kekkaku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 29.972649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:0.0 + U:0)",
+                "meaning": "rejection",
+                "semanticBoost": 0,
+                "finalScore": 29.972649110640674
+              },
+              {
+                "item": "kekkaku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1100.9916666666668,
+                "adjustedScore": 33.1768860309242,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:44.0 + U:0)",
+                "meaning": "tuberculosis",
+                "semanticBoost": 0,
+                "finalScore": 33.1768860309242
+              },
+              {
+                "item": "kekkaku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1100.9916666666668,
+                "adjustedScore": 33.1768860309242,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:44.0 + U:0)",
+                "meaning": "tuberculosis",
+                "semanticBoost": 0,
+                "finalScore": 33.1768860309242
+              },
+              {
+                "item": "kekkai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 710.3416666666667,
+                "adjustedScore": 43.8028860309242,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:28.4 + U:0)",
+                "meaning": "burst e.g. dam, embankment, levee",
+                "semanticBoost": 0,
+                "finalScore": 43.8028860309242
+              },
+              {
+                "item": "kekkai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 710.3416666666667,
+                "adjustedScore": 43.8028860309242,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:28.4 + U:0)",
+                "meaning": "burst e.g. dam, embankment, levee",
+                "semanticBoost": 0,
+                "finalScore": 43.8028860309242
+              },
+              {
+                "item": "kekkaron",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 640.1958333333333,
+                "adjustedScore": 56.60871936425754,
+                "breakdown": "(B:45 + D:27.2 + L:10 - F:25.6 + U:0)",
+                "meaning": "hindsight-based opinion",
+                "semanticBoost": 0,
+                "finalScore": 56.60871936425754
+              },
+              {
+                "item": "kekkaron",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 640.1958333333333,
+                "adjustedScore": 56.60871936425754,
+                "breakdown": "(B:45 + D:27.2 + L:10 - F:25.6 + U:0)",
+                "meaning": "hindsight-based opinion",
+                "semanticBoost": 0,
+                "finalScore": 56.60871936425754
+              },
+              {
+                "item": "kekkai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 0.1,
+                "adjustedScore": 72.21255269759087,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "fixing boundaries for religious practices",
+                "semanticBoost": -15,
+                "finalScore": 57.212552697590866
+              },
+              {
+                "item": "kekkai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 0.1,
+                "adjustedScore": 72.21255269759087,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "fixing boundaries for religious practices",
+                "semanticBoost": -15,
+                "finalScore": 57.212552697590866
+              },
+              {
+                "item": "kekka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 0.1,
+                "adjustedScore": 77.21255269759087,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "before the Emperor",
+                "semanticBoost": -15,
+                "finalScore": 62.212552697590866
+              },
+              {
+                "item": "kekka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 0.1,
+                "adjustedScore": 77.21255269759087,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "before the Emperor",
+                "semanticBoost": -15,
+                "finalScore": 62.212552697590866
+              },
+              {
+                "item": "kekkan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "missing volume e.g. of a set of books",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kekkan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "empty government position",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kekkan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "blood, sweat and tears",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kekkai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "blood clot",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kekkan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "missing volume e.g. of a set of books",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kekkan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "empty government position",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kekkan",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "blood, sweat and tears",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kekkai",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 72.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "blood clot",
+                "semanticBoost": 0,
+                "finalScore": 72.17655269759086
+              },
+              {
+                "item": "kekka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "cutting class",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kekka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "river breaking through its dikes",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kekkaku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "rejection",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kekka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "cutting class",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kekka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "river breaking through its dikes",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kekkaku",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 77.17655269759086,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "rejection",
+                "semanticBoost": 0,
+                "finalScore": 77.17655269759086
+              },
+              {
+                "item": "kekka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 0.1,
+                "adjustedScore": 77.21255269759087,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "lotus position meditation and yoga posture",
+                "semanticBoost": 0,
+                "finalScore": 77.21255269759087
+              },
+              {
+                "item": "kekka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 0.1,
+                "adjustedScore": 77.21255269759087,
+                "breakdown": "(B:45 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "lotus position meditation and yoga posture",
+                "semanticBoost": 0,
+                "finalScore": 77.21255269759087
+              }
+            ],
+            "competition": [
+              {
+                "item": "kekka",
+                "type": "exact",
+                "adj": "-47.6400",
+                "freq": "1191.0"
+              },
+              {
+                "item": "kekka",
+                "type": "fuzzy",
+                "adj": "-27.6400",
+                "freq": "1191.0"
+              },
+              {
+                "item": "kekkan",
+                "type": "fuzzy",
+                "adj": "-20.6274",
+                "freq": "1141.0"
+              }
+            ],
+            "winner": {
+              "item": "kekka",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1191,
+              "adjustedScore": -47.64,
+              "meaning": "result",
+              "semanticBoost": -15,
+              "finalScore": -62.64
+            },
+            "semanticBoost": -15,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "reason": "fuzzy",
+          "input": "dettara",
+          "output": "dattara",
+          "meta": {
+            "candidates": [
+              {
+                "item": "dattara",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 37.589969886241555,
+                "breakdown": "(B:20 + D:21.6 + L:0 - F:4.0 + U:0)",
+                "meaning": "if it's the case",
+                "semanticBoost": -15,
+                "finalScore": 22.589969886241555
+              },
+              {
+                "item": "detarame",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 350.2,
+                "adjustedScore": 32.58996988624156,
+                "breakdown": "(B:20 + D:21.6 + L:5 - F:14.0 + U:0)",
+                "meaning": "nonsense",
+                "semanticBoost": 0,
+                "finalScore": 32.58996988624156
+              },
+              {
+                "item": "bettarazuke",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1,
+                "adjustedScore": 61.55796988624156,
+                "breakdown": "(B:20 + D:21.6 + L:20 - F:0.0 + U:0)",
+                "meaning": "daikon pickled in salted rice yeast",
+                "semanticBoost": 0,
+                "finalScore": 61.55796988624156
+              }
+            ],
+            "competition": [
+              {
+                "item": "detarame",
+                "type": "fuzzy",
+                "adj": "32.5900",
+                "freq": "350.2"
+              },
+              {
+                "item": "dattara",
+                "type": "fuzzy",
+                "adj": "37.5900",
+                "freq": "100.2"
+              },
+              {
+                "item": "bettarazuke",
+                "type": "fuzzy",
+                "adj": "61.5580",
+                "freq": "1.0"
+              }
+            ],
+            "winner": {
+              "item": "dattara",
+              "type": "fuzzy",
+              "distance": 0.14285714285714285,
+              "freqScore": 100.2,
+              "adjustedScore": 37.589969886241555,
+              "breakdown": "(B:20 + D:21.6 + L:0 - F:4.0 + U:0)",
+              "meaning": "if it's the case",
+              "semanticBoost": -15,
+              "finalScore": 22.589969886241555
+            },
+            "semanticBoost": -15,
+            "isResurrected": true,
+            "previousWinner": "detarame"
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "wo",
+          "output": "wo",
+          "meta": {
+            "kana": "を"
+          }
+        },
+        {
+          "reason": "passthrough",
+          "input": "kitsutomerraru",
+          "output": "kitsutomerraru"
+        },
+        {
+          "reason": "exact",
+          "input": "deshou",
+          "output": "deshou",
+          "meta": {
+            "candidates": [
+              {
+                "item": "deshou",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": -4.008,
+                "meaning": "it seems",
+                "semanticBoost": 0,
+                "finalScore": -4.008
+              },
+              {
+                "item": "keshou",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1151,
+                "adjustedScore": 1.1765526975908713,
+                "breakdown": "(B:20 + D:27.2 + L:0 - F:46.0 + U:0)",
+                "meaning": "make-up",
+                "semanticBoost": 0,
+                "finalScore": 1.1765526975908713
+              },
+              {
+                "item": "keshou",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1151,
+                "adjustedScore": 1.1765526975908713,
+                "breakdown": "(B:20 + D:27.2 + L:0 - F:46.0 + U:0)",
+                "meaning": "make-up",
+                "semanticBoost": 0,
+                "finalScore": 1.1765526975908713
+              },
+              {
+                "item": "deshouka",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 26.004649110640674,
+                "breakdown": "(B:20 + D:0.0 + L:10 - F:4.0 + U:0)",
+                "meaning": "don't you think?",
+                "semanticBoost": -15,
+                "finalScore": 11.004649110640674
+              },
+              {
+                "item": "denshou",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 930.7458333333333,
+                "adjustedScore": 14.986719364257539,
+                "breakdown": "(B:20 + D:27.2 + L:5 - F:37.2 + U:0)",
+                "meaning": "handing down information",
+                "semanticBoost": 0,
+                "finalScore": 14.986719364257539
+              },
+              {
+                "item": "deshou",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": 15.992,
+                "breakdown": "(B:20 + D:0.0 + L:0 - F:4.0 + U:0)",
+                "meaning": "it seems",
+                "semanticBoost": 0,
+                "finalScore": 15.992
+              },
+              {
+                "item": "keshou",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 47.17655269759087,
+                "breakdown": "(B:20 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "spontaneous birth",
+                "semanticBoost": 0,
+                "finalScore": 47.17655269759087
+              },
+              {
+                "item": "keshou",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 47.17655269759087,
+                "breakdown": "(B:20 + D:27.2 + L:0 - F:0.0 + U:0)",
+                "meaning": "spontaneous birth",
+                "semanticBoost": 0,
+                "finalScore": 47.17655269759087
+              },
+              {
+                "item": "denshou",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 52.17655269759087,
+                "breakdown": "(B:20 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "tradition",
+                "semanticBoost": 0,
+                "finalScore": 52.17655269759087
+              },
+              {
+                "item": "denshou",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 52.17655269759087,
+                "breakdown": "(B:20 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "electric signal bell esp. at railway crossings",
+                "semanticBoost": 0,
+                "finalScore": 52.17655269759087
+              },
+              {
+                "item": "denshou",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 0.1,
+                "adjustedScore": 52.21255269759087,
+                "breakdown": "(B:20 + D:27.2 + L:5 - F:0.0 + U:0)",
+                "meaning": "electrical goods merchant",
+                "semanticBoost": 0,
+                "finalScore": 52.21255269759087
+              },
+              {
+                "item": "deshouka",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 67.58996988624156,
+                "breakdown": "(B:45 + D:21.6 + L:5 - F:4.0 + U:0)",
+                "meaning": "don't you think?",
+                "semanticBoost": -15,
+                "finalScore": 52.58996988624156
+              },
+              {
+                "item": "deshou",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 67.58996988624156,
+                "breakdown": "(B:45 + D:21.6 + L:5 - F:4.0 + U:0)",
+                "meaning": "it seems",
+                "semanticBoost": 0,
+                "finalScore": 67.58996988624156
+              },
+              {
+                "item": "heddoshoutotsu",
+                "type": "repair:doubling:fuzzy",
+                "distance": 0.18285714285714286,
+                "freqScore": 1,
+                "adjustedScore": 111.23720133923686,
+                "breakdown": "(B:45 + D:31.3 + L:35 - F:0.0 + U:0)",
+                "meaning": "head crash",
+                "semanticBoost": 0,
+                "finalScore": 111.23720133923686
+              }
+            ],
+            "competition": [
+              {
+                "item": "deshou",
+                "type": "exact",
+                "adj": "-4.0080",
+                "freq": "100.2"
+              },
+              {
+                "item": "keshou",
+                "type": "fuzzy",
+                "adj": "1.1766",
+                "freq": "1151.0"
+              },
+              {
+                "item": "keshou",
+                "type": "fuzzy",
+                "adj": "1.1766",
+                "freq": "1151.0"
+              }
+            ],
+            "winner": {
+              "item": "deshou",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 100.2,
+              "adjustedScore": -4.008,
+              "meaning": "it seems",
+              "semanticBoost": 0,
+              "finalScore": -4.008
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.6932,
+          "semanticScore": 0.7915,
+          "romaji": "supootsu",
+          "kana": "スポーツ",
+          "kanji": "",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "sport",
+            "sports"
+          ],
+          "tags": [
+            "gai1",
+            "ichi1"
+          ],
+          "frequency": 0.3
+        },
+        {
+          "score": 0.6906,
+          "semanticScore": 0.8133,
+          "romaji": "sezu",
+          "kana": "せず",
+          "kanji": "",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "without doing"
+          ],
+          "tags": [
+            "spec1",
+            "form"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.6824,
+          "semanticScore": 0.803,
+          "romaji": "akushon",
+          "kana": "アクション",
+          "kanji": "",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "action"
+          ],
+          "tags": [
+            "gai1"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.6816,
+          "semanticScore": 0.8019,
+          "romaji": "mooshon",
+          "kana": "モーション",
+          "kanji": "",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "motion"
+          ],
+          "tags": [
+            "gai1"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.68,
+          "semanticScore": 0.7999,
+          "romaji": "akuteibitei",
+          "kana": "アクティビティ",
+          "kanji": "",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "activity"
+          ],
+          "tags": [
+            "gai1"
+          ],
+          "frequency": 0.2
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.6346,
+          "romaji": "kekkagasubete",
+          "kana": "けっかがすべて",
+          "kanji": "結果がすべて",
+          "meanings": [
+            "only the results matter",
+            "it's all about the results"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- supootsu: sport, sports\n- sezu: without doing\n- akushon: action\n- mooshon: motion\n- akuteibitei: activity\n\nTONE HINT:\n- kekkagasubete: only the results matter",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- supootsu: sport, sports\n- sezu: without doing\n- akushon: action\n- mooshon: motion\n- akuteibitei: activity\n\nTONE HINT:\n- kekkagasubete: only the results matter\n\nInput: kensa ga hitsuyou desu ashi no shibire no ga geinou kawaranai desu w geinou no kekka dattara wo kitsutomerraru deshou\nOutput: /no_think",
+      "llmOutput": "Examination is necessary. My leg numbness is not improving. If the results of the examination are good, I will be able to recover, right?",
+      "durationMs": 22573,
+      "error": null
+    }
+  ]
+}

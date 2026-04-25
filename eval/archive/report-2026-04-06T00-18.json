@@ -1,0 +1,2785 @@
+{
+  "meta": {
+    "timestamp": "2026-04-06T00:18:38.158Z",
+    "skipLLM": false,
+    "totalMs": 92861
+  },
+  "results": [
+    {
+      "id": "case-01-appetite",
+      "label": "Fragmented appetite & medication request",
+      "input": "JAP: wakatta waktta jya sono kusuri o kudasi ima ni mo watashi ni mo kigata no nai desu kara",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "wakatta wakatta jaa sono kusuri wo kudasai ima ni mo watashi ni mo hikigatari no nai desu kara",
+      "tokens": [
+        {
+          "reason": "deinflect:wakaru",
+          "input": "wakatta",
+          "output": "wakatta",
+          "meta": {
+            "candidates": [
+              {
+                "item": "wakatta",
+                "root": "wakaru",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1110.4375,
+                "adjustedScore": -4.417499999999997,
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9
+                },
+                "semanticBoost": 0,
+                "finalScore": -4.417499999999997
+              },
+              {
+                "item": "wakatta",
+                "root": "wakatsu",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 970.8291666666667,
+                "adjustedScore": 1.1668333333333365,
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9
+                },
+                "semanticBoost": 0,
+                "finalScore": 1.1668333333333365
+              },
+              {
+                "item": "kuwawattakoryou",
+                "type": "fuzzy",
+                "distance": 0.18285714285714286,
+                "freqScore": 1,
+                "adjustedScore": 38.245714285714286,
+                "semanticBoost": 0,
+                "finalScore": 38.245714285714286
+              }
+            ],
+            "competition": [
+              {
+                "item": "wakatta(->wakaru)",
+                "type": "deinflect",
+                "adj": "-4.4175",
+                "freq": "1110.4"
+              },
+              {
+                "item": "wakatta(->wakatsu)",
+                "type": "deinflect",
+                "adj": "1.1668",
+                "freq": "970.8"
+              },
+              {
+                "item": "kuwawattakoryou",
+                "type": "fuzzy",
+                "adj": "38.2457",
+                "freq": "1.0"
+              }
+            ],
+            "reasons": [
+              [
+                17
+              ]
+            ],
+            "type": 2,
+            "ruleWeight": 0.9,
+            "winner": {
+              "item": "wakatta",
+              "root": "wakaru",
+              "type": "deinflect",
+              "distance": 0.15,
+              "freqScore": 1110.4375,
+              "adjustedScore": -4.417499999999997,
+              "meta": {
+                "reasons": [
+                  [
+                    17
+                  ]
+                ],
+                "type": 2,
+                "ruleWeight": 0.9
+              },
+              "semanticBoost": 0,
+              "finalScore": -4.417499999999997
+            }
+          }
+        },
+        {
+          "reason": "repair:deinflect:wakaru",
+          "input": "waktta",
+          "output": "wakatta",
+          "meta": {
+            "candidates": [
+              {
+                "item": "wakatta",
+                "root": "wakaru",
+                "type": "repair:deinflect",
+                "distance": 0.15,
+                "freqScore": 1110.4375,
+                "adjustedScore": -4.417499999999997,
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9
+                },
+                "semanticBoost": 0,
+                "finalScore": -4.417499999999997
+              },
+              {
+                "item": "wakatta",
+                "root": "wakatsu",
+                "type": "repair:deinflect",
+                "distance": 0.15,
+                "freqScore": 970.8291666666667,
+                "adjustedScore": 1.1668333333333365,
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9
+                },
+                "semanticBoost": 0,
+                "finalScore": 1.1668333333333365
+              },
+              {
+                "item": "kuwawattakoryou",
+                "type": "repair:fuzzy",
+                "distance": 0.18285714285714286,
+                "freqScore": 1,
+                "adjustedScore": 38.245714285714286,
+                "semanticBoost": 0,
+                "finalScore": 38.245714285714286
+              }
+            ],
+            "competition": [
+              {
+                "item": "wakatta(->wakaru)",
+                "type": "repair:deinflect",
+                "adj": "-4.4175",
+                "freq": "1110.4"
+              },
+              {
+                "item": "wakatta(->wakatsu)",
+                "type": "repair:deinflect",
+                "adj": "1.1668",
+                "freq": "970.8"
+              },
+              {
+                "item": "kuwawattakoryou",
+                "type": "repair:fuzzy",
+                "adj": "38.2457",
+                "freq": "1.0"
+              }
+            ],
+            "reasons": [
+              [
+                17
+              ]
+            ],
+            "type": 2,
+            "ruleWeight": 0.9,
+            "winner": {
+              "item": "wakatta",
+              "root": "wakaru",
+              "type": "repair:deinflect",
+              "distance": 0.15,
+              "freqScore": 1110.4375,
+              "adjustedScore": -4.417499999999997,
+              "meta": {
+                "reasons": [
+                  [
+                    17
+                  ]
+                ],
+                "type": 2,
+                "ruleWeight": 0.9
+              },
+              "semanticBoost": 0,
+              "finalScore": -4.417499999999997
+            }
+          }
+        },
+        {
+          "reason": "aggressive:fuzzy",
+          "input": "jya",
+          "output": "jaa",
+          "meta": {
+            "candidates": [
+              {
+                "item": "jaa",
+                "type": "aggressive:fuzzy",
+                "distance": 0.001,
+                "freqScore": 300.3,
+                "adjustedScore": 68.088,
+                "semanticBoost": 0,
+                "finalScore": 68.088
+              },
+              {
+                "item": "ja",
+                "type": "normalized",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": 79.996,
+                "semanticBoost": 0,
+                "finalScore": 79.996
+              }
+            ],
+            "competition": [
+              {
+                "item": "jaa",
+                "type": "aggressive:fuzzy",
+                "adj": "68.0880",
+                "freq": "300.3"
+              },
+              {
+                "item": "ja",
+                "type": "normalized",
+                "adj": "79.9960",
+                "freq": "0.1"
+              }
+            ],
+            "winner": {
+              "item": "jaa",
+              "type": "aggressive:fuzzy",
+              "distance": 0.001,
+              "freqScore": 300.3,
+              "adjustedScore": 68.088,
+              "semanticBoost": 0,
+              "finalScore": 68.088
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "sono",
+          "output": "sono",
+          "meta": {
+            "candidates": [
+              {
+                "item": "sono",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1461,
+                "adjustedScore": -58.44,
+                "semanticBoost": 0,
+                "finalScore": -58.44
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1461,
+                "adjustedScore": -38.44,
+                "semanticBoost": 0,
+                "finalScore": -38.44
+              }
+            ],
+            "competition": [
+              {
+                "item": "sono",
+                "type": "exact",
+                "adj": "-58.4400",
+                "freq": "1461.0"
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy",
+                "adj": "-38.4400",
+                "freq": "1461.0"
+              }
+            ],
+            "winner": {
+              "item": "sono",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1461,
+              "adjustedScore": -58.44,
+              "semanticBoost": 0,
+              "finalScore": -58.44
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "kusuri",
+          "output": "kusuri",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kusuri",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1161,
+                "adjustedScore": -46.44,
+                "semanticBoost": -7,
+                "finalScore": -53.44
+              },
+              {
+                "item": "kusuri",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1161,
+                "adjustedScore": -26.439999999999998,
+                "semanticBoost": -7,
+                "finalScore": -33.44
+              }
+            ],
+            "competition": [
+              {
+                "item": "kusuri",
+                "type": "exact",
+                "adj": "-46.4400",
+                "freq": "1161.0"
+              },
+              {
+                "item": "kusuri",
+                "type": "fuzzy",
+                "adj": "-26.4400",
+                "freq": "1161.0"
+              }
+            ],
+            "winner": {
+              "item": "kusuri",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1161,
+              "adjustedScore": -46.44,
+              "semanticBoost": -7,
+              "finalScore": -53.44
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "o",
+          "output": "wo",
+          "meta": {
+            "kana": "を"
+          }
+        },
+        {
+          "reason": "fuzzy",
+          "input": "kudasi",
+          "output": "kudasai",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kudasai",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1470.8291666666667,
+                "adjustedScore": -22.1665,
+                "semanticBoost": 0,
+                "finalScore": -22.1665
+              },
+              {
+                "item": "kudashi",
+                "type": "normalized",
+                "distance": 0,
+                "freqScore": 770.4666666666667,
+                "adjustedScore": 49.18133333333333,
+                "semanticBoost": 0,
+                "finalScore": 49.18133333333333
+              },
+              {
+                "item": "kudashi",
+                "type": "aggressive:fuzzy",
+                "distance": 0,
+                "freqScore": 770.4666666666667,
+                "adjustedScore": 49.18133333333333,
+                "semanticBoost": 0,
+                "finalScore": 49.18133333333333
+              },
+              {
+                "item": "kudasi",
+                "root": "kudasu",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 760.3375,
+                "adjustedScore": 185.95013636363635,
+                "meta": {
+                  "reasons": [
+                    [
+                      28
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.01
+                },
+                "semanticBoost": 0,
+                "finalScore": 185.95013636363635
+              },
+              {
+                "item": "kudashi",
+                "root": "kudasu",
+                "type": "aggressive:deinflect",
+                "distance": 0.15,
+                "freqScore": 760.3375,
+                "adjustedScore": 185.95013636363635,
+                "meta": {
+                  "reasons": [
+                    [
+                      28
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.01
+                },
+                "semanticBoost": 0,
+                "finalScore": 185.95013636363635
+              }
+            ],
+            "competition": [
+              {
+                "item": "kudasai",
+                "type": "fuzzy",
+                "adj": "-22.1665",
+                "freq": "1470.8"
+              },
+              {
+                "item": "kudashi",
+                "type": "normalized",
+                "adj": "49.1813",
+                "freq": "770.5"
+              },
+              {
+                "item": "kudashi",
+                "type": "aggressive:fuzzy",
+                "adj": "49.1813",
+                "freq": "770.5"
+              }
+            ],
+            "winner": {
+              "item": "kudasai",
+              "type": "fuzzy",
+              "distance": 0.16666666666666666,
+              "freqScore": 1470.8291666666667,
+              "adjustedScore": -22.1665,
+              "semanticBoost": 0,
+              "finalScore": -22.1665
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "ima",
+          "output": "ima",
+          "meta": {
+            "candidates": [
+              {
+                "item": "ima",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1081,
+                "adjustedScore": -43.24,
+                "semanticBoost": 0,
+                "finalScore": -43.24
+              },
+              {
+                "item": "ima",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1081,
+                "adjustedScore": -23.240000000000002,
+                "semanticBoost": 0,
+                "finalScore": -23.240000000000002
+              }
+            ],
+            "competition": [
+              {
+                "item": "ima",
+                "type": "exact",
+                "adj": "-43.2400",
+                "freq": "1081.0"
+              },
+              {
+                "item": "ima",
+                "type": "fuzzy",
+                "adj": "-23.2400",
+                "freq": "1081.0"
+              }
+            ],
+            "winner": {
+              "item": "ima",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1081,
+              "adjustedScore": -43.24,
+              "semanticBoost": 0,
+              "finalScore": -43.24
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ni",
+          "output": "ni",
+          "meta": {
+            "kana": "に"
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "mo",
+          "output": "mo",
+          "meta": {
+            "kana": "も"
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "watashi",
+          "output": "watashi",
+          "meta": {
+            "candidates": [
+              {
+                "item": "watashi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1191,
+                "adjustedScore": -47.64,
+                "semanticBoost": 0,
+                "finalScore": -47.64
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1191,
+                "adjustedScore": -27.64,
+                "semanticBoost": 0,
+                "finalScore": -27.64
+              },
+              {
+                "item": "watashi",
+                "root": "watasu",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1090.9708333333333,
+                "adjustedScore": 172.724803030303,
+                "meta": {
+                  "reasons": [
+                    [
+                      28
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.01
+                },
+                "semanticBoost": 0,
+                "finalScore": 172.724803030303
+              }
+            ],
+            "competition": [
+              {
+                "item": "watashi",
+                "type": "exact",
+                "adj": "-47.6400",
+                "freq": "1191.0"
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy",
+                "adj": "-27.6400",
+                "freq": "1191.0"
+              },
+              {
+                "item": "watashi(->watasu)",
+                "type": "deinflect",
+                "adj": "172.7248",
+                "freq": "1091.0"
+              }
+            ],
+            "winner": {
+              "item": "watashi",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1191,
+              "adjustedScore": -47.64,
+              "semanticBoost": 0,
+              "finalScore": -47.64
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ni",
+          "output": "ni",
+          "meta": {
+            "kana": "に"
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "mo",
+          "output": "mo",
+          "meta": {
+            "kana": "も"
+          }
+        },
+        {
+          "reason": "fuzzy",
+          "input": "kigata",
+          "output": "hikigatari",
+          "meta": {
+            "candidates": [
+              {
+                "item": "hikigatari",
+                "type": "fuzzy",
+                "distance": 0.04,
+                "freqScore": 730.3833333333333,
+                "adjustedScore": -5.215333333333334,
+                "semanticBoost": 0,
+                "finalScore": -5.215333333333334
+              },
+              {
+                "item": "kigata",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1,
+                "adjustedScore": -0.04,
+                "semanticBoost": 0,
+                "finalScore": -0.04
+              }
+            ],
+            "competition": [
+              {
+                "item": "hikigatari",
+                "type": "fuzzy",
+                "adj": "-5.2153",
+                "freq": "730.4"
+              },
+              {
+                "item": "kigata",
+                "type": "exact",
+                "adj": "-0.0400",
+                "freq": "1.0"
+              }
+            ],
+            "winner": {
+              "item": "hikigatari",
+              "type": "fuzzy",
+              "distance": 0.04,
+              "freqScore": 730.3833333333333,
+              "adjustedScore": -5.215333333333334,
+              "semanticBoost": 0,
+              "finalScore": -5.215333333333334
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "no",
+          "output": "no",
+          "meta": {
+            "kana": "の"
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "nai",
+          "output": "nai",
+          "meta": {
+            "candidates": [
+              {
+                "item": "nai",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1050.2125,
+                "adjustedScore": -42.008500000000005,
+                "semanticBoost": 0,
+                "finalScore": -42.008500000000005
+              },
+              {
+                "item": "nai",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1050.2125,
+                "adjustedScore": -22.008500000000005,
+                "semanticBoost": 0,
+                "finalScore": -22.008500000000005
+              },
+              {
+                "item": "nai",
+                "root": "nai",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1050.2125,
+                "adjustedScore": -3.372136363636372,
+                "meta": {
+                  "reasons": [],
+                  "type": 62719,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": -3.372136363636372
+              },
+              {
+                "item": "nai",
+                "root": "nau",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 350.2,
+                "adjustedScore": 24.628363636363634,
+                "meta": {
+                  "reasons": [
+                    [
+                      28
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": 24.628363636363634
+              }
+            ],
+            "competition": [
+              {
+                "item": "nai",
+                "type": "exact",
+                "adj": "-42.0085",
+                "freq": "1050.2"
+              },
+              {
+                "item": "nai",
+                "type": "fuzzy",
+                "adj": "-22.0085",
+                "freq": "1050.2"
+              },
+              {
+                "item": "nai(->nai)",
+                "type": "deinflect",
+                "adj": "-3.3721",
+                "freq": "1050.2"
+              }
+            ],
+            "winner": {
+              "item": "nai",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1050.2125,
+              "adjustedScore": -42.008500000000005,
+              "semanticBoost": 0,
+              "finalScore": -42.008500000000005
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "desu",
+          "output": "desu",
+          "meta": {
+            "candidates": [
+              {
+                "item": "desu",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": -4.008,
+                "semanticBoost": 0,
+                "finalScore": -4.008
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 100.2,
+                "adjustedScore": 15.992,
+                "semanticBoost": 0,
+                "finalScore": 15.992
+              }
+            ],
+            "competition": [
+              {
+                "item": "desu",
+                "type": "exact",
+                "adj": "-4.0080",
+                "freq": "100.2"
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "adj": "15.9920",
+                "freq": "100.2"
+              }
+            ],
+            "winner": {
+              "item": "desu",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 100.2,
+              "adjustedScore": -4.008,
+              "semanticBoost": 0,
+              "finalScore": -4.008
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "kara",
+          "output": "kara",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kara",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1171,
+                "adjustedScore": -46.84,
+                "semanticBoost": 0,
+                "finalScore": -46.84
+              },
+              {
+                "item": "kara",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1171,
+                "adjustedScore": -26.840000000000003,
+                "semanticBoost": 0,
+                "finalScore": -26.840000000000003
+              }
+            ],
+            "competition": [
+              {
+                "item": "kara",
+                "type": "exact",
+                "adj": "-46.8400",
+                "freq": "1171.0"
+              },
+              {
+                "item": "kara",
+                "type": "fuzzy",
+                "adj": "-26.8400",
+                "freq": "1171.0"
+              }
+            ],
+            "winner": {
+              "item": "kara",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1171,
+              "adjustedScore": -46.84,
+              "semanticBoost": 0,
+              "finalScore": -46.84
+            }
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.0335,
+          "semanticScore": 0.7919,
+          "romaji": "kusuri",
+          "kana": "くすり",
+          "kanji": "薬",
+          "domain": "",
+          "meanings": [
+            "medicine",
+            "pharmaceuticals",
+            "legal drugs"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf04"
+          ],
+          "frequency": 1
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.8068,
+          "romaji": "juyou",
+          "kana": "じゅよう",
+          "kanji": "需要",
+          "meanings": [
+            "demand",
+            "request"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- term: 薬\n  reading: くすり / kusuri\n  meaning: medicine, pharmaceuticals, legal drugs, pill\n  type: n\n  tags: ichi1, news1, nf04\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 需要  (じゅよう / juyou)\n  nuance: demand, request",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 薬\n  reading: くすり / kusuri\n  meaning: medicine, pharmaceuticals, legal drugs, pill\n  type: n\n  tags: ichi1, news1, nf04\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 需要  (じゅよう / juyou)\n  nuance: demand, request\nInput: wakatta wakatta jaa sono kusuri wo kudasai ima ni mo watashi ni mo hikigatari no nai desu kara\nOutput: /no_think",
+      "llmOutput": "I understand, I understand, so please give me that medicine now, because there is no way for me to refuse it.",
+      "durationMs": 22783,
+      "error": null
+    },
+    {
+      "id": "case-02-nausea",
+      "label": "Improved condition vs persistent nausea/dizziness",
+      "input": "JAP: sensei. konichi taicho yokunatta genki aru to demo omoimasu memai ga kibun warukute taberarenakatta",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "sensei konchinentaru taicho yokunatta genki aru to demo omoidasu memai ga kibun warukute taberarenakatta",
+      "tokens": [
+        {
+          "reason": "exact",
+          "input": "sensei",
+          "output": "sensei",
+          "meta": {
+            "candidates": [
+              {
+                "item": "sensei",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1491,
+                "adjustedScore": -59.64,
+                "semanticBoost": 0,
+                "finalScore": -59.64
+              },
+              {
+                "item": "sensei",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1491,
+                "adjustedScore": -39.64,
+                "semanticBoost": 0,
+                "finalScore": -39.64
+              },
+              {
+                "item": "sensei",
+                "root": "sensei",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1491,
+                "adjustedScore": -21.003636363636367,
+                "meta": {
+                  "reasons": [],
+                  "type": 62719,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": -21.003636363636367
+              }
+            ],
+            "competition": [
+              {
+                "item": "sensei",
+                "type": "exact",
+                "adj": "-59.6400",
+                "freq": "1491.0"
+              },
+              {
+                "item": "sensei",
+                "type": "fuzzy",
+                "adj": "-39.6400",
+                "freq": "1491.0"
+              },
+              {
+                "item": "sensei(->sensei)",
+                "type": "deinflect",
+                "adj": "-21.0036",
+                "freq": "1491.0"
+              }
+            ],
+            "winner": {
+              "item": "sensei",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1491,
+              "adjustedScore": -59.64,
+              "semanticBoost": 0,
+              "finalScore": -59.64
+            }
+          }
+        },
+        {
+          "reason": "fuzzy",
+          "input": "konichi",
+          "output": "konchinentaru",
+          "meta": {
+            "candidates": [
+              {
+                "item": "konchinentaru",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 30.277714285714286,
+                "semanticBoost": 0,
+                "finalScore": 30.277714285714286
+              }
+            ],
+            "competition": [
+              {
+                "item": "konchinentaru",
+                "type": "fuzzy",
+                "adj": "30.2777",
+                "freq": "100.2"
+              }
+            ],
+            "winner": {
+              "item": "konchinentaru",
+              "type": "fuzzy",
+              "distance": 0.14285714285714285,
+              "freqScore": 100.2,
+              "adjustedScore": 30.277714285714286,
+              "semanticBoost": 0,
+              "finalScore": 30.277714285714286
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "taicho",
+          "output": "taicho",
+          "meta": {
+            "candidates": [
+              {
+                "item": "taicho",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 700.3208333333333,
+                "adjustedScore": -28.012833333333333,
+                "semanticBoost": 0,
+                "finalScore": -28.012833333333333
+              },
+              {
+                "item": "taicho",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 700.3208333333333,
+                "adjustedScore": -8.012833333333333,
+                "semanticBoost": 0,
+                "finalScore": -8.012833333333333
+              }
+            ],
+            "competition": [
+              {
+                "item": "taicho",
+                "type": "exact",
+                "adj": "-28.0128",
+                "freq": "700.3"
+              },
+              {
+                "item": "taicho",
+                "type": "fuzzy",
+                "adj": "-8.0128",
+                "freq": "700.3"
+              }
+            ],
+            "winner": {
+              "item": "taicho",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 700.3208333333333,
+              "adjustedScore": -28.012833333333333,
+              "semanticBoost": 0,
+              "finalScore": -28.012833333333333
+            }
+          }
+        },
+        {
+          "reason": "deinflect:yokunaru",
+          "input": "yokunatta",
+          "output": "yokunatta",
+          "meta": {
+            "candidates": [
+              {
+                "item": "yokunatta",
+                "root": "yokunaru",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 250.1,
+                "adjustedScore": 29.996000000000002,
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9
+                },
+                "semanticBoost": 0,
+                "finalScore": 29.996000000000002
+              }
+            ],
+            "competition": [
+              {
+                "item": "yokunatta(->yokunaru)",
+                "type": "deinflect",
+                "adj": "29.9960",
+                "freq": "250.1"
+              }
+            ],
+            "reasons": [
+              [
+                17
+              ]
+            ],
+            "type": 2,
+            "ruleWeight": 0.9,
+            "winner": {
+              "item": "yokunatta",
+              "root": "yokunaru",
+              "type": "deinflect",
+              "distance": 0.15,
+              "freqScore": 250.1,
+              "adjustedScore": 29.996000000000002,
+              "meta": {
+                "reasons": [
+                  [
+                    17
+                  ]
+                ],
+                "type": 2,
+                "ruleWeight": 0.9
+              },
+              "semanticBoost": 0,
+              "finalScore": 29.996000000000002
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "genki",
+          "output": "genki",
+          "meta": {
+            "candidates": [
+              {
+                "item": "genki",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1141,
+                "adjustedScore": -45.64,
+                "semanticBoost": 0,
+                "finalScore": -45.64
+              },
+              {
+                "item": "genki",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1141,
+                "adjustedScore": -25.64,
+                "semanticBoost": 0,
+                "finalScore": -25.64
+              }
+            ],
+            "competition": [
+              {
+                "item": "genki",
+                "type": "exact",
+                "adj": "-45.6400",
+                "freq": "1141.0"
+              },
+              {
+                "item": "genki",
+                "type": "fuzzy",
+                "adj": "-25.6400",
+                "freq": "1141.0"
+              }
+            ],
+            "winner": {
+              "item": "genki",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1141,
+              "adjustedScore": -45.64,
+              "semanticBoost": 0,
+              "finalScore": -45.64
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "aru",
+          "output": "aru",
+          "meta": {
+            "candidates": [
+              {
+                "item": "aru",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1550.8208333333332,
+                "adjustedScore": -62.03283333333333,
+                "semanticBoost": 0,
+                "finalScore": -62.03283333333333
+              },
+              {
+                "item": "aru",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1550.8208333333332,
+                "adjustedScore": -42.03283333333333,
+                "semanticBoost": 0,
+                "finalScore": -42.03283333333333
+              },
+              {
+                "item": "aru",
+                "root": "aru",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1550.8208333333332,
+                "adjustedScore": -23.396469696969696,
+                "meta": {
+                  "reasons": [],
+                  "type": 62719,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": -23.396469696969696
+              }
+            ],
+            "competition": [
+              {
+                "item": "aru",
+                "type": "exact",
+                "adj": "-62.0328",
+                "freq": "1550.8"
+              },
+              {
+                "item": "aru",
+                "type": "fuzzy",
+                "adj": "-42.0328",
+                "freq": "1550.8"
+              },
+              {
+                "item": "aru(->aru)",
+                "type": "deinflect",
+                "adj": "-23.3965",
+                "freq": "1550.8"
+              }
+            ],
+            "winner": {
+              "item": "aru",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1550.8208333333332,
+              "adjustedScore": -62.03283333333333,
+              "semanticBoost": 0,
+              "finalScore": -62.03283333333333
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "to",
+          "output": "to",
+          "meta": {
+            "kana": "と"
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "demo",
+          "output": "demo",
+          "meta": {
+            "candidates": [
+              {
+                "item": "demo",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 300.3,
+                "adjustedScore": -12.012,
+                "semanticBoost": 0,
+                "finalScore": -12.012
+              },
+              {
+                "item": "demo",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 300.3,
+                "adjustedScore": 7.9879999999999995,
+                "semanticBoost": 0,
+                "finalScore": 7.9879999999999995
+              }
+            ],
+            "competition": [
+              {
+                "item": "demo",
+                "type": "exact",
+                "adj": "-12.0120",
+                "freq": "300.3"
+              },
+              {
+                "item": "demo",
+                "type": "fuzzy",
+                "adj": "7.9880",
+                "freq": "300.3"
+              }
+            ],
+            "winner": {
+              "item": "demo",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 300.3,
+              "adjustedScore": -12.012,
+              "semanticBoost": 0,
+              "finalScore": -12.012
+            }
+          }
+        },
+        {
+          "reason": "fuzzy",
+          "input": "omoimasu",
+          "output": "omoidasu",
+          "meta": {
+            "candidates": [
+              {
+                "item": "omoidasu",
+                "type": "fuzzy",
+                "distance": 0.125,
+                "freqScore": 1050.8875,
+                "adjustedScore": -9.535499999999999,
+                "semanticBoost": 0,
+                "finalScore": -9.535499999999999
+              },
+              {
+                "item": "omoimasu",
+                "root": "omou",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1181,
+                "adjustedScore": -5.573333333333338,
+                "meta": {
+                  "reasons": [
+                    [
+                      13
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.8
+                },
+                "semanticBoost": 0,
+                "finalScore": -5.573333333333338
+              }
+            ],
+            "competition": [
+              {
+                "item": "omoidasu",
+                "type": "fuzzy",
+                "adj": "-9.5355",
+                "freq": "1050.9"
+              },
+              {
+                "item": "omoimasu(->omou)",
+                "type": "deinflect",
+                "adj": "-5.5733",
+                "freq": "1181.0"
+              }
+            ],
+            "winner": {
+              "item": "omoidasu",
+              "type": "fuzzy",
+              "distance": 0.125,
+              "freqScore": 1050.8875,
+              "adjustedScore": -9.535499999999999,
+              "semanticBoost": 0,
+              "finalScore": -9.535499999999999
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "memai",
+          "output": "memai",
+          "meta": {
+            "candidates": [
+              {
+                "item": "memai",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 350.2,
+                "adjustedScore": -14.008,
+                "semanticBoost": 0,
+                "finalScore": -14.008
+              },
+              {
+                "item": "memai",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 350.2,
+                "adjustedScore": 5.992000000000001,
+                "semanticBoost": 0,
+                "finalScore": 5.992000000000001
+              }
+            ],
+            "competition": [
+              {
+                "item": "memai",
+                "type": "exact",
+                "adj": "-14.0080",
+                "freq": "350.2"
+              },
+              {
+                "item": "memai",
+                "type": "fuzzy",
+                "adj": "5.9920",
+                "freq": "350.2"
+              }
+            ],
+            "winner": {
+              "item": "memai",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 350.2,
+              "adjustedScore": -14.008,
+              "semanticBoost": 0,
+              "finalScore": -14.008
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ga",
+          "output": "ga",
+          "meta": {
+            "kana": "が"
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "kibun",
+          "output": "kibun",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kibun",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1171,
+                "adjustedScore": -46.84,
+                "semanticBoost": 0,
+                "finalScore": -46.84
+              },
+              {
+                "item": "kibun",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1171,
+                "adjustedScore": -26.840000000000003,
+                "semanticBoost": 0,
+                "finalScore": -26.840000000000003
+              }
+            ],
+            "competition": [
+              {
+                "item": "kibun",
+                "type": "exact",
+                "adj": "-46.8400",
+                "freq": "1171.0"
+              },
+              {
+                "item": "kibun",
+                "type": "fuzzy",
+                "adj": "-26.8400",
+                "freq": "1171.0"
+              }
+            ],
+            "winner": {
+              "item": "kibun",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1171,
+              "adjustedScore": -46.84,
+              "semanticBoost": 0,
+              "finalScore": -46.84
+            }
+          }
+        },
+        {
+          "reason": "deinflect:warui",
+          "input": "warukute",
+          "output": "warukute",
+          "meta": {
+            "candidates": [
+              {
+                "item": "warukute",
+                "root": "warui",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 670.15,
+                "adjustedScore": 11.830363636363636,
+                "meta": {
+                  "reasons": [
+                    [
+                      25
+                    ]
+                  ],
+                  "type": 4,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": 11.830363636363636
+              }
+            ],
+            "competition": [
+              {
+                "item": "warukute(->warui)",
+                "type": "deinflect",
+                "adj": "11.8304",
+                "freq": "670.1"
+              }
+            ],
+            "reasons": [
+              [
+                25
+              ]
+            ],
+            "type": 4,
+            "ruleWeight": 1,
+            "winner": {
+              "item": "warukute",
+              "root": "warui",
+              "type": "deinflect",
+              "distance": 0.15,
+              "freqScore": 670.15,
+              "adjustedScore": 11.830363636363636,
+              "meta": {
+                "reasons": [
+                  [
+                    25
+                  ]
+                ],
+                "type": 4,
+                "ruleWeight": 1
+              },
+              "semanticBoost": 0,
+              "finalScore": 11.830363636363636
+            }
+          }
+        },
+        {
+          "reason": "deinflect:taberu",
+          "input": "taberarenakatta",
+          "output": "taberarenakatta",
+          "meta": {
+            "candidates": [
+              {
+                "item": "taberarenakatta",
+                "root": "taberu",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 900.6291666666667,
+                "adjustedScore": 2.6111969696969624,
+                "meta": {
+                  "reasons": [
+                    [
+                      9,
+                      18,
+                      17
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": 2.6111969696969624
+              },
+              {
+                "item": "taberarenakatta",
+                "root": "taberareru",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1,
+                "adjustedScore": 38.596363636363634,
+                "meta": {
+                  "reasons": [
+                    [
+                      18,
+                      17
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": 38.596363636363634
+              }
+            ],
+            "competition": [
+              {
+                "item": "taberarenakatta(->taberu)",
+                "type": "deinflect",
+                "adj": "2.6112",
+                "freq": "900.6"
+              },
+              {
+                "item": "taberarenakatta(->taberareru)",
+                "type": "deinflect",
+                "adj": "38.5964",
+                "freq": "1.0"
+              }
+            ],
+            "reasons": [
+              [
+                9,
+                18,
+                17
+              ]
+            ],
+            "type": 9,
+            "ruleWeight": 1,
+            "winner": {
+              "item": "taberarenakatta",
+              "root": "taberu",
+              "type": "deinflect",
+              "distance": 0.15,
+              "freqScore": 900.6291666666667,
+              "adjustedScore": 2.6111969696969624,
+              "meta": {
+                "reasons": [
+                  [
+                    9,
+                    18,
+                    17
+                  ]
+                ],
+                "type": 9,
+                "ruleWeight": 1
+              },
+              "semanticBoost": 0,
+              "finalScore": 2.6111969696969624
+            }
+          }
+        }
+      ],
+      "ragHits": [],
+      "toneHits": [
+        {
+          "score": 0.7928,
+          "romaji": "taichou",
+          "kana": "たいちょう",
+          "kanji": "体調",
+          "meanings": [
+            "physical condition",
+            "state of health",
+            "shape"
+          ]
+        }
+      ],
+      "glossaryInjected": "SPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 体調  (たいちょう / taichou)\n  nuance: physical condition, state of health, shape",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 体調  (たいちょう / taichou)\n  nuance: physical condition, state of health, shape\nInput: sensei konchinentaru taicho yokunatta genki aru to demo omoidasu memai ga kibun warukute taberarenakatta\nOutput: /no_think",
+      "llmOutput": "Teacher, even though I thought my physical condition had improved and that I was feeling well, I felt dizzy, my mood was bad, and I couldn't eat.",
+      "durationMs": 16606,
+      "error": null
+    },
+    {
+      "id": "case-03-smoking-alcohol",
+      "label": "Merged lifestyle query (smoking/drinking)",
+      "input": "JAP: kitsueninshu tabako ha arimasu ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "kitsueninshu tabako ha arimasu ka",
+      "tokens": [
+        {
+          "reason": "passthrough",
+          "input": "kitsueninshu",
+          "output": "kitsueninshu"
+        },
+        {
+          "reason": "exact",
+          "input": "tabako",
+          "output": "tabako",
+          "meta": {
+            "candidates": [
+              {
+                "item": "tabako",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1120.4583333333335,
+                "adjustedScore": -44.81833333333334,
+                "semanticBoost": -7,
+                "finalScore": -51.81833333333334
+              },
+              {
+                "item": "tabako",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1120.4583333333335,
+                "adjustedScore": -24.818333333333342,
+                "semanticBoost": -7,
+                "finalScore": -31.818333333333342
+              }
+            ],
+            "competition": [
+              {
+                "item": "tabako",
+                "type": "exact",
+                "adj": "-44.8183",
+                "freq": "1120.5"
+              },
+              {
+                "item": "tabako",
+                "type": "fuzzy",
+                "adj": "-24.8183",
+                "freq": "1120.5"
+              }
+            ],
+            "winner": {
+              "item": "tabako",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1120.4583333333335,
+              "adjustedScore": -44.81833333333334,
+              "semanticBoost": -7,
+              "finalScore": -51.81833333333334
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ha",
+          "output": "ha",
+          "meta": {
+            "kana": "は"
+          }
+        },
+        {
+          "reason": "deinflect:aru",
+          "input": "arimasu",
+          "output": "arimasu",
+          "meta": {
+            "candidates": [
+              {
+                "item": "arimasu",
+                "root": "aru",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1550.8208333333332,
+                "adjustedScore": -20.366166666666665,
+                "meta": {
+                  "reasons": [
+                    [
+                      13
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.8
+                },
+                "semanticBoost": 0,
+                "finalScore": -20.366166666666665
+              },
+              {
+                "item": "dearimasu",
+                "type": "fuzzy",
+                "distance": 0.04,
+                "freqScore": 100.2,
+                "adjustedScore": 19.992,
+                "semanticBoost": 0,
+                "finalScore": 19.992
+              }
+            ],
+            "competition": [
+              {
+                "item": "arimasu(->aru)",
+                "type": "deinflect",
+                "adj": "-20.3662",
+                "freq": "1550.8"
+              },
+              {
+                "item": "dearimasu",
+                "type": "fuzzy",
+                "adj": "19.9920",
+                "freq": "100.2"
+              }
+            ],
+            "reasons": [
+              [
+                13
+              ]
+            ],
+            "type": 2,
+            "ruleWeight": 0.8,
+            "winner": {
+              "item": "arimasu",
+              "root": "aru",
+              "type": "deinflect",
+              "distance": 0.15,
+              "freqScore": 1550.8208333333332,
+              "adjustedScore": -20.366166666666665,
+              "meta": {
+                "reasons": [
+                  [
+                    13
+                  ]
+                ],
+                "type": 2,
+                "ruleWeight": 0.8
+              },
+              "semanticBoost": 0,
+              "finalScore": -20.366166666666665
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ka",
+          "output": "ka",
+          "meta": {
+            "kana": "か"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.9616,
+          "semanticScore": 0.8375,
+          "romaji": "tabako",
+          "kana": "タバコ",
+          "kanji": "煙草",
+          "domain": "",
+          "meanings": [
+            "tobacco",
+            "cigarette",
+            "cigar"
+          ],
+          "tags": [
+            "gai1",
+            "ichi1",
+            "news2",
+            "nf38",
+            "uk"
+          ],
+          "frequency": 0.458
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7293,
+          "romaji": "aienka",
+          "kana": "あいえんか",
+          "kanji": "愛煙家",
+          "meanings": [
+            "heavy smoker",
+            "habitual smoker",
+            "person who loves smoking"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- term: 煙草\n  reading: タバコ / tabako\n  meaning: tobacco, cigarette, cigar, tobacco plant Nicotiana tabacum\n  type: n\n  tags: gai1, ichi1, news2, nf38, uk\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 愛煙家  (あいえんか / aienka)\n  nuance: heavy smoker, habitual smoker, person who loves smoking",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 煙草\n  reading: タバコ / tabako\n  meaning: tobacco, cigarette, cigar, tobacco plant Nicotiana tabacum\n  type: n\n  tags: gai1, ichi1, news2, nf38, uk\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 愛煙家  (あいえんか / aienka)\n  nuance: heavy smoker, habitual smoker, person who loves smoking\nInput: kitsueninshu tabako ha arimasu ka\nOutput: /no_think",
+      "llmOutput": "Do you have a pack of cigarettes?",
+      "durationMs": 15058,
+      "error": null
+    },
+    {
+      "id": "case-04-substances",
+      "label": "Illicit substance query (misspelled)",
+      "input": "JAP: marijuana cokain krauku nado sesshushiteimasu ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "marifuana kokain kiraku nado sesshushiteimasu ka",
+      "tokens": [
+        {
+          "reason": "fuzzy",
+          "input": "marijuana",
+          "output": "marifuana",
+          "meta": {
+            "candidates": [
+              {
+                "item": "marifuana",
+                "type": "fuzzy",
+                "distance": 0.1111111111111111,
+                "freqScore": 100.2,
+                "adjustedScore": 27.10311111111111,
+                "semanticBoost": 0,
+                "finalScore": 27.10311111111111
+              }
+            ],
+            "competition": [
+              {
+                "item": "marifuana",
+                "type": "fuzzy",
+                "adj": "27.1031",
+                "freq": "100.2"
+              }
+            ],
+            "winner": {
+              "item": "marifuana",
+              "type": "fuzzy",
+              "distance": 0.1111111111111111,
+              "freqScore": 100.2,
+              "adjustedScore": 27.10311111111111,
+              "semanticBoost": 0,
+              "finalScore": 27.10311111111111
+            }
+          }
+        },
+        {
+          "reason": "fuzzy",
+          "input": "cokain",
+          "output": "kokain",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kokain",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 350.2,
+                "adjustedScore": 22.658666666666665,
+                "semanticBoost": -7,
+                "finalScore": 15.658666666666665
+              },
+              {
+                "item": "kokain",
+                "type": "normalized",
+                "distance": 0,
+                "freqScore": 350.2,
+                "adjustedScore": 65.992,
+                "semanticBoost": -7,
+                "finalScore": 58.992000000000004
+              },
+              {
+                "item": "kokain",
+                "type": "aggressive:fuzzy",
+                "distance": 0,
+                "freqScore": 350.2,
+                "adjustedScore": 65.992,
+                "semanticBoost": -7,
+                "finalScore": 58.992000000000004
+              }
+            ],
+            "competition": [
+              {
+                "item": "kokain",
+                "type": "fuzzy",
+                "adj": "22.6587",
+                "freq": "350.2"
+              },
+              {
+                "item": "kokain",
+                "type": "normalized",
+                "adj": "65.9920",
+                "freq": "350.2"
+              },
+              {
+                "item": "kokain",
+                "type": "aggressive:fuzzy",
+                "adj": "65.9920",
+                "freq": "350.2"
+              }
+            ],
+            "winner": {
+              "item": "kokain",
+              "type": "fuzzy",
+              "distance": 0.16666666666666666,
+              "freqScore": 350.2,
+              "adjustedScore": 22.658666666666665,
+              "semanticBoost": -7,
+              "finalScore": 15.658666666666665
+            }
+          }
+        },
+        {
+          "reason": "repair:fuzzy",
+          "input": "krauku",
+          "output": "kiraku",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kiraku",
+                "type": "repair:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1070.9291666666668,
+                "adjustedScore": -8.551452380952384,
+                "semanticBoost": 0,
+                "finalScore": -8.551452380952384
+              },
+              {
+                "item": "karukuchi",
+                "type": "repair:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 720.3625,
+                "adjustedScore": 5.471214285714286,
+                "semanticBoost": 0,
+                "finalScore": 5.471214285714286
+              },
+              {
+                "item": "kurukuru",
+                "type": "repair:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 30.277714285714286,
+                "semanticBoost": 0,
+                "finalScore": 30.277714285714286
+              },
+              {
+                "item": "koruku",
+                "type": "repair:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 30.277714285714286,
+                "semanticBoost": 0,
+                "finalScore": 30.277714285714286
+              },
+              {
+                "item": "kerakuten",
+                "type": "repair:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1,
+                "adjustedScore": 34.245714285714286,
+                "semanticBoost": 0,
+                "finalScore": 34.245714285714286
+              }
+            ],
+            "competition": [
+              {
+                "item": "kiraku",
+                "type": "repair:fuzzy",
+                "adj": "-8.5515",
+                "freq": "1070.9"
+              },
+              {
+                "item": "karukuchi",
+                "type": "repair:fuzzy",
+                "adj": "5.4712",
+                "freq": "720.4"
+              },
+              {
+                "item": "kurukuru",
+                "type": "repair:fuzzy",
+                "adj": "30.2777",
+                "freq": "100.2"
+              }
+            ],
+            "winner": {
+              "item": "kiraku",
+              "type": "repair:fuzzy",
+              "distance": 0.14285714285714285,
+              "freqScore": 1070.9291666666668,
+              "adjustedScore": -8.551452380952384,
+              "semanticBoost": 0,
+              "finalScore": -8.551452380952384
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "nado",
+          "output": "nado",
+          "meta": {
+            "candidates": [
+              {
+                "item": "nado",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 350.2,
+                "adjustedScore": -14.008,
+                "semanticBoost": 0,
+                "finalScore": -14.008
+              },
+              {
+                "item": "nado",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 350.2,
+                "adjustedScore": 5.992000000000001,
+                "semanticBoost": 0,
+                "finalScore": 5.992000000000001
+              }
+            ],
+            "competition": [
+              {
+                "item": "nado",
+                "type": "exact",
+                "adj": "-14.0080",
+                "freq": "350.2"
+              },
+              {
+                "item": "nado",
+                "type": "fuzzy",
+                "adj": "5.9920",
+                "freq": "350.2"
+              }
+            ],
+            "winner": {
+              "item": "nado",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 350.2,
+              "adjustedScore": -14.008,
+              "semanticBoost": 0,
+              "finalScore": -14.008
+            }
+          }
+        },
+        {
+          "reason": "passthrough",
+          "input": "sesshushiteimasu",
+          "output": "sesshushiteimasu"
+        },
+        {
+          "reason": "particle",
+          "input": "ka",
+          "output": "ka",
+          "meta": {
+            "kana": "か"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.913,
+          "semanticScore": 0.8412,
+          "romaji": "kokain",
+          "kana": "コカイン",
+          "kanji": "古加涅",
+          "domain": "",
+          "meanings": [
+            "cocaine"
+          ],
+          "tags": [
+            "gai1",
+            "uk"
+          ],
+          "frequency": 0.2
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.8044,
+          "romaji": "kudasai",
+          "kana": "ください",
+          "kanji": "下さい",
+          "meanings": [
+            "please give me",
+            "please do for me"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- term: 古加涅\n  reading: コカイン / kokain\n  meaning: cocaine\n  type: n\n  tags: gai1, uk\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 下さい  (ください / kudasai)\n  nuance: please give me, please do for me",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 古加涅\n  reading: コカイン / kokain\n  meaning: cocaine\n  type: n\n  tags: gai1, uk\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 下さい  (ください / kudasai)\n  nuance: please give me, please do for me\nInput: marifuana kokain kiraku nado sesshushiteimasu ka\nOutput: /no_think",
+      "llmOutput": "Do you use methamphetamine, cocaine, or similar substances?",
+      "durationMs": 21977,
+      "error": null
+    },
+    {
+      "id": "case-05-knee-stiffness",
+      "label": "Greetings + physical exam (knee stiffness)",
+      "input": "JAP: konichika genki sou de naniyoridesune. suzugo hisa wo mageyou to suru toki ni kowabari wo kanjimasu ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "konichika genki sou de naniyoridesune suzugo hisashii wo mageyou to suru toki ni kowabari wo kanjimasu ka",
+      "tokens": [
+        {
+          "reason": "passthrough",
+          "input": "konichika",
+          "output": "konichika"
+        },
+        {
+          "reason": "exact",
+          "input": "genki",
+          "output": "genki",
+          "meta": {
+            "candidates": [
+              {
+                "item": "genki",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1141,
+                "adjustedScore": -45.64,
+                "semanticBoost": 0,
+                "finalScore": -45.64
+              },
+              {
+                "item": "genki",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1141,
+                "adjustedScore": -25.64,
+                "semanticBoost": 0,
+                "finalScore": -25.64
+              }
+            ],
+            "competition": [
+              {
+                "item": "genki",
+                "type": "exact",
+                "adj": "-45.6400",
+                "freq": "1141.0"
+              },
+              {
+                "item": "genki",
+                "type": "fuzzy",
+                "adj": "-25.6400",
+                "freq": "1141.0"
+              }
+            ],
+            "winner": {
+              "item": "genki",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1141,
+              "adjustedScore": -45.64,
+              "semanticBoost": 0,
+              "finalScore": -45.64
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "sou",
+          "output": "sou",
+          "meta": {
+            "candidates": [
+              {
+                "item": "sou",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1280.9125,
+                "adjustedScore": -51.2365,
+                "semanticBoost": 0,
+                "finalScore": -51.2365
+              },
+              {
+                "item": "sou",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1280.9125,
+                "adjustedScore": -31.2365,
+                "semanticBoost": 0,
+                "finalScore": -31.2365
+              },
+              {
+                "item": "sou",
+                "root": "sou",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1280.9125,
+                "adjustedScore": -12.600136363636366,
+                "meta": {
+                  "reasons": [],
+                  "type": 62719,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": -12.600136363636366
+              }
+            ],
+            "competition": [
+              {
+                "item": "sou",
+                "type": "exact",
+                "adj": "-51.2365",
+                "freq": "1280.9"
+              },
+              {
+                "item": "sou",
+                "type": "fuzzy",
+                "adj": "-31.2365",
+                "freq": "1280.9"
+              },
+              {
+                "item": "sou(->sou)",
+                "type": "deinflect",
+                "adj": "-12.6001",
+                "freq": "1280.9"
+              }
+            ],
+            "winner": {
+              "item": "sou",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1280.9125,
+              "adjustedScore": -51.2365,
+              "semanticBoost": 0,
+              "finalScore": -51.2365
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "de",
+          "output": "de",
+          "meta": {
+            "kana": "で"
+          }
+        },
+        {
+          "reason": "passthrough",
+          "input": "naniyoridesune",
+          "output": "naniyoridesune"
+        },
+        {
+          "reason": "passthrough",
+          "input": "suzugo",
+          "output": "suzugo"
+        },
+        {
+          "reason": "fuzzy",
+          "input": "hisa",
+          "output": "hisashii",
+          "meta": {
+            "candidates": [
+              {
+                "item": "hisashii",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 830.4833333333333,
+                "adjustedScore": -13.11933333333333,
+                "semanticBoost": 0,
+                "finalScore": -13.11933333333333
+              },
+              {
+                "item": "hisa",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1,
+                "adjustedScore": -0.04,
+                "semanticBoost": 0,
+                "finalScore": -0.04
+              }
+            ],
+            "competition": [
+              {
+                "item": "hisashii",
+                "type": "fuzzy",
+                "adj": "-13.1193",
+                "freq": "830.5"
+              },
+              {
+                "item": "hisa",
+                "type": "exact",
+                "adj": "-0.0400",
+                "freq": "1.0"
+              }
+            ],
+            "winner": {
+              "item": "hisashii",
+              "type": "fuzzy",
+              "distance": 0.001,
+              "freqScore": 830.4833333333333,
+              "adjustedScore": -13.11933333333333,
+              "semanticBoost": 0,
+              "finalScore": -13.11933333333333
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "wo",
+          "output": "wo",
+          "meta": {
+            "kana": "を"
+          }
+        },
+        {
+          "reason": "deinflect:mageru",
+          "input": "mageyou",
+          "output": "mageyou",
+          "meta": {
+            "candidates": [
+              {
+                "item": "mageyou",
+                "root": "mageru",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 800.4208333333333,
+                "adjustedScore": 6.619530303030302,
+                "meta": {
+                  "reasons": [
+                    [
+                      21
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": 6.619530303030302
+              },
+              {
+                "item": "mageyui",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1,
+                "adjustedScore": 34.245714285714286,
+                "semanticBoost": 0,
+                "finalScore": 34.245714285714286
+              }
+            ],
+            "competition": [
+              {
+                "item": "mageyou(->mageru)",
+                "type": "deinflect",
+                "adj": "6.6195",
+                "freq": "800.4"
+              },
+              {
+                "item": "mageyui",
+                "type": "fuzzy",
+                "adj": "34.2457",
+                "freq": "1.0"
+              }
+            ],
+            "reasons": [
+              [
+                21
+              ]
+            ],
+            "type": 9,
+            "ruleWeight": 1,
+            "winner": {
+              "item": "mageyou",
+              "root": "mageru",
+              "type": "deinflect",
+              "distance": 0.15,
+              "freqScore": 800.4208333333333,
+              "adjustedScore": 6.619530303030302,
+              "meta": {
+                "reasons": [
+                  [
+                    21
+                  ]
+                ],
+                "type": 9,
+                "ruleWeight": 1
+              },
+              "semanticBoost": 0,
+              "finalScore": 6.619530303030302
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "to",
+          "output": "to",
+          "meta": {
+            "kana": "と"
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "suru",
+          "output": "suru",
+          "meta": {
+            "candidates": [
+              {
+                "item": "suru",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1010.4,
+                "adjustedScore": -40.416,
+                "semanticBoost": 0,
+                "finalScore": -40.416
+              },
+              {
+                "item": "suru",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1010.4,
+                "adjustedScore": -20.415999999999997,
+                "semanticBoost": 0,
+                "finalScore": -20.415999999999997
+              },
+              {
+                "item": "suru",
+                "root": "suru",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1010.4,
+                "adjustedScore": -1.7796363636363637,
+                "meta": {
+                  "reasons": [],
+                  "type": 62719,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": -1.7796363636363637
+              }
+            ],
+            "competition": [
+              {
+                "item": "suru",
+                "type": "exact",
+                "adj": "-40.4160",
+                "freq": "1010.4"
+              },
+              {
+                "item": "suru",
+                "type": "fuzzy",
+                "adj": "-20.4160",
+                "freq": "1010.4"
+              },
+              {
+                "item": "suru(->suru)",
+                "type": "deinflect",
+                "adj": "-1.7796",
+                "freq": "1010.4"
+              }
+            ],
+            "winner": {
+              "item": "suru",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1010.4,
+              "adjustedScore": -40.416,
+              "semanticBoost": 0,
+              "finalScore": -40.416
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "toki",
+          "output": "toki",
+          "meta": {
+            "candidates": [
+              {
+                "item": "toki",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1411,
+                "adjustedScore": -56.44,
+                "semanticBoost": 0,
+                "finalScore": -56.44
+              },
+              {
+                "item": "toki",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1411,
+                "adjustedScore": -36.44,
+                "semanticBoost": 0,
+                "finalScore": -36.44
+              },
+              {
+                "item": "toki",
+                "root": "toku",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1430.95,
+                "adjustedScore": -18.601636363636366,
+                "meta": {
+                  "reasons": [
+                    [
+                      28
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": -18.601636363636366
+              }
+            ],
+            "competition": [
+              {
+                "item": "toki",
+                "type": "exact",
+                "adj": "-56.4400",
+                "freq": "1411.0"
+              },
+              {
+                "item": "toki",
+                "type": "fuzzy",
+                "adj": "-36.4400",
+                "freq": "1411.0"
+              },
+              {
+                "item": "toki(->toku)",
+                "type": "deinflect",
+                "adj": "-18.6016",
+                "freq": "1431.0"
+              }
+            ],
+            "winner": {
+              "item": "toki",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1411,
+              "adjustedScore": -56.44,
+              "semanticBoost": 0,
+              "finalScore": -56.44
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ni",
+          "output": "ni",
+          "meta": {
+            "kana": "に"
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "kowabari",
+          "output": "kowabari",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kowabari",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 250.1,
+                "adjustedScore": -10.004,
+                "semanticBoost": 0,
+                "finalScore": -10.004
+              },
+              {
+                "item": "kowabaru",
+                "type": "fuzzy",
+                "distance": 0.125,
+                "freqScore": 300.15,
+                "adjustedScore": 20.494,
+                "semanticBoost": 0,
+                "finalScore": 20.494
+              },
+              {
+                "item": "kowabari",
+                "root": "kowabaru",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 300.15,
+                "adjustedScore": 26.630363636363633,
+                "meta": {
+                  "reasons": [
+                    [
+                      28
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": 26.630363636363633
+              }
+            ],
+            "competition": [
+              {
+                "item": "kowabari",
+                "type": "exact",
+                "adj": "-10.0040",
+                "freq": "250.1"
+              },
+              {
+                "item": "kowabaru",
+                "type": "fuzzy",
+                "adj": "20.4940",
+                "freq": "300.1"
+              },
+              {
+                "item": "kowabari(->kowabaru)",
+                "type": "deinflect",
+                "adj": "26.6304",
+                "freq": "300.1"
+              }
+            ],
+            "winner": {
+              "item": "kowabari",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 250.1,
+              "adjustedScore": -10.004,
+              "semanticBoost": 0,
+              "finalScore": -10.004
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "wo",
+          "output": "wo",
+          "meta": {
+            "kana": "を"
+          }
+        },
+        {
+          "reason": "deinflect:kanjiru",
+          "input": "kanjimasu",
+          "output": "kanjimasu",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kanjimasu",
+                "root": "kanjiru",
+                "type": "deinflect",
+                "distance": 0.15,
+                "freqScore": 1111,
+                "adjustedScore": -5.803636363636365,
+                "meta": {
+                  "reasons": [
+                    [
+                      13
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "semanticBoost": 0,
+                "finalScore": -5.803636363636365
+              }
+            ],
+            "competition": [
+              {
+                "item": "kanjimasu(->kanjiru)",
+                "type": "deinflect",
+                "adj": "-5.8036",
+                "freq": "1111.0"
+              }
+            ],
+            "reasons": [
+              [
+                13
+              ]
+            ],
+            "type": 9,
+            "ruleWeight": 1,
+            "winner": {
+              "item": "kanjimasu",
+              "root": "kanjiru",
+              "type": "deinflect",
+              "distance": 0.15,
+              "freqScore": 1111,
+              "adjustedScore": -5.803636363636365,
+              "meta": {
+                "reasons": [
+                  [
+                    13
+                  ]
+                ],
+                "type": 9,
+                "ruleWeight": 1
+              },
+              "semanticBoost": 0,
+              "finalScore": -5.803636363636365
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ka",
+          "output": "ka",
+          "meta": {
+            "kana": "か"
+          }
+        }
+      ],
+      "ragHits": [],
+      "toneHits": [
+        {
+          "score": 0.7805,
+          "romaji": "kigu",
+          "kana": "きぐ",
+          "kanji": "危惧",
+          "meanings": [
+            "apprehension",
+            "misgivings",
+            "uneasiness"
+          ]
+        }
+      ],
+      "glossaryInjected": "SPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 危惧  (きぐ / kigu)\n  nuance: apprehension, misgivings, uneasiness",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 危惧  (きぐ / kigu)\n  nuance: apprehension, misgivings, uneasiness\nInput: konichika genki sou de naniyoridesune suzugo hisashii wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: /no_think",
+      "llmOutput": "Hello, you look well, I'm glad to see that. Do you feel apprehension when you try to bend your foot after a long time?",
+      "durationMs": 16436,
+      "error": null
+    }
+  ]
+}

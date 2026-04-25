@@ -89,6 +89,53 @@ export const deinflectL10NKeys = {
   [Reason.Irregular]: 'deinflect_irregular',
 };
 
+export const deinflectTags = {
+  [Reason.PolitePastNegative]: 'Polite past negative',
+  [Reason.PoliteNegative]: 'Polite negative',
+  [Reason.PoliteVolitional]: 'Polite volitional',
+  [Reason.Chau]: 'To do completely',
+  [Reason.Sugiru]: 'To do too much',
+  [Reason.PolitePast]: 'Polite past',
+  [Reason.Tara]: 'If / After (tara)',
+  [Reason.Tari]: 'Such things as (tari)',
+  [Reason.Causative]: 'Causative',
+  [Reason.PotentialOrPassive]: 'Potential / Passive',
+  [Reason.Toku]: 'To do in advance',
+  [Reason.Sou]: 'Seems like',
+  [Reason.Tai]: 'Want to do',
+  [Reason.Polite]: 'Polite/Formal form',
+  [Reason.Respectful]: 'Respectful',
+  [Reason.Humble]: 'Humble',
+  [Reason.HumbleOrKansaiDialect]: 'Humble / Kansai dialect',
+  [Reason.Past]: 'Past tense',
+  [Reason.Negative]: 'Negative',
+  [Reason.Passive]: 'Passive',
+  [Reason.Ba]: 'If (ba)',
+  [Reason.Volitional]: 'Volitional',
+  [Reason.Potential]: 'Potential',
+  [Reason.EruUru]: 'Can do',
+  [Reason.CausativePassive]: 'Causative Passive',
+  [Reason.Te]: 'Te-form',
+  [Reason.Zu]: 'Without doing',
+  [Reason.Imperative]: 'Imperative',
+  [Reason.MasuStem]: 'Masu stem',
+  [Reason.Adv]: 'Adverbial',
+  [Reason.Noun]: 'Noun form',
+  [Reason.ImperativeNegative]: 'Imperative negative',
+  [Reason.Continuous]: 'Continuous (-te iru)',
+  [Reason.Ki]: 'Ki',
+  [Reason.SuruNoun]: 'Noun + Suru',
+  [Reason.ZaruWoEnai]: 'Cannot help but',
+  [Reason.NegativeTe]: 'Negative te-form',
+  [Reason.Irregular]: 'Irregular',
+};
+
+export function interpretReasonChains(chains) {
+  if (!chains || chains.length === 0) return [];
+  const firstChain = chains[0]; 
+  return firstChain.map(reasonId => deinflectTags[reasonId]).filter(Boolean);
+}
+
 export const WordType = {
   // Final word type
   IchidanVerb: 1 << 0, // i.e. ru-verbs
@@ -155,8 +202,6 @@ const deinflectRuleData = [
   ['たゆとう', 'たゆとう', WordType.TaTeStem, WordType.GodanVerb, [], 1.0],
   ['のたまう', 'のたまう', WordType.TaTeStem, WordType.GodanVerb, [], 1.0],
   ['のたもう', 'のたもう', WordType.TaTeStem, WordType.GodanVerb, [], 1.0],
-  ['ましたら', '', WordType.Initial, WordType.MasuStem, [Reason.Polite, Reason.Tara], 1.0],
-  ['ましたり', '', WordType.Initial, WordType.MasuStem, [Reason.Polite, Reason.Tari], 1.0],
   ['ましょう', '', WordType.Initial, WordType.MasuStem, [Reason.PoliteVolitional], 1.0],
   // -------------- 3 --------------
   ['いたす', '', WordType.GodanVerb, WordType.MasuStem, [Reason.Humble], 1.0],
@@ -392,7 +437,7 @@ export function deinflect(word) {
     word,
     // Initially, the type of word is unknown, so we set the type mask to
     // match all rules except stems, that don't make sense on their own.
-    type: 0xffff ^ (WordType.TaTeStem | WordType.DaDeStem | WordType.IrrealisStem),
+    type: 0xffff ^ (WordType.TaTeStem | WordType.DaDeStem | WordType.MasuStem | WordType.IrrealisStem),
     reasonChains: [],
   };
   result.push(original);

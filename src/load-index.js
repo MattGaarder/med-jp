@@ -19,6 +19,10 @@ let indexConfig = null;
  * Loads the HNSW index and the lightweight metadata map from disk.
  * Must be called once on boot before searching.
  */
+export function getIndex() {
+  return index;
+}
+
 export function loadIndex() {
   if (index !== null) return;
   

@@ -73,8 +73,15 @@ function stopCapture() {
 // ─── Markdown helpers ─────────────────────────────────────────────────────────
 
 function mdTable(headers, rows) {
+  const sanitize = (val) => {
+    if (val === undefined || val === null) return '—';
+    return String(val)
+      .replace(/\|/g, '\\|')      // Escape pipes
+      .replace(/\n/g, '<br>');    // Replace newlines with <br>
+  };
+  
   const sep = headers.map(h => '-'.repeat(Math.max(h.length, 3)));
-  const fmt = row => `| ${row.join(' | ')} |`;
+  const fmt = row => `| ${row.map(sanitize).join(' | ')} |`;
   return [fmt(headers), fmt(sep), ...rows.map(fmt)].join('\n');
 }
 
@@ -117,36 +124,44 @@ async function runCase(caseObj) {
     caseResult.prompt            = prompt;
 
     caseResult.tokens = (tokenTrace ?? []).map(t => ({
-      reason: t.decision,
-      input:  t.input,
-      output: t.output,
-      meta:   t.meta,
+      type:         t.type,
+      surface:      t.surface,
+      input:        t.input || t.surface,
+      output:       t.output,
+      base:         t.base,
+      meaning:      t.meaning,
+      grammar_tags: t.grammar_tags,
+      decision:     t.decision,
+      meta:         t.meta,
     }));
 
     caseResult.ragHits = (ragHits ?? []).map(({ score, semanticScore, item }) => ({
-      score:          +score.toFixed(4),
+      score:          +(score ?? 0).toFixed(4),
       semanticScore:  +(semanticScore ?? 0).toFixed(4),
-      romaji:         item.romaji,
-      kana:           item.kana   ?? '',
-      kanji:          item.kanji  ?? '',
-      domain:         item.domain ?? '',
-      meanings:       (item.meanings ?? []).slice(0, 3),
-      tags:           item.tags   ?? [],
-      frequency:      +(item.frequency ?? 0).toFixed(3),
+      romaji:         item?.romaji   ?? '',
+      kana:           item?.kana     ?? '',
+      kanji:          item?.kanji    ?? '',
+      domain:         item?.domain   ?? '',
+      source:         item?.source   ?? 'semantic',
+      meanings:       (item?.meanings ?? []).slice(0, 3),
+      tags:           item?.tags     ?? [],
+      frequency:      +(item?.frequency ?? 0).toFixed(3),
     }));
 
     caseResult.toneHits = (toneHits ?? []).map(({ score, item }) => ({
-      score:    +score.toFixed(4),
-      romaji:   item.romaji,
-      kana:     item.kana   ?? '',
-      kanji:    item.kanji  ?? '',
-      meanings: (item.meanings ?? []).slice(0, 3),
+      score:    +(score ?? 0).toFixed(4),
+      romaji:   item?.romaji   ?? '',
+      kana:     item?.kana     ?? '',
+      kanji:    item?.kanji    ?? '',
+      meanings: (item?.meanings ?? []).slice(0, 3),
     }));
 
     // Extract the entire "hints" block actually injected into the prompt.
     // Template order: NOW TRANSLATE:\n\n<hints>\nInput: ...
-    const glossaryMatch = prompt.match(/NOW TRANSLATE:([\s\S]+?)\nInput:/);
-    caseResult.glossaryInjected = glossaryMatch ? glossaryMatch[1].trim() : '(none — no RAG hits or grammar hints)';
+    // The hints start with either "MEDICAL GLOSSARY" or "TONE HINT" and end at "Input:"
+    const hintRegex = /((?:MEDICAL GLOSSARY HINTS:|TONE HINT:)[\s\S]+?)\nInput:/;
+    const match = prompt.match(hintRegex);
+    caseResult.glossaryInjected = match ? match[1].trim() : '(none — no hints injected)';
 
     // ── Step 2: LLM call ───────────────────────────────────────────────────
     if (!skipLLM) {
@@ -208,7 +223,7 @@ function renderMarkdown(results, runMeta) {
       `\`${r.id}\``,
       r.direction ?? 'ERR',
       r.preprocessedInput ? `\`${r.preprocessedInput.slice(0, 50)}${r.preprocessedInput.length > 50 ? '…' : ''}\`` : '—',
-      r.error ? `❌ ${r.error}` : (r.llmOutput ?? '—').slice(0, 80).replace(/\|/g, '\\|'),
+      r.error ? `❌ ${r.error}` : (r.llmOutput ?? '—').slice(0, 80),
       String(r.durationMs),
     ])
   ));
@@ -223,6 +238,16 @@ function renderMarkdown(results, runMeta) {
     lines.push(`**Input:** \`${r.input}\`  `);
     lines.push(`**Direction:** ${r.direction ?? '—'}  `);
     lines.push(`**Preprocessed:** \`${r.preprocessedInput ?? '—'}\`  `);
+    
+    // ── RAG Query Tokens ──
+    if (r.queryTokens && r.queryTokens.length > 0) {
+       lines.push(`**RAG Query Tokens:** \`[${r.queryTokens.join(', ')}]\`  `);
+    }
+
+    // ── LLM output (Moved up per user request) ──
+    lines.push(`#### LLM Output\n`);
+    lines.push(`> ${r.llmOutput ?? '—'}\n`);
+    
     lines.push(`**Duration:** ${r.durationMs}ms\n`);
 
     if (r.error) {
@@ -230,17 +255,54 @@ function renderMarkdown(results, runMeta) {
       continue;
     }
 
-    // ── Preprocessor token table ──
+    // ── Preprocessor token table & Flips ──
     lines.push(`#### Preprocessor Token Trace\n`);
     if (r.tokens.length > 0) {
+      
+      // Look for flip events first
+      r.tokens.forEach(t => {
+         if (t.meta && t.meta.flipEvent) {
+            const f = t.meta.flipEvent;
+            lines.push(`> ⭐ **FLIP TRIGGERED** for token \`[${t.surface || f.oldItem}]\`!`);
+            lines.push(`> - **Old Target:** \`${f.oldItem}\` *(score: ${f.oldScore.toFixed(1)}, cos: ${f.oldCos?.toFixed(3) || 'N/A'})*`);
+            lines.push(`> - **New Target:** \`${f.newItem}\` *(cos: ${f.newCos.toFixed(3)}, boost: +${f.boost})*`);
+            lines.push(`> - **Context:** ${f.contextDesc}\n`);
+         }
+      });
+
       lines.push(mdTable(
-        ['Input token', 'Output token', 'Decision', 'Extra Info'],
+        ['Input token', 'Output token', 'Definition', 'Decision', 'Context', 'Extra Info'],
         r.tokens.map(t => {
-          let extra = '—';
-          if (t.meta && t.meta.competition) {
-            extra = t.meta.competition.map(c => {
+          if (t.type === 'grammar') {
+              const metaId = t.meta?.grammar_obj?.grammar_id || '—';
+              const meaning = t.meaning || '—';
+              return [
+                `\`${t.surface}\``,
+                `\`${t.output}\``,
+                meaning,
+                `**🟢 GRAMMAR**`,
+                '—',
+                `ID: \`${metaId}\`<br>Tags: *${t.grammar_tags?.join(', ') || '—'}*`
+              ];
+          }
+
+          const winner = t.meta?.winner || t.meta?.candidates?.[0];
+          const meaning = t.meaning || winner?.meaning || '—';
+          const semanticBoost = t.meta?.semanticBoost || 0;
+          const contextStr = semanticBoost < 0 ? `⭐ **${semanticBoost}**` : '—';
+
+          let extra = '';
+          if (t.meta && t.meta.candidates && t.meta.candidates.length > 0) {
+            extra = t.meta.candidates.slice(0, 10).map(c => {
                 const typeLabel = c.type.startsWith('repair') ? `🛠️ ${c.type}` : c.type;
-                return `**${c.item}** [${typeLabel}] adj:**${c.adj}** (f:${c.freq})`;
+                const boostInfo = c.semanticBoost ? ` (boost: **${c.semanticBoost}**)` : '';
+                const rootInfo = c.root ? ` (root: *${c.root}*)` : '';
+                const freqVal  = (c.freqScore ?? 0).toFixed(1);
+                const scoreVal = (c.adjustedScore ?? 0).toFixed(1);
+                const breakdown = c.breakdown ? `<br>&nbsp;&nbsp;*Breakdown: ${c.breakdown}*` : '';
+                const cMeaning = c.meaning ? ` *(${c.meaning})*` : '';
+                
+                return `• **${c.item || ''}**${rootInfo}${cMeaning} [${typeLabel}]<br>&nbsp;&nbsp;Score: **${scoreVal}**${boostInfo} | Points: ${freqVal}${breakdown}`;
             }).join('<br>');
           }
 
@@ -249,14 +311,17 @@ function renderMarkdown(results, runMeta) {
               const chainStr = t.meta.reasons.map(chain => 
                   chain.map(rid => DEINFLECT_REASONS[rid] || rid).join(' → ')
               ).join(' | ');
-              extra += `<br>*Rules: ${chainStr} (w:${t.meta.ruleWeight || 1.0})*`;
+              if (extra) extra += '<br>';
+              extra += `*Rules: ${chainStr} (w:${t.meta.ruleWeight || 1.0})*`;
           }
 
           return [
-            `\`${t.input}\``,
+            `\`${t.surface || t.input}\``,
             `\`${t.output}\``,
-            `**${t.reason}**`,
-            extra
+            meaning,
+            `**${t.decision}**`,
+            contextStr,
+            extra || '—'
           ];
         })
       ));
@@ -268,16 +333,17 @@ function renderMarkdown(results, runMeta) {
     lines.push(`\n#### RAG Retrieval — Medical Glossary Hints\n`);
     if (r.ragHits.length > 0) {
       lines.push(mdTable(
-        ['Rank', 'Combined', 'Semantic', 'Domain', 'Freq', 'Romaji', 'Kanji', 'Top meanings', 'Tags'],
+        ['Rank', 'Combined', 'Semantic', 'Source', 'Domain', 'Freq', 'Romaji', 'Kanji', 'Top meanings', 'Tags'],
         r.ragHits.map((h, ri) => [
           String(ri + 1),
           String(h.score),
           String(h.semanticScore),
+          h.source === 'dictionary' ? '📖 **dict**' : '🧠 rag',
           h.domain || '—',
           String(h.frequency),
           `\`${h.romaji}\``,
           h.kanji || '—',
-          h.meanings.join('; ').replace(/\|/g, '\\|'),
+          h.meanings.join('; '),
           h.tags.slice(0, 3).join(', ') || '—',
         ])
       ));
@@ -292,7 +358,7 @@ function renderMarkdown(results, runMeta) {
       const t = r.toneHits[0];
       lines.push(mdTable(
         ['Score', 'Romaji', 'Kanji', 'Nuance'],
-        [[String(t.score), `\`${t.romaji}\``, t.kanji || '—', t.meanings.join('; ').replace(/\|/g, '\\|')]]
+        [[String(t.score), `\`${t.romaji}\``, t.kanji || '—', t.meanings.join('; ')]]
       ));
     } else {
       lines.push('*(no tone hit — may be same as medical hit or query too short)*');
@@ -300,10 +366,6 @@ function renderMarkdown(results, runMeta) {
 
     // ── Full prompt (collapsed) ──
     lines.push(`\n${mdDetails('Full prompt sent to Ollama (click to expand)', r.prompt ?? '—')}\n`);
-
-    // ── LLM output ──
-    lines.push(`#### LLM Output\n`);
-    lines.push(`> ${r.llmOutput ?? '—'}\n`);
 
     lines.push(`---\n`);
   }
@@ -314,12 +376,12 @@ function renderMarkdown(results, runMeta) {
   lines.push(`\n### Parameters to consider adjusting\n`);
   lines.push(`| Parameter | Current value | Proposed change | Rationale |`);
   lines.push(`|-----------|--------------|-----------------|-----------|`);
-  lines.push(`| RAG \`topK\` | 3 | | |`);
-  lines.push(`| Semantic weight | 0.8 | | |`);
-  lines.push(`| Frequency weight | 0.2 | | |`);
-  lines.push(`| HNSW \`fetchSize\` multiplier | 2× topK | | |`);
-  lines.push(`| Fuse.js threshold | 0.3 | | |`);
-  lines.push(`| Short-token skip length | ≤ 3 chars | | |`);
+  lines.push(`| NF-Decay Scale | 100 - (nf * 2) | | |`);
+  lines.push(`| Medical Boost | +50 | | |`);
+  lines.push(`| MeSH Disease | +80 | | |`);
+  lines.push(`| RAG topK | 9-50 | | |`);
+  lines.push(`| Semantic Rerank | -15 | | |`);
+  lines.push(`| Embedding Model | qwen3-embedding | | |`);
 
   return lines.join('\n');
 }

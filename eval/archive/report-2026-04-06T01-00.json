@@ -1,0 +1,572 @@
+{
+  "meta": {
+    "timestamp": "2026-04-06T01:00:39.902Z",
+    "skipLLM": false,
+    "totalMs": 45245
+  },
+  "results": [
+    {
+      "id": "case-01-appetite",
+      "label": "Fragmented appetite & medication request",
+      "input": "JAP: wakatta waktta jya sono kusuri o kudasi ima ni mo watashi ni mo kigata no nai desu kara",
+      "direction": null,
+      "preprocessedInput": null,
+      "tokens": [],
+      "ragHits": [],
+      "toneHits": [],
+      "glossaryInjected": "",
+      "prompt": null,
+      "llmOutput": null,
+      "durationMs": 6765,
+      "error": "Cannot read properties of undefined (reading 'item')"
+    },
+    {
+      "id": "case-02-nausea",
+      "label": "Improved condition vs persistent nausea/dizziness",
+      "input": "JAP: sensei. konichi taicho yokunatta genki aru to demo omoimasu memai ga kibun warukute taberarenakatta",
+      "direction": null,
+      "preprocessedInput": null,
+      "tokens": [],
+      "ragHits": [],
+      "toneHits": [],
+      "glossaryInjected": "",
+      "prompt": null,
+      "llmOutput": null,
+      "durationMs": 1282,
+      "error": "Cannot read properties of undefined (reading 'item')"
+    },
+    {
+      "id": "case-03-smoking-alcohol",
+      "label": "Merged lifestyle query (smoking/drinking)",
+      "input": "JAP: kitsueninshu tabako ha arimasu ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "kitsueninshu tabako ha arimasu ka",
+      "tokens": [
+        {
+          "reason": "passthrough",
+          "input": "kitsueninshu",
+          "output": "kitsueninshu"
+        },
+        {
+          "reason": "exact",
+          "input": "tabako",
+          "output": "tabako",
+          "meta": {
+            "candidates": [
+              {
+                "item": "tabako",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1120.4583333333335,
+                "adjustedScore": -44.81833333333334,
+                "semanticBoost": -7,
+                "finalScore": -51.81833333333334
+              },
+              {
+                "item": "tabako",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1120.4583333333335,
+                "adjustedScore": -24.818333333333342,
+                "semanticBoost": -7,
+                "finalScore": -31.818333333333342
+              }
+            ],
+            "competition": [
+              {
+                "item": "tabako",
+                "type": "exact",
+                "adj": "-44.8183",
+                "freq": "1120.5"
+              },
+              {
+                "item": "tabako",
+                "type": "fuzzy",
+                "adj": "-24.8183",
+                "freq": "1120.5"
+              }
+            ],
+            "winner": {
+              "item": "tabako",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1120.4583333333335,
+              "adjustedScore": -44.81833333333334,
+              "semanticBoost": -7,
+              "finalScore": -51.81833333333334
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ha",
+          "output": "ha",
+          "meta": {
+            "kana": "は"
+          }
+        },
+        {
+          "reason": "deinflect:aru",
+          "input": "arimasu",
+          "output": "arimasu",
+          "meta": {
+            "candidates": [
+              {
+                "item": "arimasu",
+                "root": "aru",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 1550.8208333333332,
+                "adjustedScore": -33.03283333333333,
+                "meta": {
+                  "reasons": [
+                    [
+                      13
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.8
+                },
+                "semanticBoost": 0,
+                "finalScore": -33.03283333333333
+              },
+              {
+                "item": "dearimasu",
+                "type": "fuzzy",
+                "distance": 0.04,
+                "freqScore": 100.2,
+                "adjustedScore": 29.192000000000004,
+                "semanticBoost": 0,
+                "finalScore": 29.192000000000004
+              }
+            ],
+            "competition": [
+              {
+                "item": "arimasu(->aru)",
+                "type": "deinflect",
+                "adj": "-33.0328",
+                "freq": "1550.8"
+              },
+              {
+                "item": "dearimasu",
+                "type": "fuzzy",
+                "adj": "29.1920",
+                "freq": "100.2"
+              }
+            ],
+            "reasons": [
+              [
+                13
+              ]
+            ],
+            "type": 2,
+            "ruleWeight": 0.8,
+            "winner": {
+              "item": "arimasu",
+              "root": "aru",
+              "type": "deinflect",
+              "distance": 0.04,
+              "freqScore": 1550.8208333333332,
+              "adjustedScore": -33.03283333333333,
+              "meta": {
+                "reasons": [
+                  [
+                    13
+                  ]
+                ],
+                "type": 2,
+                "ruleWeight": 0.8
+              },
+              "semanticBoost": 0,
+              "finalScore": -33.03283333333333
+            }
+          }
+        },
+        {
+          "reason": "particle",
+          "input": "ka",
+          "output": "ka",
+          "meta": {
+            "kana": "か"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.9616,
+          "semanticScore": 0.8375,
+          "romaji": "tabako",
+          "kana": "タバコ",
+          "kanji": "煙草",
+          "domain": "",
+          "meanings": [
+            "tobacco",
+            "cigarette",
+            "cigar"
+          ],
+          "tags": [
+            "gai1",
+            "ichi1",
+            "news2",
+            "nf38",
+            "uk"
+          ],
+          "frequency": 0.458
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7293,
+          "romaji": "aienka",
+          "kana": "あいえんか",
+          "kanji": "愛煙家",
+          "meanings": [
+            "heavy smoker",
+            "habitual smoker",
+            "person who loves smoking"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- term: 煙草\n  reading: タバコ / tabako\n  meaning: tobacco, cigarette, cigar, tobacco plant Nicotiana tabacum\n  type: n\n  tags: gai1, ichi1, news2, nf38, uk\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 愛煙家  (あいえんか / aienka)\n  nuance: heavy smoker, habitual smoker, person who loves smoking",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 煙草\n  reading: タバコ / tabako\n  meaning: tobacco, cigarette, cigar, tobacco plant Nicotiana tabacum\n  type: n\n  tags: gai1, ichi1, news2, nf38, uk\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 愛煙家  (あいえんか / aienka)\n  nuance: heavy smoker, habitual smoker, person who loves smoking\nInput: kitsueninshu tabako ha arimasu ka\nOutput: /no_think",
+      "llmOutput": "Do you have a pack of cigarettes?",
+      "durationMs": 12741,
+      "error": null
+    },
+    {
+      "id": "case-04-substances",
+      "label": "Illicit substance query (misspelled)",
+      "input": "JAP: marijuana cokain krauku nado sesshushiteimasu ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "marifuana kokain kiraku nado sesshushiteimasu ka",
+      "tokens": [
+        {
+          "reason": "fuzzy",
+          "input": "marijuana",
+          "output": "marifuana",
+          "meta": {
+            "candidates": [
+              {
+                "item": "marifuana",
+                "type": "fuzzy",
+                "distance": 0.1111111111111111,
+                "freqScore": 100.2,
+                "adjustedScore": 30.80681481481481,
+                "semanticBoost": 0,
+                "finalScore": 30.80681481481481
+              },
+              {
+                "item": "marifuana",
+                "type": "aggressive:fuzzy",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 116.76908763999664,
+                "semanticBoost": 0,
+                "finalScore": 116.76908763999664
+              }
+            ],
+            "competition": [
+              {
+                "item": "marifuana",
+                "type": "fuzzy",
+                "adj": "30.8068",
+                "freq": "100.2"
+              },
+              {
+                "item": "marifuana",
+                "type": "aggressive:fuzzy",
+                "adj": "116.7691",
+                "freq": "100.2"
+              }
+            ],
+            "winner": {
+              "item": "marifuana",
+              "type": "fuzzy",
+              "distance": 0.1111111111111111,
+              "freqScore": 100.2,
+              "adjustedScore": 30.80681481481481,
+              "semanticBoost": 0,
+              "finalScore": 30.80681481481481
+            }
+          }
+        },
+        {
+          "reason": "fuzzy",
+          "input": "cokain",
+          "output": "kokain",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kokain",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 350.2,
+                "adjustedScore": 33.208552697590875,
+                "semanticBoost": -7,
+                "finalScore": 26.208552697590875
+              },
+              {
+                "item": "kokain",
+                "type": "normalized",
+                "distance": 0,
+                "freqScore": 350.2,
+                "adjustedScore": 65.992,
+                "semanticBoost": -7,
+                "finalScore": 58.992000000000004
+              },
+              {
+                "item": "kokain",
+                "type": "aggressive:fuzzy",
+                "distance": 0,
+                "freqScore": 350.2,
+                "adjustedScore": 65.992,
+                "semanticBoost": -7,
+                "finalScore": 58.992000000000004
+              }
+            ],
+            "competition": [
+              {
+                "item": "kokain",
+                "type": "fuzzy",
+                "adj": "33.2086",
+                "freq": "350.2"
+              },
+              {
+                "item": "kokain",
+                "type": "normalized",
+                "adj": "65.9920",
+                "freq": "350.2"
+              },
+              {
+                "item": "kokain",
+                "type": "aggressive:fuzzy",
+                "adj": "65.9920",
+                "freq": "350.2"
+              }
+            ],
+            "winner": {
+              "item": "kokain",
+              "type": "fuzzy",
+              "distance": 0.16666666666666666,
+              "freqScore": 350.2,
+              "adjustedScore": 33.208552697590875,
+              "semanticBoost": -7,
+              "finalScore": 26.208552697590875
+            }
+          }
+        },
+        {
+          "reason": "repair:fuzzy",
+          "input": "krauku",
+          "output": "kiraku",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kiraku",
+                "type": "repair:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1070.9291666666668,
+                "adjustedScore": 3.760803219574889,
+                "semanticBoost": 0,
+                "finalScore": 3.760803219574889
+              },
+              {
+                "item": "karukuchi",
+                "type": "repair:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 720.3625,
+                "adjustedScore": 22.78346988624156,
+                "semanticBoost": 0,
+                "finalScore": 22.78346988624156
+              },
+              {
+                "item": "kurukuru",
+                "type": "repair:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 42.589969886241555,
+                "semanticBoost": 0,
+                "finalScore": 42.589969886241555
+              },
+              {
+                "item": "koruku",
+                "type": "repair:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 42.589969886241555,
+                "semanticBoost": 0,
+                "finalScore": 42.589969886241555
+              },
+              {
+                "item": "kerakuten",
+                "type": "repair:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1,
+                "adjustedScore": 51.55796988624156,
+                "semanticBoost": 0,
+                "finalScore": 51.55796988624156
+              }
+            ],
+            "competition": [
+              {
+                "item": "kiraku",
+                "type": "repair:fuzzy",
+                "adj": "3.7608",
+                "freq": "1070.9"
+              },
+              {
+                "item": "karukuchi",
+                "type": "repair:fuzzy",
+                "adj": "22.7835",
+                "freq": "720.4"
+              },
+              {
+                "item": "kurukuru",
+                "type": "repair:fuzzy",
+                "adj": "42.5900",
+                "freq": "100.2"
+              }
+            ],
+            "winner": {
+              "item": "kiraku",
+              "type": "repair:fuzzy",
+              "distance": 0.14285714285714285,
+              "freqScore": 1070.9291666666668,
+              "adjustedScore": 3.760803219574889,
+              "semanticBoost": 0,
+              "finalScore": 3.760803219574889
+            }
+          }
+        },
+        {
+          "reason": "exact",
+          "input": "nado",
+          "output": "nado",
+          "meta": {
+            "candidates": [
+              {
+                "item": "nado",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 350.2,
+                "adjustedScore": -14.008,
+                "semanticBoost": 0,
+                "finalScore": -14.008
+              },
+              {
+                "item": "nado",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 350.2,
+                "adjustedScore": 5.992000000000001,
+                "semanticBoost": 0,
+                "finalScore": 5.992000000000001
+              },
+              {
+                "item": "unadon",
+                "type": "aggressive:fuzzy",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 120.73708763999663,
+                "semanticBoost": 0,
+                "finalScore": 120.73708763999663
+              }
+            ],
+            "competition": [
+              {
+                "item": "nado",
+                "type": "exact",
+                "adj": "-14.0080",
+                "freq": "350.2"
+              },
+              {
+                "item": "nado",
+                "type": "fuzzy",
+                "adj": "5.9920",
+                "freq": "350.2"
+              },
+              {
+                "item": "unadon",
+                "type": "aggressive:fuzzy",
+                "adj": "120.7371",
+                "freq": "1.0"
+              }
+            ],
+            "winner": {
+              "item": "nado",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 350.2,
+              "adjustedScore": -14.008,
+              "semanticBoost": 0,
+              "finalScore": -14.008
+            }
+          }
+        },
+        {
+          "reason": "passthrough",
+          "input": "sesshushiteimasu",
+          "output": "sesshushiteimasu"
+        },
+        {
+          "reason": "particle",
+          "input": "ka",
+          "output": "ka",
+          "meta": {
+            "kana": "か"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.913,
+          "semanticScore": 0.8412,
+          "romaji": "kokain",
+          "kana": "コカイン",
+          "kanji": "古加涅",
+          "domain": "",
+          "meanings": [
+            "cocaine"
+          ],
+          "tags": [
+            "gai1",
+            "uk"
+          ],
+          "frequency": 0.2
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.8044,
+          "romaji": "kudasai",
+          "kana": "ください",
+          "kanji": "下さい",
+          "meanings": [
+            "please give me",
+            "please do for me"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- term: 古加涅\n  reading: コカイン / kokain\n  meaning: cocaine\n  type: n\n  tags: gai1, uk\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 下さい  (ください / kudasai)\n  nuance: please give me, please do for me",
+      "prompt": "TASK: Translate the following Japanese romaji into natural English. The speaker is a Japanese patient or person talking directly. You are their voice.\n\nRULES:\n- Translate LITERALLY and EXACTLY — do not summarise, do not infer diagnosis.\n- ALWAYS write in the FIRST PERSON: \"I have...\", \"I feel...\", \"I can't...\", \"Hello, I...\"\n- NEVER use third-person: NEVER write \"The patient...\", \"They report...\", \"The speaker...\"\n- Handle ALL language — greetings, everyday phrases, and medical symptoms equally.\n- CRITICAL: The input Japanese may be highly fragmented, ungrammatical, or missing particles (e.g. \"tsukare ga kanji\" => \"I feel tired\"). Reconstruct the natural meaning using standard Japanese grammar.\n- Correct romaji misspellings silently (e.g. \"zutsu\" → headache, \"atmaa\" → atama = head).\n- If unclear, translate conservatively. NEVER invent medical symptoms, medications, or meanings that are not explicitly present in the input. If a word looks like a symptom but doesn't make sense in context, treat it as general speech.\n- Output ONLY the English translation — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no known allergies.\n\nInput: zutsuu hidoi\nOutput: My headache is really bad.\n\nInput: ahsi ga zutsuu de atama mo itai\nOutput: My leg hurts and my head hurts too.\n\nInput: zutsuu ga hidoi sugite ugokenai\nOutput: My headache is so bad I can't move.\n\nInput: konnichiwa genki sou de naniyori desu ne\nOutput: Hello, you look well, I'm glad to see that.\n\nInput: shinbun wo yondari miru koto shuuchuu dekimasen\nOutput: I can't concentrate when reading the newspaper or watching things.\n\nInput: hiza wo mageyou to suru toki ni kowabari wo kanjimasu ka\nOutput: Do you feel stiffness when you try to bend your knee?\n\nInput: hayai dankai de mitsukatta\nOutput: It was found at an early stage.\n\nNOW TRANSLATE:\n\nMEDICAL GLOSSARY HINTS:\n- term: 古加涅\n  reading: コカイン / kokain\n  meaning: cocaine\n  type: n\n  tags: gai1, uk\n\nSPEECH PATTERN CONTEXT (pragmatic cue — use to capture tone, not as a term to translate):\n- pattern: 下さい  (ください / kudasai)\n  nuance: please give me, please do for me\nInput: marifuana kokain kiraku nado sesshushiteimasu ka\nOutput: /no_think",
+      "llmOutput": "Do you use methamphetamine, cocaine, or similar substances?",
+      "durationMs": 21068,
+      "error": null
+    },
+    {
+      "id": "case-05-knee-stiffness",
+      "label": "Greetings + physical exam (knee stiffness)",
+      "input": "JAP: konichika genki sou de naniyoridesune. suzugo hisa wo mageyou to suru toki ni kowabari wo kanjimasu ka",
+      "direction": null,
+      "preprocessedInput": null,
+      "tokens": [],
+      "ragHits": [],
+      "toneHits": [],
+      "glossaryInjected": "",
+      "prompt": null,
+      "llmOutput": null,
+      "durationMs": 3389,
+      "error": "Cannot read properties of undefined (reading 'item')"
+    }
+  ]
+}

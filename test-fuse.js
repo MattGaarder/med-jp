@@ -1,7 +1,17 @@
-import { vocabIndex } from './src/preprocessor.js';
 
-const medicalVocab = vocabIndex.filter(v => v.type === 'medical').map(v => v.romaji);
-const suffixRegex = /(?:masu|mashita|masen|mashou|desu|teiru|teimasu|nakatta|nakute|nai|tai|kute|rareru|saseru|sugiru)$/;
+import Fuse from 'fuse.js';
 
-const conflicts = medicalVocab.filter(w => suffixRegex.test(w));
-console.log('Medical words ending in common suffixes:', conflicts);
+const list = [
+  { romaji: 'hisan' },
+  { romaji: 'hiza' }
+];
+
+const fuse = new Fuse(list, { 
+  keys: ['romaji'],
+  includeScore: true, 
+  threshold: 0.5, 
+  distance: 50 
+});
+const res = fuse.search('hisa');
+
+console.log(JSON.stringify(res, null, 2));

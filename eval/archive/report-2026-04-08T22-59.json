@@ -1,0 +1,2838 @@
+{
+  "meta": {
+    "timestamp": "2026-04-08T22:59:11.868Z",
+    "skipLLM": true,
+    "totalMs": 14222
+  },
+  "results": [
+    {
+      "id": "case-01-appetite",
+      "label": "Fragmented appetite & medication request",
+      "input": "JAP: wakatta waktta jya sono kusuri o kudasi ima ni mo watashi ni mo kigata no nai desu kara",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "wakatta wakatta jya sono kusuri wo kudari ima ni mo watashi ni mo kigata no ない desu から",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "わかった",
+          "input": "わかった",
+          "output": "wakatta",
+          "base": "wakaru",
+          "meaning": "to understand",
+          "grammar_tags": [
+            "Past tense"
+          ],
+          "decision": "deinflect:wakaru",
+          "meta": {
+            "candidates": [
+              {
+                "item": "wakatta",
+                "root": "wakaru",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 1510.4375,
+                "adjustedScore": 0.984895625,
+                "breakdown": "(B:25 + D:16.0 - F:25.0 + S:-15)",
+                "meaning": "to understand",
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9
+                },
+                "semanticBoost": 0,
+                "finalScore": 0.984895625
+              },
+              {
+                "item": "wakatta",
+                "root": "wakatsu",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 970.8291666666667,
+                "adjustedScore": 15.990291708333332,
+                "breakdown": "(B:25 + D:16.0 - F:25.0)",
+                "meaning": "to divide",
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9
+                },
+                "semanticBoost": 0,
+                "finalScore": 15.990291708333332
+              },
+              {
+                "item": "kuwawattakoryou",
+                "type": "fuzzy",
+                "distance": 0.18285714285714286,
+                "freqScore": 1,
+                "adjustedScore": 81.23719133923686,
+                "breakdown": "(B:10 + D:31.3 + L:40 - F:0.0 + U:0)",
+                "meaning": "offered load",
+                "semanticBoost": 0,
+                "finalScore": 81.23719133923686
+              }
+            ],
+            "competition": [
+              {
+                "item": "wakatta(->wakaru)",
+                "type": "deinflect",
+                "adj": "0.9849"
+              },
+              {
+                "item": "wakatta(->wakatsu)",
+                "type": "deinflect",
+                "adj": "15.9903"
+              },
+              {
+                "item": "kuwawattakoryou",
+                "type": "fuzzy",
+                "adj": "81.2372"
+              }
+            ],
+            "reasons": [
+              [
+                17
+              ]
+            ],
+            "type": 2,
+            "ruleWeight": 0.9,
+            "winner": {
+              "item": "wakatta",
+              "root": "wakaru",
+              "type": "deinflect",
+              "distance": 0.04,
+              "freqScore": 1510.4375,
+              "adjustedScore": 0.984895625,
+              "breakdown": "(B:25 + D:16.0 - F:25.0 + S:-15)",
+              "meaning": "to understand",
+              "meta": {
+                "reasons": [
+                  [
+                    17
+                  ]
+                ],
+                "type": 2,
+                "ruleWeight": 0.9
+              },
+              "semanticBoost": 0,
+              "finalScore": 0.984895625
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "type": "text",
+          "surface": "わkった",
+          "input": "わkった",
+          "output": "wakatta",
+          "base": "wakaru",
+          "meaning": "to understand",
+          "grammar_tags": [
+            "Past tense"
+          ],
+          "decision": "deinflect:repair:wakaru",
+          "meta": {
+            "candidates": [
+              {
+                "item": "wakatta",
+                "root": "wakaru",
+                "type": "deinflect:repair",
+                "distance": 0.04,
+                "freqScore": 1510.4375,
+                "adjustedScore": 0.984895625,
+                "breakdown": "(B:25 + D:16.0 - F:25.0 + S:-15)",
+                "meaning": "to understand",
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9
+                },
+                "semanticBoost": 0,
+                "finalScore": 0.984895625
+              },
+              {
+                "item": "wakatta",
+                "root": "wakatsu",
+                "type": "deinflect:repair",
+                "distance": 0.04,
+                "freqScore": 970.8291666666667,
+                "adjustedScore": 15.990291708333332,
+                "breakdown": "(B:25 + D:16.0 - F:25.0)",
+                "meaning": "to divide",
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9
+                },
+                "semanticBoost": 0,
+                "finalScore": 15.990291708333332
+              },
+              {
+                "item": "kuwawattakoryou",
+                "type": "fuzzy:repair",
+                "distance": 0.18285714285714286,
+                "freqScore": 1,
+                "adjustedScore": 101.23719133923686,
+                "breakdown": "(B:30 + D:31.3 + L:40 - F:0.0 + U:0)",
+                "meaning": "offered load",
+                "semanticBoost": 0,
+                "finalScore": 101.23719133923686
+              }
+            ],
+            "competition": [
+              {
+                "item": "wakatta(->wakaru)",
+                "type": "deinflect:repair",
+                "adj": "0.9849"
+              },
+              {
+                "item": "wakatta(->wakatsu)",
+                "type": "deinflect:repair",
+                "adj": "15.9903"
+              },
+              {
+                "item": "kuwawattakoryou",
+                "type": "fuzzy:repair",
+                "adj": "101.2372"
+              }
+            ],
+            "reasons": [
+              [
+                17
+              ]
+            ],
+            "type": 2,
+            "ruleWeight": 0.9,
+            "winner": {
+              "item": "wakatta",
+              "root": "wakaru",
+              "type": "deinflect:repair",
+              "distance": 0.04,
+              "freqScore": 1510.4375,
+              "adjustedScore": 0.984895625,
+              "breakdown": "(B:25 + D:16.0 - F:25.0 + S:-15)",
+              "meaning": "to understand",
+              "meta": {
+                "reasons": [
+                  [
+                    17
+                  ]
+                ],
+                "type": 2,
+                "ruleWeight": 0.9
+              },
+              "semanticBoost": 0,
+              "finalScore": 0.984895625
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "type": "text",
+          "surface": "じゃ",
+          "input": "じゃ",
+          "output": "jya",
+          "base": "jya",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough:low_confidence",
+          "meta": {
+            "candidates": []
+          }
+        },
+        {
+          "type": "text",
+          "surface": "その",
+          "input": "その",
+          "output": "sono",
+          "base": "sono",
+          "meaning": "that",
+          "grammar_tags": [],
+          "decision": "exact",
+          "meta": {
+            "candidates": [
+              {
+                "item": "sono",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 750.2,
+                "adjustedScore": -40.007502,
+                "meaning": "that",
+                "semanticBoost": -15,
+                "finalScore": -55.007502
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 750.2,
+                "adjustedScore": -30.007502,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0 + S:-15)",
+                "meaning": "that",
+                "semanticBoost": -15,
+                "finalScore": -45.007502
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 750.2,
+                "adjustedScore": -30.007502,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0 + S:-15)",
+                "meaning": "that",
+                "semanticBoost": -15,
+                "finalScore": -45.007502
+              },
+              {
+                "item": "sonoyou",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 750.2,
+                "adjustedScore": -13.415073317786012,
+                "breakdown": "(B:10 + D:1.6 + L:15 - F:25.0 + U:0 + S:-15)",
+                "meaning": "that kind of",
+                "semanticBoost": -15,
+                "finalScore": -28.41507331778601
+              },
+              {
+                "item": "sono",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1111,
+                "adjustedScore": -25.01111,
+                "meaning": "garden",
+                "semanticBoost": 0,
+                "finalScore": -25.01111
+              },
+              {
+                "item": "sonohen",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 500.2,
+                "adjustedScore": -8.42057331778601,
+                "breakdown": "(B:10 + D:1.6 + L:15 - F:20.0 + U:0 + S:-15)",
+                "meaning": "around there",
+                "semanticBoost": -15,
+                "finalScore": -23.42057331778601
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1111,
+                "adjustedScore": -15.01111,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "garden",
+                "semanticBoost": 0,
+                "finalScore": -15.01111
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1111,
+                "adjustedScore": -15.01111,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "garden",
+                "semanticBoost": 0,
+                "finalScore": -15.01111
+              },
+              {
+                "item": "sonohoka",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 600.3,
+                "adjustedScore": -7.425574317786008,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:24.0 + U:0 + S:-15)",
+                "meaning": "the rest",
+                "semanticBoost": 0,
+                "finalScore": -7.425574317786008
+              },
+              {
+                "item": "sonouchini",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 750.2,
+                "adjustedScore": 1.584926682213992,
+                "breakdown": "(B:10 + D:1.6 + L:30 - F:25.0 + U:0 + S:-15)",
+                "meaning": "before very long",
+                "semanticBoost": 0,
+                "finalScore": 1.584926682213992
+              },
+              {
+                "item": "sonomama",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 350.2,
+                "adjustedScore": 17.58092668221399,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:14.0 + U:0)",
+                "meaning": "without change",
+                "semanticBoost": -15,
+                "finalScore": 2.5809266822139882
+              },
+              {
+                "item": "sonouchi",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 350.2,
+                "adjustedScore": 17.58092668221399,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:14.0 + U:0)",
+                "meaning": "before very long",
+                "semanticBoost": 0,
+                "finalScore": 17.58092668221399
+              },
+              {
+                "item": "sonomono",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 350.2,
+                "adjustedScore": 17.58092668221399,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:14.0 + U:0)",
+                "meaning": "the very thing",
+                "semanticBoost": 0,
+                "finalScore": 17.58092668221399
+              },
+              {
+                "item": "sonoue",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 17.58342668221399,
+                "breakdown": "(B:10 + D:1.6 + L:10 - F:4.0 + U:0)",
+                "meaning": "in addition",
+                "semanticBoost": 0,
+                "finalScore": 17.58342668221399
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 750.2,
+                "adjustedScore": 45.769585639996635,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:25.0 + U:0 + S:-15)",
+                "meaning": "that",
+                "semanticBoost": -15,
+                "finalScore": 30.769585639996635
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 750.2,
+                "adjustedScore": 45.769585639996635,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:25.0 + U:0 + S:-15)",
+                "meaning": "that",
+                "semanticBoost": -15,
+                "finalScore": 30.769585639996635
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 750.2,
+                "adjustedScore": 45.769585639996635,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:25.0 + U:0 + S:-15)",
+                "meaning": "that",
+                "semanticBoost": -15,
+                "finalScore": 30.769585639996635
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 750.2,
+                "adjustedScore": 45.769585639996635,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:25.0 + U:0 + S:-15)",
+                "meaning": "that",
+                "semanticBoost": -15,
+                "finalScore": 30.769585639996635
+              },
+              {
+                "item": "honno",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1381,
+                "adjustedScore": 55.76327763999664,
+                "breakdown": "(B:45 + D:35.8 + L:0 - F:25.0 + U:0)",
+                "meaning": "mere",
+                "semanticBoost": 0,
+                "finalScore": 55.76327763999664
+              },
+              {
+                "item": "honnori",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 500.2,
+                "adjustedScore": 55.764085639996644,
+                "breakdown": "(B:45 + D:35.8 + L:10 - F:20.0 + U:0 + S:-15)",
+                "meaning": "slightly",
+                "semanticBoost": 0,
+                "finalScore": 55.764085639996644
+              },
+              {
+                "item": "sonohoka",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 600.3,
+                "adjustedScore": 56.75908463999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:24.0 + U:0 + S:-15)",
+                "meaning": "the rest",
+                "semanticBoost": 0,
+                "finalScore": 56.75908463999664
+              },
+              {
+                "item": "sonohoka",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 600.3,
+                "adjustedScore": 56.75908463999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:24.0 + U:0 + S:-15)",
+                "meaning": "the rest",
+                "semanticBoost": 0,
+                "finalScore": 56.75908463999664
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1111,
+                "adjustedScore": 60.765977639996635,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:25.0 + U:0)",
+                "meaning": "garden",
+                "semanticBoost": 0,
+                "finalScore": 60.765977639996635
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1111,
+                "adjustedScore": 60.765977639996635,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:25.0 + U:0)",
+                "meaning": "garden",
+                "semanticBoost": 0,
+                "finalScore": 60.765977639996635
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1111,
+                "adjustedScore": 60.765977639996635,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:25.0 + U:0)",
+                "meaning": "garden",
+                "semanticBoost": 0,
+                "finalScore": 60.765977639996635
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1111,
+                "adjustedScore": 60.765977639996635,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:25.0 + U:0)",
+                "meaning": "garden",
+                "semanticBoost": 0,
+                "finalScore": 60.765977639996635
+              },
+              {
+                "item": "susono",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 600.1125,
+                "adjustedScore": 61.766586514996646,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:24.0 + U:0)",
+                "meaning": "foot of a mountain",
+                "semanticBoost": 0,
+                "finalScore": 61.766586514996646
+              },
+              {
+                "item": "sonomama",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 350.2,
+                "adjustedScore": 81.76558563999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:14.0 + U:0)",
+                "meaning": "without change",
+                "semanticBoost": -15,
+                "finalScore": 66.76558563999664
+              },
+              {
+                "item": "issonokoto",
+                "type": "fuzzy:doubling",
+                "distance": 0.02,
+                "freqScore": 300.15,
+                "adjustedScore": 75.48479168309245,
+                "breakdown": "(B:45 + D:17.5 + L:25 - F:12.0 + U:0)",
+                "meaning": "rather",
+                "semanticBoost": 0,
+                "finalScore": 75.48479168309245
+              },
+              {
+                "item": "sonna",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 76.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:0 - F:4.0 + U:0)",
+                "meaning": "such",
+                "semanticBoost": 0,
+                "finalScore": 76.76808563999664
+              },
+              {
+                "item": "sonouchi",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 350.2,
+                "adjustedScore": 81.76558563999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:14.0 + U:0)",
+                "meaning": "before very long",
+                "semanticBoost": 0,
+                "finalScore": 81.76558563999664
+              },
+              {
+                "item": "sonomono",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 350.2,
+                "adjustedScore": 81.76558563999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:14.0 + U:0)",
+                "meaning": "the very thing",
+                "semanticBoost": 0,
+                "finalScore": 81.76558563999664
+              },
+              {
+                "item": "sonouchi",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 350.2,
+                "adjustedScore": 81.76558563999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:14.0 + U:0)",
+                "meaning": "before very long",
+                "semanticBoost": 0,
+                "finalScore": 81.76558563999664
+              },
+              {
+                "item": "sonoue",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 81.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:4.0 + U:0)",
+                "meaning": "in addition",
+                "semanticBoost": 0,
+                "finalScore": 81.76808563999664
+              },
+              {
+                "item": "sonoue",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 81.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:4.0 + U:0)",
+                "meaning": "in addition",
+                "semanticBoost": 0,
+                "finalScore": 81.76808563999664
+              },
+              {
+                "item": "sannoze",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 86.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:10 - F:4.0 + U:0)",
+                "meaning": "San Jose",
+                "semanticBoost": 0,
+                "finalScore": 86.76808563999664
+              },
+              {
+                "item": "sosonokasu",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 350.2,
+                "adjustedScore": 91.76558563999664,
+                "breakdown": "(B:45 + D:35.8 + L:25 - F:14.0 + U:0)",
+                "meaning": "to instigate",
+                "semanticBoost": 0,
+                "finalScore": 91.76558563999664
+              },
+              {
+                "item": "uirukokusonnofugoujun'ikentei",
+                "type": "fuzzy:doubling",
+                "distance": 0.16,
+                "freqScore": 1,
+                "adjustedScore": 190.55999,
+                "breakdown": "(B:45 + D:25.6 + L:120 - F:0.0 + U:0)",
+                "meaning": "Wilcoxon signed-rank test",
+                "semanticBoost": 0,
+                "finalScore": 190.55999
+              }
+            ],
+            "competition": [
+              {
+                "item": "sono",
+                "type": "exact",
+                "adj": "-40.0075"
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy",
+                "adj": "-30.0075"
+              },
+              {
+                "item": "sono",
+                "type": "fuzzy",
+                "adj": "-30.0075"
+              }
+            ],
+            "winner": {
+              "item": "sono",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 750.2,
+              "adjustedScore": -40.007502,
+              "meaning": "that",
+              "semanticBoost": -15,
+              "finalScore": -55.007502
+            },
+            "semanticBoost": -15,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "type": "text",
+          "surface": "くすり",
+          "input": "くすり",
+          "output": "kusuri",
+          "base": "kusuri",
+          "meaning": "medicine",
+          "grammar_tags": [],
+          "decision": "exact",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kusuri",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1161,
+                "adjustedScore": -25.01161,
+                "meaning": "medicine",
+                "semanticBoost": -15,
+                "finalScore": -40.011610000000005
+              },
+              {
+                "item": "kusuri",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1161,
+                "adjustedScore": -15.01161,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "medicine",
+                "semanticBoost": -15,
+                "finalScore": -30.011609999999997
+              },
+              {
+                "item": "kusuridai",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 620.1541666666667,
+                "adjustedScore": 1.780060473880652,
+                "breakdown": "(B:10 + D:1.6 + L:15 - F:24.8 + U:0)",
+                "meaning": "charge for medicine",
+                "semanticBoost": -15,
+                "finalScore": -13.219939526119347
+              },
+              {
+                "item": "kusuriyubi",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 770.3583333333333,
+                "adjustedScore": 6.584725098880655,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:25.0 + U:0)",
+                "meaning": "ring finger",
+                "semanticBoost": 0,
+                "finalScore": 6.584725098880655
+              },
+              {
+                "item": "kusari",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1000.7833333333333,
+                "adjustedScore": 12.206544864257538,
+                "breakdown": "(B:10 + D:27.2 + L:0 - F:25.0 + U:0)",
+                "meaning": "chain",
+                "semanticBoost": 0,
+                "finalScore": 12.206544864257538
+              },
+              {
+                "item": "kusari",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1000.7833333333333,
+                "adjustedScore": 12.206544864257538,
+                "breakdown": "(B:10 + D:27.2 + L:0 - F:25.0 + U:0)",
+                "meaning": "chain",
+                "semanticBoost": 0,
+                "finalScore": 12.206544864257538
+              },
+              {
+                "item": "kusari",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 690.3,
+                "adjustedScore": 12.209649697590871,
+                "breakdown": "(B:10 + D:27.2 + L:0 - F:25.0 + U:0)",
+                "meaning": "rottenness",
+                "semanticBoost": 0,
+                "finalScore": 12.209649697590871
+              },
+              {
+                "item": "kusari",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 690.3,
+                "adjustedScore": 12.209649697590871,
+                "breakdown": "(B:10 + D:27.2 + L:0 - F:25.0 + U:0)",
+                "meaning": "rottenness",
+                "semanticBoost": 0,
+                "finalScore": 12.209649697590871
+              },
+              {
+                "item": "kusari",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 250.1,
+                "adjustedScore": 27.210051697590874,
+                "breakdown": "(B:10 + D:27.2 + L:0 - F:10.0 + U:0)",
+                "meaning": "passage",
+                "semanticBoost": 0,
+                "finalScore": 27.210051697590874
+              },
+              {
+                "item": "kusari",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 250.1,
+                "adjustedScore": 27.210051697590874,
+                "breakdown": "(B:10 + D:27.2 + L:0 - F:10.0 + U:0)",
+                "meaning": "passage",
+                "semanticBoost": 0,
+                "finalScore": 27.210051697590874
+              },
+              {
+                "item": "kusuri",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 1161,
+                "adjustedScore": 46.58635988624156,
+                "breakdown": "(B:45 + D:21.6 + L:5 - F:25.0 + U:0)",
+                "meaning": "medicine",
+                "semanticBoost": -15,
+                "finalScore": 31.58635988624156
+              },
+              {
+                "item": "kusuri",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 1161,
+                "adjustedScore": 46.58635988624156,
+                "breakdown": "(B:45 + D:21.6 + L:5 - F:25.0 + U:0)",
+                "meaning": "medicine",
+                "semanticBoost": -15,
+                "finalScore": 31.58635988624156
+              },
+              {
+                "item": "kusuri",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 1161,
+                "adjustedScore": 46.58635988624156,
+                "breakdown": "(B:45 + D:21.6 + L:5 - F:25.0 + U:0)",
+                "meaning": "medicine",
+                "semanticBoost": -15,
+                "finalScore": 31.58635988624156
+              },
+              {
+                "item": "kusuridai",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 620.1541666666667,
+                "adjustedScore": 51.78560167790822,
+                "breakdown": "(B:45 + D:21.6 + L:10 - F:24.8 + U:0)",
+                "meaning": "charge for medicine",
+                "semanticBoost": -15,
+                "finalScore": 36.78560167790822
+              },
+              {
+                "item": "kusuridai",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 620.1541666666667,
+                "adjustedScore": 51.78560167790822,
+                "breakdown": "(B:45 + D:21.6 + L:10 - F:24.8 + U:0)",
+                "meaning": "charge for medicine",
+                "semanticBoost": -15,
+                "finalScore": 36.78560167790822
+              },
+              {
+                "item": "kusuridai",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 620.1541666666667,
+                "adjustedScore": 51.78560167790822,
+                "breakdown": "(B:45 + D:21.6 + L:10 - F:24.8 + U:0)",
+                "meaning": "charge for medicine",
+                "semanticBoost": -15,
+                "finalScore": 36.78560167790822
+              },
+              {
+                "item": "kussuru",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 730.3833333333333,
+                "adjustedScore": 41.590666052908226,
+                "breakdown": "(B:45 + D:21.6 + L:0 - F:25.0 + U:0)",
+                "meaning": "to yield",
+                "semanticBoost": 0,
+                "finalScore": 41.590666052908226
+              },
+              {
+                "item": "kusuriyubi",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 770.3583333333333,
+                "adjustedScore": 56.590266302908226,
+                "breakdown": "(B:45 + D:21.6 + L:15 - F:25.0 + U:0)",
+                "meaning": "ring finger",
+                "semanticBoost": 0,
+                "finalScore": 56.590266302908226
+              },
+              {
+                "item": "kusuriyubi",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 770.3583333333333,
+                "adjustedScore": 56.590266302908226,
+                "breakdown": "(B:45 + D:21.6 + L:15 - F:25.0 + U:0)",
+                "meaning": "ring finger",
+                "semanticBoost": 0,
+                "finalScore": 56.590266302908226
+              },
+              {
+                "item": "kusuriyubi",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 770.3583333333333,
+                "adjustedScore": 56.590266302908226,
+                "breakdown": "(B:45 + D:21.6 + L:15 - F:25.0 + U:0)",
+                "meaning": "ring finger",
+                "semanticBoost": 0,
+                "finalScore": 56.590266302908226
+              },
+              {
+                "item": "kuuringuofu",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 100.2,
+                "adjustedScore": 58.20755069759087,
+                "breakdown": "(B:10 + D:27.2 + L:25 - F:4.0 + U:0)",
+                "meaning": "cooling-off period",
+                "semanticBoost": 0,
+                "finalScore": 58.20755069759087
+              },
+              {
+                "item": "gussuri",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 62.588967886241555,
+                "breakdown": "(B:45 + D:21.6 + L:0 - F:4.0 + U:0)",
+                "meaning": "soundly sleeping",
+                "semanticBoost": 0,
+                "finalScore": 62.588967886241555
+              },
+              {
+                "item": "kuuringufuan",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 67.17654269759086,
+                "breakdown": "(B:10 + D:27.2 + L:30 - F:0.0 + U:0)",
+                "meaning": "cooling fan",
+                "semanticBoost": 0,
+                "finalScore": 67.17654269759086
+              },
+              {
+                "item": "matorikkusurikigaku",
+                "type": "fuzzy",
+                "distance": 0.14,
+                "freqScore": 1,
+                "adjustedScore": 95.91327136593407,
+                "breakdown": "(B:10 + D:21.0 + L:65 - F:0.0 + U:0)",
+                "meaning": "matrix mechanics",
+                "semanticBoost": 0,
+                "finalScore": 95.91327136593407
+              },
+              {
+                "item": "matorikkusurikigaku",
+                "type": "fuzzy:doubling",
+                "distance": 0.12,
+                "freqScore": 1,
+                "adjustedScore": 121.58767775266121,
+                "breakdown": "(B:45 + D:16.6 + L:60 - F:0.0 + U:0)",
+                "meaning": "matrix mechanics",
+                "semanticBoost": 0,
+                "finalScore": 121.58767775266121
+              }
+            ],
+            "competition": [
+              {
+                "item": "kusuri",
+                "type": "exact",
+                "adj": "-25.0116"
+              },
+              {
+                "item": "kusuri",
+                "type": "fuzzy",
+                "adj": "-15.0116"
+              },
+              {
+                "item": "kusuridai",
+                "type": "fuzzy",
+                "adj": "1.7801"
+              }
+            ],
+            "winner": {
+              "item": "kusuri",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1161,
+              "adjustedScore": -25.01161,
+              "meaning": "medicine",
+              "semanticBoost": -15,
+              "finalScore": -40.011610000000005
+            },
+            "semanticBoost": -15,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "type": "text",
+          "surface": "お",
+          "input": "お",
+          "output": "wo",
+          "base": "wo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "kana": "を"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "くだし",
+          "input": "くだし",
+          "output": "kudari",
+          "base": "kudari",
+          "meaning": "down-train",
+          "grammar_tags": [],
+          "decision": "fuzzy",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kudari",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1121,
+                "adjustedScore": 12.20534269759087,
+                "breakdown": "(B:10 + D:27.2 + L:0 - F:25.0 + U:0)",
+                "meaning": "down-train",
+                "semanticBoost": 0,
+                "finalScore": 12.20534269759087
+              },
+              {
+                "item": "kudasu",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 760.3375,
+                "adjustedScore": 12.20894932259087,
+                "breakdown": "(B:10 + D:27.2 + L:0 - F:25.0 + U:0)",
+                "meaning": "to make a decision",
+                "semanticBoost": 0,
+                "finalScore": 12.20894932259087
+              },
+              {
+                "item": "kudasi",
+                "root": "kudasu",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 760.3375,
+                "adjustedScore": 15.992396625,
+                "breakdown": "(B:25 + D:16.0 - F:25.0)",
+                "meaning": "to make a decision",
+                "meta": {
+                  "reasons": [
+                    [
+                      28
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.01
+                },
+                "semanticBoost": 0,
+                "finalScore": 15.992396625
+              },
+              {
+                "item": "kudasai",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1470.8291666666667,
+                "adjustedScore": 17.201844405924202,
+                "breakdown": "(B:10 + D:27.2 + L:5 - F:25.0 + U:0)",
+                "meaning": "please give me",
+                "semanticBoost": 0,
+                "finalScore": 17.201844405924202
+              },
+              {
+                "item": "kudashi",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 770.4666666666667,
+                "adjustedScore": 17.208848030924205,
+                "breakdown": "(B:10 + D:27.2 + L:5 - F:25.0 + U:0)",
+                "meaning": "evacuation",
+                "semanticBoost": 0,
+                "finalScore": 17.208848030924205
+              },
+              {
+                "item": "kudasaru",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1520.825,
+                "adjustedScore": 22.20134444759087,
+                "breakdown": "(B:10 + D:27.2 + L:10 - F:25.0 + U:0)",
+                "meaning": "to give",
+                "semanticBoost": 0,
+                "finalScore": 22.20134444759087
+              },
+              {
+                "item": "kudari",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 250.1,
+                "adjustedScore": 27.210051697590874,
+                "breakdown": "(B:10 + D:27.2 + L:0 - F:10.0 + U:0)",
+                "meaning": "passage",
+                "semanticBoost": 0,
+                "finalScore": 27.210051697590874
+              },
+              {
+                "item": "kudarizaka",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 870.6208333333333,
+                "adjustedScore": 32.207846489257534,
+                "breakdown": "(B:10 + D:27.2 + L:20 - F:25.0 + U:0)",
+                "meaning": "downhill",
+                "semanticBoost": 0,
+                "finalScore": 32.207846489257534
+              },
+              {
+                "item": "kudasai",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 1470.8291666666667,
+                "adjustedScore": 41.58326159457489,
+                "breakdown": "(B:45 + D:21.6 + L:0 - F:25.0 + U:0)",
+                "meaning": "please give me",
+                "semanticBoost": 0,
+                "finalScore": 41.58326159457489
+              },
+              {
+                "item": "kudashi",
+                "type": "fuzzy:doubling",
+                "distance": 0.14285714285714285,
+                "freqScore": 770.4666666666667,
+                "adjustedScore": 41.59026521957489,
+                "breakdown": "(B:45 + D:21.6 + L:0 - F:25.0 + U:0)",
+                "meaning": "evacuation",
+                "semanticBoost": 0,
+                "finalScore": 41.59026521957489
+              },
+              {
+                "item": "kudariressha",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 700.3208333333333,
+                "adjustedScore": 42.20954948925754,
+                "breakdown": "(B:10 + D:27.2 + L:30 - F:25.0 + U:0)",
+                "meaning": "down-train",
+                "semanticBoost": 0,
+                "finalScore": 42.20954948925754
+              },
+              {
+                "item": "kudashi",
+                "type": "normalized",
+                "distance": 0,
+                "freqScore": 770.4666666666667,
+                "adjustedScore": 54.99229533333333,
+                "meaning": "evacuation",
+                "semanticBoost": 0,
+                "finalScore": 54.99229533333333
+              },
+              {
+                "item": "kudaririnku",
+                "type": "fuzzy",
+                "distance": 0.16666666666666666,
+                "freqScore": 1,
+                "adjustedScore": 62.17654269759087,
+                "breakdown": "(B:10 + D:27.2 + L:25 - F:0.0 + U:0)",
+                "meaning": "forward link",
+                "semanticBoost": 0,
+                "finalScore": 62.17654269759087
+              },
+              {
+                "item": "kudashi",
+                "type": "aggressive:fuzzy",
+                "distance": 0,
+                "freqScore": 770.4666666666667,
+                "adjustedScore": 64.99229533333333,
+                "breakdown": "(B:90 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "evacuation",
+                "semanticBoost": 0,
+                "finalScore": 64.99229533333333
+              },
+              {
+                "item": "kudashi",
+                "root": "kudasu",
+                "type": "aggressive:deinflect",
+                "distance": 0.04,
+                "freqScore": 760.3375,
+                "adjustedScore": 70.992396625,
+                "breakdown": "(B:80 + D:16.0 - F:25.0)",
+                "meaning": "to make a decision",
+                "meta": {
+                  "reasons": [
+                    [
+                      28
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.01
+                },
+                "semanticBoost": 0,
+                "finalScore": 70.992396625
+              },
+              {
+                "item": "kurashi",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1161,
+                "adjustedScore": 86.58635988624155,
+                "breakdown": "(B:90 + D:21.6 + L:0 - F:25.0 + U:0)",
+                "meaning": "way of life",
+                "semanticBoost": -15,
+                "finalScore": 71.58635988624155
+              },
+              {
+                "item": "kuyashii",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 880.5875,
+                "adjustedScore": 91.58916401124156,
+                "breakdown": "(B:90 + D:21.6 + L:5 - F:25.0 + U:0)",
+                "meaning": "frustrated over a failure, humiliation or injustice",
+                "semanticBoost": -15,
+                "finalScore": 76.58916401124156
+              },
+              {
+                "item": "kudasai",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1470.8291666666667,
+                "adjustedScore": 86.58326159457489,
+                "breakdown": "(B:90 + D:21.6 + L:0 - F:25.0 + U:0)",
+                "meaning": "please give me",
+                "semanticBoost": 0,
+                "finalScore": 86.58326159457489
+              },
+              {
+                "item": "kurashikku",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 700.4,
+                "adjustedScore": 86.59096588624156,
+                "breakdown": "(B:90 + D:21.6 + L:15 - F:25.0 + U:0 + S:-15)",
+                "meaning": "classical music",
+                "semanticBoost": 0,
+                "finalScore": 86.59096588624156
+              },
+              {
+                "item": "kuwashii",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1131,
+                "adjustedScore": 91.58665988624156,
+                "breakdown": "(B:90 + D:21.6 + L:5 - F:25.0 + U:0)",
+                "meaning": "detailed",
+                "semanticBoost": 0,
+                "finalScore": 91.58665988624156
+              },
+              {
+                "item": "kuyashinaki",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1000.8916666666667,
+                "adjustedScore": 106.58796096957491,
+                "breakdown": "(B:90 + D:21.6 + L:20 - F:25.0 + U:0)",
+                "meaning": "crying from vexation",
+                "semanticBoost": -15,
+                "finalScore": 91.58796096957491
+              },
+              {
+                "item": "kurashiki",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 970.8291666666667,
+                "adjustedScore": 96.58826159457489,
+                "breakdown": "(B:90 + D:21.6 + L:10 - F:25.0 + U:0)",
+                "meaning": "Kurashiki city",
+                "semanticBoost": 0,
+                "finalScore": 96.58826159457489
+              },
+              {
+                "item": "kuyashinamida",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 710.3416666666667,
+                "adjustedScore": 116.5908664695749,
+                "breakdown": "(B:90 + D:21.6 + L:30 - F:25.0 + U:0)",
+                "meaning": "tears of regret",
+                "semanticBoost": 0,
+                "finalScore": 116.5908664695749
+              },
+              {
+                "item": "kurashiki",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 1,
+                "adjustedScore": 121.55795988624155,
+                "breakdown": "(B:90 + D:21.6 + L:10 - F:0.0 + U:0)",
+                "meaning": "saddlecloth",
+                "semanticBoost": 0,
+                "finalScore": 121.55795988624155
+              },
+              {
+                "item": "kurashikaru",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 100.2,
+                "adjustedScore": 127.58896788624158,
+                "breakdown": "(B:90 + D:21.6 + L:20 - F:4.0 + U:0)",
+                "meaning": "classical",
+                "semanticBoost": 0,
+                "finalScore": 127.58896788624158
+              }
+            ],
+            "competition": [
+              {
+                "item": "kudari",
+                "type": "fuzzy",
+                "adj": "12.2053"
+              },
+              {
+                "item": "kudasu",
+                "type": "fuzzy",
+                "adj": "12.2089"
+              },
+              {
+                "item": "kudasi(->kudasu)",
+                "type": "deinflect",
+                "adj": "15.9924"
+              }
+            ],
+            "winner": {
+              "item": "kudari",
+              "type": "fuzzy",
+              "distance": 0.16666666666666666,
+              "freqScore": 1121,
+              "adjustedScore": 12.20534269759087,
+              "breakdown": "(B:10 + D:27.2 + L:0 - F:25.0 + U:0)",
+              "meaning": "down-train",
+              "semanticBoost": 0,
+              "finalScore": 12.20534269759087
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "type": "text",
+          "surface": "いま",
+          "input": "いま",
+          "output": "ima",
+          "base": "ima",
+          "meaning": "now",
+          "grammar_tags": [],
+          "decision": "exact",
+          "meta": {
+            "candidates": [
+              {
+                "item": "ima",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1131,
+                "adjustedScore": -25.01131,
+                "meaning": "now",
+                "semanticBoost": 0,
+                "finalScore": -25.01131
+              },
+              {
+                "item": "ima",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1080.95,
+                "adjustedScore": -25.0108095,
+                "meaning": "living room Western style",
+                "semanticBoost": 0,
+                "finalScore": -25.0108095
+              },
+              {
+                "item": "imaichi",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 750.2,
+                "adjustedScore": -8.415073317786012,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:25.0 + U:0 + S:-15)",
+                "meaning": "not quite right",
+                "semanticBoost": -15,
+                "finalScore": -23.41507331778601
+              },
+              {
+                "item": "imaya",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1040.975,
+                "adjustedScore": -3.4179810677860116,
+                "breakdown": "(B:10 + D:1.6 + L:10 - F:25.0 + U:0)",
+                "meaning": "now esp. in contrast to the past",
+                "semanticBoost": -15,
+                "finalScore": -18.417981067786013
+              },
+              {
+                "item": "ima",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1131,
+                "adjustedScore": -15.01131,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "now",
+                "semanticBoost": 0,
+                "finalScore": -15.01131
+              },
+              {
+                "item": "ima",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1131,
+                "adjustedScore": -15.01131,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "now",
+                "semanticBoost": 0,
+                "finalScore": -15.01131
+              },
+              {
+                "item": "ima",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1080.95,
+                "adjustedScore": -15.0108095,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "living room Western style",
+                "semanticBoost": 0,
+                "finalScore": -15.0108095
+              },
+              {
+                "item": "ima",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1080.95,
+                "adjustedScore": -15.0108095,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "living room Western style",
+                "semanticBoost": 0,
+                "finalScore": -15.0108095
+              },
+              {
+                "item": "imani",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 980.7416666666667,
+                "adjustedScore": -3.4173787344526785,
+                "breakdown": "(B:10 + D:1.6 + L:10 - F:25.0 + U:0)",
+                "meaning": "before long",
+                "semanticBoost": 0,
+                "finalScore": -3.4173787344526785
+              },
+              {
+                "item": "imawashii",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 730.3291666666667,
+                "adjustedScore": 16.585125390547326,
+                "breakdown": "(B:10 + D:1.6 + L:30 - F:25.0 + U:0)",
+                "meaning": "abhorrent",
+                "semanticBoost": 0,
+                "finalScore": 16.585125390547326
+              },
+              {
+                "item": "imashimeru",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 790.4,
+                "adjustedScore": 21.584524682213992,
+                "breakdown": "(B:10 + D:1.6 + L:35 - F:25.0 + U:0)",
+                "meaning": "to warn against",
+                "semanticBoost": 0,
+                "finalScore": 21.584524682213992
+              },
+              {
+                "item": "imanimo",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 27.58342668221399,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:4.0 + U:0)",
+                "meaning": "at any moment now",
+                "semanticBoost": 0,
+                "finalScore": 27.58342668221399
+              },
+              {
+                "item": "imasara",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 27.58342668221399,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:4.0 + U:0)",
+                "meaning": "now when it is already much too late",
+                "semanticBoost": 0,
+                "finalScore": 27.58342668221399
+              },
+              {
+                "item": "imashimeru",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 46.55241868221399,
+                "breakdown": "(B:10 + D:1.6 + L:35 - F:0.0 + U:0)",
+                "meaning": "to bind with rope, etc.",
+                "semanticBoost": -15,
+                "finalScore": 31.55241868221399
+              },
+              {
+                "item": "imajineeshon",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 50.15,
+                "adjustedScore": 54.58592718221399,
+                "breakdown": "(B:10 + D:1.6 + L:45 - F:2.0 + U:0)",
+                "meaning": "imagination",
+                "semanticBoost": 0,
+                "finalScore": 54.58592718221399
+              }
+            ],
+            "competition": [
+              {
+                "item": "ima",
+                "type": "exact",
+                "adj": "-25.0113"
+              },
+              {
+                "item": "ima",
+                "type": "exact",
+                "adj": "-25.0108"
+              },
+              {
+                "item": "ima",
+                "type": "fuzzy",
+                "adj": "-15.0113"
+              }
+            ],
+            "winner": {
+              "item": "ima",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1131,
+              "adjustedScore": -25.01131,
+              "meaning": "now",
+              "semanticBoost": 0,
+              "finalScore": -25.01131
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "type": "text",
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "kana": "に"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "も",
+          "input": "も",
+          "output": "mo",
+          "base": "mo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "kana": "も"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "わたし",
+          "input": "わたし",
+          "output": "watashi",
+          "base": "watashi",
+          "meaning": "I",
+          "grammar_tags": [],
+          "decision": "exact",
+          "meta": {
+            "candidates": [
+              {
+                "item": "watashi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1191,
+                "adjustedScore": -25.01191,
+                "meaning": "I",
+                "semanticBoost": 0,
+                "finalScore": -25.01191
+              },
+              {
+                "item": "watashi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 890.6625,
+                "adjustedScore": -25.008906625,
+                "meaning": "ferry crossing",
+                "semanticBoost": 0,
+                "finalScore": -25.008906625
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1191,
+                "adjustedScore": -15.01191,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "I",
+                "semanticBoost": 0,
+                "finalScore": -15.01191
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 1191,
+                "adjustedScore": -15.01191,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "I",
+                "semanticBoost": 0,
+                "finalScore": -15.01191
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 890.6625,
+                "adjustedScore": -15.008906625,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "ferry crossing",
+                "semanticBoost": 0,
+                "finalScore": -15.008906625
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 890.6625,
+                "adjustedScore": -15.008906625,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:25.0 + U:0)",
+                "meaning": "ferry crossing",
+                "semanticBoost": 0,
+                "finalScore": -15.008906625
+              },
+              {
+                "item": "watashitachi",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1260.4375,
+                "adjustedScore": -3.420175692786008,
+                "breakdown": "(B:10 + D:1.6 + L:25 - F:25.0 + U:0 + S:-15)",
+                "meaning": "we",
+                "semanticBoost": 0,
+                "finalScore": -3.420175692786008
+              },
+              {
+                "item": "watashi",
+                "root": "watasu",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 1090.9708333333333,
+                "adjustedScore": 15.989090291666667,
+                "breakdown": "(B:25 + D:16.0 - F:25.0)",
+                "meaning": "to ferry across e.g. a river",
+                "meta": {
+                  "reasons": [
+                    [
+                      28
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.01
+                },
+                "semanticBoost": -15,
+                "finalScore": 0.9890902916666668
+              },
+              {
+                "item": "ukewatashi",
+                "type": "fuzzy",
+                "distance": 0.06,
+                "freqScore": 890.6625,
+                "adjustedScore": 5.869868757679628,
+                "breakdown": "(B:10 + D:5.9 + L:15 - F:25.0 + U:0)",
+                "meaning": "delivery",
+                "semanticBoost": 0,
+                "finalScore": 5.869868757679628
+              },
+              {
+                "item": "watashijishin",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 500.2,
+                "adjustedScore": 6.579426682213993,
+                "breakdown": "(B:10 + D:1.6 + L:30 - F:20.0 + U:0 + S:-15)",
+                "meaning": "myself",
+                "semanticBoost": 0,
+                "finalScore": 6.579426682213993
+              },
+              {
+                "item": "watashibune",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 720.3083333333333,
+                "adjustedScore": 6.585225598880655,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:25.0 + U:0)",
+                "meaning": "ferry",
+                "semanticBoost": 0,
+                "finalScore": 6.585225598880655
+              },
+              {
+                "item": "watashikomi",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 31.55241868221399,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:0.0 + U:0)",
+                "meaning": "technique of throwing one's opponent by pushing his chest while holding his thigh",
+                "semanticBoost": -15,
+                "finalScore": 16.55241868221399
+              },
+              {
+                "item": "iiwatashi",
+                "type": "fuzzy",
+                "distance": 0.04,
+                "freqScore": 880.6416666666667,
+                "adjustedScore": 25.449656602787385,
+                "breakdown": "(B:10 + D:30.5 + L:10 - F:25.0 + U:0)",
+                "meaning": "sentence",
+                "semanticBoost": 0,
+                "finalScore": 25.449656602787385
+              },
+              {
+                "item": "tewatashi",
+                "type": "fuzzy",
+                "distance": 0.04,
+                "freqScore": 770.4666666666667,
+                "adjustedScore": 25.450758352787386,
+                "breakdown": "(B:10 + D:30.5 + L:10 - F:25.0 + U:0)",
+                "meaning": "personal delivery",
+                "semanticBoost": 0,
+                "finalScore": 25.450758352787386
+              },
+              {
+                "item": "watashitachi",
+                "type": "fuzzy:doubling",
+                "distance": 0.125,
+                "freqScore": 1260.4375,
+                "adjustedScore": 42.66506515466369,
+                "breakdown": "(B:45 + D:17.7 + L:20 - F:25.0 + U:0 + S:-15)",
+                "meaning": "we",
+                "semanticBoost": 0,
+                "finalScore": 42.66506515466369
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy:doubling",
+                "distance": 0.125,
+                "freqScore": 1191,
+                "adjustedScore": 42.66575952966369,
+                "breakdown": "(B:45 + D:17.7 + L:5 - F:25.0 + U:0)",
+                "meaning": "I",
+                "semanticBoost": 0,
+                "finalScore": 42.66575952966369
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy:doubling",
+                "distance": 0.125,
+                "freqScore": 1191,
+                "adjustedScore": 42.66575952966369,
+                "breakdown": "(B:45 + D:17.7 + L:5 - F:25.0 + U:0)",
+                "meaning": "I",
+                "semanticBoost": 0,
+                "finalScore": 42.66575952966369
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy:doubling",
+                "distance": 0.125,
+                "freqScore": 890.6625,
+                "adjustedScore": 42.66876290466369,
+                "breakdown": "(B:45 + D:17.7 + L:5 - F:25.0 + U:0)",
+                "meaning": "ferry crossing",
+                "semanticBoost": 0,
+                "finalScore": 42.66876290466369
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy:doubling",
+                "distance": 0.125,
+                "freqScore": 890.6625,
+                "adjustedScore": 42.66876290466369,
+                "breakdown": "(B:45 + D:17.7 + L:5 - F:25.0 + U:0)",
+                "meaning": "ferry crossing",
+                "semanticBoost": 0,
+                "finalScore": 42.66876290466369
+              },
+              {
+                "item": "iiwatashi",
+                "type": "fuzzy:doubling",
+                "distance": 0.165,
+                "freqScore": 880.6416666666667,
+                "adjustedScore": 51.800520318632,
+                "breakdown": "(B:45 + D:26.8 + L:5 - F:25.0 + U:0)",
+                "meaning": "sentence",
+                "semanticBoost": 0,
+                "finalScore": 51.800520318632
+              },
+              {
+                "item": "tewatashi",
+                "type": "fuzzy:doubling",
+                "distance": 0.165,
+                "freqScore": 770.4666666666667,
+                "adjustedScore": 51.801622068632,
+                "breakdown": "(B:45 + D:26.8 + L:5 - F:25.0 + U:0)",
+                "meaning": "personal delivery",
+                "semanticBoost": 0,
+                "finalScore": 51.801622068632
+              },
+              {
+                "item": "watashijishin",
+                "type": "fuzzy:doubling",
+                "distance": 0.125,
+                "freqScore": 500.2,
+                "adjustedScore": 52.664667529663696,
+                "breakdown": "(B:45 + D:17.7 + L:25 - F:20.0 + U:0 + S:-15)",
+                "meaning": "myself",
+                "semanticBoost": 0,
+                "finalScore": 52.664667529663696
+              },
+              {
+                "item": "watashibune",
+                "type": "fuzzy:doubling",
+                "distance": 0.125,
+                "freqScore": 720.3083333333333,
+                "adjustedScore": 52.67046644633036,
+                "breakdown": "(B:45 + D:17.7 + L:15 - F:25.0 + U:0)",
+                "meaning": "ferry",
+                "semanticBoost": 0,
+                "finalScore": 52.67046644633036
+              },
+              {
+                "item": "ukewatashikensa",
+                "type": "fuzzy",
+                "distance": 0.06,
+                "freqScore": 1,
+                "adjustedScore": 55.838765382679625,
+                "breakdown": "(B:10 + D:5.9 + L:40 - F:0.0 + U:0)",
+                "meaning": "delivery test",
+                "semanticBoost": 0,
+                "finalScore": 55.838765382679625
+              },
+              {
+                "item": "ukewatashi",
+                "type": "fuzzy:doubling",
+                "distance": 0.185,
+                "freqScore": 890.6625,
+                "adjustedScore": 61.81969686305772,
+                "breakdown": "(B:45 + D:31.8 + L:10 - F:25.0 + U:0)",
+                "meaning": "delivery",
+                "semanticBoost": 0,
+                "finalScore": 61.81969686305772
+              },
+              {
+                "item": "watashikomi",
+                "type": "fuzzy:doubling",
+                "distance": 0.125,
+                "freqScore": 1,
+                "adjustedScore": 77.63765952966368,
+                "breakdown": "(B:45 + D:17.7 + L:15 - F:0.0 + U:0)",
+                "meaning": "technique of throwing one's opponent by pushing his chest while holding his thigh",
+                "semanticBoost": -15,
+                "finalScore": 62.63765952966368
+              },
+              {
+                "item": "ukewatashikensa",
+                "type": "fuzzy:doubling",
+                "distance": 0.185,
+                "freqScore": 1,
+                "adjustedScore": 111.78859348805771,
+                "breakdown": "(B:45 + D:31.8 + L:35 - F:0.0 + U:0)",
+                "meaning": "delivery test",
+                "semanticBoost": 0,
+                "finalScore": 111.78859348805771
+              }
+            ],
+            "competition": [
+              {
+                "item": "watashi",
+                "type": "exact",
+                "adj": "-25.0119"
+              },
+              {
+                "item": "watashi",
+                "type": "exact",
+                "adj": "-25.0089"
+              },
+              {
+                "item": "watashi",
+                "type": "fuzzy",
+                "adj": "-15.0119"
+              }
+            ],
+            "winner": {
+              "item": "watashi",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1191,
+              "adjustedScore": -25.01191,
+              "meaning": "I",
+              "semanticBoost": 0,
+              "finalScore": -25.01191
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "type": "text",
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "kana": "に"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "も",
+          "input": "も",
+          "output": "mo",
+          "base": "mo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "kana": "も"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "きがた",
+          "input": "きがた",
+          "output": "kigata",
+          "base": "kigata",
+          "meaning": "wooden form",
+          "grammar_tags": [],
+          "decision": "exact",
+          "meta": {
+            "candidates": [
+              {
+                "item": "kigata",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 1,
+                "adjustedScore": -0.040010000000000004,
+                "meaning": "wooden form",
+                "semanticBoost": 0,
+                "finalScore": -0.040010000000000004
+              },
+              {
+                "item": "tsukigata",
+                "type": "fuzzy",
+                "distance": 0.06,
+                "freqScore": 630.175,
+                "adjustedScore": 5.872473632679627,
+                "breakdown": "(B:10 + D:5.9 + L:15 - F:25.0 + U:0)",
+                "meaning": "crescent shape",
+                "semanticBoost": 0,
+                "finalScore": 5.872473632679627
+              },
+              {
+                "item": "hikigatari",
+                "type": "fuzzy",
+                "distance": 0.04,
+                "freqScore": 730.3833333333333,
+                "adjustedScore": 35.45115918612072,
+                "breakdown": "(B:10 + D:30.5 + L:20 - F:25.0 + U:0)",
+                "meaning": "singing to one's own accompaniment",
+                "semanticBoost": -15,
+                "finalScore": 20.45115918612072
+              },
+              {
+                "item": "ketsuekigata",
+                "type": "fuzzy",
+                "distance": 0.12,
+                "freqScore": 930.7458333333333,
+                "adjustedScore": 31.618380294327885,
+                "breakdown": "(B:10 + D:16.6 + L:30 - F:25.0 + U:0)",
+                "meaning": "blood type",
+                "semanticBoost": 0,
+                "finalScore": 31.618380294327885
+              },
+              {
+                "item": "hikigatari",
+                "type": "fuzzy:doubling",
+                "distance": 0.16285714285714284,
+                "freqScore": 730.3833333333333,
+                "adjustedScore": 61.28146262655418,
+                "breakdown": "(B:45 + D:26.3 + L:15 - F:25.0 + U:0)",
+                "meaning": "singing to one's own accompaniment",
+                "semanticBoost": -15,
+                "finalScore": 46.28146262655418
+              },
+              {
+                "item": "hikigatari",
+                "type": "fuzzy:doubling",
+                "distance": 0.18285714285714286,
+                "freqScore": 730.3833333333333,
+                "adjustedScore": 66.26989750590353,
+                "breakdown": "(B:45 + D:31.3 + L:15 - F:25.0 + U:0)",
+                "meaning": "singing to one's own accompaniment",
+                "semanticBoost": -15,
+                "finalScore": 51.26989750590353
+              },
+              {
+                "item": "hikigatari",
+                "type": "fuzzy:doubling",
+                "distance": 0.18285714285714286,
+                "freqScore": 730.3833333333333,
+                "adjustedScore": 66.26989750590353,
+                "breakdown": "(B:45 + D:31.3 + L:15 - F:25.0 + U:0)",
+                "meaning": "singing to one's own accompaniment",
+                "semanticBoost": -15,
+                "finalScore": 51.26989750590353
+              },
+              {
+                "item": "tsukigata",
+                "type": "fuzzy:doubling",
+                "distance": 0.18285714285714286,
+                "freqScore": 630.175,
+                "adjustedScore": 61.27089958923687,
+                "breakdown": "(B:45 + D:31.3 + L:10 - F:25.0 + U:0)",
+                "meaning": "crescent shape",
+                "semanticBoost": 0,
+                "finalScore": 61.27089958923687
+              },
+              {
+                "item": "tagutsukigata",
+                "type": "fuzzy",
+                "distance": 0.14,
+                "freqScore": 1,
+                "adjustedScore": 65.91327136593407,
+                "breakdown": "(B:10 + D:21.0 + L:35 - F:0.0 + U:0)",
+                "meaning": "tagged type",
+                "semanticBoost": 0,
+                "finalScore": 65.91327136593407
+              },
+              {
+                "item": "tetsuzukigatagengo",
+                "type": "fuzzy",
+                "distance": 0.14,
+                "freqScore": 1,
+                "adjustedScore": 90.91327136593407,
+                "breakdown": "(B:10 + D:21.0 + L:60 - F:0.0 + U:0)",
+                "meaning": "procedural language",
+                "semanticBoost": 0,
+                "finalScore": 90.91327136593407
+              },
+              {
+                "item": "tetsuzukigatagengo",
+                "type": "fuzzy",
+                "distance": 0.14,
+                "freqScore": 1,
+                "adjustedScore": 90.91327136593407,
+                "breakdown": "(B:10 + D:21.0 + L:60 - F:0.0 + U:0)",
+                "meaning": "procedural language",
+                "semanticBoost": 0,
+                "finalScore": 90.91327136593407
+              },
+              {
+                "item": "tetsuzukigatagengo",
+                "type": "fuzzy",
+                "distance": 0.14,
+                "freqScore": 1,
+                "adjustedScore": 90.91327136593407,
+                "breakdown": "(B:10 + D:21.0 + L:60 - F:0.0 + U:0)",
+                "meaning": "procedural language",
+                "semanticBoost": 0,
+                "finalScore": 90.91327136593407
+              },
+              {
+                "item": "tetsuzukigatagengo",
+                "type": "fuzzy",
+                "distance": 0.14,
+                "freqScore": 1,
+                "adjustedScore": 90.91327136593407,
+                "breakdown": "(B:10 + D:21.0 + L:60 - F:0.0 + U:0)",
+                "meaning": "procedural language",
+                "semanticBoost": 0,
+                "finalScore": 90.91327136593407
+              },
+              {
+                "item": "ketsuekigatafutekigou",
+                "type": "fuzzy",
+                "distance": 0.12,
+                "freqScore": 1,
+                "adjustedScore": 101.58767775266121,
+                "breakdown": "(B:10 + D:16.6 + L:75 - F:0.0 + U:0)",
+                "meaning": "blood type incompatibility",
+                "semanticBoost": 0,
+                "finalScore": 101.58767775266121
+              },
+              {
+                "item": "tsuikigatahikarideisuku",
+                "type": "fuzzy",
+                "distance": 0.08,
+                "freqScore": 1,
+                "adjustedScore": 104.0109567991878,
+                "breakdown": "(B:10 + D:9.1 + L:85 - F:0.0 + U:0)",
+                "meaning": "direct read after write optical disk",
+                "semanticBoost": 0,
+                "finalScore": 104.0109567991878
+              },
+              {
+                "item": "tokkagataeeai",
+                "type": "fuzzy:doubling",
+                "distance": 0.18285714285714286,
+                "freqScore": 1,
+                "adjustedScore": 106.23719133923686,
+                "breakdown": "(B:45 + D:31.3 + L:30 - F:0.0 + U:0)",
+                "meaning": "specialized AI",
+                "semanticBoost": 0,
+                "finalScore": 106.23719133923686
+              },
+              {
+                "item": "bunsekigatabunruitaikei",
+                "type": "fuzzy",
+                "distance": 0.1,
+                "freqScore": 1,
+                "adjustedScore": 107.6091006406735,
+                "breakdown": "(B:10 + D:12.6 + L:85 - F:0.0 + U:0)",
+                "meaning": "analytical classification system",
+                "semanticBoost": 0,
+                "finalScore": 107.6091006406735
+              },
+              {
+                "item": "ryouikigatashutsuryokukihon'youso",
+                "type": "fuzzy",
+                "distance": 0.1,
+                "freqScore": 1,
+                "adjustedScore": 157.60910064067352,
+                "breakdown": "(B:10 + D:12.6 + L:135 - F:0.0 + U:0)",
+                "meaning": "area primitive",
+                "semanticBoost": 0,
+                "finalScore": 157.60910064067352
+              }
+            ],
+            "competition": [
+              {
+                "item": "kigata",
+                "type": "exact",
+                "adj": "-0.0400"
+              },
+              {
+                "item": "tsukigata",
+                "type": "fuzzy",
+                "adj": "5.8725"
+              },
+              {
+                "item": "ketsuekigata",
+                "type": "fuzzy",
+                "adj": "31.6184"
+              }
+            ],
+            "winner": {
+              "item": "kigata",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 1,
+              "adjustedScore": -0.040010000000000004,
+              "meaning": "wooden form",
+              "semanticBoost": 0,
+              "finalScore": -0.040010000000000004
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "type": "text",
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "kana": "の"
+          }
+        },
+        {
+          "type": "grammar",
+          "surface": "ない",
+          "input": "ない",
+          "output": "ない",
+          "base": "ない",
+          "meaning": "not even",
+          "grammar_tags": [
+            "Grammar form: たりとも〜ない"
+          ],
+          "decision": "grammar",
+          "meta": {
+            "grammar_obj": {
+              "anchor_hiragana": "ない",
+              "priority": 0,
+              "id": 203,
+              "grammar_id": "taritomo_nai",
+              "title": "たりとも〜ない",
+              "meanings_ja": "[\"〜も\"]",
+              "meanings_en": "[\"not even\"]",
+              "pattern_raw": "１助＋たりとも〜ない"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "surface": "です",
+          "input": "です",
+          "output": "desu",
+          "base": "desu",
+          "meaning": "be",
+          "grammar_tags": [],
+          "decision": "exact",
+          "meta": {
+            "candidates": [
+              {
+                "item": "desu",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 500.2,
+                "adjustedScore": -45.01300199999999,
+                "meaning": "be",
+                "semanticBoost": 0,
+                "finalScore": -45.01300199999999
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 500.2,
+                "adjustedScore": -35.01300199999999,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:20.0 + U:-10 + S:-15)",
+                "meaning": "be",
+                "semanticBoost": 0,
+                "finalScore": -35.01300199999999
+              },
+              {
+                "item": "desu",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": -10.004000999999999,
+                "meaning": "death",
+                "semanticBoost": 0,
+                "finalScore": -10.004000999999999
+              },
+              {
+                "item": "desugiru",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 630.1208333333333,
+                "adjustedScore": 6.586127473880655,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:25.0 + U:0)",
+                "meaning": "to stick out too much",
+                "semanticBoost": -15,
+                "finalScore": -8.413872526119345
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "distance": 0,
+                "freqScore": 0.1,
+                "adjustedScore": -0.00400099999999956,
+                "breakdown": "(B:10 + D:0.0 + L:0 - F:0.0 + U:-10)",
+                "meaning": "death",
+                "semanticBoost": 0,
+                "finalScore": -0.00400099999999956
+              },
+              {
+                "item": "desuku",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 17.58342668221399,
+                "breakdown": "(B:10 + D:1.6 + L:10 - F:4.0 + U:0)",
+                "meaning": "desk",
+                "semanticBoost": 0,
+                "finalScore": 17.58342668221399
+              },
+              {
+                "item": "desukara",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 100.2,
+                "adjustedScore": 27.58342668221399,
+                "breakdown": "(B:10 + D:1.6 + L:20 - F:4.0 + U:0)",
+                "meaning": "so",
+                "semanticBoost": 0,
+                "finalScore": 27.58342668221399
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 500.2,
+                "adjustedScore": 40.764085639996644,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:20.0 + U:-10 + S:-15)",
+                "meaning": "be",
+                "semanticBoost": 0,
+                "finalScore": 40.764085639996644
+              },
+              {
+                "item": "desumatchi",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 41.55241868221399,
+                "breakdown": "(B:10 + D:1.6 + L:30 - F:0.0 + U:0)",
+                "meaning": "death match",
+                "semanticBoost": 0,
+                "finalScore": 41.55241868221399
+              },
+              {
+                "item": "desukutoppu",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 46.55241868221399,
+                "breakdown": "(B:10 + D:1.6 + L:35 - F:0.0 + U:0)",
+                "meaning": "desktop",
+                "semanticBoost": 0,
+                "finalScore": 46.55241868221399
+              },
+              {
+                "item": "desugiru",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 630.1208333333333,
+                "adjustedScore": 70.77078643166331,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:25.0 + U:0)",
+                "meaning": "to stick out too much",
+                "semanticBoost": -15,
+                "finalScore": 55.77078643166331
+              },
+              {
+                "item": "desukuakusesari",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 66.55241868221398,
+                "breakdown": "(B:10 + D:1.6 + L:55 - F:0.0 + U:0)",
+                "meaning": "desk accessory",
+                "semanticBoost": 0,
+                "finalScore": 66.55241868221398
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 0.1,
+                "adjustedScore": 75.77308663999663,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:0.0 + U:-10)",
+                "meaning": "death",
+                "semanticBoost": 0,
+                "finalScore": 75.77308663999663
+              },
+              {
+                "item": "desukutoppupiishii",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 81.55241868221398,
+                "breakdown": "(B:10 + D:1.6 + L:70 - F:0.0 + U:0)",
+                "meaning": "desktop PC",
+                "semanticBoost": 0,
+                "finalScore": 81.55241868221398
+              },
+              {
+                "item": "desuku",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 81.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:5 - F:4.0 + U:0)",
+                "meaning": "desk",
+                "semanticBoost": 0,
+                "finalScore": 81.76808563999664
+              },
+              {
+                "item": "deisuko",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 200.3,
+                "adjustedScore": 82.76308463999663,
+                "breakdown": "(B:45 + D:35.8 + L:10 - F:8.0 + U:0)",
+                "meaning": "disco",
+                "semanticBoost": 0,
+                "finalScore": 82.76308463999663
+              },
+              {
+                "item": "deisuku",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 86.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:10 - F:4.0 + U:0)",
+                "meaning": "disk",
+                "semanticBoost": 0,
+                "finalScore": 86.76808563999664
+              },
+              {
+                "item": "desukara",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 91.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:4.0 + U:0)",
+                "meaning": "so",
+                "semanticBoost": 0,
+                "finalScore": 91.76808563999664
+              },
+              {
+                "item": "desukara",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 91.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:15 - F:4.0 + U:0)",
+                "meaning": "so",
+                "semanticBoost": 0,
+                "finalScore": 91.76808563999664
+              },
+              {
+                "item": "deisukabaa",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 101.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:25 - F:4.0 + U:0)",
+                "meaning": "discover",
+                "semanticBoost": 0,
+                "finalScore": 101.76808563999664
+              },
+              {
+                "item": "desumatchi",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 105.73707763999663,
+                "breakdown": "(B:45 + D:35.8 + L:25 - F:0.0 + U:0)",
+                "meaning": "death match",
+                "semanticBoost": 0,
+                "finalScore": 105.73707763999663
+              },
+              {
+                "item": "deisuketto",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 105.73707763999663,
+                "breakdown": "(B:45 + D:35.8 + L:25 - F:0.0 + U:0)",
+                "meaning": "diskette",
+                "semanticBoost": 0,
+                "finalScore": 105.73707763999663
+              },
+              {
+                "item": "deisukaunto",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 106.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:30 - F:4.0 + U:0)",
+                "meaning": "discount",
+                "semanticBoost": 0,
+                "finalScore": 106.76808563999664
+              },
+              {
+                "item": "desukutoppu",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 110.73707763999663,
+                "breakdown": "(B:45 + D:35.8 + L:30 - F:0.0 + U:0)",
+                "meaning": "desktop",
+                "semanticBoost": 0,
+                "finalScore": 110.73707763999663
+              },
+              {
+                "item": "deisukuresu",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 110.73707763999663,
+                "breakdown": "(B:45 + D:35.8 + L:30 - F:0.0 + U:0)",
+                "meaning": "diskless",
+                "semanticBoost": 0,
+                "finalScore": 110.73707763999663
+              },
+              {
+                "item": "desukutoppupaburisshingu",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 111.55241868221398,
+                "breakdown": "(B:10 + D:1.6 + L:100 - F:0.0 + U:0)",
+                "meaning": "desktop publishing",
+                "semanticBoost": 0,
+                "finalScore": 111.55241868221398
+              },
+              {
+                "item": "desukutoppuekusuperiensu",
+                "type": "fuzzy",
+                "distance": 0.001,
+                "freqScore": 1,
+                "adjustedScore": 111.55241868221398,
+                "breakdown": "(B:10 + D:1.6 + L:100 - F:0.0 + U:0)",
+                "meaning": "desktop experience",
+                "semanticBoost": 0,
+                "finalScore": 111.55241868221398
+              },
+              {
+                "item": "deisukasshon",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 111.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:35 - F:4.0 + U:0)",
+                "meaning": "discussion",
+                "semanticBoost": 0,
+                "finalScore": 111.76808563999664
+              },
+              {
+                "item": "deisukujokkii",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 116.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:40 - F:4.0 + U:0)",
+                "meaning": "disk jockey",
+                "semanticBoost": 0,
+                "finalScore": 116.76808563999664
+              },
+              {
+                "item": "deisukuroojaa",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 100.2,
+                "adjustedScore": 116.76808563999664,
+                "breakdown": "(B:45 + D:35.8 + L:40 - F:4.0 + U:0)",
+                "meaning": "disclosure",
+                "semanticBoost": 0,
+                "finalScore": 116.76808563999664
+              },
+              {
+                "item": "desukuakusesari",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 130.73707763999664,
+                "breakdown": "(B:45 + D:35.8 + L:50 - F:0.0 + U:0)",
+                "meaning": "desk accessory",
+                "semanticBoost": 0,
+                "finalScore": 130.73707763999664
+              },
+              {
+                "item": "desukutoppupiishii",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 145.73707763999664,
+                "breakdown": "(B:45 + D:35.8 + L:65 - F:0.0 + U:0)",
+                "meaning": "desktop PC",
+                "semanticBoost": 0,
+                "finalScore": 145.73707763999664
+              },
+              {
+                "item": "desukutoppupaburisshingu",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 175.73707763999664,
+                "breakdown": "(B:45 + D:35.8 + L:95 - F:0.0 + U:0)",
+                "meaning": "desktop publishing",
+                "semanticBoost": 0,
+                "finalScore": 175.73707763999664
+              },
+              {
+                "item": "desukutoppuekusuperiensu",
+                "type": "fuzzy:doubling",
+                "distance": 0.2,
+                "freqScore": 1,
+                "adjustedScore": 175.73707763999664,
+                "breakdown": "(B:45 + D:35.8 + L:95 - F:0.0 + U:0)",
+                "meaning": "desktop experience",
+                "semanticBoost": 0,
+                "finalScore": 175.73707763999664
+              }
+            ],
+            "competition": [
+              {
+                "item": "desu",
+                "type": "exact",
+                "adj": "-45.0130"
+              },
+              {
+                "item": "desu",
+                "type": "fuzzy",
+                "adj": "-35.0130"
+              },
+              {
+                "item": "desu",
+                "type": "exact",
+                "adj": "-10.0040"
+              }
+            ],
+            "winner": {
+              "item": "desu",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 500.2,
+              "adjustedScore": -45.01300199999999,
+              "meaning": "be",
+              "semanticBoost": 0,
+              "finalScore": -45.01300199999999
+            },
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null
+          }
+        },
+        {
+          "type": "grammar",
+          "surface": "から",
+          "input": "から",
+          "output": "から",
+          "base": "から",
+          "meaning": "so / since",
+          "grammar_tags": [
+            "Grammar form: から"
+          ],
+          "decision": "grammar",
+          "meta": {
+            "grammar_obj": {
+              "anchor_hiragana": "から",
+              "priority": 0,
+              "id": 64,
+              "grammar_id": "kara",
+              "title": "から",
+              "meanings_ja": "[]",
+              "meanings_en": "[\"so\",\"since\"]",
+              "pattern_raw": "〔普通形〕・〔丁寧形〕＋から"
+            }
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.0254,
+          "semanticScore": 0.7817,
+          "romaji": "kusuri",
+          "kana": "くすり",
+          "kanji": "薬",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "medicine",
+            "pharmaceuticals",
+            "legal drugs"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf04"
+          ],
+          "frequency": 1
+        },
+        {
+          "score": 0.8151,
+          "semanticScore": 0.7689,
+          "romaji": "shuuri",
+          "kana": "しゅうり",
+          "kanji": "修理",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "repair",
+            "mending",
+            "fixing"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf07"
+          ],
+          "frequency": 1
+        },
+        {
+          "score": 0.8059,
+          "semanticScore": 0.7688,
+          "romaji": "shuufuku",
+          "kana": "しゅうふく",
+          "kanji": "修復",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "restoration",
+            "repair",
+            "mending"
+          ],
+          "tags": [
+            "news1",
+            "nf07"
+          ],
+          "frequency": 0.954
+        },
+        {
+          "score": 0.7866,
+          "semanticScore": 0.7666,
+          "romaji": "yakkyoku",
+          "kana": "やっきょく",
+          "kanji": "薬局",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "pharmacy",
+            "drugstore",
+            "chemist's shop"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf16"
+          ],
+          "frequency": 0.867
+        },
+        {
+          "score": 0.7827,
+          "semanticScore": 0.769,
+          "romaji": "shohousen",
+          "kana": "しょほうせん",
+          "kanji": "処方箋",
+          "domain": "medicine",
+          "source": "semantic",
+          "meanings": [
+            "prescription"
+          ],
+          "tags": [
+            "news2",
+            "nf39",
+            "spec1"
+          ],
+          "frequency": 0.338
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.6656,
+          "romaji": "nai",
+          "kana": "ない",
+          "kanji": "無い",
+          "meanings": [
+            "nonexistent",
+            "not being there",
+            "unowned"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- kusuri: medicine, pharmaceuticals\n- shuuri: repair, mending\n- shuufuku: restoration, repair\n- yakkyoku: pharmacy, drugstore\n- shohousen: prescription\n\nGRAMMAR & TENSE HINTS:\n- わかった (wakaru): to understand [Past tense]\n- ない: not even (grammar pattern)\n- から: so / since (grammar pattern)\n\nTONE HINT:\n- nai: nonexistent",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- kusuri: medicine, pharmaceuticals\n- shuuri: repair, mending\n- shuufuku: restoration, repair\n- yakkyoku: pharmacy, drugstore\n- shohousen: prescription\n\nGRAMMAR & TENSE HINTS:\n- わかった (wakaru): to understand [Past tense]\n- ない: not even (grammar pattern)\n- から: so / since (grammar pattern)\n\nTONE HINT:\n- nai: nonexistent\n\nInput: wakatta wakatta jya sono kusuri wo kudari ima ni mo watashi ni mo kigata no ない desu から\nOutput: /no_think",
+      "llmOutput": "(skipped — --no-llm flag)",
+      "durationMs": 14222,
+      "error": null
+    }
+  ]
+}
