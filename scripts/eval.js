@@ -23,6 +23,10 @@
 import fs   from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const XLSX = require('xlsx');
+
 import { buildPrompt } from '../src/promptBuilder.js';
 import { generate }    from '../src/ollamaClient.js';
 
@@ -108,7 +112,9 @@ async function runCase(caseObj) {
     prompt: null,
     llmOutput: null,
     durationMs: null,
+    timings: {},
     error: null,
+    queryTokens: [],
   };
 
   const t0 = Date.now();
@@ -116,11 +122,15 @@ async function runCase(caseObj) {
   try {
     // ── Step 1: buildPrompt (captures preprocessor + RAG) ──────────────────
     startCapture();
-    const { direction, prompt, preprocessedInput, ragHits, toneHits, tokenTrace } = await buildPrompt(input);
+    const tBuild0 = performance.now();
+    const { direction, prompt, preprocessedInput, ragHits, toneHits, tokenTrace, queryTokens, timings } = await buildPrompt(input);
+    caseResult.timings = timings || {};
+    caseResult.timings.buildPromptTotal = performance.now() - tBuild0;
     stopCapture();
 
     caseResult.direction         = direction;
     caseResult.preprocessedInput = preprocessedInput;
+    caseResult.queryTokens       = queryTokens || [];
     caseResult.prompt            = prompt;
 
     caseResult.tokens = (tokenTrace ?? []).map(t => ({
@@ -165,6 +175,7 @@ async function runCase(caseObj) {
 
     // ── Step 2: LLM call ───────────────────────────────────────────────────
     if (!skipLLM) {
+      const tLlm0 = performance.now();
       let output = '';
       for await (const chunk of generate(prompt)) {
         output += chunk;
@@ -172,6 +183,7 @@ async function runCase(caseObj) {
       }
       process.stdout.write('\n');
       caseResult.llmOutput = output.trim();
+      caseResult.timings.llmGeneration = performance.now() - tLlm0;
     } else {
       caseResult.llmOutput = '(skipped — --no-llm flag)';
     }
@@ -271,7 +283,7 @@ function renderMarkdown(results, runMeta) {
       });
 
       lines.push(mdTable(
-        ['Input token', 'Output token', 'Definition', 'Decision', 'Context', 'Extra Info'],
+        ['Input token', 'Output token', 'Definition', 'Decision', 'Semantic Boost', 'Extra Info'],
         r.tokens.map(t => {
           if (t.type === 'grammar') {
               const metaId = t.meta?.grammar_obj?.grammar_id || '—';
@@ -367,7 +379,23 @@ function renderMarkdown(results, runMeta) {
     // ── Full prompt (collapsed) ──
     lines.push(`\n${mdDetails('Full prompt sent to Ollama (click to expand)', r.prompt ?? '—')}\n`);
 
-    lines.push(`---\n`);
+    // ── Timing Breakdown ──
+    lines.push(`#### Timing Breakdown\n`);
+    const t = r.timings || {};
+    const timingRows = [
+      ['Total Case Time', `${r.durationMs}ms`],
+      ['- LLM Generation', `${(t.llmGeneration ?? 0).toFixed(1)}ms`],
+      ['- Build Prompt (Total)', `${(t.buildPromptTotal ?? 0).toFixed(1)}ms`],
+      ['  - Ensure ANN', `${(t.ensureANN ?? 0).toFixed(1)}ms`],
+      ['  - Preprocessing', `${(t.preprocess ?? 0).toFixed(1)}ms`],
+      ['  - Embedding (API)', `${(t.embedding ?? 0).toFixed(1)}ms`],
+      ['  - RAG Search', `${(t.ragSearch ?? 0).toFixed(1)}ms`],
+      ['  - Reranking', `${(t.rerank ?? 0).toFixed(1)}ms`],
+      ['  - Prompt Assembly', `${(t.promptAssembly ?? 0).toFixed(1)}ms`],
+    ];
+    lines.push(mdTable(['Step', 'Time'], timingRows));
+
+    lines.push(`\n---\n`);
   }
 
   // Tuning notes section — left intentionally blank for the user to fill in
@@ -418,6 +446,78 @@ async function main() {
   const md = renderMarkdown(results, runMeta);
   fs.writeFileSync(mdPath, md);
   _origLog(`\x1b[32m[eval] Markdown report written → ${mdPath}\x1b[0m`);
+
+  // ── Write Excel (Append to reporting.xlsx) ──
+  try {
+    const excelPath = path.join(EVAL_DIR, 'reporting.xlsx');
+    let wb;
+    if (fs.existsSync(excelPath)) {
+      wb = XLSX.readFile(excelPath);
+    } else {
+      wb = XLSX.utils.book_new();
+    }
+
+    const shortTs = ts.slice(5); // e.g. 04-25T13-56
+    
+    // 1. Run History (Accumulate)
+    const historyRow = {
+      Timestamp: runMeta.timestamp,
+      Cases: results.length,
+      Duration_s: +(runMeta.totalMs / 1000).toFixed(1),
+      LLM_Enabled: !skipLLM,
+      Avg_ms_per_case: +(runMeta.totalMs / results.length).toFixed(0),
+      Pipeline_Version: "v3.1-phonetic-recall"
+    };
+    let historyWs = wb.Sheets['RunHistory'];
+    if (!historyWs) {
+      historyWs = XLSX.utils.json_to_sheet([historyRow]);
+      XLSX.utils.book_append_sheet(wb, historyWs, 'RunHistory');
+    } else {
+      const existingHistory = XLSX.utils.sheet_to_json(historyWs);
+      existingHistory.push(historyRow);
+      const newHistoryWs = XLSX.utils.json_to_sheet(existingHistory);
+      wb.Sheets['RunHistory'] = newHistoryWs;
+    }
+
+    // 2. Summary Sheet (Timestamped)
+    const summaryData = results.map((r, i) => ({
+      ID: r.id,
+      Direction: r.direction,
+      Input: r.input,
+      Result: r.error ? `ERR: ${r.error}` : r.llmOutput,
+      Time_ms: r.durationMs,
+      Tokens: r.tokens.length,
+      RAG_Hits: r.ragHits.length
+    }));
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(summaryData), `Sum_${shortTs}`);
+
+    // 3. Token Details (Timestamped)
+    const tokenData = [];
+    results.forEach(r => {
+      r.tokens.forEach(t => {
+        const win = t.meta?.winner || t.meta?.candidates?.[0];
+        const candidateList = (t.meta?.candidates || []).slice(0, 5).map(c => `${c.item}(${c.adjustedScore.toFixed(0)})`).join(', ');
+        tokenData.push({
+          Case: r.id,
+          RAG_Query: r.queryTokens.join(', '),
+          Token: t.surface || t.input,
+          Type: t.type || '',
+          Decision: t.decision,
+          Winner: win?.item || '',
+          Score: win?.adjustedScore || 0,
+          Boost: t.meta?.semanticBoost || 0,
+          Meaning: t.meaning || win?.meaning || '',
+          Alternative_Candidates: candidateList
+        });
+      });
+    });
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(tokenData), `Tok_${shortTs}`);
+
+    XLSX.writeFile(wb, excelPath);
+    _origLog(`\x1b[32m[eval] Excel report updated → ${excelPath}\x1b[0m`);
+  } catch (exErr) {
+    _origLog(`\x1b[31m[eval] Failed to write Excel: ${exErr.message}\x1b[0m`);
+  }
 
   _origLog(`\x1b[36m[eval] Done — ${results.length} cases in ${(totalMs / 1000).toFixed(1)}s\x1b[0m`);
 }

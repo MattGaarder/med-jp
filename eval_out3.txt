@@ -1,0 +1,108 @@
+
+> med-jp@1.0.0 eval:quick
+> node scripts/eval.js --no-llm
+
+[preprocessor] Initializing from vocab.db with deinflector and grammar indices...
+[grammarPeel] Loaded 817 unique grammar suffixes (max len: 11)
+[36m[eval] Starting evaluation — 15 case(s)[0m
+[33m[eval] --no-llm: Ollama calls skipped[0m
+
+[36m[eval] Running case: case-01-appetite — Fragmented appetite & medication request[0m
+[90m[RAG] Loading HNSW index from disk...[0m
+Loading HNSW metadata...
+Loading HNSW native binary (4096 dims)...
+Successfully mapped 204560 entries into active RAG memory via ANN.
+[90m[RAG] ANN index + SQLite ready.[0m
+[90m[RAG] Query tokens (winners only): [wakaru, ja, kusuri, kigata][0m
+
+[36m[eval] Running case: case-02-nausea — Improved condition vs persistent nausea/dizziness[0m
+
+[35m[Context Pass][0m Evaluating token: [1mたべられ[0m
+  Context words drawn from ±3 neighbors: [become, bright, hakata, old, but, still, commonly, used, name, for]
+  Candidates considered:
+    - taberaren (score: 818.0) -> meaning: to be able to eat
+    - taberaren (score: 781.3) -> meaning: to eat
+    - daberaren (score: 155.5) -> meaning: to jabber
+
+[35m[Context Pass][0m Evaluating token: [1mなかった[0m
+  Context words drawn from ±3 neighbors: [able, eat, jabber]
+  Candidates considered:
+    - akatta (score: 818.0) -> meaning: to become bright
+    - hakata (score: 790.8) -> meaning: Hakata old but still commonly used name for Fukuoka
+    - kattaa (score: 765.3) -> meaning: cutter
+
+[36m[BeamSearch] taberarenakatta[0m
+{
+  hiragana: 'たべられなかった',
+  final_cost: 4200,
+  segments: [
+    { type: 'text', surface: 'たべられ' },
+    { type: 'text', surface: 'なかった' }
+  ],
+  analysis: [
+    {
+      surface: 'たべられ',
+      base: 'taberareru',
+      tags: [Array],
+      contextResurrected: undefined
+    },
+    {
+      surface: 'なかった',
+      base: 'akaru',
+      tags: [Array],
+      contextResurrected: undefined
+    }
+  ],
+  rejected_paths: [
+    { cost: 4240, joined: 'たべら|れなかった' },
+    { cost: 4240, joined: 'たべられな|かった' }
+  ]
+}
+[90m[RAG] Query tokens (winners only): [taicho, memai, kibun, warui, taberareru, akaru][0m
+
+[36m[eval] Running case: case-03-smoking-alcohol — Merged lifestyle query (smoking/drinking)[0m
+
+[35m[Context Pass][0m Evaluating token: [1mきつえ[0m
+  Context words drawn from ±3 neighbors: [drinking, alcohol, myoma, type, goods]
+  Candidates considered:
+    - kitsuen (score: 1120.0) -> meaning: smoking tobacco
+    - kitouen (score: 905.1) -> meaning: balanitis
+    - kotsuen (score: 905.1) -> meaning: osteitis
+
+[35m[Context Pass][0m Evaluating token: [1mにんしゅ[0m
+  Context words drawn from ±3 neighbors: [smoking, tobacco, balanitis, osteitis]
+  Candidates considered:
+    - inshu (score: 1098.0) -> meaning: drinking alcohol
+    - kinshu (score: 878.9) -> meaning: myoma
+    - hinshu (score: 872.9) -> meaning: type of goods
+
+[36m[BeamSearch] kitsueninshu[0m
+{
+  hiragana: 'きつえにんしゅ',
+  final_cost: 4240,
+  segments: [
+    { type: 'text', surface: 'きつえ' },
+    { type: 'text', surface: 'にんしゅ' }
+  ],
+  analysis: [
+    {
+      surface: 'きつえ',
+      base: 'kitsuen',
+      tags: undefined,
+      contextResurrected: undefined
+    },
+    {
+      surface: 'にんしゅ',
+      base: 'inshu',
+      tags: undefined,
+      contextResurrected: undefined
+    }
+  ],
+  rejected_paths: [
+    { cost: 4240, joined: 'きつえに|んしゅ' },
+    { cost: 4280, joined: 'きつ|えにんしゅ' }
+  ]
+}
+[90m[RAG] Query tokens (winners only): [kitsuen, inshu, tabako][0m
+
+[36m[eval] Running case: case-04-substances — Illicit substance query (misspelled)[0m

@@ -1,0 +1,2130 @@
+[
+  {
+    "sheet": "j1000",
+    "kanji": "くれる",
+    "kana": "くれる",
+    "meaning": "be given",
+    "candidates": [
+      {
+        "kanji": "呉れる",
+        "kana": "くれる",
+        "romaji": "kureru",
+        "primary_meaning": "to give",
+        "tags": "ichi1, uk",
+        "score": 8
+      },
+      {
+        "kanji": "暮れる",
+        "kana": "くれる",
+        "romaji": "kureru",
+        "primary_meaning": "to get dark",
+        "tags": "ichi1, news1, nf12",
+        "score": 8
+      }
+    ]
+  },
+  {
+    "sheet": "j1000",
+    "kanji": "バス",
+    "kana": "ばす",
+    "meaning": "bus",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "バス",
+        "romaji": "basu",
+        "primary_meaning": "bus",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "バス",
+        "romaji": "basu",
+        "primary_meaning": "bath",
+        "tags": "",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "バス",
+        "romaji": "basu",
+        "primary_meaning": "bass",
+        "tags": "abbr",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "バス",
+        "romaji": "basu",
+        "primary_meaning": "bass fish; esp. black bass",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j1000",
+    "kanji": "いとこ",
+    "kana": "いとこ",
+    "meaning": "cousin",
+    "candidates": [
+      {
+        "kanji": "従兄弟",
+        "kana": "いとこ",
+        "romaji": "itoko",
+        "primary_meaning": "cousin male",
+        "tags": "ichi1, uk",
+        "score": 9
+      },
+      {
+        "kanji": "従姉妹",
+        "kana": "いとこ",
+        "romaji": "itoko",
+        "primary_meaning": "cousin female",
+        "tags": "spec1, uk",
+        "score": 9
+      }
+    ]
+  },
+  {
+    "sheet": "j1000",
+    "kanji": "フォーク",
+    "kana": "ふぉーく",
+    "meaning": "fork",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "フォーク",
+        "romaji": "fuooku",
+        "primary_meaning": "fork",
+        "tags": "gai1, ichi1, abbr",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "フォーク",
+        "romaji": "fuooku",
+        "primary_meaning": "folk esp. music",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j1000",
+    "kanji": "似ている",
+    "kana": "にている",
+    "meaning": "look like, resemble",
+    "candidates": [
+      {
+        "kanji": "似る",
+        "kana": "にる",
+        "romaji": "niru",
+        "primary_meaning": "to resemble",
+        "tags": "ichi1, news2, nf29",
+        "score": 4
+      },
+      {
+        "kanji": "煮る",
+        "kana": "にる",
+        "romaji": "niru",
+        "primary_meaning": "to boil",
+        "tags": "ichi1, news1, nf15",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sheet": "j1000",
+    "kanji": "ランチ",
+    "kana": "らんち",
+    "meaning": "lunch (loan word)",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ランチ",
+        "romaji": "ranchi",
+        "primary_meaning": "lunch",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "ランチ",
+        "romaji": "ranchi",
+        "primary_meaning": "launch boat",
+        "tags": "",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "ランチ",
+        "romaji": "ranchi",
+        "primary_meaning": "ranch",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j1000",
+    "kanji": "コップ",
+    "kana": "こっぷ",
+    "meaning": "cup, glass",
+    "candidates": [
+      {
+        "kanji": "洋杯",
+        "kana": "コップ",
+        "romaji": "koppu",
+        "primary_meaning": "glass drinking vessel",
+        "tags": "gai1, ichi1, uk",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "コップ",
+        "romaji": "koppu",
+        "primary_meaning": "cop",
+        "tags": "sl, rare",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j1000",
+    "kanji": "九",
+    "kana": "く",
+    "meaning": "nine",
+    "candidates": [
+      {
+        "kanji": "句",
+        "kana": "く",
+        "romaji": "ku",
+        "primary_meaning": "section i.e. of text",
+        "tags": "ichi1, news1, nf12",
+        "score": 8
+      },
+      {
+        "kanji": "区",
+        "kana": "く",
+        "romaji": "ku",
+        "primary_meaning": "ward",
+        "tags": "ichi1, news1, nf09",
+        "score": 8
+      },
+      {
+        "kanji": "九",
+        "kana": "きゅう",
+        "romaji": "kyuu",
+        "primary_meaning": "nine",
+        "tags": "ichi1, news1, nf01",
+        "score": 7
+      },
+      {
+        "kanji": "苦",
+        "kana": "く",
+        "romaji": "ku",
+        "primary_meaning": "pain",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "躯",
+        "kana": "く",
+        "romaji": "ku",
+        "primary_meaning": "counter for Buddhist images statues and paintings",
+        "tags": "arch",
+        "score": 7
+      },
+      {
+        "kanji": "矩",
+        "kana": "く",
+        "romaji": "ku",
+        "primary_meaning": "quadrature",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "垢",
+        "kana": "く",
+        "romaji": "ku",
+        "primary_meaning": "klesha polluting thoughts such as greed, hatred and delusion, which result in suffering",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "口",
+        "kana": "く",
+        "romaji": "ku",
+        "primary_meaning": "mouth",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "九",
+        "kana": "チュー",
+        "romaji": "chuu",
+        "primary_meaning": "nine",
+        "tags": "",
+        "score": 6
+      }
+    ]
+  },
+  {
+    "sheet": "j1000",
+    "kanji": "ガス",
+    "kana": "がす",
+    "meaning": "gas (loan word)",
+    "candidates": [
+      {
+        "kanji": "臥す",
+        "kana": "がす",
+        "romaji": "gasu",
+        "primary_meaning": "to lie down in bed",
+        "tags": "arch",
+        "score": 7
+      },
+      {
+        "kanji": "賀す",
+        "kana": "がす",
+        "romaji": "gasu",
+        "primary_meaning": "to congratulate",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "瓦斯",
+        "kana": "ガス",
+        "romaji": "gasu",
+        "primary_meaning": "gas as a fuel",
+        "tags": "gai1, ichi1, uk, abbr, col",
+        "score": 4
+      }
+    ]
+  },
+  {
+    "sheet": "j1000",
+    "kanji": "トラック",
+    "kana": "とらっく",
+    "meaning": "truck",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "トラック",
+        "romaji": "torakku",
+        "primary_meaning": "truck",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "トラック",
+        "romaji": "torakku",
+        "primary_meaning": "running track",
+        "tags": "abbr",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "コート",
+    "kana": "こーと",
+    "meaning": "coat, jacket (loan word)",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "コート",
+        "romaji": "kooto",
+        "primary_meaning": "coat",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "コート",
+        "romaji": "kooto",
+        "primary_meaning": "court e.g. tennis, basketball, volleyball",
+        "tags": "gai1, ichi1",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "カード",
+    "kana": "かーど",
+    "meaning": "card",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "カード",
+        "romaji": "kaado",
+        "primary_meaning": "card information, filing, etc.",
+        "tags": "gai1, ichi1, abbr",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "カード",
+        "romaji": "kaado",
+        "primary_meaning": "curd",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "カラー",
+    "kana": "からー",
+    "meaning": "color (loan word)",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "カラー",
+        "romaji": "karaa",
+        "primary_meaning": "color",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "カラー",
+        "romaji": "karaa",
+        "primary_meaning": "collar",
+        "tags": "spec1",
+        "score": 1
+      },
+      {
+        "kanji": null,
+        "kana": "カラー",
+        "romaji": "karaa",
+        "primary_meaning": "calla variety of arum lily",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "パン",
+    "kana": "ぱん",
+    "meaning": "bread",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "パン",
+        "romaji": "pan",
+        "primary_meaning": "bread",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "パン",
+        "romaji": "pan",
+        "primary_meaning": "Pan god",
+        "tags": "",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "パン",
+        "romaji": "pan",
+        "primary_meaning": "pan",
+        "tags": "",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "パン",
+        "romaji": "pan",
+        "primary_meaning": "pan-",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "ボール",
+    "kana": "ぼーる",
+    "meaning": "ball",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ボール",
+        "romaji": "booru",
+        "primary_meaning": "ball",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "ボール",
+        "romaji": "booru",
+        "primary_meaning": "board cardboard, pasteboard, etc.",
+        "tags": "abbr",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "ホーム",
+    "kana": "ほーむ",
+    "meaning": "platform (for short)",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ホーム",
+        "romaji": "hoomu",
+        "primary_meaning": "platform",
+        "tags": "gai1, ichi1, abbr",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "ホーム",
+        "romaji": "hoomu",
+        "primary_meaning": "home",
+        "tags": "spec2, abbr",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "コート",
+    "kana": "こーと",
+    "meaning": "sports court",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "コート",
+        "romaji": "kooto",
+        "primary_meaning": "court e.g. tennis, basketball, volleyball",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "コート",
+        "romaji": "kooto",
+        "primary_meaning": "coat",
+        "tags": "gai1, ichi1",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "ぶどう",
+    "kana": "ぶどう",
+    "meaning": "grapes",
+    "candidates": [
+      {
+        "kanji": "武道",
+        "kana": "ぶどう",
+        "romaji": "budou",
+        "primary_meaning": "martial arts",
+        "tags": "news1, nf11",
+        "score": 8
+      },
+      {
+        "kanji": "葡萄",
+        "kana": "ぶどう",
+        "romaji": "budou",
+        "primary_meaning": "grape",
+        "tags": "ichi1, news2, nf46, uk",
+        "score": 8
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "グラス",
+    "kana": "ぐらす",
+    "meaning": "glass",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "グラス",
+        "romaji": "gurasu",
+        "primary_meaning": "glass drinking vessel",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "グラス",
+        "romaji": "gurasu",
+        "primary_meaning": "grass",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "サッカー",
+    "kana": "さっかー",
+    "meaning": "soccer, football",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "サッカー",
+        "romaji": "sakkaa",
+        "primary_meaning": "soccer",
+        "tags": "gai1, ichi1",
+        "score": 3
+      },
+      {
+        "kanji": null,
+        "kana": "サッカー",
+        "romaji": "sakkaa",
+        "primary_meaning": "seersucker",
+        "tags": "",
+        "score": 0
+      },
+      {
+        "kanji": null,
+        "kana": "サッカー",
+        "romaji": "sakkaa",
+        "primary_meaning": "sacker at a supermarket",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "タオル",
+    "kana": "たおる",
+    "meaning": "towel",
+    "candidates": [
+      {
+        "kanji": "手折る",
+        "kana": "たおる",
+        "romaji": "taoru",
+        "primary_meaning": "to break by hand e.g. a flower",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "倒る",
+        "kana": "たおる",
+        "romaji": "taoru",
+        "primary_meaning": "to fall",
+        "tags": "arch",
+        "score": 7
+      },
+      {
+        "kanji": null,
+        "kana": "タオル",
+        "romaji": "taoru",
+        "primary_meaning": "towel",
+        "tags": "gai1, ichi1",
+        "score": 4
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "ソース",
+    "kana": "そーす",
+    "meaning": "sauce",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ソース",
+        "romaji": "soosu",
+        "primary_meaning": "sauce",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "ソース",
+        "romaji": "soosu",
+        "primary_meaning": "source of information",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "ベル",
+    "kana": "べる",
+    "meaning": "bell",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ベル",
+        "romaji": "beru",
+        "primary_meaning": "bell",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "ベル",
+        "romaji": "beru",
+        "primary_meaning": "bel unit",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "ラーメン",
+    "kana": "らーめん",
+    "meaning": "ramen (chinese noodles)",
+    "candidates": [
+      {
+        "kanji": "拉麺",
+        "kana": "ラーメン",
+        "romaji": "raamen",
+        "primary_meaning": "ramen",
+        "tags": "gai1, ichi1, uk",
+        "score": 3
+      },
+      {
+        "kanji": null,
+        "kana": "ラーメン",
+        "romaji": "raamen",
+        "primary_meaning": "rigid frame",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "ライター",
+    "kana": "らいたー",
+    "meaning": "lighter",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ライター",
+        "romaji": "raitaa",
+        "primary_meaning": "lighter",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "ライター",
+        "romaji": "raitaa",
+        "primary_meaning": "writer",
+        "tags": "gai1, ichi1",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "メール",
+    "kana": "めーる",
+    "meaning": "e-mail",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "メール",
+        "romaji": "meeru",
+        "primary_meaning": "email",
+        "tags": "gai1, abbr, col",
+        "score": 1
+      },
+      {
+        "kanji": null,
+        "kana": "メール",
+        "romaji": "meeru",
+        "primary_meaning": "male",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "エンジン",
+    "kana": "えんじん",
+    "meaning": "engine",
+    "candidates": [
+      {
+        "kanji": "円陣",
+        "kana": "えんじん",
+        "romaji": "enjin",
+        "primary_meaning": "forming a circle",
+        "tags": "news2, nf45",
+        "score": 8
+      },
+      {
+        "kanji": "猿人",
+        "kana": "えんじん",
+        "romaji": "enjin",
+        "primary_meaning": "ape man",
+        "tags": "news2, nf31",
+        "score": 8
+      },
+      {
+        "kanji": "厭人",
+        "kana": "えんじん",
+        "romaji": "enjin",
+        "primary_meaning": "misanthropy",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "閹人",
+        "kana": "えんじん",
+        "romaji": "enjin",
+        "primary_meaning": "eunuch",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "煙塵",
+        "kana": "えんじん",
+        "romaji": "enjin",
+        "primary_meaning": "dust",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": null,
+        "kana": "エンジン",
+        "romaji": "enjin",
+        "primary_meaning": "engine",
+        "tags": "gai1, ichi1",
+        "score": 4
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "行き",
+    "kana": "ゆき",
+    "meaning": "going, bound for (traditional reading)",
+    "candidates": [
+      {
+        "kanji": "雪",
+        "kana": "ゆき",
+        "romaji": "yuki",
+        "primary_meaning": "snow",
+        "tags": "ichi1, news1, nf03",
+        "score": 8
+      },
+      {
+        "kanji": "行き",
+        "kana": "いき",
+        "romaji": "iki",
+        "primary_meaning": "the way there",
+        "tags": "ichi1, news1, nf12",
+        "score": 8
+      },
+      {
+        "kanji": "裄",
+        "kana": "ゆき",
+        "romaji": "yuki",
+        "primary_meaning": "distance from the seam in the back of a kimono to the end of the sleeve",
+        "tags": "",
+        "score": 7
+      }
+    ]
+  },
+  {
+    "sheet": "j2000",
+    "kanji": "サイト",
+    "kana": "さいと",
+    "meaning": "website",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "サイト",
+        "romaji": "saito",
+        "primary_meaning": "site",
+        "tags": "gai1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "サイト",
+        "romaji": "saito",
+        "primary_meaning": "time allowed for payment of a bill of exchange",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "ファン",
+    "kana": "ふぁん",
+    "meaning": "fan, admirer",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ファン",
+        "romaji": "fuan",
+        "primary_meaning": "fan",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": "不安",
+        "kana": "ふあん",
+        "romaji": "fuan",
+        "primary_meaning": "anxiety",
+        "tags": "ichi1, news1, nf02",
+        "score": 3
+      },
+      {
+        "kanji": null,
+        "kana": "ファン",
+        "romaji": "fuan",
+        "primary_meaning": "fun",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "ケース",
+    "kana": "けーす",
+    "meaning": "case",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ケース",
+        "romaji": "keesu",
+        "primary_meaning": "case container",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": "ＣＡＳＥ",
+        "kana": "ケース",
+        "romaji": "keesu",
+        "primary_meaning": "computer-aided software engineering",
+        "tags": "",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "マーク",
+    "kana": "まーく",
+    "meaning": "logo",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "マーク",
+        "romaji": "maaku",
+        "primary_meaning": "mark",
+        "tags": "gai1, ichi1, abbr",
+        "score": 2
+      },
+      {
+        "kanji": "Ｍａｃｈ",
+        "kana": "マーク",
+        "romaji": "maaku",
+        "primary_meaning": "Mach OS kernel",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "ベスト",
+    "kana": "べすと",
+    "meaning": "best",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ベスト",
+        "romaji": "besuto",
+        "primary_meaning": "best",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "ベスト",
+        "romaji": "besuto",
+        "primary_meaning": "vest",
+        "tags": "gai1",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "デザート",
+    "kana": "でざーと",
+    "meaning": "dessert",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "デザート",
+        "romaji": "dezaato",
+        "primary_meaning": "dessert",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "デザート",
+        "romaji": "dezaato",
+        "primary_meaning": "desert",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "つい",
+    "kana": "つい",
+    "meaning": "inadvertently, carelessly",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "つい",
+        "romaji": "tsui",
+        "primary_meaning": "just now",
+        "tags": "ichi1",
+        "score": 8
+      },
+      {
+        "kanji": "対",
+        "kana": "つい",
+        "romaji": "tsui",
+        "primary_meaning": "pair",
+        "tags": "ichi1",
+        "score": 8
+      },
+      {
+        "kanji": "終",
+        "kana": "つい",
+        "romaji": "tsui",
+        "primary_meaning": "end",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": null,
+        "kana": "ツイ",
+        "romaji": "tsui",
+        "primary_meaning": "Twitter",
+        "tags": "abbr, net-sl",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "アイドル",
+    "kana": "あいどる",
+    "meaning": "idol",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "アイドル",
+        "romaji": "aidoru",
+        "primary_meaning": "performer usu. in a boy band or girl group with an image cultivated to foster a dedicated fan following",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "アイドル",
+        "romaji": "aidoru",
+        "primary_meaning": "idle",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "おばさん",
+    "kana": "おばさん",
+    "meaning": "middle-aged woman",
+    "candidates": [
+      {
+        "kanji": "伯母さん",
+        "kana": "おばさん",
+        "romaji": "obasan",
+        "primary_meaning": "aunt",
+        "tags": "hon, fam, uk",
+        "score": 7
+      },
+      {
+        "kanji": "小母さん",
+        "kana": "おばさん",
+        "romaji": "obasan",
+        "primary_meaning": "old lady",
+        "tags": "fam, uk",
+        "score": 7
+      },
+      {
+        "kanji": "叔母",
+        "kana": "おば",
+        "romaji": "oba",
+        "primary_meaning": "aunt",
+        "tags": "ichi1, news1, news2, nf20, nf30",
+        "score": 1
+      },
+      {
+        "kanji": "小母",
+        "kana": "おば",
+        "romaji": "oba",
+        "primary_meaning": "old lady",
+        "tags": "fam, uk",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "ウエスト",
+    "kana": "うえすと",
+    "meaning": "waist",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ウエスト",
+        "romaji": "uesuto",
+        "primary_meaning": "waist",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "ウエスト",
+        "romaji": "uesuto",
+        "primary_meaning": "west",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "バツ",
+    "kana": "ばつ",
+    "meaning": "cross, x-mark (on errors, mistakes etc.)",
+    "candidates": [
+      {
+        "kanji": "罰",
+        "kana": "ばつ",
+        "romaji": "batsu",
+        "primary_meaning": "punishment",
+        "tags": "ichi1",
+        "score": 8
+      },
+      {
+        "kanji": "閥",
+        "kana": "ばつ",
+        "romaji": "batsu",
+        "primary_meaning": "clique",
+        "tags": "news2, nf39, spec2",
+        "score": 8
+      },
+      {
+        "kanji": "ｘ",
+        "kana": "ばつ",
+        "romaji": "batsu",
+        "primary_meaning": "x mark",
+        "tags": "uk, sl",
+        "score": 8
+      },
+      {
+        "kanji": null,
+        "kana": "ばつ",
+        "romaji": "batsu",
+        "primary_meaning": "one's circumstances or condition, esp. compared to that of another",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "跋",
+        "kana": "ばつ",
+        "romaji": "batsu",
+        "primary_meaning": "epilogue",
+        "tags": "",
+        "score": 7
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "かっと",
+    "kana": "かっと",
+    "meaning": "in a temper, in a rage",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "カッと",
+        "romaji": "katto",
+        "primary_meaning": "flaring up",
+        "tags": "ichi1, on-mim, arch",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "カット",
+        "romaji": "katto",
+        "primary_meaning": "cut",
+        "tags": "gai1",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "イカ",
+    "kana": "いか",
+    "meaning": "squid",
+    "candidates": [
+      {
+        "kanji": "以下",
+        "kana": "いか",
+        "romaji": "ika",
+        "primary_meaning": "not exceeding ...",
+        "tags": "ichi1, news1, nf04",
+        "score": 8
+      },
+      {
+        "kanji": "医科",
+        "kana": "いか",
+        "romaji": "ika",
+        "primary_meaning": "medical science",
+        "tags": "news1, nf08",
+        "score": 8
+      },
+      {
+        "kanji": "異化",
+        "kana": "いか",
+        "romaji": "ika",
+        "primary_meaning": "dissimilation",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "衣架",
+        "kana": "いか",
+        "romaji": "ika",
+        "primary_meaning": "clothes rack",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "医家",
+        "kana": "いか",
+        "romaji": "ika",
+        "primary_meaning": "family of doctors",
+        "tags": "dated",
+        "score": 7
+      },
+      {
+        "kanji": "五十日",
+        "kana": "いか",
+        "romaji": "ika",
+        "primary_meaning": "fiftieth day after the birth of a child",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "易化",
+        "kana": "いか",
+        "romaji": "ika",
+        "primary_meaning": "simplification",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "烏賊",
+        "kana": "イカ",
+        "romaji": "ika",
+        "primary_meaning": "cuttlefish",
+        "tags": "ichi1, ichi2, uk",
+        "score": 4
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "かんかん",
+    "kana": "かんかん",
+    "meaning": "furiously angry, in a rage",
+    "candidates": [
+      {
+        "kanji": "看貫",
+        "kana": "かんかん",
+        "romaji": "kankan",
+        "primary_meaning": "weighing",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "感官",
+        "kana": "かんかん",
+        "romaji": "kankan",
+        "primary_meaning": "sense organ",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "閑々",
+        "kana": "かんかん",
+        "romaji": "kankan",
+        "primary_meaning": "quietly",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "寛緩",
+        "kana": "かんかん",
+        "romaji": "kankan",
+        "primary_meaning": "looking cool and collect",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "肝管",
+        "kana": "かんかん",
+        "romaji": "kankan",
+        "primary_meaning": "hepatic duct",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "漢奸",
+        "kana": "かんかん",
+        "romaji": "kankan",
+        "primary_meaning": "Chinese traitor esp. a collaborator with the Japanese",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "完完",
+        "kana": "かんかん",
+        "romaji": "kankan",
+        "primary_meaning": "confirmed as completed",
+        "tags": "abbr",
+        "score": 7
+      },
+      {
+        "kanji": null,
+        "kana": "かんかん",
+        "romaji": "kankan",
+        "primary_meaning": "hair",
+        "tags": "chn, dated",
+        "score": 7
+      },
+      {
+        "kanji": null,
+        "kana": "カンカン",
+        "romaji": "kankan",
+        "primary_meaning": "extremely angry",
+        "tags": "on-mim",
+        "score": 3
+      },
+      {
+        "kanji": null,
+        "kana": "カンカン",
+        "romaji": "kankan",
+        "primary_meaning": "can-can",
+        "tags": "gai2",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "からす",
+    "kana": "からす",
+    "meaning": "crow, raven",
+    "candidates": [
+      {
+        "kanji": "枯らす",
+        "kana": "からす",
+        "romaji": "karasu",
+        "primary_meaning": "to let dry",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "涸らす",
+        "kana": "からす",
+        "romaji": "karasu",
+        "primary_meaning": "to dry up",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "嗄らす",
+        "kana": "からす",
+        "romaji": "karasu",
+        "primary_meaning": "to talk oneself hoarse",
+        "tags": "uk",
+        "score": 7
+      },
+      {
+        "kanji": "烏河豚",
+        "kana": "からす",
+        "romaji": "karasu",
+        "primary_meaning": "Chinese puffer Takifugu chinensis",
+        "tags": "uk",
+        "score": 7
+      },
+      {
+        "kanji": "空素",
+        "kana": "からす",
+        "romaji": "karasu",
+        "primary_meaning": "dealt hand containing only 1-point cards scoring combination",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "烏",
+        "kana": "カラス",
+        "romaji": "karasu",
+        "primary_meaning": "crow Corvus spp.",
+        "tags": "spec1, ichi1, news1, nf22, uk",
+        "score": 5
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "昨日",
+    "kana": "さくじつ",
+    "meaning": "yesterday (formal)",
+    "candidates": [
+      {
+        "kanji": "昨日",
+        "kana": "きのう",
+        "romaji": "kinou",
+        "primary_meaning": "yesterday",
+        "tags": "ichi1, news1, nf10",
+        "score": 7
+      },
+      {
+        "kanji": "朔日",
+        "kana": "さくじつ",
+        "romaji": "sakujitsu",
+        "primary_meaning": "first day of the month in the lunar calendar",
+        "tags": "",
+        "score": 7
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "夜",
+    "kana": "よ",
+    "meaning": "night, evening",
+    "candidates": [
+      {
+        "kanji": "夜",
+        "kana": "よる",
+        "romaji": "yoru",
+        "primary_meaning": "night",
+        "tags": "ichi1, news1, nf02",
+        "score": 8
+      },
+      {
+        "kanji": "世",
+        "kana": "よ",
+        "romaji": "yo",
+        "primary_meaning": "world",
+        "tags": "ichi1, news1, nf06",
+        "score": 8
+      },
+      {
+        "kanji": null,
+        "kana": "よ",
+        "romaji": "yo",
+        "primary_meaning": "hey",
+        "tags": "spec1",
+        "score": 8
+      },
+      {
+        "kanji": "余",
+        "kana": "よ",
+        "romaji": "yo",
+        "primary_meaning": "other",
+        "tags": "form",
+        "score": 7
+      },
+      {
+        "kanji": "節",
+        "kana": "よ",
+        "romaji": "yo",
+        "primary_meaning": "space between two nodes on bamboo, etc.",
+        "tags": "arch",
+        "score": 7
+      },
+      {
+        "kanji": "予",
+        "kana": "よ",
+        "romaji": "yo",
+        "primary_meaning": "I",
+        "tags": "form",
+        "score": 7
+      },
+      {
+        "kanji": "夜",
+        "kana": "や",
+        "romaji": "ya",
+        "primary_meaning": "counter for nights",
+        "tags": "",
+        "score": 5
+      },
+      {
+        "kanji": null,
+        "kana": "ヨ",
+        "romaji": "yo",
+        "primary_meaning": "I",
+        "tags": "dated",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "レベル",
+    "kana": "れべる",
+    "meaning": "level",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "レベル",
+        "romaji": "reberu",
+        "primary_meaning": "level",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "レベル",
+        "romaji": "reberu",
+        "primary_meaning": "rebel",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "プロ",
+    "kana": "ぷろ",
+    "meaning": "professional",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "プロ",
+        "romaji": "puro",
+        "primary_meaning": "professional",
+        "tags": "gai1, ichi1, abbr",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "プロ",
+        "romaji": "puro",
+        "primary_meaning": "percent",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "クラブ",
+    "kana": "くらぶ",
+    "meaning": "club",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "クラブ",
+        "romaji": "kurabu",
+        "primary_meaning": "nightclub",
+        "tags": "gai1",
+        "score": 4
+      },
+      {
+        "kanji": "倶楽部",
+        "kana": "クラブ",
+        "romaji": "kurabu",
+        "primary_meaning": "club",
+        "tags": "gai1, ichi1, news1, nf09, uk",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "クラブ",
+        "romaji": "kurabu",
+        "primary_meaning": "crab",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "おる",
+    "kana": "おる",
+    "meaning": "be present, stay (humble)",
+    "candidates": [
+      {
+        "kanji": "織る",
+        "kana": "おる",
+        "romaji": "oru",
+        "primary_meaning": "to weave",
+        "tags": "ichi1, news2, nf26",
+        "score": 8
+      },
+      {
+        "kanji": "折る",
+        "kana": "おる",
+        "romaji": "oru",
+        "primary_meaning": "to break",
+        "tags": "ichi1, news2, nf37",
+        "score": 8
+      },
+      {
+        "kanji": "居る",
+        "kana": "おる",
+        "romaji": "oru",
+        "primary_meaning": "to be animate",
+        "tags": "ichi1, news1, nf19, uk, hum",
+        "score": 8
+      }
+    ]
+  },
+  {
+    "sheet": "j3000",
+    "kanji": "コード",
+    "kana": "こーど",
+    "meaning": "cord",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "コード",
+        "romaji": "koodo",
+        "primary_meaning": "code",
+        "tags": "gai1, ichi1",
+        "score": 1
+      },
+      {
+        "kanji": null,
+        "kana": "コード",
+        "romaji": "koodo",
+        "primary_meaning": "cord",
+        "tags": "",
+        "score": 1
+      },
+      {
+        "kanji": null,
+        "kana": "コード",
+        "romaji": "koodo",
+        "primary_meaning": "chord",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j4000",
+    "kanji": "マッチ",
+    "kana": "まっち",
+    "meaning": "match, matchbox",
+    "candidates": [
+      {
+        "kanji": "燐寸",
+        "kana": "マッチ",
+        "romaji": "matchi",
+        "primary_meaning": "match for lighting a fire",
+        "tags": "gai1, ichi1, uk",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "マッチ",
+        "romaji": "matchi",
+        "primary_meaning": "match contest",
+        "tags": "",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sheet": "j4000",
+    "kanji": "流行",
+    "kana": "はやり",
+    "meaning": "fashion, trend (rather casual)",
+    "candidates": [
+      {
+        "kanji": "流行",
+        "kana": "りゅうこう",
+        "romaji": "ryuukou",
+        "primary_meaning": "fashion",
+        "tags": "ichi1, news1, nf06",
+        "score": 8
+      },
+      {
+        "kanji": "流行り",
+        "kana": "はやり",
+        "romaji": "hayari",
+        "primary_meaning": "fashion",
+        "tags": "",
+        "score": 8
+      }
+    ]
+  },
+  {
+    "sheet": "j4000",
+    "kanji": "カーブ",
+    "kana": "かーぶ",
+    "meaning": "curve",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "カーブ",
+        "romaji": "kaabu",
+        "primary_meaning": "curve",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "カーブ",
+        "romaji": "kaabu",
+        "primary_meaning": "wine cellar",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j4000",
+    "kanji": "はねる",
+    "kana": "はねる",
+    "meaning": "run over, hit",
+    "candidates": [
+      {
+        "kanji": "跳ねる",
+        "kana": "はねる",
+        "romaji": "haneru",
+        "primary_meaning": "to jump",
+        "tags": "ichi1, news2, nf40",
+        "score": 9
+      },
+      {
+        "kanji": "撥ねる",
+        "kana": "はねる",
+        "romaji": "haneru",
+        "primary_meaning": "to hit e.g. with a car",
+        "tags": "ichi1, uk",
+        "score": 9
+      },
+      {
+        "kanji": "刎ねる",
+        "kana": "はねる",
+        "romaji": "haneru",
+        "primary_meaning": "to cut off someone's head",
+        "tags": "uk",
+        "score": 7
+      }
+    ]
+  },
+  {
+    "sheet": "j4000",
+    "kanji": "マラソン",
+    "kana": "まらそん",
+    "meaning": "marathon",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "マラソン",
+        "romaji": "marason",
+        "primary_meaning": "marathon",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "マラソン",
+        "romaji": "marason",
+        "primary_meaning": "malathion insecticide",
+        "tags": "",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sheet": "j5000",
+    "kanji": "着ける",
+    "kana": "つける",
+    "meaning": "pull up, park (a vehicle)",
+    "candidates": [
+      {
+        "kanji": "漬ける",
+        "kana": "つける",
+        "romaji": "tsukeru",
+        "primary_meaning": "to soak in",
+        "tags": "ichi1, news1, nf14",
+        "score": 8
+      },
+      {
+        "kanji": "付ける",
+        "kana": "つける",
+        "romaji": "tsukeru",
+        "primary_meaning": "to attach",
+        "tags": "ichi1, uk",
+        "score": 8
+      },
+      {
+        "kanji": "点ける",
+        "kana": "つける",
+        "romaji": "tsukeru",
+        "primary_meaning": "to turn on",
+        "tags": "ichi1, uk",
+        "score": 8
+      },
+      {
+        "kanji": "就ける",
+        "kana": "つける",
+        "romaji": "tsukeru",
+        "primary_meaning": "to install a king, emperor, etc.",
+        "tags": "",
+        "score": 7
+      },
+      {
+        "kanji": "尾ける",
+        "kana": "つける",
+        "romaji": "tsukeru",
+        "primary_meaning": "to follow someone",
+        "tags": "",
+        "score": 7
+      }
+    ]
+  },
+  {
+    "sheet": "j5000",
+    "kanji": "メーター",
+    "kana": "めーたー",
+    "meaning": "meter",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "メーター",
+        "romaji": "meetaa",
+        "primary_meaning": "meter",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "メーター",
+        "romaji": "meetaa",
+        "primary_meaning": "animator",
+        "tags": "sl, abbr",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j5000",
+    "kanji": "チョーク",
+    "kana": "ちょーく",
+    "meaning": "chalk",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "チョーク",
+        "romaji": "chooku",
+        "primary_meaning": "chalk",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "チョーク",
+        "romaji": "chooku",
+        "primary_meaning": "chock wedge placed under a wheel",
+        "tags": "",
+        "score": 0
+      },
+      {
+        "kanji": null,
+        "kana": "チョーク",
+        "romaji": "chooku",
+        "primary_meaning": "choke hold",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j5000",
+    "kanji": "ロッカー",
+    "kana": "ろっかー",
+    "meaning": "locker",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ロッカー",
+        "romaji": "rokkaa",
+        "primary_meaning": "locker",
+        "tags": "gai1, ichi1",
+        "score": 2
+      },
+      {
+        "kanji": null,
+        "kana": "ロッカー",
+        "romaji": "rokkaa",
+        "primary_meaning": "rocker",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j5000",
+    "kanji": "カット",
+    "kana": "かっと",
+    "meaning": "cut (loan word)",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "カット",
+        "romaji": "katto",
+        "primary_meaning": "cut",
+        "tags": "gai1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "カッと",
+        "romaji": "katto",
+        "primary_meaning": "flaring up",
+        "tags": "ichi1, on-mim, arch",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sheet": "j5000",
+    "kanji": "リード",
+    "kana": "りーど",
+    "meaning": "the lead, taking a lead",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "リード",
+        "romaji": "riido",
+        "primary_meaning": "lead",
+        "tags": "gai1, ichi1",
+        "score": 4
+      },
+      {
+        "kanji": null,
+        "kana": "リード",
+        "romaji": "riido",
+        "primary_meaning": "reed of a musical instrument",
+        "tags": "",
+        "score": 0
+      },
+      {
+        "kanji": null,
+        "kana": "リード",
+        "romaji": "riido",
+        "primary_meaning": "reading",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sheet": "j6000",
+    "kanji": "もっとも",
+    "kana": "もっとも",
+    "meaning": "quite right",
+    "candidates": [
+      {
+        "kanji": "最も",
+        "kana": "もっとも",
+        "romaji": "mottomo",
+        "primary_meaning": "most",
+        "tags": "ichi1, news1, nf01",
+        "score": 8
+      },
+      {
+        "kanji": "尤も",
+        "kana": "もっとも",
+        "romaji": "mottomo",
+        "primary_meaning": "but then",
+        "tags": "ichi1, uk",
+        "score": 8
+      }
+    ]
+  },
+  {
+    "sheet": "j6000",
+    "kanji": "はかり",
+    "kana": "はかり",
+    "meaning": "scale",
+    "candidates": [
+      {
+        "kanji": "秤",
+        "kana": "はかり",
+        "romaji": "hakari",
+        "primary_meaning": "scales",
+        "tags": "ichi1",
+        "score": 8
+      },
+      {
+        "kanji": "量り",
+        "kana": "はかり",
+        "romaji": "hakari",
+        "primary_meaning": "measurements",
+        "tags": "news2, nf32",
+        "score": 8
+      }
+    ]
+  },
+  {
+    "sheet": "j6000",
+    "kanji": "頭",
+    "kana": "かしら",
+    "meaning": "head (of a group), chief",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "かしら",
+        "romaji": "kashira",
+        "primary_meaning": "I wonder",
+        "tags": "spec1, fem",
+        "score": 8
+      },
+      {
+        "kanji": "頭",
+        "kana": "あたま",
+        "romaji": "atama",
+        "primary_meaning": "head",
+        "tags": "ichi1, abbr, col",
+        "score": 8
+      },
+      {
+        "kanji": "首",
+        "kana": "かしら",
+        "romaji": "kashira",
+        "primary_meaning": "head of a doll",
+        "tags": "",
+        "score": 8
+      },
+      {
+        "kanji": "頭",
+        "kana": "とう",
+        "romaji": "tou",
+        "primary_meaning": "counter for large animals e.g. head of cattle",
+        "tags": "ichi1",
+        "score": 7
+      },
+      {
+        "kanji": "頭",
+        "kana": "がしら",
+        "romaji": "gashira",
+        "primary_meaning": "top of ...",
+        "tags": "",
+        "score": 6
+      },
+      {
+        "kanji": "頭",
+        "kana": "かぶし",
+        "romaji": "kabushi",
+        "primary_meaning": "shape of one's head",
+        "tags": "arch, uk",
+        "score": 6
+      },
+      {
+        "kanji": "頭",
+        "kana": "こうべ",
+        "romaji": "koube",
+        "primary_meaning": "head",
+        "tags": "uk",
+        "score": 6
+      },
+      {
+        "kanji": "頭",
+        "kana": "ず",
+        "romaji": "zu",
+        "primary_meaning": "head",
+        "tags": "",
+        "score": 6
+      },
+      {
+        "kanji": "頭",
+        "kana": "かぶり",
+        "romaji": "kaburi",
+        "primary_meaning": "head",
+        "tags": "uk, dated",
+        "score": 6
+      },
+      {
+        "kanji": "頭",
+        "kana": "つむり",
+        "romaji": "tsumuri",
+        "primary_meaning": "head",
+        "tags": "",
+        "score": 6
+      },
+      {
+        "kanji": "頭",
+        "kana": "つむ",
+        "romaji": "tsumu",
+        "primary_meaning": "head",
+        "tags": "abbr",
+        "score": 6
+      }
+    ]
+  },
+  {
+    "sheet": "j6000",
+    "kanji": "ガード",
+    "kana": "がーど",
+    "meaning": "guardrail",
+    "candidates": [
+      {
+        "kanji": null,
+        "kana": "ガード",
+        "romaji": "gaado",
+        "primary_meaning": "guarding",
+        "tags": "gai1, ichi1",
+        "score": 1
+      },
+      {
+        "kanji": null,
+        "kana": "ガード",
+        "romaji": "gaado",
+        "primary_meaning": "railway bridge over a road",
+        "tags": "",
+        "score": 0
+      }
+    ]
+  }
+]

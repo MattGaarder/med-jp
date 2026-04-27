@@ -20,6 +20,7 @@
     "fast-xml-parser": "^5.5.11",
     "fuse.js": "^7.1.0",
     "hnswlib-node": "^3.0.0",
-    "wanakana": "^5.3.1"
+    "wanakana": "^5.3.1",
+    "xlsx": "^0.18.5"
   }
 }

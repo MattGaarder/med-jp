@@ -36,7 +36,7 @@ const candidates = db.prepare(`
 
 const pre = createPreprocessor({
   vocabulary: candidates,
-  knownWords
+  exactMatchIndex: knownWords
 });
 
 const res = pre.preprocessJapWithTrace("konichi");

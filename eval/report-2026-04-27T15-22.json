@@ -1,0 +1,6414 @@
+{
+  "meta": {
+    "timestamp": "2026-04-27T15:22:17.384Z",
+    "skipLLM": false,
+    "totalMs": 1730828
+  },
+  "results": [
+    {
+      "id": "case-01-appetite",
+      "label": "Fragmented appetite & medication request",
+      "input": "JAP: wakatta waktta jya sono kusuri o kudasi ima ni mo watashi ni mo kigata no nai desu kara",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "wakatta   waktta   jya   sono   kusuri   wo   kudasi   ima   ni   mo   watashi   ni   mo   kigata   no naide su kara",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "わかった",
+          "input": "わかった",
+          "output": "wakatta",
+          "base": "wakatta",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "わkった",
+          "input": "わkった",
+          "output": "waktta",
+          "base": "waktta",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "じゃ",
+          "input": "じゃ",
+          "output": "jya",
+          "base": "jya",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "その",
+          "input": "その",
+          "output": "sono",
+          "base": "sono",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "くすり",
+          "input": "くすり",
+          "output": "kusuri",
+          "base": "kusuri",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "お",
+          "input": "お",
+          "output": "wo",
+          "base": "wo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "くだし",
+          "input": "くだし",
+          "output": "kudasi",
+          "base": "kudasi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "いま",
+          "input": "いま",
+          "output": "ima",
+          "base": "ima",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "も",
+          "input": "も",
+          "output": "mo",
+          "base": "mo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "わたし",
+          "input": "わたし",
+          "output": "watashi",
+          "base": "watashi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "も",
+          "input": "も",
+          "output": "mo",
+          "base": "mo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "きがた",
+          "input": "きがた",
+          "output": "kigata",
+          "base": "kigata",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "grammar",
+          "surface": "ないで",
+          "input": "ないで",
+          "output": "naide",
+          "base": "naide",
+          "meaning": "without",
+          "grammar_tags": [
+            "naide"
+          ],
+          "decision": "grammar:naide",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "naide",
+              "title": "ないで",
+              "meanings": [
+                "without"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "す",
+          "input": "す",
+          "output": "su",
+          "base": "su",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "particle"
+        },
+        {
+          "type": "grammar",
+          "surface": "から",
+          "input": "から",
+          "output": "kara",
+          "base": "kara",
+          "meaning": "so, since",
+          "grammar_tags": [
+            "kara"
+          ],
+          "decision": "grammar:kara",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "kara",
+              "title": "から",
+              "meanings": [
+                "so",
+                "since"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.1456,
+          "semanticScore": 0.932,
+          "romaji": "kusuri",
+          "kana": "くすり",
+          "kanji": "薬",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "medicine",
+            "pharmaceuticals",
+            "legal drugs"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf04"
+          ],
+          "frequency": 1
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7713,
+          "romaji": "kudasai",
+          "kana": "ください",
+          "kanji": "下さい",
+          "meanings": [
+            "please give me",
+            "please do for me"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- kusuri: medicine, pharmaceuticals\n\nTONE HINT:\n- kudasai: please give me",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- kusuri: medicine, pharmaceuticals\n\nTONE HINT:\n- kudasai: please give me\n\nInput: wakatta   waktta   jya   sono   kusuri   wo   kudasi   ima   ni   mo   watashi   ni   mo   kigata   no naide su kara\nOutput: /no_think",
+      "llmOutput": "I understand, but please give me that medicine now, because I can't even move without it.",
+      "durationMs": 52623,
+      "timings": {
+        "preprocess": 31893.262334,
+        "ensureANN": 3214.298582999996,
+        "embedding": 4998.807957999998,
+        "ragSearch": 23.645125000002736,
+        "rerank": 0.33849999999802094,
+        "promptAssembly": 0.02108299999963492,
+        "total": 40163.170000000006,
+        "buildPromptTotal": 40163.454333,
+        "llmGeneration": 12457.805792
+      },
+      "error": null,
+      "queryTokens": [
+        "wakatta",
+        "waktta",
+        "jya",
+        "kusuri"
+      ]
+    },
+    {
+      "id": "case-02-nausea",
+      "label": "Improved condition vs persistent nausea/dizziness",
+      "input": "JAP: sensei. konichi taicho yokunatta genki aru to demo omoimasu memai ga kibun warukute taberarenakatta",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "sensei .   konichi tai choyokunatta   genki   aru   to demo omoimasu   memai   ga   kibun   warukute   taberarenakatta",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "せんせい",
+          "input": "せんせい",
+          "output": "sensei",
+          "base": "sensei",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": ".",
+          "input": ".",
+          "output": ".",
+          "base": ".",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "こにち",
+          "input": "こにち",
+          "output": "konichi",
+          "base": "konichi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "たい",
+          "input": "たい",
+          "output": "tai",
+          "base": "tai",
+          "meaning": "(I) want to",
+          "grammar_tags": [
+            "tai"
+          ],
+          "decision": "grammar:tai",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "tai",
+              "title": "たい",
+              "meanings": [
+                "(I) want to"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "ちょよくなった",
+          "input": "ちょよくなった",
+          "output": "choyokunatta",
+          "base": "choyokunatta",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "げんき",
+          "input": "げんき",
+          "output": "genki",
+          "base": "genki",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ある",
+          "input": "ある",
+          "output": "aru",
+          "base": "aru",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "と",
+          "input": "と",
+          "output": "to",
+          "base": "to",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "grammar",
+          "surface": "でも",
+          "input": "でも",
+          "output": "demo",
+          "base": "temo",
+          "meaning": "even if",
+          "grammar_tags": [
+            "temo"
+          ],
+          "decision": "grammar:temo",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "temo",
+              "title": "ても",
+              "meanings": [
+                "even if"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "おもいます",
+          "input": "おもいます",
+          "output": "omoimasu",
+          "base": "omoimasu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "めまい",
+          "input": "めまい",
+          "output": "memai",
+          "base": "memai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "が",
+          "input": "が",
+          "output": "ga",
+          "base": "ga",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "きぶん",
+          "input": "きぶん",
+          "output": "kibun",
+          "base": "kibun",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "わるくて",
+          "input": "わるくて",
+          "output": "warukute",
+          "base": "warukute",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "たべられなかった",
+          "input": "たべられなかった",
+          "output": "taberarenakatta",
+          "base": "taberarenakatta",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.149,
+          "semanticScore": 0.9363,
+          "romaji": "tai",
+          "kana": "タイ",
+          "kanji": "泰",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "Thailand"
+          ],
+          "tags": [
+            "news1",
+            "nf04",
+            "uk"
+          ],
+          "frequency": 1
+        },
+        {
+          "score": 0.9298,
+          "semanticScore": 0.8623,
+          "romaji": "tai",
+          "kana": "タイ",
+          "kanji": "",
+          "domain": "music",
+          "source": "semantic",
+          "meanings": [
+            "tie",
+            "necktie",
+            "tie"
+          ],
+          "tags": [
+            "gai1"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.9088,
+          "semanticScore": 0.861,
+          "romaji": "tai",
+          "kana": "たい",
+          "kanji": "台",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "Taiwan"
+          ],
+          "tags": [
+            "abbr"
+          ],
+          "frequency": 0.1
+        },
+        {
+          "score": 0.9041,
+          "semanticScore": 0.8551,
+          "romaji": "tai",
+          "kana": "たい",
+          "kanji": "胎",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "womb"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7665,
+          "romaji": "genkyou",
+          "kana": "げんきょう",
+          "kanji": "現況",
+          "meanings": [
+            "present condition"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- tai: Thailand\n- tai: tie, necktie\n- tai: Taiwan\n- tai: womb\n\nTONE HINT:\n- genkyou: present condition",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- tai: Thailand\n- tai: tie, necktie\n- tai: Taiwan\n- tai: womb\n\nTONE HINT:\n- genkyou: present condition\n\nInput: sensei .   konichi tai choyokunatta   genki   aru   to demo omoimasu   memai   ga   kibun   warukute   taberarenakatta\nOutput: /no_think",
+      "llmOutput": "Teacher, although I feel my present condition is okay, I feel dizzy and couldn't eat.",
+      "durationMs": 167265,
+      "timings": {
+        "preprocess": 152387.8935,
+        "ensureANN": 0.06674999999813735,
+        "embedding": 3399.072916999983,
+        "ragSearch": 226.66408300001058,
+        "rerank": 0.024958000023616478,
+        "promptAssembly": 0.0011660000018309802,
+        "total": 156168.609292,
+        "buildPromptTotal": 156168.630208,
+        "llmGeneration": 11093.290208999999
+      },
+      "error": null,
+      "queryTokens": [
+        "konichi",
+        "tai",
+        "choyokunatta"
+      ]
+    },
+    {
+      "id": "case-03-smoking-alcohol",
+      "label": "Merged lifestyle query (smoking/drinking)",
+      "input": "JAP: kitsueninshu tabako ha arimasu ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "kitsueninshu   tabako   wa   arimasu   ka",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "きつえにんしゅ",
+          "input": "きつえにんしゅ",
+          "output": "kitsueninshu",
+          "base": "kitsueninshu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "たばこ",
+          "input": "たばこ",
+          "output": "tabako",
+          "base": "tabako",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "は",
+          "input": "は",
+          "output": "wa",
+          "base": "wa",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "あります",
+          "input": "あります",
+          "output": "arimasu",
+          "base": "arimasu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "か",
+          "input": "か",
+          "output": "ka",
+          "base": "ka",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.0621,
+          "semanticScore": 0.9631,
+          "romaji": "tabako",
+          "kana": "タバコ",
+          "kanji": "煙草",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "tobacco",
+            "cigarette",
+            "cigar"
+          ],
+          "tags": [
+            "gai1",
+            "ichi1",
+            "news2",
+            "nf38",
+            "uk"
+          ],
+          "frequency": 0.458
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7317,
+          "romaji": "aienka",
+          "kana": "あいえんか",
+          "kanji": "愛煙家",
+          "meanings": [
+            "heavy smoker",
+            "habitual smoker",
+            "person who loves smoking"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- tabako: tobacco, cigarette\n\nTONE HINT:\n- aienka: heavy smoker",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- tabako: tobacco, cigarette\n\nTONE HINT:\n- aienka: heavy smoker\n\nInput: kitsueninshu   tabako   wa   arimasu   ka\nOutput: /no_think",
+      "llmOutput": "Do you have a history of smoking tobacco?",
+      "durationMs": 37099,
+      "timings": {
+        "preprocess": 22208.197000000015,
+        "ensureANN": 0.0054579999996349216,
+        "embedding": 3044.4971660000156,
+        "ragSearch": 175.1856249999837,
+        "rerank": 0.019583000015700236,
+        "promptAssembly": 0.0011660000018309802,
+        "total": 25545.736584,
+        "buildPromptTotal": 25545.774375000008,
+        "llmGeneration": 11553.125583999994
+      },
+      "error": null,
+      "queryTokens": [
+        "kitsueninshu",
+        "tabako",
+        "arimasu"
+      ]
+    },
+    {
+      "id": "case-04-substances",
+      "label": "Illicit substance query (misspelled)",
+      "input": "JAP: marijuana cokain krauku nado sesshushiteimasu ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "marijuana   cokain   krauku nado sesshushiteimasu   ka",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "まりじゅあな",
+          "input": "まりじゅあな",
+          "output": "marijuana",
+          "base": "marijuana",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "こかいん",
+          "input": "こかいん",
+          "output": "cokain",
+          "base": "cokain",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "kらうく",
+          "input": "kらうく",
+          "output": "krauku",
+          "base": "krauku",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "など",
+          "input": "など",
+          "output": "nado",
+          "base": "nado",
+          "meaning": "something like, someone like",
+          "grammar_tags": [
+            "nado"
+          ],
+          "decision": "grammar:nado",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "nado",
+              "title": "など",
+              "meanings": [
+                "something like",
+                "someone like"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "せっしゅしています",
+          "input": "せっしゅしています",
+          "output": "sesshushiteimasu",
+          "base": "sesshushiteimasu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "か",
+          "input": "か",
+          "output": "ka",
+          "base": "ka",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        }
+      ],
+      "ragHits": [],
+      "toneHits": [
+        {
+          "score": 0.8473,
+          "romaji": "mayaku",
+          "kana": "まやく",
+          "kanji": "麻薬",
+          "meanings": [
+            "narcotic",
+            "drug",
+            "dope"
+          ]
+        }
+      ],
+      "glossaryInjected": "TONE HINT:\n- mayaku: narcotic",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nTONE HINT:\n- mayaku: narcotic\n\nInput: marijuana   cokain   krauku nado sesshushiteimasu   ka\nOutput: /no_think",
+      "llmOutput": "Have you used marijuana, cocaine, crack, or other drugs?",
+      "durationMs": 81189,
+      "timings": {
+        "preprocess": 67531.28375,
+        "ensureANN": 0.03554199996870011,
+        "embedding": 3258.8433749999967,
+        "ragSearch": 205.9407909999718,
+        "rerank": 0.02174999995622784,
+        "promptAssembly": 0.0008749999688006938,
+        "total": 71021.61029200003,
+        "buildPromptTotal": 71021.667666,
+        "llmGeneration": 10165.90399999998
+      },
+      "error": null,
+      "queryTokens": [
+        "marijuana",
+        "cokain",
+        "krauku",
+        "sesshushiteimasu"
+      ]
+    },
+    {
+      "id": "case-05-knee-stiffness",
+      "label": "Greetings + physical exam (knee stiffness)",
+      "input": "JAP: konichika genki sou de naniyoridesune. suzugo hisa wo mageyou to suru toki ni kowabari wo kanjimasu ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "konichika   genki sou de   naniyoridesune .   suzugo   hisa   wo   mageyou tosuru toki ni   kowabari   wo   kanjimasu   ka",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "こにちか",
+          "input": "こにちか",
+          "output": "konichika",
+          "base": "konichika",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "げんき",
+          "input": "げんき",
+          "output": "genki",
+          "base": "genki",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "そう",
+          "input": "そう",
+          "output": "sou",
+          "base": "nisotte",
+          "meaning": "follow",
+          "grammar_tags": [
+            "nisotte"
+          ],
+          "decision": "grammar:nisotte",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "nisotte",
+              "title": "にそって",
+              "meanings": [
+                "follow"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "で",
+          "input": "で",
+          "output": "de",
+          "base": "de",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "particle"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "なによりですね",
+          "input": "なによりですね",
+          "output": "naniyoridesune",
+          "base": "naniyoridesune",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": ".",
+          "input": ".",
+          "output": ".",
+          "base": ".",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "すずご",
+          "input": "すずご",
+          "output": "suzugo",
+          "base": "suzugo",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ひさ",
+          "input": "ひさ",
+          "output": "hisa",
+          "base": "hisa",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "を",
+          "input": "を",
+          "output": "wo",
+          "base": "wo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "まげよう",
+          "input": "まげよう",
+          "output": "mageyou",
+          "base": "mageyou",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "とする",
+          "input": "とする",
+          "output": "tosuru",
+          "base": "youtosuru",
+          "meaning": "just when about to, try to",
+          "grammar_tags": [
+            "youtosuru"
+          ],
+          "decision": "grammar:youtosuru",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "youtosuru",
+              "title": "ようとする",
+              "meanings": [
+                "just when about to",
+                "try to"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "grammar",
+          "surface": "とき",
+          "input": "とき",
+          "output": "toki",
+          "base": "toki",
+          "meaning": "when",
+          "grammar_tags": [
+            "toki"
+          ],
+          "decision": "grammar:toki",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "toki",
+              "title": "とき",
+              "meanings": [
+                "when"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "particle"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "こわばり",
+          "input": "こわばり",
+          "output": "kowabari",
+          "base": "kowabari",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "を",
+          "input": "を",
+          "output": "wo",
+          "base": "wo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "かんじます",
+          "input": "かんじます",
+          "output": "kanjimasu",
+          "base": "kanjimasu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "か",
+          "input": "か",
+          "output": "ka",
+          "base": "ka",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.9703,
+          "semanticScore": 0.9379,
+          "romaji": "hisa",
+          "kana": "ひさ",
+          "kanji": "飛砂",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "blown sand",
+            "sand blow",
+            "sand drift by the wind"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.6706,
+          "romaji": "sezu",
+          "kana": "せず",
+          "kanji": "",
+          "meanings": [
+            "without doing"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- hisa: blown sand, sand blow\n\nTONE HINT:\n- sezu: without doing",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- hisa: blown sand, sand blow\n\nTONE HINT:\n- sezu: without doing\n\nInput: konichika   genki sou de   naniyoridesune .   suzugo   hisa   wo   mageyou tosuru toki ni   kowabari   wo   kanjimasu   ka\nOutput: /no_think",
+      "llmOutput": "Good evening. I feel generally well, but I am afraid of getting hit by sandblow when I open my mouth. Do you feel that way?",
+      "durationMs": 96167,
+      "timings": {
+        "preprocess": 76816.125542,
+        "ensureANN": 0.06225000001722947,
+        "embedding": 5940.965708000003,
+        "ragSearch": 1253.9360410000081,
+        "rerank": 0.02987500000745058,
+        "promptAssembly": 0.0012080000014975667,
+        "total": 84829.39420899999,
+        "buildPromptTotal": 84829.45058300003,
+        "llmGeneration": 11335.106916000019
+      },
+      "error": null,
+      "queryTokens": [
+        "konichika",
+        "naniyoridesune",
+        "suzugo",
+        "hisa"
+      ]
+    },
+    {
+      "id": "case-06-concentration",
+      "label": "Mental health/Neurological (concentration)",
+      "input": "JAP: shuinbun wo yondari miru koto shuuchu dekimasen ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "shuinbun   wo   yondari   miru koto shuuchu   dekimasen   ka",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "しゅいんぶん",
+          "input": "しゅいんぶん",
+          "output": "shuinbun",
+          "base": "shuinbun",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "を",
+          "input": "を",
+          "output": "wo",
+          "base": "wo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "よんだり",
+          "input": "よんだり",
+          "output": "yondari",
+          "base": "yondari",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "みる",
+          "input": "みる",
+          "output": "miru",
+          "base": "miru",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "こと",
+          "input": "こと",
+          "output": "koto",
+          "base": "koto",
+          "meaning": "(you) should",
+          "grammar_tags": [
+            "koto"
+          ],
+          "decision": "grammar:koto",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "koto",
+              "title": "こと",
+              "meanings": [
+                "(you) should"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "しゅうちゅ",
+          "input": "しゅうちゅ",
+          "output": "shuuchu",
+          "base": "shuuchu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "できません",
+          "input": "できません",
+          "output": "dekimasen",
+          "base": "dekimasen",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "か",
+          "input": "か",
+          "output": "ka",
+          "base": "ka",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.177,
+          "semanticScore": 0.9713,
+          "romaji": "miru",
+          "kana": "みる",
+          "kanji": "見る",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "to see",
+            "to look",
+            "to watch"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf14",
+            "spec1",
+            "uk"
+          ],
+          "frequency": 1
+        },
+        {
+          "score": 1.058,
+          "semanticScore": 0.8923,
+          "romaji": "miru",
+          "kana": "みる",
+          "kanji": "診る",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "to examine medically",
+            "to have a look at",
+            "to check a patient's pulse"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf23"
+          ],
+          "frequency": 0.721
+        },
+        {
+          "score": 0.9787,
+          "semanticScore": 0.9233,
+          "romaji": "miru",
+          "kana": "みる",
+          "kanji": "看る",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "to look after often medically",
+            "to take care of"
+          ],
+          "tags": [
+            "ichi1"
+          ],
+          "frequency": 0.2
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7023,
+          "romaji": "tekisuto",
+          "kana": "テキスト",
+          "kanji": "",
+          "meanings": [
+            "text",
+            "textbook"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- miru: to see, to look\n- miru: to examine medically, to have a look at\n- miru: to look after often medically, to take care of\n\nTONE HINT:\n- tekisuto: text",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- miru: to see, to look\n- miru: to examine medically, to have a look at\n- miru: to look after often medically, to take care of\n\nTONE HINT:\n- tekisuto: text\n\nInput: shuinbun   wo   yondari   miru koto shuuchu   dekimasen   ka\nOutput: /no_think",
+      "llmOutput": "Can I read the medical record?",
+      "durationMs": 59658,
+      "timings": {
+        "preprocess": 46338.59145800001,
+        "ensureANN": 0.006458000047132373,
+        "embedding": 3327.4287499999627,
+        "ragSearch": 150.67674999998417,
+        "rerank": 0.018207999994046986,
+        "promptAssembly": 0.0007919999770820141,
+        "total": 49908.399000000034,
+        "buildPromptTotal": 49908.46204099996,
+        "llmGeneration": 9748.071833000053
+      },
+      "error": null,
+      "queryTokens": [
+        "shuinbun",
+        "yondari",
+        "miru",
+        "shuuchu",
+        "dekimasen"
+      ]
+    },
+    {
+      "id": "case-07-slow-movement",
+      "label": "Motor symptoms / Restlessness",
+      "input": "JAP: hoka no hito ni ugoitari hanshitari no ga osokute kitdukaremashitaka ochitsukuganaku mata ha sowasowa takusan ogoitemasuka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "hoka   no   hito   ni   ugoitari hanshita rino   ga   osokute   kitdukaremashitaka   ochitsukuganaku   mata   wa   sowasowa   takusan   ogoitemasuka",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "ほか",
+          "input": "ほか",
+          "output": "hoka",
+          "base": "hoka",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ひと",
+          "input": "ひと",
+          "output": "hito",
+          "base": "hito",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "うごいたり",
+          "input": "うごいたり",
+          "output": "ugoitari",
+          "base": "ugoitari",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "はんした",
+          "input": "はんした",
+          "output": "hanshita",
+          "base": "nihanshite",
+          "meaning": "contrary to",
+          "grammar_tags": [
+            "nihanshite"
+          ],
+          "decision": "grammar:nihanshite",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "nihanshite",
+              "title": "にはんして",
+              "meanings": [
+                "contrary to"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "りの",
+          "input": "りの",
+          "output": "rino",
+          "base": "rino",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "が",
+          "input": "が",
+          "output": "ga",
+          "base": "ga",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "おそくて",
+          "input": "おそくて",
+          "output": "osokute",
+          "base": "osokute",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "きtづかれましたか",
+          "input": "きtづかれましたか",
+          "output": "kitdukaremashitaka",
+          "base": "kitdukaremashitaka",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "おちつくがなく",
+          "input": "おちつくがなく",
+          "output": "ochitsukuganaku",
+          "base": "ochitsukuganaku",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "また",
+          "input": "また",
+          "output": "mata",
+          "base": "mata",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "は",
+          "input": "は",
+          "output": "wa",
+          "base": "wa",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "そわそわ",
+          "input": "そわそわ",
+          "output": "sowasowa",
+          "base": "sowasowa",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "たくさん",
+          "input": "たくさん",
+          "output": "takusan",
+          "base": "takusan",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "おごいてますか",
+          "input": "おごいてますか",
+          "output": "ogoitemasuka",
+          "base": "ogoitemasuka",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 0.9971,
+          "semanticScore": 0.9464,
+          "romaji": "hoka",
+          "kana": "ほか",
+          "kanji": "他",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "another place",
+            "some other place",
+            "somewhere else"
+          ],
+          "tags": [
+            "ichi1",
+            "uk"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.9281,
+          "semanticScore": 0.8602,
+          "romaji": "hito",
+          "kana": "ひと",
+          "kanji": "人",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "person",
+            "someone",
+            "somebody"
+          ],
+          "tags": [
+            "ichi1",
+            "uk"
+          ],
+          "frequency": 0.2
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7989,
+          "romaji": "yokattara",
+          "kana": "よかったら",
+          "kanji": "良かったら",
+          "meanings": [
+            "if you like"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- hoka: another place, some other place\n- hito: person, someone\n\nTONE HINT:\n- yokattara: if you like",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- hoka: another place, some other place\n- hito: person, someone\n\nTONE HINT:\n- yokattara: if you like\n\nInput: hoka   no   hito   ni   ugoitari hanshita rino   ga   osokute   kitdukaremashitaka   ochitsukuganaku   mata   wa   sowasowa   takusan   ogoitemasuka\nOutput: /no_think",
+      "llmOutput": "Did you perhaps move to another place too late and get lost, or are you constantly asking for directions?",
+      "durationMs": 321750,
+      "timings": {
+        "preprocess": 306174.2212089999,
+        "ensureANN": 0.057333000004291534,
+        "embedding": 3385.488541999948,
+        "ragSearch": 179.92887499998324,
+        "rerank": 0.026916999951936305,
+        "promptAssembly": 0.0007919999770820141,
+        "total": 309858.8920410001,
+        "buildPromptTotal": 309858.940833,
+        "llmGeneration": 11884.527666000067
+      },
+      "error": null,
+      "queryTokens": [
+        "hoka",
+        "hito",
+        "ugoitari",
+        "hanshita",
+        "rino"
+      ]
+    },
+    {
+      "id": "case-08-drug-history",
+      "label": "Injected drug history",
+      "input": "JAP: kako ni ninen inai ni duragu ka yakubutsu ya ihou yaku btsu wo shiyou shita mata ha chuushabari koto arimasu ka arimasuka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "kako   ni   ninen   inai   ni   duragu   ka   yakubutsu   ya   ihou   yaku   btsu   wo   shiyou   shita   mata   wa   chuushabari koto arimasu   ka   arimasuka",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "かこ",
+          "input": "かこ",
+          "output": "kako",
+          "base": "kako",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "にねん",
+          "input": "にねん",
+          "output": "ninen",
+          "base": "ninen",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "いない",
+          "input": "いない",
+          "output": "inai",
+          "base": "inai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "づらぐ",
+          "input": "づらぐ",
+          "output": "duragu",
+          "base": "duragu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "か",
+          "input": "か",
+          "output": "ka",
+          "base": "ka",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "やくぶつ",
+          "input": "やくぶつ",
+          "output": "yakubutsu",
+          "base": "yakubutsu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "や",
+          "input": "や",
+          "output": "ya",
+          "base": "ya",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "いほう",
+          "input": "いほう",
+          "output": "ihou",
+          "base": "ihou",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "やく",
+          "input": "やく",
+          "output": "yaku",
+          "base": "yaku",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "bつ",
+          "input": "bつ",
+          "output": "btsu",
+          "base": "btsu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "を",
+          "input": "を",
+          "output": "wo",
+          "base": "wo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "しよう",
+          "input": "しよう",
+          "output": "shiyou",
+          "base": "shiyou",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "した",
+          "input": "した",
+          "output": "shita",
+          "base": "shita",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "また",
+          "input": "また",
+          "output": "mata",
+          "base": "mata",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "は",
+          "input": "は",
+          "output": "wa",
+          "base": "wa",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ちゅうしゃばり",
+          "input": "ちゅうしゃばり",
+          "output": "chuushabari",
+          "base": "chuushabari",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "こと",
+          "input": "こと",
+          "output": "koto",
+          "base": "koto",
+          "meaning": "(you) should",
+          "grammar_tags": [
+            "koto"
+          ],
+          "decision": "grammar:koto",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "koto",
+              "title": "こと",
+              "meanings": [
+                "(you) should"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "あります",
+          "input": "あります",
+          "output": "arimasu",
+          "base": "arimasu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "か",
+          "input": "か",
+          "output": "ka",
+          "base": "ka",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ありますか",
+          "input": "ありますか",
+          "output": "arimasuka",
+          "base": "arimasuka",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.1575,
+          "semanticScore": 0.9469,
+          "romaji": "kako",
+          "kana": "かこ",
+          "kanji": "過去",
+          "domain": "grammar, Buddhism",
+          "source": "semantic",
+          "meanings": [
+            "the past",
+            "bygone days",
+            "one's past that one would prefer remained secret"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf01"
+          ],
+          "frequency": 1
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.6756,
+          "romaji": "deshouka",
+          "kana": "でしょうか",
+          "kanji": "",
+          "meanings": [
+            "don't you think?",
+            "indicates question"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- kako: the past, bygone days\n\nTONE HINT:\n- deshouka: don't you think?",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- kako: the past, bygone days\n\nTONE HINT:\n- deshouka: don't you think?\n\nInput: kako   ni   ninen   inai   ni   duragu   ka   yakubutsu   ya   ihou   yaku   btsu   wo   shiyou   shita   mata   wa   chuushabari koto arimasu   ka   arimasuka\nOutput: /no_think",
+      "llmOutput": "Have you not been in the past two years, or did you perform a drug, animal, or method test, or is there a need for sterilization?",
+      "durationMs": 78370,
+      "timings": {
+        "preprocess": 63480.04204199999,
+        "ensureANN": 0.00495900004170835,
+        "embedding": 3478.619042000035,
+        "ragSearch": 166.92795799998567,
+        "rerank": 0.027292000013403594,
+        "promptAssembly": 0.0010000000474974513,
+        "total": 67245.29412500001,
+        "buildPromptTotal": 67245.33533300005,
+        "llmGeneration": 11122.166708000004
+      },
+      "error": null,
+      "queryTokens": [
+        "kako",
+        "ninen",
+        "inai",
+        "duragu"
+      ]
+    },
+    {
+      "id": "case-09-leg-numbness",
+      "label": "Diagnostic tests for numbness",
+      "input": "JAP: kensa ga hitsuyou desu. ashi no shibire no ga gein waranai desu w. gein no kekka dettara wo kitsutomerraru deshou",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "kensa   ga   hitsuyou   desu .   ashi   no   shibire   no   ga   gein   waranai   desu   w .   gein   no   kekka   dettara   wo   kitsutomerraru deshou",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "けんさ",
+          "input": "けんさ",
+          "output": "kensa",
+          "base": "kensa",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "が",
+          "input": "が",
+          "output": "ga",
+          "base": "ga",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ひつよう",
+          "input": "ひつよう",
+          "output": "hitsuyou",
+          "base": "hitsuyou",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "です",
+          "input": "です",
+          "output": "desu",
+          "base": "desu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": ".",
+          "input": ".",
+          "output": ".",
+          "base": ".",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "あし",
+          "input": "あし",
+          "output": "ashi",
+          "base": "ashi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "しびれ",
+          "input": "しびれ",
+          "output": "shibire",
+          "base": "shibire",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "が",
+          "input": "が",
+          "output": "ga",
+          "base": "ga",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "げいん",
+          "input": "げいん",
+          "output": "gein",
+          "base": "gein",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "わらない",
+          "input": "わらない",
+          "output": "waranai",
+          "base": "waranai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "です",
+          "input": "です",
+          "output": "desu",
+          "base": "desu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "w",
+          "input": "w",
+          "output": "w",
+          "base": "w",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "skipped (too short)"
+        },
+        {
+          "type": "punctuation",
+          "surface": ".",
+          "input": ".",
+          "output": ".",
+          "base": ".",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "げいん",
+          "input": "げいん",
+          "output": "gein",
+          "base": "gein",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "けっか",
+          "input": "けっか",
+          "output": "kekka",
+          "base": "kekka",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "でったら",
+          "input": "でったら",
+          "output": "dettara",
+          "base": "dettara",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "を",
+          "input": "を",
+          "output": "wo",
+          "base": "wo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "きつとめっらる",
+          "input": "きつとめっらる",
+          "output": "kitsutomerraru",
+          "base": "kitsutomerraru",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "でしょう",
+          "input": "でしょう",
+          "output": "deshou",
+          "base": "deshou",
+          "meaning": "don't you think?",
+          "grammar_tags": [
+            "deshou"
+          ],
+          "decision": "grammar:deshou",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "deshou",
+              "title": "でしょう",
+              "meanings": [
+                "don't you think?"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        }
+      ],
+      "ragHits": [],
+      "toneHits": [
+        {
+          "score": 0.6533,
+          "romaji": "shitai",
+          "kana": "したい",
+          "kanji": "",
+          "meanings": [
+            "want to do"
+          ]
+        }
+      ],
+      "glossaryInjected": "TONE HINT:\n- shitai: want to do",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nTONE HINT:\n- shitai: want to do\n\nInput: kensa   ga   hitsuyou   desu .   ashi   no   shibire   no   ga   gein   waranai   desu   w .   gein   no   kekka   dettara   wo   kitsutomerraru deshou\nOutput: /no_think",
+      "llmOutput": "I need a test. I don't know the cause of my leg numbness. If I get the test results, I suppose I can be relieved.",
+      "durationMs": 93428,
+      "timings": {
+        "preprocess": 77827.35999999999,
+        "ensureANN": 0.05324999999720603,
+        "embedding": 3612.6599169999827,
+        "ragSearch": 213.51558299991302,
+        "rerank": 0.04454200004693121,
+        "promptAssembly": 0.0014590000500902534,
+        "total": 81763.64549999998,
+        "buildPromptTotal": 81763.67204199999,
+        "llmGeneration": 11663.093583000009
+      },
+      "error": null,
+      "queryTokens": [
+        "kensa",
+        "hitsuyou",
+        "ashi"
+      ]
+    },
+    {
+      "id": "case-10-transplant",
+      "label": "Transplant rejection / medication adherence",
+      "input": "JAP: sshoku seikou shimashita karada ga kyousetsu hanou chubakaku shohou sareta subete kusuru chisai no jikan ni fukuyou shitekudasai",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "sshoku   seikou   shimashita kara daga   kyousetsu   hanou   chubakaku   shohou   sareta   subete kusuru chisai   no   jikan   ni   fukuyou   shitekudasai",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "っしょく",
+          "input": "っしょく",
+          "output": "sshoku",
+          "base": "sshoku",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "せいこう",
+          "input": "せいこう",
+          "output": "seikou",
+          "base": "seikou",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "しました",
+          "input": "しました",
+          "output": "shimashita",
+          "base": "shimashita",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "から",
+          "input": "から",
+          "output": "kara",
+          "base": "kara",
+          "meaning": "so, since",
+          "grammar_tags": [
+            "kara"
+          ],
+          "decision": "grammar:kara",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "kara",
+              "title": "から",
+              "meanings": [
+                "so",
+                "since"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "だが",
+          "input": "だが",
+          "output": "daga",
+          "base": "daga",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "きょうせつ",
+          "input": "きょうせつ",
+          "output": "kyousetsu",
+          "base": "kyousetsu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "はのう",
+          "input": "はのう",
+          "output": "hanou",
+          "base": "hanou",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ちゅばかく",
+          "input": "ちゅばかく",
+          "output": "chubakaku",
+          "base": "chubakaku",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "しょほう",
+          "input": "しょほう",
+          "output": "shohou",
+          "base": "shohou",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "された",
+          "input": "された",
+          "output": "sareta",
+          "base": "sareta",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "すべて",
+          "input": "すべて",
+          "output": "subete",
+          "base": "subete",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "くする",
+          "input": "くする",
+          "output": "kusuru",
+          "base": "kusuru",
+          "meaning": "–en, make",
+          "grammar_tags": [
+            "kusuru"
+          ],
+          "decision": "grammar:kusuru",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "kusuru",
+              "title": "くする",
+              "meanings": [
+                "–en",
+                "make"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "ちさい",
+          "input": "ちさい",
+          "output": "chisai",
+          "base": "chisai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "じかん",
+          "input": "じかん",
+          "output": "jikan",
+          "base": "jikan",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ふくよう",
+          "input": "ふくよう",
+          "output": "fukuyou",
+          "base": "fukuyou",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "してください",
+          "input": "してください",
+          "output": "shitekudasai",
+          "base": "shitekudasai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.1837,
+          "semanticScore": 0.9797,
+          "romaji": "seikou",
+          "kana": "せいこう",
+          "kanji": "成功",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "success",
+            "achievement",
+            "succeeding in life"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf03"
+          ],
+          "frequency": 1
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.6938,
+          "romaji": "shiyoukanoujikan",
+          "kana": "しようかのうじかん",
+          "kanji": "使用可能時間",
+          "meanings": [
+            "available time"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- seikou: success, achievement\n\nTONE HINT:\n- shiyoukanoujikan: available time",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- seikou: success, achievement\n\nTONE HINT:\n- shiyoukanoujikan: available time\n\nInput: sshoku   seikou   shimashita kara daga   kyousetsu   hanou   chubakaku   shohou   sareta   subete kusuru chisai   no   jikan   ni   fukuyou   shitekudasai\nOutput: /no_think",
+      "llmOutput": "I succeeded in the project, but please provide all the necessary time for the subsequent negotiations, which were scheduled for the entire small amount of time.",
+      "durationMs": 137975,
+      "timings": {
+        "preprocess": 122681.930375,
+        "ensureANN": 0.08841699990443885,
+        "embedding": 3503.4602500000037,
+        "ragSearch": 227.5861670000013,
+        "rerank": 0.026542000006884336,
+        "promptAssembly": 0.0009999999310821295,
+        "total": 126615.2865840001,
+        "buildPromptTotal": 126615.35562499997,
+        "llmGeneration": 11357.272624999983
+      },
+      "error": null,
+      "queryTokens": [
+        "sshoku",
+        "seikou",
+        "shimashita",
+        "kyousetsu"
+      ]
+    },
+    {
+      "id": "case-11-self-harm",
+      "label": "Screening for suicidal ideation",
+      "input": "JAP: shindahouga mashi da to kangaetari nanninaka no houde kangaetari suru koto ha arimasu ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "shindahouga mashi da toka ngaetari   nanninaka nohou de   kangaetari suru kotoha arimasu   ka",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "しんだほうが",
+          "input": "しんだほうが",
+          "output": "shindahouga",
+          "base": "shindahouga",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "まし",
+          "input": "まし",
+          "output": "mashi",
+          "base": "dakemashi",
+          "meaning": "at least",
+          "grammar_tags": [
+            "dakemashi"
+          ],
+          "decision": "grammar:dakemashi",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "dakemashi",
+              "title": "だけまし",
+              "meanings": [
+                "at least"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "だ",
+          "input": "だ",
+          "output": "da",
+          "base": "da",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "particle"
+        },
+        {
+          "type": "grammar",
+          "surface": "とか",
+          "input": "とか",
+          "output": "toka",
+          "base": "toka",
+          "meaning": "I heard something to the effect that",
+          "grammar_tags": [
+            "toka"
+          ],
+          "decision": "grammar:toka",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "toka",
+              "title": "とか",
+              "meanings": [
+                "I heard something to the effect that"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "んがえたり",
+          "input": "んがえたり",
+          "output": "ngaetari",
+          "base": "ngaetari",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "なんになか",
+          "input": "なんになか",
+          "output": "nanninaka",
+          "base": "nanninaka",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "のほう",
+          "input": "のほう",
+          "output": "nohou",
+          "base": "yori_nohou",
+          "meaning": "is more/less than",
+          "grammar_tags": [
+            "yori_nohou"
+          ],
+          "decision": "grammar:yori_nohou",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "yori_nohou",
+              "title": "より〜のほう",
+              "meanings": [
+                "is more/less than"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "で",
+          "input": "で",
+          "output": "de",
+          "base": "de",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "particle"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "かんがえたり",
+          "input": "かんがえたり",
+          "output": "kangaetari",
+          "base": "kangaetari",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "する",
+          "input": "する",
+          "output": "suru",
+          "base": "o_suru",
+          "meaning": "the speaker humbly (does verb)",
+          "grammar_tags": [
+            "o_suru"
+          ],
+          "decision": "grammar:o_suru",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "o_suru",
+              "title": "お〜する",
+              "meanings": [
+                "the speaker humbly (does verb)"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "grammar",
+          "surface": "ことは",
+          "input": "ことは",
+          "output": "kotoha",
+          "base": "kotoha_ga",
+          "meaning": "it's true that, but",
+          "grammar_tags": [
+            "kotoha_ga"
+          ],
+          "decision": "grammar:kotoha_ga",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "kotoha_ga",
+              "title": "ことは〜が",
+              "meanings": [
+                "it's true that",
+                "but"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "あります",
+          "input": "あります",
+          "output": "arimasu",
+          "base": "arimasu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "か",
+          "input": "か",
+          "output": "ka",
+          "base": "ka",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.1534,
+          "semanticScore": 0.9647,
+          "romaji": "mashi",
+          "kana": "まし",
+          "kanji": "増し",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "better",
+            "preferable",
+            "less objectionable"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf14",
+            "uk",
+            "arch"
+          ],
+          "frequency": 0.908
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.8438,
+          "romaji": "kangaekata",
+          "kana": "かんがえかた",
+          "kanji": "考え方",
+          "meanings": [
+            "way of thinking",
+            "point of view",
+            "opinion"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- mashi: better, preferable\n\nTONE HINT:\n- kangaekata: way of thinking",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- mashi: better, preferable\n\nTONE HINT:\n- kangaekata: way of thinking\n\nInput: shindahouga mashi da toka ngaetari   nanninaka nohou de   kangaetari suru kotoha arimasu   ka\nOutput: /no_think",
+      "llmOutput": "Do you ever think that the method of treatment is better, or do you consider other ways of thinking?",
+      "durationMs": 62518,
+      "timings": {
+        "preprocess": 48948.891542,
+        "ensureANN": 0.02316599991172552,
+        "embedding": 3026.6551250000484,
+        "ragSearch": 187.1327080000192,
+        "rerank": 0.01770800002850592,
+        "promptAssembly": 0.0011249999515712261,
+        "total": 52256.89033400011,
+        "buildPromptTotal": 52256.90666600014,
+        "llmGeneration": 10260.663416999858
+      },
+      "error": null,
+      "queryTokens": [
+        "shindahouga",
+        "mashi",
+        "ngaetari",
+        "nanninaka"
+      ]
+    },
+    {
+      "id": "case-12-chronic-conditions",
+      "label": "History of chronic lung disease (asthma/COPD/pneumonia)",
+      "input": "JAP: genzai mata kako ni ikano jyoutai ni natta koto arimasu ka zensoku mansei heisoku haishikkan haien",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "genzai   mata   kako   ni   ikano   jyoutai   ni   natta koto arimasu   ka   zensoku   mansei   heisoku   haishikkan   haien",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "げんざい",
+          "input": "げんざい",
+          "output": "genzai",
+          "base": "genzai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "また",
+          "input": "また",
+          "output": "mata",
+          "base": "mata",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "かこ",
+          "input": "かこ",
+          "output": "kako",
+          "base": "kako",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "いかの",
+          "input": "いかの",
+          "output": "ikano",
+          "base": "ikano",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "じょうたい",
+          "input": "じょうたい",
+          "output": "jyoutai",
+          "base": "jyoutai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "なった",
+          "input": "なった",
+          "output": "natta",
+          "base": "natta",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "こと",
+          "input": "こと",
+          "output": "koto",
+          "base": "koto",
+          "meaning": "(you) should",
+          "grammar_tags": [
+            "koto"
+          ],
+          "decision": "grammar:koto",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "koto",
+              "title": "こと",
+              "meanings": [
+                "(you) should"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "あります",
+          "input": "あります",
+          "output": "arimasu",
+          "base": "arimasu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "か",
+          "input": "か",
+          "output": "ka",
+          "base": "ka",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ぜんそく",
+          "input": "ぜんそく",
+          "output": "zensoku",
+          "base": "zensoku",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "まんせい",
+          "input": "まんせい",
+          "output": "mansei",
+          "base": "mansei",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "へいそく",
+          "input": "へいそく",
+          "output": "heisoku",
+          "base": "heisoku",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "はいしっかん",
+          "input": "はいしっかん",
+          "output": "haishikkan",
+          "base": "haishikkan",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "はいえん",
+          "input": "はいえん",
+          "output": "haien",
+          "base": "haien",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.1752,
+          "semanticScore": 0.969,
+          "romaji": "genzai",
+          "kana": "げんざい",
+          "kanji": "現在",
+          "domain": "grammar, Buddhism",
+          "source": "semantic",
+          "meanings": [
+            "the present",
+            "present time",
+            "now"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf01"
+          ],
+          "frequency": 1
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7914,
+          "romaji": "genkyou",
+          "kana": "げんきょう",
+          "kanji": "現況",
+          "meanings": [
+            "present condition"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- genzai: the present, present time\n\nTONE HINT:\n- genkyou: present condition",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- genzai: the present, present time\n\nTONE HINT:\n- genkyou: present condition\n\nInput: genzai   mata   kako   ni   ikano   jyoutai   ni   natta koto arimasu   ka   zensoku   mansei   heisoku   haishikkan   haien\nOutput: /no_think",
+      "llmOutput": "In the present, have you ever experienced a condition that also occurred in the past? Have you ever had a chronic or permanent condition?",
+      "durationMs": 83011,
+      "timings": {
+        "preprocess": 66536.49037500005,
+        "ensureANN": 0.006749999942258,
+        "embedding": 3384.535000000149,
+        "ragSearch": 145.49212500010617,
+        "rerank": 0.014583999989554286,
+        "promptAssembly": 0.0005000000819563866,
+        "total": 70122.24362500012,
+        "buildPromptTotal": 70122.26691700006,
+        "llmGeneration": 12887.093957999954
+      },
+      "error": null,
+      "queryTokens": [
+        "genzai",
+        "kako",
+        "ikano",
+        "jyoutai"
+      ]
+    },
+    {
+      "id": "case-13-early-satiety",
+      "label": "Post-prandial fullness / Weight issues",
+      "input": "JAP: hai asa no chozen shoku go mainichi nondemasu uchi gakkoukara kaettekite gohan wo iwaretayouni tabesasetakara demo saikin jibun amari taberarenakute sugu onaka ga ippai ni natte shimaimsu sukoshi taberu dake de sugu",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "hai   asa   no   chozen   shoku   go mai nichinondemasu   uchi   gakkoukara   kaettekite   gohan   wo   iwaretayouni   tabesasetakara demo sai kinjibun amari taberarenakute sugu   onaka gai ppai   ni   natte   shimaimsu   sukoshi   taberu dake de   sugu",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "はい",
+          "input": "はい",
+          "output": "hai",
+          "base": "hai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "あさ",
+          "input": "あさ",
+          "output": "asa",
+          "base": "asa",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ちょぜん",
+          "input": "ちょぜん",
+          "output": "chozen",
+          "base": "chozen",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "しょく",
+          "input": "しょく",
+          "output": "shoku",
+          "base": "shoku",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ご",
+          "input": "ご",
+          "output": "go",
+          "base": "go",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "まい",
+          "input": "まい",
+          "output": "mai",
+          "base": "mai",
+          "meaning": "I (we) will never",
+          "grammar_tags": [
+            "mai"
+          ],
+          "decision": "grammar:mai",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "mai",
+              "title": "まい",
+              "meanings": [
+                "I (we) will never"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "にちのんでます",
+          "input": "にちのんでます",
+          "output": "nichinondemasu",
+          "base": "nichinondemasu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "うち",
+          "input": "うち",
+          "output": "uchi",
+          "base": "uchi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "がっこうから",
+          "input": "がっこうから",
+          "output": "gakkoukara",
+          "base": "gakkoukara",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "かえってきて",
+          "input": "かえってきて",
+          "output": "kaettekite",
+          "base": "kaettekite",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ごはん",
+          "input": "ごはん",
+          "output": "gohan",
+          "base": "gohan",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "を",
+          "input": "を",
+          "output": "wo",
+          "base": "wo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "いわれたように",
+          "input": "いわれたように",
+          "output": "iwaretayouni",
+          "base": "iwaretayouni",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "たべさせたから",
+          "input": "たべさせたから",
+          "output": "tabesasetakara",
+          "base": "tabesasetakara",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "でも",
+          "input": "でも",
+          "output": "demo",
+          "base": "temo",
+          "meaning": "even if",
+          "grammar_tags": [
+            "temo"
+          ],
+          "decision": "grammar:temo",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "temo",
+              "title": "ても",
+              "meanings": [
+                "even if"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "grammar",
+          "surface": "さい",
+          "input": "さい",
+          "output": "sai",
+          "base": "sai_ni",
+          "meaning": "when, on the occasion of",
+          "grammar_tags": [
+            "sai_ni"
+          ],
+          "decision": "grammar:sai_ni",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "sai_ni",
+              "title": "さい（に）",
+              "meanings": [
+                "when",
+                "on the occasion of"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "きんじぶん",
+          "input": "きんじぶん",
+          "output": "kinjibun",
+          "base": "kinjibun",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "あまり",
+          "input": "あまり",
+          "output": "amari",
+          "base": "amari",
+          "meaning": "so, that",
+          "grammar_tags": [
+            "amari"
+          ],
+          "decision": "grammar:amari",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "amari",
+              "title": "あまり",
+              "meanings": [
+                "so",
+                "that"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "たべられなくて",
+          "input": "たべられなくて",
+          "output": "taberarenakute",
+          "base": "taberarenakute",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "text",
+          "surface": "すぐ",
+          "input": "すぐ",
+          "output": "sugu",
+          "base": "sugu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "おなか",
+          "input": "おなか",
+          "output": "onaka",
+          "base": "onaka",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "がい",
+          "input": "がい",
+          "output": "gai",
+          "base": "kaigaatte",
+          "meaning": "effort of, paid off",
+          "grammar_tags": [
+            "kaigaatte"
+          ],
+          "decision": "grammar:kaigaatte",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "kaigaatte",
+              "title": "かいがあって",
+              "meanings": [
+                "effort of",
+                "paid off"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "っぱい",
+          "input": "っぱい",
+          "output": "ppai",
+          "base": "ppai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "なって",
+          "input": "なって",
+          "output": "natte",
+          "base": "natte",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "しまいmす",
+          "input": "しまいmす",
+          "output": "shimaimsu",
+          "base": "shimaimsu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "すこし",
+          "input": "すこし",
+          "output": "sukoshi",
+          "base": "sukoshi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "たべる",
+          "input": "たべる",
+          "output": "taberu",
+          "base": "taberu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "だけ",
+          "input": "だけ",
+          "output": "dake",
+          "base": "dake",
+          "meaning": "as much as",
+          "grammar_tags": [
+            "dake"
+          ],
+          "decision": "grammar:dake",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "dake",
+              "title": "だけ",
+              "meanings": [
+                "as much as"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "で",
+          "input": "で",
+          "output": "de",
+          "base": "de",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "particle"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "すぐ",
+          "input": "すぐ",
+          "output": "sugu",
+          "base": "sugu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.1048,
+          "semanticScore": 0.881,
+          "romaji": "hai",
+          "kana": "はい",
+          "kanji": "肺",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "lung"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf06"
+          ],
+          "frequency": 1
+        },
+        {
+          "score": 0.7748,
+          "semanticScore": 0.8185,
+          "romaji": "haigan",
+          "kana": "はいがん",
+          "kanji": "肺がん",
+          "domain": "medicine",
+          "source": "semantic",
+          "meanings": [
+            "lung cancer"
+          ],
+          "tags": [],
+          "frequency": 0.1
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.7897,
+          "romaji": "gaishoku",
+          "kana": "がいしょく",
+          "kanji": "外食",
+          "meanings": [
+            "eating out",
+            "dining out"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- hai: lung\n- haigan: lung cancer\n\nTONE HINT:\n- gaishoku: eating out",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- hai: lung\n- haigan: lung cancer\n\nTONE HINT:\n- gaishoku: eating out\n\nInput: hai   asa   no   chozen   shoku   go mai nichinondemasu   uchi   gakkoukara   kaettekite   gohan   wo   iwaretayouni   tabesasetakara demo sai kinjibun amari taberarenakute sugu   onaka gai ppai   ni   natte   shimaimsu   sukoshi   taberu dake de   sugu\nOutput: /no_think",
+      "llmOutput": "I eat lunch at school and come home in the afternoon, but even though I'm told to eat dinner, I can't eat much because I'm already full, so I get hungry again quickly. Even if I eat a little, I get hungry right away.",
+      "durationMs": 280930,
+      "timings": {
+        "preprocess": 263690.336625,
+        "ensureANN": 0.057582999812439084,
+        "embedding": 3689.0877089998685,
+        "ragSearch": 188.7860000000801,
+        "rerank": 0.02887500007636845,
+        "promptAssembly": 0.0008750001434236765,
+        "total": 267721.016667,
+        "buildPromptTotal": 267721.03191699996,
+        "llmGeneration": 13204.266874999972
+      },
+      "error": null,
+      "queryTokens": [
+        "hai",
+        "asa",
+        "chozen",
+        "shoku",
+        "mai"
+      ]
+    },
+    {
+      "id": "case-14-nausea-black-stool",
+      "label": "Severe symptoms (nausea, fatigue, dizziness, melaena)",
+      "input": "JAP: nnnn hakike hidoi no to hirokan dake desu ato yoko ni natte okiagru toki ya tatte suwatte tachi agaru toki ni chotto memai surun desu onaka mo katai kanji shite itsumo i ga itai desu senjyutsu kuroi ben deta desu ga nani ka warui koto da to omoimasu ka",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "nnnn   hakike   hidoi   no   to   hirokan dake desu ato yoko   ni   natte   okiagru toki ya tatte suwatte   tachi   agaru toki ni   chotto   memai suru ndesu   onaka   mo   katai   kanji   shite   itsumo   i gai tai desu senjyutsu   kuroi   ben   deta   desu   ga   nani   ka   warui kotoda   to   omoimasu   ka",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "んんんん",
+          "input": "んんんん",
+          "output": "nnnn",
+          "base": "nnnn",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "はきけ",
+          "input": "はきけ",
+          "output": "hakike",
+          "base": "hakike",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ひどい",
+          "input": "ひどい",
+          "output": "hidoi",
+          "base": "hidoi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "と",
+          "input": "と",
+          "output": "to",
+          "base": "to",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ひろかん",
+          "input": "ひろかん",
+          "output": "hirokan",
+          "base": "hirokan",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "だけ",
+          "input": "だけ",
+          "output": "dake",
+          "base": "dake",
+          "meaning": "as much as",
+          "grammar_tags": [
+            "dake"
+          ],
+          "decision": "grammar:dake",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "dake",
+              "title": "だけ",
+              "meanings": [
+                "as much as"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "です",
+          "input": "です",
+          "output": "desu",
+          "base": "desu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "あと",
+          "input": "あと",
+          "output": "ato",
+          "base": "atode",
+          "meaning": "after",
+          "grammar_tags": [
+            "atode"
+          ],
+          "decision": "grammar:atode",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "atode",
+              "title": "あとで",
+              "meanings": [
+                "after"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "よこ",
+          "input": "よこ",
+          "output": "yoko",
+          "base": "yoko",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "なって",
+          "input": "なって",
+          "output": "natte",
+          "base": "natte",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "おきあgる",
+          "input": "おきあgる",
+          "output": "okiagru",
+          "base": "okiagru",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "とき",
+          "input": "とき",
+          "output": "toki",
+          "base": "toki",
+          "meaning": "when",
+          "grammar_tags": [
+            "toki"
+          ],
+          "decision": "grammar:toki",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "toki",
+              "title": "とき",
+              "meanings": [
+                "when"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "や",
+          "input": "や",
+          "output": "ya",
+          "base": "ya",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "particle"
+        },
+        {
+          "type": "grammar",
+          "surface": "たって",
+          "input": "たって",
+          "output": "tatte",
+          "base": "tatte",
+          "meaning": "no matter how",
+          "grammar_tags": [
+            "tatte"
+          ],
+          "decision": "grammar:tatte",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "tatte",
+              "title": "たって",
+              "meanings": [
+                "no matter how"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "すわって",
+          "input": "すわって",
+          "output": "suwatte",
+          "base": "suwatte",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "たち",
+          "input": "たち",
+          "output": "tachi",
+          "base": "tachi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "あがる",
+          "input": "あがる",
+          "output": "agaru",
+          "base": "agaru",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "とき",
+          "input": "とき",
+          "output": "toki",
+          "base": "toki",
+          "meaning": "when",
+          "grammar_tags": [
+            "toki"
+          ],
+          "decision": "grammar:toki",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "toki",
+              "title": "とき",
+              "meanings": [
+                "when"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "に",
+          "input": "に",
+          "output": "ni",
+          "base": "ni",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "particle"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ちょっと",
+          "input": "ちょっと",
+          "output": "chotto",
+          "base": "chotto",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "めまい",
+          "input": "めまい",
+          "output": "memai",
+          "base": "memai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "する",
+          "input": "する",
+          "output": "suru",
+          "base": "o_suru",
+          "meaning": "the speaker humbly (does verb)",
+          "grammar_tags": [
+            "o_suru"
+          ],
+          "decision": "grammar:o_suru",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "o_suru",
+              "title": "お〜する",
+              "meanings": [
+                "the speaker humbly (does verb)"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "んです",
+          "input": "んです",
+          "output": "ndesu",
+          "base": "ndesu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "おなか",
+          "input": "おなか",
+          "output": "onaka",
+          "base": "onaka",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "も",
+          "input": "も",
+          "output": "mo",
+          "base": "mo",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "かたい",
+          "input": "かたい",
+          "output": "katai",
+          "base": "katai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "かんじ",
+          "input": "かんじ",
+          "output": "kanji",
+          "base": "kanji",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "して",
+          "input": "して",
+          "output": "shite",
+          "base": "shite",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "いつも",
+          "input": "いつも",
+          "output": "itsumo",
+          "base": "itsumo",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "い",
+          "input": "い",
+          "output": "i",
+          "base": "i",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "skipped (too short)"
+        },
+        {
+          "type": "grammar",
+          "surface": "がい",
+          "input": "がい",
+          "output": "gai",
+          "base": "kaigaatte",
+          "meaning": "effort of, paid off",
+          "grammar_tags": [
+            "kaigaatte"
+          ],
+          "decision": "grammar:kaigaatte",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "kaigaatte",
+              "title": "かいがあって",
+              "meanings": [
+                "effort of",
+                "paid off"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "grammar",
+          "surface": "たい",
+          "input": "たい",
+          "output": "tai",
+          "base": "tai",
+          "meaning": "(I) want to",
+          "grammar_tags": [
+            "tai"
+          ],
+          "decision": "grammar:tai",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "tai",
+              "title": "たい",
+              "meanings": [
+                "(I) want to"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "です",
+          "input": "です",
+          "output": "desu",
+          "base": "desu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "text",
+          "surface": "せんじゅつ",
+          "input": "せんじゅつ",
+          "output": "senjyutsu",
+          "base": "senjyutsu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "くろい",
+          "input": "くろい",
+          "output": "kuroi",
+          "base": "kuroi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "べん",
+          "input": "べん",
+          "output": "ben",
+          "base": "ben",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "でた",
+          "input": "でた",
+          "output": "deta",
+          "base": "deta",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "です",
+          "input": "です",
+          "output": "desu",
+          "base": "desu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "が",
+          "input": "が",
+          "output": "ga",
+          "base": "ga",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "なに",
+          "input": "なに",
+          "output": "nani",
+          "base": "nani",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "か",
+          "input": "か",
+          "output": "ka",
+          "base": "ka",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "わるい",
+          "input": "わるい",
+          "output": "warui",
+          "base": "warui",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "ことだ",
+          "input": "ことだ",
+          "output": "kotoda",
+          "base": "kotoda",
+          "meaning": "(deep emotion) how very",
+          "grammar_tags": [
+            "kotoda"
+          ],
+          "decision": "grammar:kotoda",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "kotoda",
+              "title": "ことだ",
+              "meanings": [
+                "(deep emotion) how very"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "と",
+          "input": "と",
+          "output": "to",
+          "base": "to",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "おもいます",
+          "input": "おもいます",
+          "output": "omoimasu",
+          "base": "omoimasu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "か",
+          "input": "か",
+          "output": "ka",
+          "base": "ka",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.1067,
+          "semanticScore": 0.9469,
+          "romaji": "hakike",
+          "kana": "はきけ",
+          "kanji": "吐き気",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "nausea",
+            "feeling like throwing up",
+            "feeling sick"
+          ],
+          "tags": [
+            "news1",
+            "nf17"
+          ],
+          "frequency": 0.746
+        },
+        {
+          "score": 0.9336,
+          "semanticScore": 0.867,
+          "romaji": "hidoi",
+          "kana": "ひどい",
+          "kanji": "酷い",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "cruel",
+            "heartless",
+            "hard"
+          ],
+          "tags": [
+            "ichi1",
+            "uk"
+          ],
+          "frequency": 0.2
+        },
+        {
+          "score": 0.8233,
+          "semanticScore": 0.8458,
+          "romaji": "outo",
+          "kana": "おうと",
+          "kanji": "嘔吐",
+          "domain": "medicine",
+          "source": "semantic",
+          "meanings": [
+            "vomiting",
+            "emesis"
+          ],
+          "tags": [
+            "news2",
+            "nf44",
+            "spec1"
+          ],
+          "frequency": 0.233
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.8172,
+          "romaji": "nigate",
+          "kana": "にがて",
+          "kanji": "苦手",
+          "meanings": [
+            "poor at",
+            "weak in",
+            "not very good at"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- hakike: nausea, feeling like throwing up\n- hidoi: cruel, heartless\n- outo: vomiting, emesis\n\nTONE HINT:\n- nigate: poor at",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- hakike: nausea, feeling like throwing up\n- hidoi: cruel, heartless\n- outo: vomiting, emesis\n\nTONE HINT:\n- nigate: poor at\n\nInput: nnnn   hakike   hidoi   no   to   hirokan dake desu ato yoko   ni   natte   okiagru toki ya tatte suwatte   tachi   agaru toki ni   chotto   memai suru ndesu   onaka   mo   katai   kanji   shite   itsumo   i gai tai desu senjyutsu   kuroi   ben   deta   desu   ga   nani   ka   warui kotoda   to   omoimasu   ka\nOutput: /no_think",
+      "llmOutput": "I have nausea, and it's just that when I stand up after lying down for a while, or when I stand up from sitting, I get a little dizzy. My stomach also feels hard, and I always feel like I want to vomit. I have black stool, but I'm wondering if something is wrong.",
+      "durationMs": 116740,
+      "timings": {
+        "preprocess": 99195.16158299986,
+        "ensureANN": 0.0067079998552799225,
+        "embedding": 3273.967292000074,
+        "ragSearch": 179.04966699983925,
+        "rerank": 0.031208999920636415,
+        "promptAssembly": 0.0007920002099126577,
+        "total": 102832.80441599991,
+        "buildPromptTotal": 102832.81645899988,
+        "llmGeneration": 13905.242249999894
+      },
+      "error": null,
+      "queryTokens": [
+        "nnnn",
+        "hakike",
+        "hidoi",
+        "hirokan"
+      ]
+    },
+    {
+      "id": "case-15-follow-up",
+      "label": "Next appointment / Recital context",
+      "input": "JAP: wakatta sensei kore ijyou waruknai ranai to iino desu ga sugi no youyaku itsu desuka saisho chichi no hi de hapyoukai aru no de",
+      "direction": "JAP→ENG",
+      "preprocessedInput": "wakatta   sensei   kore ijou waruknai   ranai toii node su ga   sugi   no you yakuitsu   desuka sai shochichi   no   hi   de   hapyoukai   aru   no   de",
+      "tokens": [
+        {
+          "type": "text",
+          "surface": "わかった",
+          "input": "わかった",
+          "output": "wakatta",
+          "base": "wakatta",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "せんせい",
+          "input": "せんせい",
+          "output": "sensei",
+          "base": "sensei",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "これ",
+          "input": "これ",
+          "output": "kore",
+          "base": "kore",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "いじょう",
+          "input": "いじょう",
+          "output": "ijou",
+          "base": "ijou_ha",
+          "meaning": "so long as",
+          "grammar_tags": [
+            "ijou_ha"
+          ],
+          "decision": "grammar:ijou_ha",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "ijou_ha",
+              "title": "いじょう（は）",
+              "meanings": [
+                "so long as"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "わるkない",
+          "input": "わるkない",
+          "output": "waruknai",
+          "base": "waruknai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "らない",
+          "input": "らない",
+          "output": "ranai",
+          "base": "ranai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "といい",
+          "input": "といい",
+          "output": "toii",
+          "base": "toii",
+          "meaning": "(hope)  would be good if",
+          "grammar_tags": [
+            "toii"
+          ],
+          "decision": "grammar:toii",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "toii",
+              "title": "といい",
+              "meanings": [
+                "(hope)  would be good if"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "grammar",
+          "surface": "ので",
+          "input": "ので",
+          "output": "node",
+          "base": "node",
+          "meaning": "so",
+          "grammar_tags": [
+            "node"
+          ],
+          "decision": "grammar:node",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "node",
+              "title": "ので",
+              "meanings": [
+                "so"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "す",
+          "input": "す",
+          "output": "su",
+          "base": "su",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "particle"
+        },
+        {
+          "surface": "が",
+          "input": "が",
+          "output": "ga",
+          "base": "ga",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "すぎ",
+          "input": "すぎ",
+          "output": "sugi",
+          "base": "sugi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "grammar",
+          "surface": "よう",
+          "input": "よう",
+          "output": "you",
+          "base": "you",
+          "meaning": "I think I will",
+          "grammar_tags": [
+            "you"
+          ],
+          "decision": "grammar:you",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "you",
+              "title": "よう",
+              "meanings": [
+                "I think I will"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "やくいつ",
+          "input": "やくいつ",
+          "output": "yakuitsu",
+          "base": "yakuitsu",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ですか",
+          "input": "ですか",
+          "output": "desuka",
+          "base": "desuka",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "grammar",
+          "surface": "さい",
+          "input": "さい",
+          "output": "sai",
+          "base": "sai_ni",
+          "meaning": "when, on the occasion of",
+          "grammar_tags": [
+            "sai_ni"
+          ],
+          "decision": "grammar:sai_ni",
+          "meta": {
+            "grammar_obj": {
+              "grammarId": "sai_ni",
+              "title": "さい（に）",
+              "meanings": [
+                "when",
+                "on the occasion of"
+              ],
+              "priority": 0
+            },
+            "type": "grammar"
+          }
+        },
+        {
+          "type": "text",
+          "surface": "しょちち",
+          "input": "しょちち",
+          "output": "shochichi",
+          "base": "shochichi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ひ",
+          "input": "ひ",
+          "output": "hi",
+          "base": "hi",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "で",
+          "input": "で",
+          "output": "de",
+          "base": "de",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "はぴょうかい",
+          "input": "はぴょうかい",
+          "output": "hapyoukai",
+          "base": "hapyoukai",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "type": "text",
+          "surface": "ある",
+          "input": "ある",
+          "output": "aru",
+          "base": "aru",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "passthrough"
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "の",
+          "input": "の",
+          "output": "no",
+          "base": "no",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "type": "punctuation",
+          "surface": " ",
+          "input": " ",
+          "output": " ",
+          "base": " ",
+          "meaning": "",
+          "grammar_tags": [],
+          "decision": "punctuation"
+        },
+        {
+          "surface": "で",
+          "input": "で",
+          "output": "de",
+          "base": "de",
+          "meaning": "particle",
+          "grammar_tags": [],
+          "decision": "particle",
+          "meta": {
+            "type": "particle"
+          }
+        }
+      ],
+      "ragHits": [
+        {
+          "score": 1.1337,
+          "semanticScore": 0.9172,
+          "romaji": "ijou",
+          "kana": "いじょう",
+          "kanji": "異常",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "abnormal",
+            "unusual",
+            "extraordinary"
+          ],
+          "tags": [
+            "ichi1",
+            "news1",
+            "nf05"
+          ],
+          "frequency": 1
+        },
+        {
+          "score": 1.046,
+          "semanticScore": 0.8867,
+          "romaji": "ijou",
+          "kana": "いじょう",
+          "kanji": "異状",
+          "domain": "",
+          "source": "semantic",
+          "meanings": [
+            "something wrong",
+            "something unusual",
+            "abnormality"
+          ],
+          "tags": [
+            "news1",
+            "nf20"
+          ],
+          "frequency": 0.683
+        }
+      ],
+      "toneHits": [
+        {
+          "score": 0.8153,
+          "romaji": "kyuujitsu",
+          "kana": "きゅうじつ",
+          "kanji": "休日",
+          "meanings": [
+            "holiday",
+            "day off"
+          ]
+        }
+      ],
+      "glossaryInjected": "MEDICAL GLOSSARY HINTS:\n- ijou: abnormal, unusual\n- ijou: something wrong, something unusual\n\nTONE HINT:\n- kyuujitsu: holiday",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nMEDICAL GLOSSARY HINTS:\n- ijou: abnormal, unusual\n- ijou: something wrong, something unusual\n\nTONE HINT:\n- kyuujitsu: holiday\n\nInput: wakatta   sensei   kore ijou waruknai   ranai toii node su ga   sugi   no you yakuitsu   desuka sai shochichi   no   hi   de   hapyoukai   aru   no   de\nOutput: /no_think",
+      "llmOutput": "I understand, teacher. This is not something abnormal; it's not a tumor, right? It's just that there are too many mosquitoes, so there's a meeting on the 15th.",
+      "durationMs": 62096,
+      "timings": {
+        "preprocess": 46319.86658300017,
+        "ensureANN": 0.006165999919176102,
+        "embedding": 3175.9286670000292,
+        "ragSearch": 205.4584170000162,
+        "rerank": 0.02583299996331334,
+        "promptAssembly": 0.0006660001818090677,
+        "total": 49862.09770799987,
+        "buildPromptTotal": 49862.16033299989,
+        "llmGeneration": 12253.489957999904
+      },
+      "error": null,
+      "queryTokens": [
+        "wakatta",
+        "ijou",
+        "waruknai",
+        "ranai"
+      ]
+    }
+  ]
+}

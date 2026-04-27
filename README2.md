@@ -164,12 +164,12 @@ A CLI REPL that accepts prefixed input (`JAP: ...` or `ENG: ...`). Calls `buildP
 
 **File**: [`src/preprocessor.js`](src/preprocessor.js)
 
-At boot, the preprocessor loads **all entries from vocab.db** into a `Map<romaji, entry[]>` called `knownWords`. This is the in-memory dictionary used for all lookups.
+At boot, the preprocessor loads **all entries from vocab.db** into a `Map<romaji, entry[]>` called `exactMatchIndex`. This is the in-memory dictionary used for O(1) exact lookups.
 
 For each romaji token, the preprocessor generates candidates through three passes:
 
 #### Pass 1: Exact Match
-Look up the token directly in `knownWords`. If "kusuri" exists as a key, all entries under that key become candidates tagged `exact`.
+Look up the token directly in `exactMatchIndex`. If "kusuri" exists as a key, all entries under that key become candidates tagged `exact`.
 
 #### Pass 2: Fuzzy Match
 Use Fuse.js (threshold 0.3) to find approximate matches. "kusari" might fuzzy-match "kusuri" with a small distance. Tagged `fuzzy`.

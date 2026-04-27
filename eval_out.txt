@@ -1,0 +1,398 @@
+
+> med-jp@1.0.0 eval:quick
+> node scripts/eval.js --no-llm
+
+[preprocessor] Initializing from vocab.db with deinflector and grammar indices...
+[grammarPeel] Loaded 817 unique grammar suffixes (max len: 11)
+[36m[eval] Starting evaluation — 15 case(s)[0m
+[33m[eval] --no-llm: Ollama calls skipped[0m
+
+[36m[eval] Running case: case-01-appetite — Fragmented appetite & medication request[0m
+[90m[RAG] Loading HNSW index from disk...[0m
+Loading HNSW metadata...
+Loading HNSW native binary (4096 dims)...
+Successfully mapped 204560 entries into active RAG memory via ANN.
+[90m[RAG] ANN index + SQLite ready.[0m
+[90m[RAG] Query tokens (winners only): [wakaru, ja, kusuri, kigata][0m
+
+[36m[eval] Running case: case-02-nausea — Improved condition vs persistent nausea/dizziness[0m
+
+[35m[Context Pass][0m Evaluating token: [1mたべられ[0m
+  Context words drawn from ±3 neighbors: [become, bright, hakata, old, but, still, commonly, used, name, for]
+  Candidates considered:
+    - taberaren (score: 818.0) -> meaning: to be able to eat
+    - taberaren (score: 781.3) -> meaning: to eat
+    - daberaren (score: 155.5) -> meaning: to jabber
+
+[35m[Context Pass][0m Evaluating token: [1mなかった[0m
+  Context words drawn from ±3 neighbors: [able, eat, jabber]
+  Candidates considered:
+    - akatta (score: 818.0) -> meaning: to become bright
+    - hakata (score: 790.8) -> meaning: Hakata old but still commonly used name for Fukuoka
+    - kattaa (score: 765.3) -> meaning: cutter
+
+[36m[BeamSearch] taberarenakatta[0m
+{
+  hiragana: 'たべられなかった',
+  final_cost: 4200,
+  segments: [
+    { type: 'text', surface: 'たべられ' },
+    { type: 'text', surface: 'なかった' }
+  ],
+  analysis: [
+    {
+      surface: 'たべられ',
+      base: 'taberareru',
+      tags: [Array],
+      contextResurrected: undefined
+    },
+    {
+      surface: 'なかった',
+      base: 'akaru',
+      tags: [Array],
+      contextResurrected: undefined
+    }
+  ],
+  rejected_paths: [
+    { cost: 4240, joined: 'たべら|れなかった' },
+    { cost: 4240, joined: 'たべられな|かった' }
+  ]
+}
+[90m[RAG] Query tokens (winners only): [taicho, memai, kibun, warui, taberareru, akaru][0m
+
+[36m[eval] Running case: case-03-smoking-alcohol — Merged lifestyle query (smoking/drinking)[0m
+
+[35m[Context Pass][0m Evaluating token: [1mきつえ[0m
+  Context words drawn from ±3 neighbors: [drinking, alcohol, myoma, type, goods]
+  Candidates considered:
+    - kitsuen (score: 1120.0) -> meaning: smoking tobacco
+    - kitouen (score: 905.1) -> meaning: balanitis
+    - kotsuen (score: 905.1) -> meaning: osteitis
+
+[35m[Context Pass][0m Evaluating token: [1mにんしゅ[0m
+  Context words drawn from ±3 neighbors: [smoking, tobacco, balanitis, osteitis]
+  Candidates considered:
+    - inshu (score: 1098.0) -> meaning: drinking alcohol
+    - kinshu (score: 878.9) -> meaning: myoma
+    - hinshu (score: 872.9) -> meaning: type of goods
+
+[36m[BeamSearch] kitsueninshu[0m
+{
+  hiragana: 'きつえにんしゅ',
+  final_cost: 4240,
+  segments: [
+    { type: 'text', surface: 'きつえ' },
+    { type: 'text', surface: 'にんしゅ' }
+  ],
+  analysis: [
+    {
+      surface: 'きつえ',
+      base: 'kitsuen',
+      tags: undefined,
+      contextResurrected: undefined
+    },
+    {
+      surface: 'にんしゅ',
+      base: 'inshu',
+      tags: undefined,
+      contextResurrected: undefined
+    }
+  ],
+  rejected_paths: [
+    { cost: 4240, joined: 'きつえに|んしゅ' },
+    { cost: 4280, joined: 'きつ|えにんしゅ' }
+  ]
+}
+[90m[RAG] Query tokens (winners only): [kitsuen, inshu, tabako][0m
+
+[36m[eval] Running case: case-04-substances — Illicit substance query (misspelled)[0m
+
+[35m[Context Pass][0m Evaluating token: [1mせっしゅ[0m
+  Context words drawn from ±3 neighbors: [i'm, off, basement, membrane, bit, mask]
+  Candidates considered:
+    - sesshoku (score: 791.9) -> meaning: touch
+    - seishuku (score: 744.6) -> meaning: silent
+    - seishuku (score: 721.9) -> meaning: constellation
+
+[35m[Context Pass][0m Evaluating token: [1mしています[0m
+  Context words drawn from ±3 neighbors: [touch, silent, constellation]
+  Candidates considered:
+    - ittekimasu (score: 782.0) -> meaning: I'm off
+    - kiteimaku (score: 738.3) -> meaning: basement membrane
+    - bittomasuku (score: 607.5) -> meaning: bit mask
+
+[36m[BeamSearch] sesshushiteimasu[0m
+{
+  hiragana: 'せっしゅしています',
+  final_cost: 4200,
+  segments: [
+    { type: 'text', surface: 'せっしゅ' },
+    { type: 'text', surface: 'しています' }
+  ],
+  analysis: [
+    {
+      surface: 'せっしゅ',
+      base: 'sesshoku',
+      tags: undefined,
+      contextResurrected: undefined
+    },
+    {
+      surface: 'しています',
+      base: 'ittekimasu',
+      tags: undefined,
+      contextResurrected: undefined
+    }
+  ],
+  rejected_paths: [
+    { cost: 4200, joined: 'せっしゅし|ています' },
+    { cost: 6420, joined: 'せ|っしゅし|ています' }
+  ]
+}
+[90m[RAG] Query tokens (winners only): [marifuana, kokain, kiraku, sesshoku][0m
+
+[36m[RAG Vector Rerank pass][0m ⭐ FLIP TRIGGERED for token [kらうく]!
+  Old Target: kiraku (score: 784.3, cos: N/A)
+  New Target: rakuraku (cos: 0.676, boost: +103)
+  └─ Context: averaged ±3 neighbor vectors from HNSW
+
+[36m[eval] Running case: case-05-knee-stiffness — Greetings + physical exam (knee stiffness)[0m
+
+[35m[Context Pass][0m Evaluating token: [1mなに[0m
+  Context words drawn from ±3 neighbors: [usual, state, things, lesson, shin]
+  Candidates considered:
+    - nani (score: 1160.0) -> meaning: what
+    - nanika (score: 850.0) -> meaning: something
+    - nanji (score: 782.0) -> meaning: what time
+
+[35m[Context Pass][0m Evaluating token: [1mですね[0m
+  Context words drawn from ±3 neighbors: [what, something, time]
+  Candidates considered:
+    - tsune (score: 826.8) -> meaning: usual state of things
+    - ressun (score: 756.4) -> meaning: lesson
+    - sune (score: 695.6) -> meaning: shin
+
+[36m[BeamSearch] naniyoridesune[0m
+{
+  hiragana: 'なによりですね',
+  final_cost: 4040,
+  segments: [ { type: 'text', surface: 'なに' }, { type: 'text', surface: 'ですね' } ],
+  analysis: [
+    {
+      surface: 'なに',
+      base: 'nani',
+      tags: undefined,
+      contextResurrected: undefined
+    },
+    {
+      surface: 'ですね',
+      base: 'tsune',
+      tags: undefined,
+      contextResurrected: undefined
+    }
+  ],
+  rejected_paths: [
+    { cost: 4240, joined: 'なによ|りですね' },
+    { cost: 4240, joined: 'なにより|ですね' }
+  ]
+}
+[90m[RAG] Query tokens (winners only): [hiza, make, kowabari, kanjiru][0m
+
+[36m[RAG Vector Rerank pass][0m ⭐ FLIP TRIGGERED for token [する]!
+  Old Target: suru (score: 1130.0, cos: N/A)
+  New Target: tsuru (cos: 0.771, boost: +423)
+  └─ Context: averaged ±3 neighbor vectors from HNSW
+
+[36m[eval] Running case: case-06-concentration — Mental health/Neurological (concentration)[0m
+[90m[RAG] Query tokens (winners only): [yobu, miru, dekiru][0m
+
+[36m[RAG Vector Rerank pass][0m ⭐ FLIP TRIGGERED for token [しゅうちゅ]!
+  Old Target: shuuchi (score: 862.7, cos: N/A)
+  New Target: shuushuu (cos: 0.628, boost: +48)
+  └─ Context: averaged ±3 neighbor vectors from HNSW
+
+[36m[eval] Running case: case-07-slow-movement — Motor symptoms / Restlessness[0m
+
+[35m[Context Pass][0m Evaluating token: [1mきtづかれ[0m
+  Context words drawn from ±3 neighbors: [arrogant, high, entrusting, something, person]
+  Candidates considered:
+    - katazukeru (score: 710.3) -> meaning: to put in order
+    - kotozukeru (score: 697.0) -> meaning: to have someone send a message, parcel, etc.
+    - katsukaree (score: 687.5) -> meaning: pork cutlet curry
+
+[35m[Context Pass][0m Evaluating token: [1mたか[0m
+  Context words drawn from ±3 neighbors: [put, order, have, someone, send, message, parcel, etc., pork, cutlet]
+  Candidates considered:
+    - itaka (score: 1000.0) -> meaning: arrogant
+    - takai (score: 852.4) -> meaning: high
+    - itaku (score: 824.2) -> meaning: entrusting something to a person
+
+[36m[BeamSearch] kitdukaremashitaka[0m
+{
+  hiragana: 'きtづかれましたか',
+  final_cost: 4080,
+  segments: [
+    { type: 'text', surface: 'きtづかれ' },
+    { type: 'text', surface: 'たか' }
+  ],
+  analysis: [
+    {
+      surface: 'きtづかれ',
+      base: 'katazukeru',
+      tags: undefined,
+      contextResurrected: undefined
+    },
+    {
+      surface: 'たか',
+      base: 'itaka',
+      tags: undefined,
+      contextResurrected: undefined
+    }
+  ],
+  rejected_paths: [
+    { cost: 4200, joined: 'きtづか|れましたか' },
+    { cost: 4200, joined: 'きtづかれ|ましたか' }
+  ]
+}
+
+[35m[Context Pass][0m Evaluating token: [1mおごい[0m
+  Context words drawn from ±3 neighbors: [master, skill, height, mass, communication]
+  Candidates considered:
+    - kogoto (score: 775.7) -> meaning: scolding
+    - nozoite (score: 758.8) -> meaning: except
+    - kogoto (score: 756.4) -> meaning: every house
+
+[35m[Context Pass][0m Evaluating token: [1mてますか[0m
+  Context words drawn from ±3 neighbors: [scolding, except, every, house]
+  Candidates considered:
+    - masutaa (score: 698.0) -> meaning: to master a skill
+    - massakari (score: 663.8) -> meaning: height of
+    - masukomi (score: 647.1) -> meaning: mass communication
+
+[36m[BeamSearch] ogoitemasuka[0m
+{
+  hiragana: 'おごいてますか',
+  final_cost: 4240,
+  segments: [
+    { type: 'text', surface: 'おごい' },
+    { type: 'text', surface: 'てますか' }
+  ],
+  analysis: [
+    {
+      surface: 'おごい',
+      base: 'kogoto',
+      tags: undefined,
+      contextResurrected: undefined
+    },
+    {
+      surface: 'てますか',
+      base: 'masutaa',
+      tags: undefined,
+      contextResurrected: undefined
+    }
+  ],
+  rejected_paths: [
+    { cost: 4240, joined: 'おごいて|ますか' },
+    { cost: 4280, joined: 'おご|いてますか' }
+  ]
+}
+[90m[RAG] Query tokens (winners only): [hoka, hito, ugo, hanshi, itaka, takusan, asutaa][0m
+
+[36m[eval] Running case: case-08-drug-history — Injected drug history[0m
+[90m[RAG] Query tokens (winners only): [kako, ninen, inai, yakubutsu, ihou, yaku, betsu, shiyou, shita, chuushabari][0m
+
+[36m[eval] Running case: case-09-leg-numbness — Diagnostic tests for numbness[0m
+
+[35m[Context Pass][0m Evaluating token: [1mきつと[0m
+  Context words drawn from ±3 neighbors: [aerial, skiing, mineral, herald]
+  Candidates considered:
+    - tsutomeru (score: 827.2) -> meaning: to work for
+    - tsutomeru (score: 810.5) -> meaning: to endeavor to do
+    - tsutomete (score: 760.5) -> meaning: as much as possible
+
+[35m[Context Pass][0m Evaluating token: [1mめっらる[0m
+  Context words drawn from ±3 neighbors: [work, for, endeavor, much, possible]
+  Candidates considered:
+    - eariaru (score: 698.0) -> meaning: aerial skiing
+    - mineraru (score: 613.4) -> meaning: mineral
+    - herarudo (score: 596.4) -> meaning: herald
+
+[36m[BeamSearch] kitsutomerraru[0m
+{
+  hiragana: 'きつとめっらる',
+  final_cost: 4240,
+  segments: [
+    { type: 'text', surface: 'きつと' },
+    { type: 'text', surface: 'めっらる' }
+  ],
+  analysis: [
+    {
+      surface: 'きつと',
+      base: 'tsutomeru',
+      tags: undefined,
+      contextResurrected: undefined
+    },
+    {
+      surface: 'めっらる',
+      base: 'eariaru',
+      tags: undefined,
+      contextResurrected: undefined
+    }
+  ],
+  rejected_paths: [
+    { cost: 4240, joined: 'きつとめ|っらる' },
+    { cost: 6500, joined: 'き|つと|めっらる' }
+  ]
+}
+[90m[RAG] Query tokens (winners only): [kensa, hitsu, ashi, shibire, gein, wara, kekka][0m
+
+[36m[eval] Running case: case-10-transplant — Transplant rejection / medication adherence[0m
+[90m[RAG] Query tokens (winners only): [seikou, karada, sho, sareru, subete, chisai, jikan, fuku][0m
+
+[36m[eval] Running case: case-11-self-harm — Screening for suicidal ideation[0m
+[90m[RAG] Query tokens (winners only): [mashi, kangae][0m
+
+[36m[eval] Running case: case-12-chronic-conditions — History of chronic lung disease (asthma/COPD/pneumonia)[0m
+[90m[RAG] Query tokens (winners only): [zensoku, mansei, haien, genzai, kako, jou, heisoku][0m
+
+[36m[RAG Vector Rerank pass][0m ⭐ FLIP TRIGGERED for token [いかの]!
+  Old Target: nikkan (score: 853.9, cos: N/A)
+  New Target: shikkan (cos: 0.635, boost: +40)
+  └─ Context: averaged ±3 neighbor vectors from HNSW
+
+[36m[eval] Running case: case-13-early-satiety — Post-prandial fullness / Weight issues[0m
+[90m[RAG] Query tokens (winners only): [hai, asa, shoku, mainichi, nomu, uchi, gakkou, gohan, saikin, amari][0m
+
+[36m[RAG Vector Rerank pass][0m ⭐ FLIP TRIGGERED for token [いわれた]!
+  Old Target: wareware (score: 655.1, cos: N/A)
+  New Target: iwareta (cos: 0.645, boost: +111)
+  └─ Context: averaged ±3 neighbor vectors from HNSW
+
+[36m[RAG Vector Rerank pass][0m ⭐ FLIP TRIGGERED for token [しまいmす]!
+  Old Target: shifyirisu (score: 717.9, cos: N/A)
+  New Target: shimaimasu (cos: 0.647, boost: +123)
+  └─ Context: averaged ±3 neighbor vectors from HNSW
+
+[36m[eval] Running case: case-14-nausea-black-stool — Severe symptoms (nausea, fatigue, dizziness, melaena)[0m
+[90m[RAG] Query tokens (winners only): [hakike, hidoi, ato, yoko, okiagaru, tatsu, tachi, agaru, memai, onaka][0m
+
+[36m[RAG Vector Rerank pass][0m ⭐ FLIP TRIGGERED for token [ひろかん]!
+  Old Target: shikkan (score: 723.8, cos: N/A)
+  New Target: shiroban (cos: 0.659, boost: +91)
+  └─ Context: averaged ±3 neighbor vectors from HNSW
+
+[36m[RAG Vector Rerank pass][0m ⭐ FLIP TRIGGERED for token [するん]!
+  Old Target: issuru (score: 778.4, cos: N/A)
+  New Target: tassuru (cos: 0.670, boost: +80)
+  └─ Context: averaged ±3 neighbor vectors from HNSW
+
+[36m[eval] Running case: case-15-follow-up — Next appointment / Recital context[0m
+[90m[RAG] Query tokens (winners only): [wakaru, ranai, sugi, youyaku, saisho, chichi, hi][0m
+
+[36m[RAG Vector Rerank pass][0m ⭐ FLIP TRIGGERED for token [わるk]!
+  Old Target: wafuku (score: 855.3, cos: N/A)
+  New Target: wazuka (cos: 0.663, boost: +95)
+  └─ Context: averaged ±3 neighbor vectors from HNSW
+[32m[eval] JSON report written → /Users/matteusgaarder/Desktop/Projects/Antigravity/med-jp/eval/report-2026-04-26T20-17.json[0m
+[32m[eval] Markdown report written → /Users/matteusgaarder/Desktop/Projects/Antigravity/med-jp/eval/report-2026-04-26T20-17.md[0m
+[32m[eval] Excel report updated → /Users/matteusgaarder/Desktop/Projects/Antigravity/med-jp/eval/reporting.xlsx[0m
+[36m[eval] Done — 15 cases in 546.2s[0m

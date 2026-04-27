@@ -8,6 +8,7 @@
  *   JAP:  → Translate broken Japanese / romaji to professional English
  */
 
+import { performance } from 'node:perf_hooks';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { preprocessJap, preprocessJapWithTrace, preprocessEng, CONTENT_DECISIONS, rerankTrace } from './preprocessor.js';
@@ -79,7 +80,7 @@ async function getSentenceEmbedding(text) {
  * @param {number}   topK
  * @param {Set}      [anchorTokens] - forwarded to searchANN for anchor boost
  */
-function ragSearch(embedding, queryText, topK = 9, anchorTokens = new Set()) {
+function ragSearch(embedding, queryText, topK = 10, anchorTokens = new Set()) {
   const annHits = searchANN(queryText, embedding, topK, anchorTokens);
   const stmt = db.prepare(
     'SELECT romaji, kanji, kana, domain, pos, tags, freq, primary_meaning, secondary_meanings ' +
@@ -237,10 +238,12 @@ Output: /no_think`;
 /**
  * Parse the input prefix, preprocess the content, and build the prompt.
  * @param {string} rawInput - e.g. "ENG: patient chest pain"
- * @returns {{ direction: string, prompt: string }}
+ * @returns {{ direction: string, prompt: string, timings: Object }}
  * @throws {Error} if the prefix is missing or unrecognised.
  */
 export async function buildPrompt(rawInput) {
+  const tTotalStart = performance.now();
+  const timings = {};
   const trimmed = rawInput.trim();
 
   let direction        = '';
@@ -255,8 +258,10 @@ export async function buildPrompt(rawInput) {
     templateFn = ENG_TO_JP_TEMPLATE;
   } else if (/^JAP:/i.test(trimmed)) {
     const raw = trimmed.replace(/^JAP:\s*/i, '').trim();
+    const tPre0 = performance.now();
     // Use the structured trace variant: same corrections, also returns per-token decisions
     const traced  = preprocessJapWithTrace(raw);
+    timings.preprocess = performance.now() - tPre0;
     preprocessedInput = traced.output;
     tokenTrace        = traced.tokens;
     direction  = 'JAP→ENG';
@@ -331,7 +336,9 @@ export async function buildPrompt(rawInput) {
   let toneHits    = [];     // tone/sentiment hits — exposed for eval
   let deepContextHits = []; // deep semantic hits for reranking
   let finalContentTokens = [];
+  const tAnnStart = performance.now();
   const ready = await ensureANN();
+  timings.ensureANN = performance.now() - tAnnStart;
 
   if (ready && preprocessedInput.length > 0) {
     // ── 1. Build query tokens from top candidates ──────────────────────────
@@ -380,7 +387,8 @@ export async function buildPrompt(rawInput) {
           winner.type === 'exact' ||
           winner.type === 'normalized' ||
           winner.type?.startsWith('deinflect') ||
-          (winner.adjustedScore || 0) > 900;
+          (winner.tags?.includes('spec1') || winner.tags?.includes('news1')) ||
+          (winner.adjustedScore || 0) > 950; // Raised from 900 for non-medical
 
         if (!isHighConfidence) continue;
 
@@ -393,10 +401,26 @@ export async function buildPrompt(rawInput) {
         let priority = 3;
         if (row) {
           if (row.domain && MEDICAL_DOMAINS.has(row.domain)) priority = 1;
-          else if (row.tags && (row.tags.includes('spec1') || row.tags.includes('spec2'))) priority = 1;
           else priority = 2;
         }
         trackedTokens.push({ romaji: r, priority, originalIndex: idx });
+      }
+
+      // ── RAG ANCHOR FALLBACK ──────────────────────────────────────
+      // If the sentence is entirely fuzzy/low-confidence, we have no "winners"
+      // to anchor the search. A search with 0 tokens is "blind" and returns noise.
+      // Fallback: Use the first 5 non-particle tokens even if they are low-confidence.
+      if (trackedTokens.length === 0) {
+        for (let idx = 0; idx < Math.min(tokenTrace.length, 12); idx++) {
+          const t = tokenTrace[idx];
+          if (t.decision === 'particle' || t.decision?.startsWith('skip') || t.output.length <= 1) continue;
+          
+          const r = (t.output || '').toLowerCase();
+          if (r.length <= 1 || BLACKLIST.has(r)) continue;
+          
+          trackedTokens.push({ romaji: r, priority: 3, originalIndex: idx });
+          if (trackedTokens.length >= 5) break; 
+        }
       }
 
       // Sort by clinical priority, then original position
@@ -429,6 +453,7 @@ export async function buildPrompt(rawInput) {
       if (combinedTexts.length > 0) medQueryText = combinedTexts.join(' | ');
     }
 
+    const tEmbedStart = performance.now();
     // ── 2. Run both embedding queries in parallel ──────────────────────────
     //    Medical: POS-filtered nouns/adjectives  → clinical glossary hints
     //    Tone:    full preprocessed sentence     → speech pattern context
@@ -439,6 +464,8 @@ export async function buildPrompt(rawInput) {
         ? getSentenceEmbedding(preprocessedInput)
         : Promise.resolve(null),        // ENG→JP: tone pass not needed
     ]);
+    const tEmbedEnd = performance.now();
+    timings.embedding = tEmbedEnd - tEmbedStart;
 
     // ── 3. Medical glossary hits ───────────────────────────────────────────
     // Anchor tokens: the exact romaji the user typed (after POS filter).
@@ -446,8 +473,12 @@ export async function buildPrompt(rawInput) {
     // ensuring memai is always retrieved when the user said memai.
     if (medEmbed) {
       const anchorSet = new Set(finalContentTokens);
+      const tSearchStart = performance.now();
       // Retrieve 20 neighbors — focused depth, less noise than previous 50
-      const rawMed = ragSearch(medEmbed, medQueryText, 20, anchorSet);
+      const rawMed = ragSearch(medEmbed, medQueryText, 10, anchorSet);
+      const tSearchEnd = performance.now();
+      timings.ragSearch = tSearchEnd - tSearchStart;
+      console.log(`\n\x1b[90m[Perf] RAG total: ${(tSearchEnd - tEmbedStart).toFixed(2)}ms (Embed: ${(tEmbedEnd - tEmbedStart).toFixed(2)}ms, Search: ${(tSearchEnd - tSearchStart).toFixed(2)}ms)\x1b[0m`);
 
       // --- HYBRID STEP: Extract direct dictionary medical hits from trace ---
       const directMedHits = [];
@@ -564,14 +595,20 @@ export async function buildPrompt(rawInput) {
     }
     // ── 6. Semantic Vector Reranking ──────────
     if (medEmbed) {
+      const tRerankStart = performance.now();
       const reranked = rerankTrace(tokenTrace, medEmbed, getIndex(), 15);
+      timings.rerank = performance.now() - tRerankStart;
       preprocessedInput = reranked.output;
       tokenTrace        = reranked.tokens;
     }
   }
 
+  const tPromptBuild = performance.now();
   const prompt = direction === 'JAP→ENG'
     ? templateFn(preprocessedInput, glossaryStr, toneStr)
     : templateFn(preprocessedInput, glossaryStr);
-  return { direction, prompt, preprocessedInput, ragHits, toneHits, tokenTrace, queryTokens: finalContentTokens };
+  timings.promptAssembly = performance.now() - tPromptBuild;
+  timings.total = performance.now() - tTotalStart;
+  
+  return { direction, prompt, preprocessedInput, ragHits, toneHits, tokenTrace, queryTokens: finalContentTokens, timings };
 }

@@ -7,7 +7,7 @@ const allRomaji = new Set(vocabClean.map(e => e.romaji));
 
 const preprocessor = createPreprocessor({
   vocabulary: medicalVocab,
-  knownWords: allRomaji
+  exactMatchIndex: allRomaji
 });
 
 const testWords = ['tabenai', 'tabemasu', 'taberarenai', 'nomimasen', 'ugokenai', 'nemurenai', 'kaeritai', 'naite', 'taoresou'];

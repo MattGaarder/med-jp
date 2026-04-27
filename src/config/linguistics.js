@@ -25,6 +25,8 @@ export const MESH_DOMAINS = {
   BIOLOGY:   'mesh_biology'
 };
 
+export const MAX_BOOST = 100; // Reduced from 250
+
 export const GRAM_POS = new Set([
   'prt','conj','cop','cop-da','aux','aux-v','aux-adj',
   'int','exp','adv','adv-to','pn','n-suf','n-pref','ctr'
@@ -35,16 +37,17 @@ export const GRAM_POS = new Set([
 // ─────────────────────────────────────────────────────────────────
 
 export const SEGMENT_TIERS = {
-  EXACT:      1000,
-  NORMALIZED: 950,
-  DEINFLECT:  900,
-  FUZZY:      800,
-  AGGRESSIVE: 400
+  EXACT:        1000,
+  GRAMMAR_PEEL: 980,    // Grammar suffix stripped, stem matched — very high confidence
+  NORMALIZED:   950,
+  DEINFLECT:    900,
+  FUZZY:        800,
+  AGGRESSIVE:   400
 };
 
 export const PENALTY_WEIGHTS = {
-  TYPO:   150,  // Reduced from original 400 per user request
-  LENGTH: 40,   // Penalty per character length mismatch
+  TYPO:   250,  // Increased from 150 to prioritize phonetic accuracy
+  LENGTH: 80,  // Increased from 40 to penalize mismatched word lengths
   UTILITY: 80   // Penalty for common noise/utility words
 };
 
@@ -63,9 +66,13 @@ export const SCORING_WEIGHTS = {
     news1: 30,
     spec1: 50
   },
+  FREQUENCY: {
+    j1000: 90,
+    step:  10  // Decrease per 1000-rank increase (j2000 = 90 - 10 = 80)
+  },
   CLINICAL: {
-    medicine:     120,   // Was 50 — too low, medical terms lost to dictionary noise
-    anatomy:       80,   // Was 40
+    medicine:     80,   // Was 50 — too low, medical terms lost to dictionary noise
+    anatomy:       40,   // Was 40
     pharmacology: 100,   // New — drug-related JMDict entries
   },
   MESH: {
@@ -89,14 +96,28 @@ export function calculateScore(entry) {
 
   let score = 0;
 
-  // 1. Frequency (Linguistic Rank)
-  const nfTag = tags.find(t => typeof t === 'string' && t.startsWith('nf'));
-  if (nfTag) {
-    const nf = parseInt(nfTag.slice(2), 10);
-    if (!isNaN(nf)) {
-      score += Math.max(0, 100 - nf * 2); // 100 down to 4 (nf48)
+  // 1. Frequency (Non-Stacking Priority)
+  let freqScore = 0;
+  const commonWords = entry.commonWords || entry.common_words;
+  
+  if (commonWords) {
+    const match = commonWords.match(/j(\d+)/);
+    if (match) {
+      const tier = parseInt(match[1], 10);
+      const rank = Math.min(6, Math.max(1, Math.floor(tier / 1000)));
+      freqScore = SCORING_WEIGHTS.FREQUENCY.j1000 - (rank - 1) * SCORING_WEIGHTS.FREQUENCY.step;
+    }
+  } else {
+    // Only check nf# tags if no j-tier tag is present
+    const nfTag = tags.find(t => typeof t === 'string' && t.startsWith('nf'));
+    if (nfTag) {
+      const nf = parseInt(nfTag.slice(2), 10);
+      if (!isNaN(nf)) {
+        freqScore = Math.max(0, 100 - nf * 2); // 100 down to 4 (nf48)
+      }
     }
   }
+  score += freqScore;
 
   // 2. JMdict Priority Labels
   if (tags.includes('ichi1')) score += SCORING_WEIGHTS.PRIORITY.ichi1;
@@ -108,6 +129,11 @@ export function calculateScore(entry) {
   if (domain.includes('medicine'))      score += SCORING_WEIGHTS.CLINICAL.medicine;
   if (domain.includes('anatomy'))       score += SCORING_WEIGHTS.CLINICAL.anatomy;
   if (domain.includes('pharmacology'))  score += SCORING_WEIGHTS.CLINICAL.pharmacology;
+
+  // 3.1 Loanword Resilience (Prioritize loanwords like 'marijuana', 'cocaine' over native noise)
+  if (entry.romaji?.match(/[f-z]{6,}/) || (entry.tags && entry.tags.includes('loan'))) {
+    score += 50; 
+  }
 
   // 4. MeSH Annotations (The specific clinical anchors)
   const meshDomains = entry.meshDomains || entry.mesh_domains || [];
@@ -132,29 +158,39 @@ export function calculateSegmentScore(entry, metrics) {
   let label = type;
 
   // 1. Determine Base Tier
-  if (type.startsWith('exact'))      base = SEGMENT_TIERS.EXACT;
-  else if (type.startsWith('deinflect')) base = SEGMENT_TIERS.DEINFLECT;
-  else if (type.startsWith('normalized')) base = SEGMENT_TIERS.NORMALIZED;
-  else if (type.startsWith('fuzzy'))      base = SEGMENT_TIERS.FUZZY;
-  else if (type.startsWith('aggressive')) base = SEGMENT_TIERS.AGGRESSIVE;
+  if (type.startsWith('exact'))          base = SEGMENT_TIERS.EXACT;
+  else if (type.startsWith('grammar_peel')) base = SEGMENT_TIERS.GRAMMAR_PEEL;
+  else if (type.startsWith('deinflect'))    base = SEGMENT_TIERS.DEINFLECT;
+  else if (type.startsWith('normalized'))   base = SEGMENT_TIERS.NORMALIZED;
+  else if (type.startsWith('fuzzy'))        base = SEGMENT_TIERS.FUZZY;
+  else if (type.startsWith('aggressive'))   base = SEGMENT_TIERS.AGGRESSIVE;
 
   // Exact Match variation adjustments
   if (type === 'exact:repair')    base -= 50;
+  if (type === 'exact:phonetic')  base -= 100;
   if (type === 'exact:doubling')  base -= 100;
   
   // Fuzzy variation adjustment
   if (type === 'fuzzy' && !isOriginal) base -= 50;
 
   // 2. Add Linguistic Context points
-  const points = calculateScore(entry);
+  // ── PHONETIC SAFETY GATE ──────────────────────────────────────
+  // We use a smooth decay instead of a hard gate.
+  // If the distance is 0.3 (30% typo), points are reduced by ~90%.
+  const distanceDecay = Math.max(0, 1 - Math.pow(distance * 3, 2));
+  const points = calculateScore(entry) * distanceDecay;
 
   // 3. Calculate Penalties
-  // Typo (Distance) Penalty
-  const distanceFactor = distance < 0.05 ? 0.8 : 1.2;
-  const typoPenalty = Math.pow(distance, distanceFactor) * PENALTY_WEIGHTS.TYPO;
+  // Typo (Distance) Penalty — Scales exponentially to punish "loose" matches
+  const typoPenalty = distance * distance * PENALTY_WEIGHTS.TYPO * 5;
 
   // Length Mismatch Penalty
-  const lengthPenalty = Math.abs(inputLen - matchLen) * PENALTY_WEIGHTS.LENGTH;
+  let lengthPenalty = Math.abs(inputLen - matchLen) * PENALTY_WEIGHTS.LENGTH;
+  if (type.includes('deinflect')) {
+    // Highly inflected verbs shouldn't be heavily penalized for the length 
+    // added by their grammatical suffixes (e.g., -renakatta).
+    lengthPenalty = Math.min(lengthPenalty, PENALTY_WEIGHTS.LENGTH * 2);
+  }
 
   // Utility/Noise Penalty
   let utilityPenalty = 0;
@@ -165,14 +201,24 @@ export function calculateSegmentScore(entry, metrics) {
       : PENALTY_WEIGHTS.UTILITY;
   }
 
-  // 4. Final Aggregation
-  const finalScore = base + points - (typoPenalty + lengthPenalty + utilityPenalty);
+  // 4. Togetherness Boost
+  // Heavily reward tokens that successfully deinflect into valid grammar chains.
+  // A +100 bonus offsets the BASE_SEGMENT_COST, making it much more likely 
+  // that a long verb (distorted or not) is kept as one token.
+  let togethernessBoost = 0;
+  if (type.includes('deinflect')) {
+    togethernessBoost = 100;
+  }
 
-  // 5. Build Intelligible Breakdown
+  // 5. Final Aggregation
+  const finalScore = base + points + togethernessBoost - (typoPenalty + lengthPenalty + utilityPenalty);
+
+  // 6. Build Intelligible Breakdown
   const parts = [];
   parts.push(`[${label}: ${base}]`);
-  if (points > 0) parts.push(`[Points: +${points}]`);
-  if (typoPenalty > 0)  parts.push(`[Typo: -${typoPenalty.toFixed(1)}]`);
+  if (points > 0) parts.push(`[Points: +${points.toFixed(0)}]`);
+  if (togethernessBoost > 0) parts.push(`[Together: +${togethernessBoost}]`);
+  if (typoPenalty > 0)  parts.push(`[Typo: -${typoPenalty.toFixed(0)}]`);
   if (lengthPenalty > 0) parts.push(`[Len: -${lengthPenalty}]`);
   if (utilityPenalty > 0) parts.push(`[Utility: -${utilityPenalty}]`);
 

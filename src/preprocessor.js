@@ -4,6 +4,7 @@
  * Modernized romaji preprocessing pipeline using SQLite (vocab.db) and a robust deinflector.
  */
 
+import { performance } from 'node:perf_hooks';
 import * as wanakana from 'wanakana';
 import Fuse from 'fuse.js';
 import Database from 'better-sqlite3';
@@ -11,6 +12,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { deinflect, WordType, interpretReasonChains } from './deinflect.js';
 import { calculateScore, calculateSegmentScore } from './config/linguistics.js';
+import { loadGrammarAnchors, peelGrammarSuffix, collapseGrammarTokens } from './grammarPeel.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -55,58 +57,67 @@ function mapPosToVerbClass(posTag) {
   const tags = posTag.split(',').map(t => t.trim());
   let mask = 0;
 
+  // The syntax mask |= WordType.IchidanVerb means: "Flip the switch for 'IchidanVerb' to ON, but leave all other switches as they are."
   for (const t of tags) {
     if (t === 'v1') mask |= WordType.IchidanVerb;
     if (t.startsWith('v5')) mask |= WordType.GodanVerb;
     if (t === 'vk') mask |= WordType.KuruVerb;
-    if (t === 'vs') mask |= WordType.SuruVerb;
+    if (t === 'vs') mask |= (WordType.SuruVerb | WordType.NounVS);
+    if (t === 'vz') mask |= WordType.SuruVerb;
     if (t === 'adj-i') mask |= WordType.IAdj;
   }
   return mask;
 }
 
-// getFrequencyScore and getSemanticImportance replaced by centralized calculateScore in Linguistics Engine.
-
 // ─────────────────────────────────────────────────────────────────
 // Preprocessor Engine Factory
 // ─────────────────────────────────────────────────────────────────
 
-export function createPreprocessor({ vocabulary = [], knownWords = new Map() } = {}) {
+export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map() } = {}) {
 
   const romajiList = vocabulary.map(v => v.romaji);
   const fuse = new Fuse(romajiList, FUSE_OPTIONS);
 
   function processTextSegment(tok, hiraOrigin = null) {
     const rawInput = tok.toLowerCase();
-    const normalizedInput = rawInput;
 
-    // 1. Particle Check
-    const PARTICLES = {
-      'wa': 'は', 'ha': 'は', 'ga': 'が', 'wo': 'を', 'o': 'を',
-      'ni': 'に', 'e': 'へ', 'to': 'と', 'de': 'で',
-      'no': 'の', 'mo': 'も', 'ka': 'か', 'ya': 'や',
-      'yo': 'よ', 'ne': 'ね'
+    // 1. Particle Check (Unified Kana + Standardized Romaji mapping)
+    const PARTICLE_MAP = {
+      'wa': { hira: 'は', romaji: 'wa' },
+      'ha': { hira: 'は', romaji: 'wa' },
+      'ga': { hira: 'が', romaji: 'ga' },
+      'wo': { hira: 'を', romaji: 'wo' },
+      'o':  { hira: 'を', romaji: 'wo' },
+      'ni': { hira: 'に', romaji: 'ni' },
+      'e':  { hira: 'へ', romaji: 'e' },
+      'to': { hira: 'と', romaji: 'to' },
+      'de': { hira: 'で', romaji: 'de' },
+      'no': { hira: 'の', romaji: 'no' },
+      'mo': { hira: 'も', romaji: 'mo' },
+      'ka': { hira: 'か', romaji: 'ka' },
+      'ya': { hira: 'や', romaji: 'ya' },
+      'yo': { hira: 'よ', romaji: 'yo' },
+      'ne': { hira: 'ね', romaji: 'ne' }
     };
 
-    if (PARTICLES[normalizedInput]) {
-      const particleOutput = (normalizedInput === 'o' ? 'wo' : normalizedInput);
+    const pMatch = PARTICLE_MAP[rawInput];
+    if (pMatch) {
       return {
-        surface: hiraOrigin || PARTICLES[normalizedInput],
-        output: particleOutput,
-        base: particleOutput,
+        surface: hiraOrigin || pMatch.hira,
+        output: pMatch.romaji,
+        base: pMatch.romaji,
         meaning: 'particle',
         grammar_tags: [],
         decision: 'particle',
-        type: 'text',
-        meta: { kana: PARTICLES[normalizedInput] }
+        meta: { type: 'particle' }
       };
     }
 
-    if (normalizedInput.length < 2) {
+    if (rawInput.length < 2) {
       return {
-        surface: hiraOrigin || normalizedInput,
-        output: normalizedInput,
-        base: normalizedInput,
+        surface: hiraOrigin || rawInput,
+        output: rawInput,
+        base: rawInput,
         meaning: '',
         grammar_tags: [],
         type: 'text',
@@ -115,38 +126,68 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
     }
 
     // 2. Corruption Detection & Repair Cycle
-    const candidates = [];
-    const hiraganaRaw = wanakana.toHiragana(normalizedInput);
+    let candidates = [];
+    const hiraganaRaw = wanakana.toHiragana(rawInput);
     const hasCorruption = /[a-z]/.test(hiraganaRaw);
 
-    let variants = new Map([[normalizedInput, { isOriginal: true }]]);
+    let variants = new Map([[rawInput, { isOriginal: true }]]);
 
-    // If normalizedInput is a normalized version (e.g. kudashi) and we have a more raw one (e.g. kudasi),
+    // If rawInput is a normalized version (e.g. kudashi) and we have a more raw one (e.g. kudasi),
     // should we prioritize the raw one? Currently tok is the "most raw" available from evaluatePrefix.
 
     if (hasCorruption) {
-      const corruptionMatch = hiraganaRaw.match(/[a-z]+/);
-      if (corruptionMatch) {
-        const failedPart = corruptionMatch[0];
-        const failedIdx = normalizedInput.indexOf(failedPart);
+      // Find ALL corruption sites in the hiragana string and map each
+      // back to its correct position in the romaji input.
+      // The old code used rawInput.indexOf(failedPart) which found the WRONG
+      // instance (e.g., the first 'm' in 'shimaimsu' instead of the orphan 'm').
+      const corruptionRegex = /[a-z]+/g;
+      let match;
+      while ((match = corruptionRegex.exec(hiraganaRaw)) !== null) {
+        const hiraPos = match.index; // position in the hiragana string
+        // Map hiragana position back to romaji position:
+        // Count how many romaji chars produce the kana up to hiraPos
+        let romajiPos = 0;
+        for (let r = 1; r <= rawInput.length; r++) {
+          const partialHira = wanakana.toHiragana(rawInput.slice(0, r));
+          if (partialHira.length > hiraPos) {
+            romajiPos = r - 1; // the romaji char at r-1 is where the corruption starts
+            break;
+          }
+          if (r === rawInput.length) romajiPos = r - 1;
+        }
+        // Insert vowels after the stuck consonant(s)
+        const stuckLen = match[0].length;
         ['a', 'i', 'u', 'e', 'o'].forEach(v => {
-          variants.set(normalizedInput.slice(0, failedIdx + 1) + v + normalizedInput.slice(failedIdx + 1), { isRepair: true });
+          const repaired = rawInput.slice(0, romajiPos + stuckLen) + v + rawInput.slice(romajiPos + stuckLen);
+          variants.set(repaired, { isRepair: true });
         });
       }
     }
 
     const CONSONANTS_TO_DOUBLE = 'kstpbcgdrfvmzn';
-    for (let i = 0; i < normalizedInput.length - 1; i++) {
-      const char = normalizedInput[i];
-      const next = normalizedInput[i + 1];
-      if (CONSONANTS_TO_DOUBLE.includes(char) && 'aeiouy'.includes(next)) {
-        const doubled = normalizedInput.slice(0, i + 1) + char + normalizedInput.slice(i + 1);
-        variants.set(doubled, { isDoubling: true });
+    for (let i = 0; i < rawInput.length - 1; i++) {
+        const char = rawInput[i];
+        const next = rawInput[i + 1];
+        if (CONSONANTS_TO_DOUBLE.includes(char) && 'aeiouy'.includes(next)) {
+            const doubled = rawInput.slice(0, i + 1) + char + rawInput.slice(i + 1);
+            variants.set(doubled, { isDoubling: true });
+        }
+    }
+ 
+    // Voicing/Dakuten Repair (ks th -> gz db)
+    const DAKUTEN_MAP = { 'k':'g', 's':'z', 't':'d', 'h':'b', 'f':'b', 'g':'k', 'z':'s', 'd':'t', 'b':'h' };
+
+    for (let i = 0; i < rawInput.length; i++) {
+      const char = rawInput[i];
+      if (DAKUTEN_MAP[char]) {
+        const phonetic = rawInput.slice(0, i) + DAKUTEN_MAP[char] + rawInput.slice(i + 1);
+        variants.set(phonetic, { isPhonetic: true });
       }
     }
 
-    const wkNormalized = wkNormalize(normalizedInput);
-    if (wkNormalized !== normalizedInput) {
+
+    const wkNormalized = wkNormalize(rawInput);
+    if (wkNormalized !== rawInput) {
       variants.set(wkNormalized, { isWkNorm: true });
     }
 
@@ -156,15 +197,20 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
 
       if (hasCorruption && isOriginal) continue;
 
-      let variantType = isOriginal ? 'exact' : (vMeta.isRepair ? 'exact:repair' : (vMeta.isDoubling ? 'exact:doubling' : (isWkNorm ? 'normalized' : 'aggressive:exact')));
+      let variantType = isOriginal ? 'exact' 
+        : (vMeta.isRepair ? 'exact:repair' 
+        : (vMeta.isPhonetic ? 'exact:phonetic'
+        : (vMeta.isDoubling ? 'exact:doubling' 
+        : (isWkNorm ? 'normalized' : 'aggressive:exact'))));
 
-      const exactEntries = knownWords.get(variant);
+
+      const exactEntries = exactMatchIndex.get(variant);
       if (exactEntries) {
         for (const entry of exactEntries) {
           const { score, breakdown } = calculateSegmentScore(entry, {
             type: variantType,
             isOriginal,
-            inputLen: normalizedInput.length,
+            inputLen: rawInput.length,
             matchLen: variant.length
           });
 
@@ -183,13 +229,13 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
 
       const fuzzyType = isOriginal ? 'fuzzy' : (vMeta.isRepair ? 'fuzzy:repair' : (vMeta.isDoubling ? 'fuzzy:doubling' : 'aggressive:fuzzy'));
       let fuseResults = [];
-      if (variant.length <= 15) {
-        fuseResults = fuse.search(variant).slice(0, 10);
+      if (variant.length <= 25) {
+        fuseResults = fuse.search(variant).slice(0, 20); // Cap increased for better medical recall
       }
 
       for (const res of fuseResults) {
         const item = res.item;
-        const entries = knownWords.get(item);
+        const entries = exactMatchIndex.get(item);
         if (!entries) continue;
 
         for (const wordData of entries) {
@@ -219,35 +265,56 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
       const deinfResults = deinflect(hira);
       for (const c of deinfResults) {
         const rootRomaji = toRomajiSafe(c.word);
-        const entries = knownWords.get(rootRomaji);
-        if (entries) {
-          for (const wordData of entries) {
-            const isMatch = wordData.pos.some(tag => (mapPosToVerbClass(tag) & c.type) !== 0);
-            if (isMatch) {
-              const steps = (c.reasonChains && c.reasonChains[0]) ? c.reasonChains[0].length : 1;
-              const deinfDistance = 0.02 + (steps * 0.02);
-
-              const { score, breakdown } = calculateSegmentScore(wordData, {
-                type: deinfType,
-                distance: deinfDistance,
-                inputLen: variant.length,
-                matchLen: rootRomaji.length,
-                isOriginal
-              });
-
-              candidates.push({
-                id: wordData.id,
-                item: variant,
-                root: rootRomaji,
-                type: deinfType,
-                distance: deinfDistance,
-                freqScore: calculateScore(wordData),
-                adjustedScore: score,
-                breakdown,
-                meaning: wordData.meaning,
-                meta: { reasons: c.reasonChains, type: c.type, ruleWeight: c.ruleWeight || 1.0 }
-              });
+        
+        let stemMatches = [];
+        const exactStemEntries = exactMatchIndex.get(rootRomaji);
+        
+        if (exactStemEntries) {
+          stemMatches = exactStemEntries.map(e => ({ entry: e, type: deinfType, dist: 0 }));
+        } else if (rootRomaji.length >= 4 && c.reasonChains.length > 0) {
+          // FUZZY STEM REPAIR: If we have a valid deinflection reason but no exact root match,
+          // fuzzy match the stem against the dictionary. This prevents "kitdukare" 
+          // from being fragmented when it could be a corrupted "kizuka" or "katazuka".
+          const fuzzyRoots = fuse.search(rootRomaji).slice(0, 3);
+          for (const f of fuzzyRoots) {
+            const fEntries = exactMatchIndex.get(f.item);
+            if (fEntries) {
+              stemMatches.push(...fEntries.map(e => ({ 
+                entry: e, 
+                type: `${deinfType}:fuzzy_stem`, 
+                dist: f.score 
+              })));
             }
+          }
+        }
+
+        for (const { entry: wordData, type: mType, dist: stemDist } of stemMatches) {
+          const isMatch = wordData.pos.some(tag => (mapPosToVerbClass(tag) & c.type) !== 0);
+          if (isMatch) {
+            const steps = (c.reasonChains && c.reasonChains[0]) ? c.reasonChains[0].length : 1;
+            // Combined distance: base penalty for deinflection depth + any stem corruption
+            const totalDist = 0.02 + (steps * 0.02) + (stemDist * 0.5);
+
+            const { score, breakdown } = calculateSegmentScore(wordData, {
+              type: mType,
+              distance: totalDist,
+              inputLen: variant.length,
+              matchLen: rootRomaji.length,
+              isOriginal
+            });
+
+            candidates.push({
+              id: wordData.id,
+              item: variant,
+              root: wordData.romaji,
+              type: mType,
+              distance: totalDist,
+              freqScore: calculateScore(wordData),
+              adjustedScore: score,
+              breakdown,
+              meaning: wordData.meaning,
+              meta: { reasons: c.reasonChains, type: c.type, ruleWeight: c.ruleWeight || 1.0 }
+            });
           }
         }
       }
@@ -255,6 +322,16 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
     }
 
     if (candidates.length > 0) {
+      // ── DEDUPLICATE ──────────────────────────────────────────────
+      // Prevent multiple variations of the same word (e.g. yuragu vs yuragu:repair)
+      // from filling the top pool, allowing room for other words (like drug).
+      const idSeen = new Set();
+      candidates = candidates.filter(c => {
+        if (c.id && idSeen.has(c.id)) return false;
+        if (c.id) idSeen.add(c.id);
+        return true;
+      });
+
       candidates.sort((a, b) => b.adjustedScore - a.adjustedScore);
 
       // ── EXACT-MATCH SAFETY CLAMP ──────────────────────────────────
@@ -277,9 +354,9 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
 
       if (winner.adjustedScore < 600) {
         return {
-          surface: hiraOrigin || normalizedInput,
-          output: normalizedInput,
-          base: normalizedInput,
+          surface: hiraOrigin || rawInput,
+          output: rawInput,
+          base: rawInput,
           meaning: '',
           grammar_tags: [],
           type: 'text',
@@ -303,7 +380,7 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
           : winner.type,
         meta: {
           candidates: candidates,
-          competition: candidates.slice(0, 3).map(c => ({
+          competition: candidates.slice(0, 5).map(c => ({
             item: c.root ? `${c.item}(->${c.root})` : c.item,
             type: c.type,
             adj: c.adjustedScore.toFixed(4)
@@ -314,9 +391,9 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
     }
 
     return {
-      surface: hiraOrigin || normalizedInput,
-      output: normalizedInput,
-      base: normalizedInput,
+      surface: hiraOrigin || rawInput,
+      output: rawInput,
+      base: rawInput,
       meaning: '',
       grammar_tags: [],
       type: 'text',
@@ -341,9 +418,9 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
     }
     hiraToRaw[hiraStr.length] = rawLower.length - 1;
 
-    const MAX_PREFIX_LEN = 15;
+    const MAX_PREFIX_LEN = 25;
     const BEAM_WIDTH = 3;
-    const memo = new Map();
+    const globalEvalCache = new Map();
 
     function evaluatePrefix(j, i) {
       const prefix = hiraStr.slice(j, i);
@@ -353,44 +430,75 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
       const romaji = rawLower.slice(startR, endR);
 
       const memoKey = prefix + "|" + romaji;
-
-      if (memo.has(memoKey)) return memo.get(memoKey);
+      if (globalEvalCache.has(memoKey)) return globalEvalCache.get(memoKey);
       const results = [];
       const l = prefix.length;
 
-      const BASE_SEGMENT_COST = 45; // Increased from 25 to penalize over-fragmentation
-      const SHORT_PENALTY = Math.max(0, (4 - prefix.length) * 20); // More aggressive short penalty
+      const BASE_SEGMENT_COST = 100; // Increased from 45 to heavily penalize over-fragmentation
+      const SHORT_PENALTY = Math.max(0, (4 - prefix.length) * 40); // More aggressive short penalty
 
       // 1. Text / deinflect candidate
       const textEval = processTextSegment(romaji, prefix);
 
       if (textEval.decision !== 'passthrough' && textEval.decision !== 'passthrough:low_confidence' && textEval.decision !== 'skipped (too short)') {
-        // Path Cost = MaxPossiblePoints (2500) - ActualPoints
+        // Path Cost = MaxPossiblePoints (2000) - ActualPoints
         // This allows the Beam Search (Dijkstra) to work with a minimization goal.
         let pathCost = 2000;
 
         if (textEval.meta?.winner) {
-          pathCost = Math.max(0, 2500 - textEval.meta.winner.adjustedScore);
+          pathCost = Math.max(0, 2000 - textEval.meta.winner.adjustedScore);
 
           // Extra bonus for high-confidence medical terms
           if (textEval.meta.winner.freqScore >= 80) {
-            pathCost = Math.max(0, pathCost - 100);
+            pathCost = Math.max(0, pathCost - 150);
           }
         }
 
         if (textEval.decision === 'particle') pathCost -= 50;
 
-        results.push({ eval: textEval, cost: pathCost + SHORT_PENALTY });
+        results.push({ eval: textEval, cost: pathCost + SHORT_PENALTY + BASE_SEGMENT_COST });
       } else {
-        // Low confidence passthrough
-        let cost = 1200 - (l * 40);
+        // Low confidence passthrough - Make this extremely expensive to force dictionary matches
+        // Scaling cost high ensures that even a deinflected match with a typo is cheaper than two passthrough chunks.
+        let cost = 8000 - (l * 50);
         results.push({ eval: textEval, cost: cost + SHORT_PENALTY });
       }
 
-      // Grammar matching removed — LLM handles grammar natively.
-      // The beam search now focuses purely on vocabulary disambiguation.
+      // 2. Grammar suffix peel candidates
+      // Try peeling known grammar suffixes (から, たり, ように, etc.) from the end
+      // of the prefix. If the remaining stem matches a dictionary entry, emit it
+      // as a high-confidence compound candidate.
+      const grammarPeels = peelGrammarSuffix(prefix, romaji, exactMatchIndex, fuse);
+      for (const peel of grammarPeels) {
+        const stemEval = processTextSegment(peel.stemRomaji, peel.stemHira);
+        if (stemEval.decision !== 'passthrough' && stemEval.decision !== 'passthrough:low_confidence' && stemEval.decision !== 'skipped (too short)') {
+          let peelCost = 2000;
+          if (stemEval.meta?.winner) {
+            peelCost = Math.max(0, 2000 - stemEval.meta.winner.adjustedScore);
+          }
+          // Grammar peel bonus: reward finding a real word + grammar structure
+          // We provide a "Togetherness Boost" of -150 to keep these together.
+          peelCost -= 150; 
+          if (peel.priority > 0) peelCost -= peel.priority * 10; // DB priority boost
+          if (peel.isFuzzy) peelCost += (peel.distance * 100); // Penalty for fuzzy stem
 
-      memo.set(memoKey, results);
+          results.push({
+            eval: {
+              ...stemEval,
+              decision: `grammar_peel:${peel.grammarId}`,
+              grammarSuffix: {
+                anchor: peel.anchor,
+                grammarId: peel.grammarId,
+                meaning: peel.grammarMeaning,
+                title: peel.grammarTitle
+              }
+            },
+            cost: peelCost + SHORT_PENALTY + BASE_SEGMENT_COST
+          });
+        }
+      }
+
+      globalEvalCache.set(memoKey, results);
       return results;
     }
 
@@ -419,11 +527,14 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
         }
       }
 
-      // Sort candidates by cost (lowest is better)
+      // Sort and prune candidates at each position to prevent exponential growth
       candidatesForI.sort((a, b) => a.cost - b.cost);
 
-      // Apply beam width
-      topPaths[i] = candidatesForI.slice(0, BEAM_WIDTH);
+      // BEAM PRUNING:
+      // 1. Hard limit on beam width (Reduced from 20 to 5 for latency)
+      // 2. Cost threshold: drop anything significantly worse than the best candidate
+      const bestCost = candidatesForI[0]?.cost || Infinity;
+      topPaths[i] = candidatesForI.slice(0, 5).filter(c => c.cost < (bestCost + 800));
     }
 
     if (topPaths[hiraStr.length].length === 0) return [];
@@ -546,21 +657,44 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
   function dispatch(text, includeTrace = false) {
     if (!text) return includeTrace ? { output: '', tokens: [] } : '';
 
-    const tokenLog = [];
+    const tDispatchStart = performance.now();
+    let allTokens = [];
     const clauses = text.split(/([.。?？!！,、\s])/);
 
-    const processed = clauses.map(part => {
-      if (!part || /^[.。?？!！,、\s]+$/.test(part)) return part;
+    for (const part of clauses) {
+      if (!part) continue;
+      if (/^[.。?？!！,、\s]+$/.test(part)) {
+        allTokens.push({
+          surface: part,
+          output: part,
+          base: part,
+          meaning: '',
+          grammar_tags: [],
+          type: 'punctuation',
+          decision: 'punctuation'
+        });
+        continue;
+      }
 
       const segments = segmentAndProcess(part, includeTrace);
-      if (includeTrace) {
-        tokenLog.push(...segments);
-      }
-      return segments.map(s => s.output).join('');
-    });
+      allTokens.push(...segments);
+    }
 
-    const output = processed.join('');
-    return includeTrace ? { output, tokens: tokenLog } : output;
+    const tBeamEnd = performance.now();
+
+    // ── GRAMMAR COLLAPSE & ORPHAN MERGE PASS ───────────────────
+    // Runs on the full token stream (across whitespace boundaries)
+    // to detect multi-token grammar patterns and merge garbage orphans.
+    allTokens = collapseGrammarTokens(allTokens, processTextSegment, segmentAndProcess);
+
+    const tCollapseEnd = performance.now();
+
+    if (includeTrace) {
+      console.log(`\n\x1b[90m[Perf] Dispatch total: ${(tCollapseEnd - tDispatchStart).toFixed(2)}ms (Beam: ${(tBeamEnd - tDispatchStart).toFixed(2)}ms, Collapse: ${(tCollapseEnd - tBeamEnd).toFixed(2)}ms)\x1b[0m`);
+    }
+
+    const output = allTokens.map(s => s.output).join('');
+    return includeTrace ? { output, tokens: allTokens } : output;
   }
 
   return {
@@ -654,9 +788,15 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
 
           let semanticBoost = 0;
           // Absolute Curve: noise is < 0.55. Max similarity roughly ~0.70.
-          if (cosSim > 0.55) {
-            const ratio = Math.min(1.0, (cosSim - 0.55) / 0.15);
-            semanticBoost = Math.round(MAX_BOOST * ratio);
+          if (cosSim > 0.60) { // Tightened from 0.55
+            const ratio = Math.min(1.0, (cosSim - 0.60) / 0.15);
+            let rawBoost = Math.round(MAX_BOOST * ratio);
+            
+            // ── DISTANCE SCALING ──────────────────────────────────────
+            // High-confidence exact matches get full boost.
+            // Poor fuzzy matches (dist 0.3) get scaled down drastically.
+            const distScale = Math.max(0, 1.0 - (c.distance || 0) * 3); 
+            semanticBoost = Math.round(rawBoost * distScale);
           }
 
           return {
@@ -669,10 +809,23 @@ export function createPreprocessor({ vocabulary = [], knownWords = new Map() } =
           return { ...tok, meta: { ...tok.meta, candidates } };
         }
 
-        // Exact Match Ceiling Protection
-        if (initialWinner.type === 'exact' && initialWinner.adjustedScore >= 1000) {
+        // Exact Match & Grammar Ceiling Protection
+        // If we have a literal exact match or a high-confidence deinflection,
+        // protect it from loose fuzzy "hallucinations" unless they are near-perfect matches.
+        const isStrongMatch = initialWinner.type === 'exact' || initialWinner.type.startsWith('deinflect');
+        if (isStrongMatch) {
           candidates.forEach(c => {
-            if (c.type.includes('fuzzy') && c.cosSim < 0.85) {
+            if (c.id === initialWinner.id) return;
+
+            const isRiskyFuzzy = c.type.includes('fuzzy') && c.distance > 0.05;
+            const isDifferentExact = c.type.startsWith('exact') && c.id !== initialWinner.id;
+
+            // SAFETY GATE: If it's a loose fuzzy or a different exact match, 
+            // require an extreme semantic threshold (0.90) to allow a flip.
+            // Tightened for grammar words to prevent "arimasuka" -> "himatsukaku"
+            // Require a near-perfect match (0.95) to flip a literal match.
+            const threshold = isStrongMatch ? 0.95 : 0.90;
+            if ((isRiskyFuzzy || isDifferentExact) && c.cosSim < threshold) {
               c.finalScore = (c.contextScore || c.adjustedScore || 0); // Strip boost
               c.semanticBoost = 0;
             }
@@ -737,7 +890,7 @@ export function preprocessEng(text) {
 console.log('[preprocessor] Initializing from vocab.db with deinflector and grammar indices...');
 const db = new Database(DB_PATH, { readonly: true });
 
-const allEntries = db.prepare('SELECT id, romaji, pos, tags, freq, primary_meaning, domain, mesh_annotations, mesh_domains FROM vocab').all();
+const allEntries = db.prepare('SELECT id, romaji, pos, tags, freq, primary_meaning, domain, mesh_annotations, mesh_domains, common_words FROM vocab').all();
 const knownWords = new Map();
 
 for (const entry of allEntries) {
@@ -757,7 +910,8 @@ for (const entry of allEntries) {
     meaning: entry.primary_meaning || '',
     domain: entry.domain || null,
     mesh: entry.mesh_annotations ? JSON.parse(entry.mesh_annotations) : null,
-    meshDomains: entry.mesh_domains ? JSON.parse(entry.mesh_domains) : []
+    meshDomains: entry.mesh_domains ? JSON.parse(entry.mesh_domains) : [],
+    commonWords: entry.common_words || null
   });
 }
 
@@ -766,8 +920,8 @@ const candidates = db.prepare(`
   WHERE domain IS NOT NULL OR freq > 0.1
 `).all();
 
-// Grammar tables left in DB but no longer loaded by preprocessor.
-// The LLM handles grammar natively — preprocessor focuses on vocab disambiguation.
+// Load grammar anchors for the suffix peel system
+loadGrammarAnchors(db);
 
 const _default = createPreprocessor({
   vocabulary: candidates,

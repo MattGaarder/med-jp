@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "timestamp": "2026-04-27T12:47:34.423Z",
+    "skipLLM": false,
+    "totalMs": 32154
+  },
+  "results": [
+    {
+      "id": "case-07-slow-movement",
+      "label": "Motor symptoms / Restlessness",
+      "input": "JAP: hoka no hito ni ugoitari hanshitari no ga osokute kitdukaremashitaka ochitsukuganaku mata ha sowasowa takusan ogoitemasuka",
+      "direction": null,
+      "preprocessedInput": null,
+      "tokens": [],
+      "ragHits": [],
+      "toneHits": [],
+      "glossaryInjected": "",
+      "prompt": null,
+      "llmOutput": null,
+      "durationMs": 4158,
+      "timings": {},
+      "error": "Cannot read properties of undefined (reading 'toLowerCase')",
+      "queryTokens": []
+    },
+    {
+      "id": "case-14-nausea-black-stool",
+      "label": "Severe symptoms (nausea, fatigue, dizziness, melaena)",
+      "input": "JAP: nnnn hakike hidoi no to hirokan dake desu ato yoko ni natte okiagru toki ya tatte suwatte tachi agaru toki ni chotto memai surun desu onaka mo katai kanji shite itsumo i ga itai desu senjyutsu kuroi ben deta desu ga nani ka warui koto da to omoimasu ka",
+      "direction": null,
+      "preprocessedInput": null,
+      "tokens": [],
+      "ragHits": [],
+      "toneHits": [],
+      "glossaryInjected": "",
+      "prompt": null,
+      "llmOutput": null,
+      "durationMs": 15962,
+      "timings": {},
+      "error": "Cannot read properties of undefined (reading 'toLowerCase')",
+      "queryTokens": []
+    },
+    {
+      "id": "case-15-follow-up",
+      "label": "Next appointment / Recital context",
+      "input": "JAP: wakatta sensei kore ijyou waruknai ranai to iino desu ga sugi no youyaku itsu desuka saisho chichi no hi de hapyoukai aru no de",
+      "direction": null,
+      "preprocessedInput": null,
+      "tokens": [],
+      "ragHits": [],
+      "toneHits": [],
+      "glossaryInjected": "",
+      "prompt": null,
+      "llmOutput": null,
+      "durationMs": 12033,
+      "timings": {},
+      "error": "Cannot read properties of undefined (reading 'toLowerCase')",
+      "queryTokens": []
+    }
+  ]
+}

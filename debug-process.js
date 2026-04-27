@@ -15,7 +15,7 @@ allRomaji.add('kara');
 const pp = createPreprocessor({
   vocabulary: medicalVocab,
   corrections: corrections,
-  knownWords: allRomaji
+  exactMatchIndex: allRomaji
 });
 
 console.log("=== Testing 'ochite' ===");
