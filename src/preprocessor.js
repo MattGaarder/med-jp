@@ -34,13 +34,13 @@ const FUSE_OPTIONS = {
 // Linguistic Transformers
 // ─────────────────────────────────────────────────────────────────
 
-function wkNormalize(token) {
+function wkNormalize(text) {
   try {
-    if (!wanakana.isRomaji(token)) return token;
-    const hiragana = wanakana.toHiragana(token, { passRomaji: false });
+    if (!wanakana.isRomaji(text)) return text;
+    const hiragana = wanakana.toHiragana(text, { passRomaji: false });
     return wanakana.toRomaji(hiragana);
   } catch {
-    return token;
+    return text;
   }
 }
 
@@ -57,13 +57,15 @@ function mapPosToVerbClass(posTag) {
   const tags = posTag.split(',').map(t => t.trim());
   let mask = 0;
 
-  // The syntax mask |= WordType.IchidanVerb means: "Flip the switch for 'IchidanVerb' to ON, but leave all other switches as they are."
+  // Verb Stem Mask: A dictionary verb can be ANY of these stems after deinflection.
+  const ALL_STEMS = WordType.Initial | WordType.TaTeStem | WordType.DaDeStem | WordType.MasuStem | WordType.IrrealisStem;
+
   for (const t of tags) {
-    if (t === 'v1') mask |= WordType.IchidanVerb;
-    if (t.startsWith('v5')) mask |= WordType.GodanVerb;
-    if (t === 'vk') mask |= WordType.KuruVerb;
-    if (t === 'vs') mask |= (WordType.SuruVerb | WordType.NounVS);
-    if (t === 'vz') mask |= WordType.SuruVerb;
+    if (t === 'v1') mask |= (WordType.IchidanVerb | ALL_STEMS);
+    if (t.startsWith('v5')) mask |= (WordType.GodanVerb | ALL_STEMS);
+    if (t === 'vk') mask |= (WordType.KuruVerb | ALL_STEMS);
+    if (t === 'vs') mask |= (WordType.SuruVerb | WordType.NounVS | ALL_STEMS);
+    if (t === 'vz') mask |= (WordType.SuruVerb | ALL_STEMS);
     if (t === 'adj-i') mask |= WordType.IAdj;
   }
   return mask;
@@ -78,8 +80,8 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
   const romajiList = vocabulary.map(v => v.romaji);
   const fuse = new Fuse(romajiList, FUSE_OPTIONS);
 
-  function processTextSegment(tok, hiraOrigin = null) {
-    const rawInput = tok.toLowerCase();
+  function processTextSegment(candidateSegment, hiraOrigin = null) {
+    const rawInput = candidateSegment.toLowerCase();
 
     // 1. Particle Check (Unified Kana + Standardized Romaji mapping)
     const PARTICLE_MAP = {
@@ -133,7 +135,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
     let variants = new Map([[rawInput, { isOriginal: true }]]);
 
     // If rawInput is a normalized version (e.g. kudashi) and we have a more raw one (e.g. kudasi),
-    // should we prioritize the raw one? Currently tok is the "most raw" available from evaluatePrefix.
+    // should we prioritize the raw one? Currently candidateSegment is the "most raw" available from evaluatePrefix.
 
     if (hasCorruption) {
       // Find ALL corruption sites in the hiragana string and map each
@@ -194,17 +196,21 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
     for (const [variant, vMeta] of variants.entries()) {
       const isOriginal = vMeta.isOriginal;
       const isWkNorm = vMeta.isWkNorm;
+      // We no longer skip corrupted originals here. 
+      // If deinflect() can find a valid morphological parse for a "corrupted" string, 
+      // we want to allow it.
 
-      if (hasCorruption && isOriginal) continue;
 
       let variantType = isOriginal ? 'exact' 
         : (vMeta.isRepair ? 'exact:repair' 
         : (vMeta.isPhonetic ? 'exact:phonetic'
         : (vMeta.isDoubling ? 'exact:doubling' 
+        // to handle highly-transformed future mutations
         : (isWkNorm ? 'normalized' : 'aggressive:exact'))));
 
 
       const exactEntries = exactMatchIndex.get(variant);
+      let hasHighConfidenceExact = false;
       if (exactEntries) {
         for (const entry of exactEntries) {
           const { score, breakdown } = calculateSegmentScore(entry, {
@@ -213,6 +219,8 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
             inputLen: rawInput.length,
             matchLen: variant.length
           });
+
+          if (score > 1000) hasHighConfidenceExact = true;
 
           candidates.push({
             id: entry.id,
@@ -227,10 +235,13 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
         }
       }
 
+      // SHORT-CIRCUIT: If we found a high-confidence exact match, skip the expensive fuzzy search for this variant.
+      if (hasHighConfidenceExact) continue;
+
       const fuzzyType = isOriginal ? 'fuzzy' : (vMeta.isRepair ? 'fuzzy:repair' : (vMeta.isDoubling ? 'fuzzy:doubling' : 'aggressive:fuzzy'));
       let fuseResults = [];
       if (variant.length <= 25) {
-        fuseResults = fuse.search(variant).slice(0, 20); // Cap increased for better medical recall
+        fuseResults = fuse.search(variant).slice(0, 5); // Reduced from 20 for latency
       }
 
       for (const res of fuseResults) {
@@ -271,11 +282,11 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
         
         if (exactStemEntries) {
           stemMatches = exactStemEntries.map(e => ({ entry: e, type: deinfType, dist: 0 }));
-        } else if (rootRomaji.length >= 4 && c.reasonChains.length > 0) {
+        } else if (rootRomaji.length >= 2 && c.reasonChains.length > 0) {
           // FUZZY STEM REPAIR: If we have a valid deinflection reason but no exact root match,
           // fuzzy match the stem against the dictionary. This prevents "kitdukare" 
           // from being fragmented when it could be a corrupted "kizuka" or "katazuka".
-          const fuzzyRoots = fuse.search(rootRomaji).slice(0, 3);
+          const fuzzyRoots = fuse.search(rootRomaji).slice(0, 15);
           for (const f of fuzzyRoots) {
             const fEntries = exactMatchIndex.get(f.item);
             if (fEntries) {
@@ -303,6 +314,13 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
               isOriginal
             });
 
+            if (score > 1050) {
+              // VERB SHORT-CIRCUIT: If we find a high-confidence verb via morphological deinflection,
+              // we treat it with the same priority as a direct exact match, making it the dominant
+              // candidate for this segment and preventing fragmentation.
+              hasHighConfidenceExact = true; 
+            }
+
             candidates.push({
               id: wordData.id,
               item: variant,
@@ -318,6 +336,9 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
           }
         }
       }
+
+      if (hasHighConfidenceExact) break; // Exit variant loop early if we found our verb
+
 
     }
 
@@ -891,15 +912,15 @@ console.log('[preprocessor] Initializing from vocab.db with deinflector and gram
 const db = new Database(DB_PATH, { readonly: true });
 
 const allEntries = db.prepare('SELECT id, romaji, pos, tags, freq, primary_meaning, domain, mesh_annotations, mesh_domains, common_words FROM vocab').all();
-const knownWords = new Map();
+const exactMatchIndex = new Map();
 
 for (const entry of allEntries) {
   const norm = entry.romaji.toLowerCase();
-  let entries = knownWords.get(norm);
+  let entries = exactMatchIndex.get(norm);
 
   if (!entries) {
     entries = [];
-    knownWords.set(norm, entries);
+    exactMatchIndex.set(norm, entries);
   }
 
   entries.push({
@@ -925,7 +946,7 @@ loadGrammarAnchors(db);
 
 const _default = createPreprocessor({
   vocabulary: candidates,
-  knownWords
+  exactMatchIndex
 });
 
 export const preprocessJap = _default.preprocessJap;

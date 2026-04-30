@@ -187,9 +187,9 @@ export function calculateSegmentScore(entry, metrics) {
   // Length Mismatch Penalty
   let lengthPenalty = Math.abs(inputLen - matchLen) * PENALTY_WEIGHTS.LENGTH;
   if (type.includes('deinflect')) {
-    // Highly inflected verbs shouldn't be heavily penalized for the length 
-    // added by their grammatical suffixes (e.g., -renakatta).
-    lengthPenalty = Math.min(lengthPenalty, PENALTY_WEIGHTS.LENGTH * 2);
+    // Morphological deinflection naturally changes string length;
+    // we should not penalize the root match for the length of its suffixes.
+    lengthPenalty = 0;
   }
 
   // Utility/Noise Penalty
@@ -207,7 +207,7 @@ export function calculateSegmentScore(entry, metrics) {
   // that a long verb (distorted or not) is kept as one token.
   let togethernessBoost = 0;
   if (type.includes('deinflect')) {
-    togethernessBoost = 100;
+    togethernessBoost = 250; // Increased from 100 to prioritize morphological whole-verb reconstructions
   }
 
   // 5. Final Aggregation

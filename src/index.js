@@ -1,26 +1,42 @@
 /**
  * index.js
- * CLI entry point — interactive REPL for the medical interpreter.
- *
- * Usage:
- *   node src/index.js
- *
- * Prefixes:
- *   ENG: <text>  →  English → Japanese
- *   JAP: <text>  →  Japanese/romaji → English
+ * 
+ * This file is the ENTRY POINT of your program.
+ * That means: this is where everything starts when you run:
+ * 
+ *    node src/index.js
+ * 
+ * It creates a command-line interface (CLI) where the user can type input,
+ * and it sends that input into your interpreter pipeline.
  */
 
+// Load environment variables (like API URLs) from a .env file
 import 'dotenv/config';
+
+// Built-in Node.js module for reading user input from the terminal
 import readline from 'readline';
+
+// This is YOUR pipeline function (defined elsewhere)
+// It takes input → processes it → returns a streamed response
 import { interpret } from './interpreter.js';
 
-const RESET  = '\x1b[0m';
-const CYAN   = '\x1b[36m';
-const GREEN  = '\x1b[32m';
-const YELLOW = '\x1b[33m';
-const RED    = '\x1b[31m';
-const DIM    = '\x1b[2m';
 
+// ─────────────────────────────────────────────
+// Terminal color codes (ANSI escape codes)
+// These just make text look nicer in the terminal
+// ─────────────────────────────────────────────
+
+const RESET  = '\x1b[0m';  // Reset color back to normal
+const CYAN   = '\x1b[36m'; // Cyan text
+const GREEN  = '\x1b[32m'; // Green text
+const YELLOW = '\x1b[33m'; // Yellow text
+const RED    = '\x1b[31m'; // Red text
+const DIM    = '\x1b[2m';  // Dim/faded text
+
+
+// ─────────────────────────────────────────────
+// Prints the startup banner (UI decoration)
+// ─────────────────────────────────────────────
 function banner() {
   console.log(`
 ${CYAN}╔══════════════════════════════════════════╗
@@ -33,86 +49,156 @@ ${CYAN}╔═══════════════════════�
 `);
 }
 
+
+// ─────────────────────────────────────────────
+// MAIN FUNCTION (program starts here)
+// ─────────────────────────────────────────────
 async function main() {
+
+  // Show banner when program starts
   banner();
 
+  // Create a "readline interface"
+  // This lets us read input from the terminal (like a chat prompt)
   const rl = readline.createInterface({
-    input:    process.stdin,
-    output:   process.stdout,
-    terminal: process.stdin.isTTY,
+    input:    process.stdin,   // where input comes from (keyboard)
+    output:   process.stdout,  // where output goes (terminal)
+    terminal: process.stdin.isTTY, // whether we're in an interactive terminal
   });
 
-  // Helper to ask a single question and return the answer
+
+  // ───────────────────────────────────────────
+  // Helper function: ask user for input
+  // Returns a Promise that resolves with what user typed
+  // ───────────────────────────────────────────
   const ask = () =>
     new Promise((resolve) => {
+
+      // If NOT interactive (e.g. piping input from a file)
       if (!process.stdin.isTTY) {
-        // Non-interactive mode: read lines via 'line' event instead of question()
+        // Listen for a single line of input
         rl.once('line', resolve);
+
       } else {
+        // Interactive mode → show prompt ">"
         rl.question(`${CYAN}> ${RESET}`, resolve);
       }
     });
 
+
+  // ───────────────────────────────────────────
+  // Main loop: keeps running forever until user exits
+  // ───────────────────────────────────────────
   while (true) {
+
     let rawInput;
+
     try {
+      // Wait for user to type something
       rawInput = await ask();
     } catch {
-      break; // stdin closed
+      // If input stream is closed → exit loop
+      break;
     }
 
+    // If nothing was received → exit
     if (rawInput === undefined) break;
 
+    // Remove extra spaces from input
     const input = rawInput.trim();
+
+    // If empty input → skip and ask again
     if (!input) continue;
 
+
+    // ─────────────────────────────────────────
+    // Exit conditions
+    // ─────────────────────────────────────────
     if (input.toLowerCase() === 'exit' || input.toLowerCase() === 'quit') {
       console.log(`${DIM}Goodbye.${RESET}`);
       break;
     }
 
+
+    // ─────────────────────────────────────────
+    // Handle shortcut prefixes
+    // ─────────────────────────────────────────
+
     let finalInput = input;
+
+    // "!" → treat as English input
     if (finalInput.startsWith('!')) {
       finalInput = 'ENG: ' + finalInput.substring(1).trim();
+
+    // "±" → treat as Japanese input
     } else if (finalInput.startsWith('±')) {
       finalInput = 'JAP: ' + finalInput.substring(1).trim();
     }
 
+
+    // ─────────────────────────────────────────
+    // Send input into your interpreter pipeline
+    // ─────────────────────────────────────────
     try {
-      if (process.stdin.isTTY) process.stdout.write(`${DIM}Thinking...${RESET}\r`);
-      
+
+      // Show "Thinking..." while waiting (only in interactive terminal)
+      if (process.stdin.isTTY) {
+        process.stdout.write(`${DIM}Thinking...${RESET}\r`);
+      }
+
+      // Call your pipeline → returns an async stream of text chunks
       const stream = interpret(finalInput);
+
       let startedStreaming = false;
 
+      // Loop over chunks as they arrive (streaming output)
       for await (const chunk of stream) {
+
+        // First chunk → clear "Thinking..." and switch to green text
         if (!startedStreaming && process.stdin.isTTY) {
           process.stdout.clearLine(0);
           process.stdout.cursorTo(0);
-          process.stdout.write(GREEN); // switch to output color once stream starts
+          process.stdout.write(GREEN);
           startedStreaming = true;
         }
+
+        // Print each chunk to terminal
         process.stdout.write(chunk);
       }
-      
+
+      // If nothing was streamed, still clear the "Thinking..." line
       if (!startedStreaming && process.stdin.isTTY) {
-          process.stdout.clearLine(0);
-          process.stdout.cursorTo(0);
+        process.stdout.clearLine(0);
+        process.stdout.cursorTo(0);
       }
+
+      // Reset color and move to next line
       process.stdout.write(`${RESET}\n\n`);
+
     } catch (err) {
+
+      // If error happens → clear line and show error message
       if (process.stdin.isTTY) {
         process.stdout.clearLine?.(0);
         process.stdout.cursorTo?.(0);
       }
+
       console.error(`${RED}Error:${RESET} ${err.message}\n`);
     }
   }
 
+
+  // Close the readline interface when loop ends
   rl.close();
 }
 
+
+// ─────────────────────────────────────────────
+// Start the program
+// ─────────────────────────────────────────────
+
+// Call main() and catch any fatal errors
 main().catch((err) => {
   console.error(`${RED}Fatal:${RESET}`, err.message);
-  process.exit(1);
+  process.exit(1); // exit program with error code
 });
-
