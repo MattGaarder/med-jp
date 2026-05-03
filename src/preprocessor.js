@@ -17,7 +17,7 @@ import { loadGrammarAnchors, peelGrammarSuffix, collapseGrammarTokens } from './
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const DB_PATH = join(__dirname, '..', 'data', 'vocab.db');
-
+// 953 Lines
 // ─────────────────────────────────────────────────────────────────
 // Fuse.js configuration
 // ─────────────────────────────────────────────────────────────────
@@ -56,10 +56,7 @@ function mapPosToVerbClass(posTag) {
   if (!posTag) return 0;
   const tags = posTag.split(',').map(t => t.trim());
   let mask = 0;
-
-  // Verb Stem Mask: A dictionary verb can be ANY of these stems after deinflection.
   const ALL_STEMS = WordType.Initial | WordType.TaTeStem | WordType.DaDeStem | WordType.MasuStem | WordType.IrrealisStem;
-
   for (const t of tags) {
     if (t === 'v1') mask |= (WordType.IchidanVerb | ALL_STEMS);
     if (t.startsWith('v5')) mask |= (WordType.GodanVerb | ALL_STEMS);
@@ -71,275 +68,351 @@ function mapPosToVerbClass(posTag) {
   return mask;
 }
 
+const PARTICLE_MAP = Object.freeze({
+  'wa': { hira: 'は', romaji: 'wa' },
+  'ha': { hira: 'は', romaji: 'wa' },
+  'ga': { hira: 'が', romaji: 'ga' },
+  'wo': { hira: 'を', romaji: 'wo' },
+  'o':  { hira: 'を', romaji: 'wo' },
+  'ni': { hira: 'に', romaji: 'ni' },
+  'e':  { hira: 'へ', romaji: 'e' },
+  'to': { hira: 'と', romaji: 'to' },
+  'de': { hira: 'で', romaji: 'de' },
+  'no': { hira: 'の', romaji: 'no' },
+  'mo': { hira: 'も', romaji: 'mo' },
+  'ka': { hira: 'か', romaji: 'ka' },
+  'ya': { hira: 'や', romaji: 'ya' },
+  'yo': { hira: 'よ', romaji: 'yo' },
+  'ne': { hira: 'ね', romaji: 'ne' }
+});
+// ─────────────────────────────────────────────────────────────────
+// Handle Special Cases
+// ─────────────────────────────────────────────────────────────────
+
+function handleSpecialCases(chunkSegment, hiraOrigin) {
+  const pMatch = PARTICLE_MAP[chunkSegment];
+  if (pMatch) {
+    return {
+      surface: hiraOrigin || pMatch.hira,
+      output: pMatch.romaji,
+      base: pMatch.romaji,
+      meaning: 'particle',
+      grammar_tags: [],
+      decision: 'particle',
+      meta: { type: 'particle' }
+    };
+  }
+  if (chunkSegment.length < 2) {
+    return {
+      surface: hiraOrigin || chunkSegment,
+      output: chunkSegment,
+      base: chunkSegment,
+      meaning: '',
+      grammar_tags: [],
+      type: 'text',
+      decision: 'skipped (too short)'
+    };
+  }
+  return null;
+}
+
+function generateVariants(chunkSegment) {
+  const variants = new Map([[chunkSegment, { isOriginal: true }]]);
+  const hiraganaRaw = wanakana.toHiragana(chunkSegment);
+  const hasCorruption = /[a-z]/.test(hiraganaRaw);
+  // ── 1. Corruption Repair ─────────────────────────────
+  if (hasCorruption) {
+    const corruptionRegex = /[a-z]+/g;
+    let match;
+
+    while ((match = corruptionRegex.exec(hiraganaRaw)) !== null) {
+      const hiraPos = match.index;
+
+      let romajiPos = 0;
+      for (let r = 1; r <= chunkSegment.length; r++) {
+        const partialHira = wanakana.toHiragana(chunkSegment.slice(0, r));
+        if (partialHira.length > hiraPos) {
+          romajiPos = r - 1;
+          break;
+        }
+        if (r === chunkSegment.length) romajiPos = r - 1;
+      }
+
+      const stuckLen = match[0].length;
+
+      ['a', 'i', 'u', 'e', 'o'].forEach(v => {
+        const repaired = chunkSegment.slice(0, romajiPos + stuckLen) + v + chunkSegment.slice(romajiPos + stuckLen);
+        variants.set(repaired, { isRepair: true });
+      });
+    }
+  }
+  // ── 2. Consonant Doubling ─────────────────────────────
+  const CONSONANTS_TO_DOUBLE = 'kstpbcgdrfvmzn';
+  for (let i = 0; i < chunkSegment.length - 1; i++) {
+    const char = chunkSegment[i];
+    const next = chunkSegment[i + 1];
+    if (CONSONANTS_TO_DOUBLE.includes(char) && 'aeiouy'.includes(next)) {
+      const doubled = chunkSegment.slice(0, i + 1) + char + chunkSegment.slice(i + 1);
+      variants.set(doubled, { isDoubling: true });
+    }
+  }
+  // ── 3. Dakuten / Phonetic Swap ────────────────────────
+  const DAKUTEN_MAP = { 'k':'g', 's':'z', 't':'d', 'h':'b', 'f':'b', 'g':'k', 'z':'s', 'd':'t', 'b':'h' };
+  for (let i = 0; i < chunkSegment.length; i++) {
+    const char = chunkSegment[i];
+    if (DAKUTEN_MAP[char]) {
+      const phonetic =
+        chunkSegment.slice(0, i) +
+        DAKUTEN_MAP[char] +
+        chunkSegment.slice(i + 1);
+      variants.set(phonetic, { isPhonetic: true });
+    }
+  }
+  // ── 4. WanaKana Normalization ─────────────────────────
+  const wkNormalized = wkNormalize(chunkSegment);
+  if (wkNormalized !== chunkSegment) {
+    variants.set(wkNormalized, { isWkNorm: true });
+  }
+  return variants;
+}
+
+function evaluateVariants({
+  variant,
+  vMeta,
+  chunkSegment,
+  exactMatchIndex,
+  fuse
+}) {
+  const isOriginal = vMeta.isOriginal;
+  let hasHighConfidenceExact = false;
+  let candidates = [];
+  const variantType = isOriginal ? 'exact' 
+    : (vMeta.isRepair ? 'exact:repair' 
+    : (vMeta.isPhonetic ? 'exact:phonetic'
+    : (vMeta.isDoubling ? 'exact:doubling' 
+    : (vMeta.isWkNorm ? 'normalized' : 'aggressive:exact'))));
+  // ─────────────────────────────
+  // 1. EXACT
+  // ─────────────────────────────
+  const exactRes = evaluateExact({
+    variant,
+    variantType,
+    chunkSegment,
+    exactMatchIndex,
+    isOriginal
+  });
+  candidates.push(...exactRes.candidates);
+  if (exactRes.hasHighConfidenceExact) {
+    return { candidates, shortCircuit: true };
+  }
+  // ─────────────────────────────
+  // 2. FUZZY
+  // ─────────────────────────────
+  const fuzzyType = isOriginal
+    ? 'fuzzy'
+    : (vMeta.isRepair ? 'fuzzy:repair'
+    : (vMeta.isDoubling ? 'fuzzy:doubling'
+    : 'aggressive:fuzzy'));
+  const fuzzyRes = evaluateFuzzy({
+    variant,
+    fuzzyType,
+    exactMatchIndex,
+    fuse,
+    isOriginal
+  });
+  candidates.push(...fuzzyRes);
+  // ─────────────────────────────
+  // 3. DEINFLECT
+  // ─────────────────────────────
+  const deinfType = isOriginal
+    ? 'deinflect'
+    : (vMeta.isRepair ? 'deinflect:repair'
+    : (vMeta.isDoubling ? 'deinflect:doubling'
+    : 'aggressive:deinflect'));
+  const deinfRes = evaluateDeinflect({
+    variant,
+    deinfType,
+    exactMatchIndex,
+    fuse,
+    isOriginal
+  });
+  candidates.push(...deinfRes.candidates);
+  if (deinfRes.hasHighConfidenceExact) {
+    hasHighConfidenceExact = true;
+  }
+  return { candidates, shortCircuit: hasHighConfidenceExact };
+}
+
+function evaluateExact({
+  variant,
+  variantType,
+  chunkSegment,
+  exactMatchIndex,
+  isOriginal
+}) {
+  let candidates = [];
+  let hasHighConfidenceExact = false;
+  const exactEntries = exactMatchIndex.get(variant);
+  if (!exactEntries) {
+    return { candidates, hasHighConfidenceExact };
+  }
+  for (const entry of exactEntries) {
+    const { score, breakdown } = calculateSegmentScore(entry, {
+      type: variantType,
+      isOriginal,
+      inputLen: chunkSegment.length,
+      matchLen: variant.length
+    });
+    if (score > 1000) hasHighConfidenceExact = true;
+    candidates.push({
+      id: entry.id,
+      item: variant,
+      type: variantType,
+      distance: 0.0,
+      freqScore: calculateScore(entry),
+      adjustedScore: score,
+      breakdown,
+      meaning: entry.meaning
+    });
+  }
+  return { candidates, hasHighConfidenceExact };
+}
+function evaluateFuzzy({
+    variant,
+    fuzzyType,
+    exactMatchIndex,
+    fuse,
+    isOriginal
+  }) {
+  let candidates = [];
+  if (variant.length > 25) return candidates;
+  const results = fuse.search(variant).slice(0, 5);
+  for (const res of results) {
+    const item = res.item;
+    const entries = exactMatchIndex.get(item);
+    if (!entries) continue;
+    for (const wordData of entries) {
+      const { score, breakdown } = calculateSegmentScore(wordData, {
+        type: fuzzyType,
+        distance: res.score,
+        inputLen: variant.length,
+        matchLen: item.length,
+        isOriginal
+      });
+
+      candidates.push({
+        id: wordData.id,
+        item,
+        type: fuzzyType,
+        distance: res.score,
+        freqScore: calculateScore(wordData),
+        adjustedScore: score,
+        breakdown,
+        meaning: wordData.meaning
+      });
+    }
+  }
+  return candidates;
+}
+
+function evaluateDeinflect({
+    variant,
+    deinfType,
+    exactMatchIndex,
+    fuse,
+    isOriginal
+  }) {
+  let candidates = [];
+  let hasHighConfidenceExact = false;
+  const hira = wanakana.toHiragana(variant);
+  const deinfResults = deinflect(hira);
+  for (const c of deinfResults) {
+    const rootRomaji = toRomajiSafe(c.word);
+    let stemMatches = [];
+    const exactStemEntries = exactMatchIndex.get(rootRomaji);
+    if (exactStemEntries) {
+      stemMatches = exactStemEntries.map(e => ({
+        entry: e,
+        type: deinfType,
+        dist: 0
+      }));
+    } else if (rootRomaji.length >= 2 && c.reasonChains.length > 0) {
+      const fuzzyRoots = fuse.search(rootRomaji).slice(0, 15);
+      for (const f of fuzzyRoots) {
+        const fEntries = exactMatchIndex.get(f.item);
+        if (fEntries) {
+          stemMatches.push(...fEntries.map(e => ({
+            entry: e,
+            type: `${deinfType}:fuzzy_stem`,
+            dist: f.score
+          })));
+        }
+      }
+    }
+    for (const { entry: wordData, type: mType, dist } of stemMatches) {
+      const isMatch = wordData.pos.some(tag =>
+        (mapPosToVerbClass(tag) & c.type) !== 0
+      );
+      if (!isMatch) continue;
+      const steps = (c.reasonChains?.[0]?.length) || 1;
+      const totalDist = 0.02 + (steps * 0.02) + (dist * 0.5);
+      const { score, breakdown } = calculateSegmentScore(wordData, {
+        type: mType,
+        distance: totalDist,
+        inputLen: variant.length,
+        matchLen: rootRomaji.length,
+        isOriginal
+      });
+      if (score > 1050) {
+        hasHighConfidenceExact = true;
+      }
+      candidates.push({
+        id: wordData.id,
+        item: variant,
+        root: wordData.romaji,
+        type: mType,
+        distance: totalDist,
+        freqScore: calculateScore(wordData),
+        adjustedScore: score,
+        breakdown,
+        meaning: wordData.meaning,
+        meta: {
+          reasons: c.reasonChains,
+          type: c.type,
+          ruleWeight: c.ruleWeight || 1.0
+        }
+      });
+    }
+  }
+  return { candidates, hasHighConfidenceExact };
+}
 // ─────────────────────────────────────────────────────────────────
 // Preprocessor Engine Factory
 // ─────────────────────────────────────────────────────────────────
-
 export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map() } = {}) {
 
   const romajiList = vocabulary.map(v => v.romaji);
   const fuse = new Fuse(romajiList, FUSE_OPTIONS);
 
-  function processTextSegment(candidateSegment, hiraOrigin = null) {
-    const rawInput = candidateSegment.toLowerCase();
-
-    // 1. Particle Check (Unified Kana + Standardized Romaji mapping)
-    const PARTICLE_MAP = {
-      'wa': { hira: 'は', romaji: 'wa' },
-      'ha': { hira: 'は', romaji: 'wa' },
-      'ga': { hira: 'が', romaji: 'ga' },
-      'wo': { hira: 'を', romaji: 'wo' },
-      'o':  { hira: 'を', romaji: 'wo' },
-      'ni': { hira: 'に', romaji: 'ni' },
-      'e':  { hira: 'へ', romaji: 'e' },
-      'to': { hira: 'と', romaji: 'to' },
-      'de': { hira: 'で', romaji: 'de' },
-      'no': { hira: 'の', romaji: 'no' },
-      'mo': { hira: 'も', romaji: 'mo' },
-      'ka': { hira: 'か', romaji: 'ka' },
-      'ya': { hira: 'や', romaji: 'ya' },
-      'yo': { hira: 'よ', romaji: 'yo' },
-      'ne': { hira: 'ね', romaji: 'ne' }
-    };
-
-    const pMatch = PARTICLE_MAP[rawInput];
-    if (pMatch) {
-      return {
-        surface: hiraOrigin || pMatch.hira,
-        output: pMatch.romaji,
-        base: pMatch.romaji,
-        meaning: 'particle',
-        grammar_tags: [],
-        decision: 'particle',
-        meta: { type: 'particle' }
-      };
-    }
-
-    if (rawInput.length < 2) {
-      return {
-        surface: hiraOrigin || rawInput,
-        output: rawInput,
-        base: rawInput,
-        meaning: '',
-        grammar_tags: [],
-        type: 'text',
-        decision: 'skipped (too short)'
-      };
-    }
-
-    // 2. Corruption Detection & Repair Cycle
+  function evaluateChunkSegmentCandidate(chunkSegment, hiraOrigin = null) {
     let candidates = [];
-    const hiraganaRaw = wanakana.toHiragana(rawInput);
-    const hasCorruption = /[a-z]/.test(hiraganaRaw);
 
-    let variants = new Map([[rawInput, { isOriginal: true }]]);
+    const special = handleSpecialCases(chunkSegment, hiraOrigin);
+    if (special) return special;
 
-    // If rawInput is a normalized version (e.g. kudashi) and we have a more raw one (e.g. kudasi),
-    // should we prioritize the raw one? Currently candidateSegment is the "most raw" available from evaluatePrefix.
-
-    if (hasCorruption) {
-      // Find ALL corruption sites in the hiragana string and map each
-      // back to its correct position in the romaji input.
-      // The old code used rawInput.indexOf(failedPart) which found the WRONG
-      // instance (e.g., the first 'm' in 'shimaimsu' instead of the orphan 'm').
-      const corruptionRegex = /[a-z]+/g;
-      let match;
-      while ((match = corruptionRegex.exec(hiraganaRaw)) !== null) {
-        const hiraPos = match.index; // position in the hiragana string
-        // Map hiragana position back to romaji position:
-        // Count how many romaji chars produce the kana up to hiraPos
-        let romajiPos = 0;
-        for (let r = 1; r <= rawInput.length; r++) {
-          const partialHira = wanakana.toHiragana(rawInput.slice(0, r));
-          if (partialHira.length > hiraPos) {
-            romajiPos = r - 1; // the romaji char at r-1 is where the corruption starts
-            break;
-          }
-          if (r === rawInput.length) romajiPos = r - 1;
-        }
-        // Insert vowels after the stuck consonant(s)
-        const stuckLen = match[0].length;
-        ['a', 'i', 'u', 'e', 'o'].forEach(v => {
-          const repaired = rawInput.slice(0, romajiPos + stuckLen) + v + rawInput.slice(romajiPos + stuckLen);
-          variants.set(repaired, { isRepair: true });
-        });
-      }
-    }
-
-    const CONSONANTS_TO_DOUBLE = 'kstpbcgdrfvmzn';
-    for (let i = 0; i < rawInput.length - 1; i++) {
-        const char = rawInput[i];
-        const next = rawInput[i + 1];
-        if (CONSONANTS_TO_DOUBLE.includes(char) && 'aeiouy'.includes(next)) {
-            const doubled = rawInput.slice(0, i + 1) + char + rawInput.slice(i + 1);
-            variants.set(doubled, { isDoubling: true });
-        }
-    }
- 
-    // Voicing/Dakuten Repair (ks th -> gz db)
-    const DAKUTEN_MAP = { 'k':'g', 's':'z', 't':'d', 'h':'b', 'f':'b', 'g':'k', 'z':'s', 'd':'t', 'b':'h' };
-
-    for (let i = 0; i < rawInput.length; i++) {
-      const char = rawInput[i];
-      if (DAKUTEN_MAP[char]) {
-        const phonetic = rawInput.slice(0, i) + DAKUTEN_MAP[char] + rawInput.slice(i + 1);
-        variants.set(phonetic, { isPhonetic: true });
-      }
-    }
-
-
-    const wkNormalized = wkNormalize(rawInput);
-    if (wkNormalized !== rawInput) {
-      variants.set(wkNormalized, { isWkNorm: true });
-    }
+    const variants = generateVariants(chunkSegment);
 
     for (const [variant, vMeta] of variants.entries()) {
-      const isOriginal = vMeta.isOriginal;
-      const isWkNorm = vMeta.isWkNorm;
-      // We no longer skip corrupted originals here. 
-      // If deinflect() can find a valid morphological parse for a "corrupted" string, 
-      // we want to allow it.
-
-
-      let variantType = isOriginal ? 'exact' 
-        : (vMeta.isRepair ? 'exact:repair' 
-        : (vMeta.isPhonetic ? 'exact:phonetic'
-        : (vMeta.isDoubling ? 'exact:doubling' 
-        // to handle highly-transformed future mutations
-        : (isWkNorm ? 'normalized' : 'aggressive:exact'))));
-
-
-      const exactEntries = exactMatchIndex.get(variant);
-      let hasHighConfidenceExact = false;
-      if (exactEntries) {
-        for (const entry of exactEntries) {
-          const { score, breakdown } = calculateSegmentScore(entry, {
-            type: variantType,
-            isOriginal,
-            inputLen: rawInput.length,
-            matchLen: variant.length
-          });
-
-          if (score > 1000) hasHighConfidenceExact = true;
-
-          candidates.push({
-            id: entry.id,
-            item: variant,
-            type: variantType,
-            distance: 0.0,
-            freqScore: calculateScore(entry),
-            adjustedScore: score,
-            breakdown,
-            meaning: entry.meaning
-          });
-        }
-      }
-
-      // SHORT-CIRCUIT: If we found a high-confidence exact match, skip the expensive fuzzy search for this variant.
-      if (hasHighConfidenceExact) continue;
-
-      const fuzzyType = isOriginal ? 'fuzzy' : (vMeta.isRepair ? 'fuzzy:repair' : (vMeta.isDoubling ? 'fuzzy:doubling' : 'aggressive:fuzzy'));
-      let fuseResults = [];
-      if (variant.length <= 25) {
-        fuseResults = fuse.search(variant).slice(0, 5); // Reduced from 20 for latency
-      }
-
-      for (const res of fuseResults) {
-        const item = res.item;
-        const entries = exactMatchIndex.get(item);
-        if (!entries) continue;
-
-        for (const wordData of entries) {
-          const { score, breakdown } = calculateSegmentScore(wordData, {
-            type: fuzzyType,
-            distance: res.score,
-            inputLen: variant.length,
-            matchLen: item.length,
-            isOriginal
-          });
-
-          candidates.push({
-            id: wordData.id,
-            item: item,
-            type: fuzzyType,
-            distance: res.score,
-            freqScore: calculateScore(wordData),
-            adjustedScore: score,
-            breakdown,
-            meaning: wordData.meaning
-          });
-        }
-      }
-
-      const deinfType = isOriginal ? 'deinflect' : (vMeta.isRepair ? 'deinflect:repair' : (vMeta.isDoubling ? 'deinflect:doubling' : 'aggressive:deinflect'));
-      const hira = wanakana.toHiragana(variant);
-      const deinfResults = deinflect(hira);
-      for (const c of deinfResults) {
-        const rootRomaji = toRomajiSafe(c.word);
-        
-        let stemMatches = [];
-        const exactStemEntries = exactMatchIndex.get(rootRomaji);
-        
-        if (exactStemEntries) {
-          stemMatches = exactStemEntries.map(e => ({ entry: e, type: deinfType, dist: 0 }));
-        } else if (rootRomaji.length >= 2 && c.reasonChains.length > 0) {
-          // FUZZY STEM REPAIR: If we have a valid deinflection reason but no exact root match,
-          // fuzzy match the stem against the dictionary. This prevents "kitdukare" 
-          // from being fragmented when it could be a corrupted "kizuka" or "katazuka".
-          const fuzzyRoots = fuse.search(rootRomaji).slice(0, 15);
-          for (const f of fuzzyRoots) {
-            const fEntries = exactMatchIndex.get(f.item);
-            if (fEntries) {
-              stemMatches.push(...fEntries.map(e => ({ 
-                entry: e, 
-                type: `${deinfType}:fuzzy_stem`, 
-                dist: f.score 
-              })));
-            }
-          }
-        }
-
-        for (const { entry: wordData, type: mType, dist: stemDist } of stemMatches) {
-          const isMatch = wordData.pos.some(tag => (mapPosToVerbClass(tag) & c.type) !== 0);
-          if (isMatch) {
-            const steps = (c.reasonChains && c.reasonChains[0]) ? c.reasonChains[0].length : 1;
-            // Combined distance: base penalty for deinflection depth + any stem corruption
-            const totalDist = 0.02 + (steps * 0.02) + (stemDist * 0.5);
-
-            const { score, breakdown } = calculateSegmentScore(wordData, {
-              type: mType,
-              distance: totalDist,
-              inputLen: variant.length,
-              matchLen: rootRomaji.length,
-              isOriginal
-            });
-
-            if (score > 1050) {
-              // VERB SHORT-CIRCUIT: If we find a high-confidence verb via morphological deinflection,
-              // we treat it with the same priority as a direct exact match, making it the dominant
-              // candidate for this segment and preventing fragmentation.
-              hasHighConfidenceExact = true; 
-            }
-
-            candidates.push({
-              id: wordData.id,
-              item: variant,
-              root: wordData.romaji,
-              type: mType,
-              distance: totalDist,
-              freqScore: calculateScore(wordData),
-              adjustedScore: score,
-              breakdown,
-              meaning: wordData.meaning,
-              meta: { reasons: c.reasonChains, type: c.type, ruleWeight: c.ruleWeight || 1.0 }
-            });
-          }
-        }
-      }
-
-      if (hasHighConfidenceExact) break; // Exit variant loop early if we found our verb
-
-
+      const { candidates: newCands, shortCircuit } =
+        evaluateVariants({
+          variant,
+          vMeta,
+          chunkSegment,
+          exactMatchIndex,
+          fuse
+        });
+      candidates.push(...newCands);
+      if (shortCircuit) break;
     }
 
     if (candidates.length > 0) {
@@ -375,9 +448,9 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
 
       if (winner.adjustedScore < 600) {
         return {
-          surface: hiraOrigin || rawInput,
-          output: rawInput,
-          base: rawInput,
+          surface: hiraOrigin || chunkSegment,
+          output: chunkSegment,
+          base: chunkSegment,
           meaning: '',
           grammar_tags: [],
           type: 'text',
@@ -390,6 +463,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       const grammar_tags = interpretReasonChains(reasons);
 
       return {
+        input: chunkSegment,
         surface: hiraOrigin || winner.item,
         output: winner.item,
         base: winner.root || winner.item,
@@ -400,6 +474,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
           ? `${winner.type}:${winner.root || winner.item}`
           : winner.type,
         meta: {
+          winner,
           candidates: candidates,
           competition: candidates.slice(0, 5).map(c => ({
             item: c.root ? `${c.item}(->${c.root})` : c.item,
@@ -412,9 +487,9 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
     }
 
     return {
-      surface: hiraOrigin || rawInput,
-      output: rawInput,
-      base: rawInput,
+      surface: hiraOrigin || chunkSegment,
+      output: chunkSegment,
+      base: chunkSegment,
       meaning: '',
       grammar_tags: [],
       type: 'text',
@@ -422,33 +497,32 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
     };
   }
 
-  function segmentAndProcess(rawChunk, includeTrace = false) {
-    const hiraStr = wanakana.toHiragana(rawChunk.toLowerCase(), { passRomaji: false });
-    if (hiraStr.length === 0) return [];
+  function segmentChunkWithBeam(rawChunk, includeTrace = false) {
+    const hiraChunk = wanakana.toHiragana(rawChunk, { passRomaji: false });
+    if (hiraChunk.length === 0) return [];
 
-    // Build map for raw romaji slicing
-    const rawLower = rawChunk.toLowerCase();
-    const hiraToRaw = new Uint8Array(hiraStr.length + 1);
+    // I want to segment Japanese text in kana space, but still recover the exact romaji substring that produced each segment.
+    const hiraToRaw = new Uint8Array(hiraChunk.length + 1);
     let hIdx = 0;
-    for (let rIdx = 0; rIdx < rawLower.length; rIdx++) {
-      const subH = wanakana.toHiragana(rawLower.slice(0, rIdx + 1));
+    for (let rIdx = 0; rIdx < rawChunk.length; rIdx++) {
+      const subH = wanakana.toHiragana(rawChunk.slice(0, rIdx + 1));
       while (hIdx < subH.length) {
         hiraToRaw[hIdx] = rIdx;
         hIdx++;
       }
     }
-    hiraToRaw[hiraStr.length] = rawLower.length - 1;
+    hiraToRaw[hiraChunk.length] = rawChunk.length - 1;
 
     const MAX_PREFIX_LEN = 25;
     const BEAM_WIDTH = 3;
     const globalEvalCache = new Map();
 
     function evaluatePrefix(j, i) {
-      const prefix = hiraStr.slice(j, i);
+      const prefix = hiraChunk.slice(j, i);
       // Precise raw romaji extraction
       const startR = j === 0 ? 0 : hiraToRaw[j] + 1;
       const endR = hiraToRaw[i] + 1;
-      const romaji = rawLower.slice(startR, endR);
+      const romaji = rawChunk.slice(startR, endR);
 
       const memoKey = prefix + "|" + romaji;
       if (globalEvalCache.has(memoKey)) return globalEvalCache.get(memoKey);
@@ -459,7 +533,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       const SHORT_PENALTY = Math.max(0, (4 - prefix.length) * 40); // More aggressive short penalty
 
       // 1. Text / deinflect candidate
-      const textEval = processTextSegment(romaji, prefix);
+      const textEval = evaluateChunkSegmentCandidate(romaji, prefix);
 
       if (textEval.decision !== 'passthrough' && textEval.decision !== 'passthrough:low_confidence' && textEval.decision !== 'skipped (too short)') {
         // Path Cost = MaxPossiblePoints (2000) - ActualPoints
@@ -491,7 +565,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       // as a high-confidence compound candidate.
       const grammarPeels = peelGrammarSuffix(prefix, romaji, exactMatchIndex, fuse);
       for (const peel of grammarPeels) {
-        const stemEval = processTextSegment(peel.stemRomaji, peel.stemHira);
+        const stemEval = evaluateChunkSegmentCandidate(peel.stemRomaji, peel.stemHira);
         if (stemEval.decision !== 'passthrough' && stemEval.decision !== 'passthrough:low_confidence' && stemEval.decision !== 'skipped (too short)') {
           let peelCost = 2000;
           if (stemEval.meta?.winner) {
@@ -525,17 +599,17 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
 
     // Viterbi / Beam Search path building
     // topPaths[i] saves { cost: number, paths: Array of evaluations }
-    let topPaths = Array(hiraStr.length + 1).fill(null).map(() => []);
+    let topPaths = Array(hiraChunk.length + 1).fill(null).map(() => []);
     topPaths[0] = [{ cost: 0, path: [] }];
 
-    for (let i = 1; i <= hiraStr.length; i++) {
+    for (let i = 1; i <= hiraChunk.length; i++) {
       const startJ = Math.max(0, i - MAX_PREFIX_LEN);
       let candidatesForI = [];
 
       for (let j = startJ; j < i; j++) {
         if (topPaths[j].length === 0) continue;
 
-        const prefix = hiraStr.slice(j, i);
+        const prefix = hiraChunk.slice(j, i);
         const evals = evaluatePrefix(j, i);
 
         for (const state of topPaths[j]) {
@@ -558,9 +632,9 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       topPaths[i] = candidatesForI.slice(0, 5).filter(c => c.cost < (bestCost + 800));
     }
 
-    if (topPaths[hiraStr.length].length === 0) return [];
+    if (topPaths[hiraChunk.length].length === 0) return [];
 
-    let winningPath = topPaths[hiraStr.length][0].path;
+    let winningPath = topPaths[hiraChunk.length][0].path;
 
     // ── NEIGHBOR-CONTEXT SECOND PASS ─────────────────────────────────
     // After the beam search picks winners purely by score, re-examine each
@@ -659,8 +733,8 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
     if (includeTrace && winningPath.length > 1) {
       console.log(`\n\x1b[36m[BeamSearch] ${rawChunk}\x1b[0m`);
       console.log({
-        hiragana: hiraStr,
-        final_cost: topPaths[hiraStr.length][0].cost,
+        hiragana: hiraChunk,
+        final_cost: topPaths[hiraChunk.length][0].cost,
         segments: winningPath.map(s => ({ type: s.type, surface: s.surface })),
         analysis: winningPath.map(r => ({
           surface: r.surface,
@@ -668,27 +742,26 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
           tags: r.grammar_tags.length > 0 ? r.grammar_tags : undefined,
           contextResurrected: r.meta?.contextResurrected || undefined
         })),
-        rejected_paths: topPaths[hiraStr.length].slice(1).map(p => ({ cost: p.cost, joined: p.path.map(s => s.surface).join('|') }))
+        rejected_paths: topPaths[hiraChunk.length].slice(1).map(p => ({ cost: p.cost, joined: p.path.map(s => s.surface).join('|') }))
       });
     }
-
     return winningPath;
   }
 
-  function dispatch(text, includeTrace = false) {
-    if (!text) return includeTrace ? { output: '', tokens: [] } : '';
+  function dispatch(input, includeTrace = false) {
+    if (!input) return includeTrace ? { output: '', tokens: [] } : '';
 
     const tDispatchStart = performance.now();
     let allTokens = [];
-    const clauses = text.split(/([.。?？!！,、\s])/);
+    const chunks = input.split(/([.。?？!！,、\s])/);
 
-    for (const part of clauses) {
-      if (!part) continue;
-      if (/^[.。?？!！,、\s]+$/.test(part)) {
+    for (const chunk of chunks) {
+      if (!chunk) continue;
+      if (/^[.。?？!！,、\s]+$/.test(chunk)) {
         allTokens.push({
-          surface: part,
-          output: part,
-          base: part,
+          surface: chunk,
+          output: chunk,
+          base: chunk,
           meaning: '',
           grammar_tags: [],
           type: 'punctuation',
@@ -697,7 +770,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
         continue;
       }
 
-      const segments = segmentAndProcess(part, includeTrace);
+      const segments = segmentChunkWithBeam(chunk, includeTrace);
       allTokens.push(...segments);
     }
 
@@ -706,7 +779,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
     // ── GRAMMAR COLLAPSE & ORPHAN MERGE PASS ───────────────────
     // Runs on the full token stream (across whitespace boundaries)
     // to detect multi-token grammar patterns and merge garbage orphans.
-    allTokens = collapseGrammarTokens(allTokens, processTextSegment, segmentAndProcess);
+    allTokens = collapseGrammarTokens(allTokens, evaluateChunkSegmentCandidate, segmentChunkWithBeam);
 
     const tCollapseEnd = performance.now();
 
@@ -719,8 +792,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
   }
 
   return {
-    preprocessJap: (text) => dispatch(text, false),
-    preprocessJapWithTrace: (text) => dispatch(text, true),
+    preprocessJapTrace: (input) => dispatch(input, true),
     rerankTrace: (tokens, queryEmbedding, hnswIndex, boost = 15) => {
       function cosineSimilarity(vecA, vecB) {
         if (!vecA || !vecB || vecA.length !== vecB.length) return 0;
@@ -928,6 +1000,7 @@ for (const entry of allEntries) {
     pos: entry.pos ? [entry.pos] : [],
     tags: entry.tags || '',
     freq: entry.freq || 0,
+    romaji: entry.romaji,
     meaning: entry.primary_meaning || '',
     domain: entry.domain || null,
     mesh: entry.mesh_annotations ? JSON.parse(entry.mesh_annotations) : null,
@@ -949,7 +1022,5 @@ const _default = createPreprocessor({
   exactMatchIndex
 });
 
-export const preprocessJap = _default.preprocessJap;
-export const preprocessJapWithTrace = _default.preprocessJapWithTrace;
+export const preprocessJapTrace = _default.preprocessJapTrace;
 export const rerankTrace = _default.rerankTrace;
-export const CONTENT_DECISIONS = new Set(['exact', 'normalization', 'fuzzy', 'passthrough', 'whitelist', 'correction', 'grammar']);

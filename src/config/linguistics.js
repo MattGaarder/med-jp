@@ -37,7 +37,7 @@ export const GRAM_POS = new Set([
 // ─────────────────────────────────────────────────────────────────
 
 export const SEGMENT_TIERS = {
-  EXACT:        1000,
+  EXACT:        1200,
   GRAMMAR_PEEL: 980,    // Grammar suffix stripped, stem matched — very high confidence
   NORMALIZED:   950,
   DEINFLECT:    900,
@@ -67,7 +67,7 @@ export const SCORING_WEIGHTS = {
     spec1: 50
   },
   FREQUENCY: {
-    j1000: 90,
+    j1000: 100,
     step:  10  // Decrease per 1000-rank increase (j2000 = 90 - 10 = 80)
   },
   CLINICAL: {

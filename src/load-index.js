@@ -103,7 +103,7 @@ export function searchANN(queryText, queryEmbedding, topK = 3, anchorTokens = ne
 
     // Scores can exceed 1.0 intentionally — we only use them for ranking.
     const finalScore = (0.8 * semanticScore) + (0.2 * freqScore) + anchorBoost + domainBoost;
-    results.push({ item, score: finalScore, semanticScore }); // expose raw for threshold filtering
+    results.push({ id, item, score: finalScore, semanticScore }); // expose raw for threshold filtering
   }
 
   results.sort((a, b) => b.score - a.score);

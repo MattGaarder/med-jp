@@ -12,8 +12,8 @@ const __dirname = path.dirname(__filename);
 const XML_PATH = path.join(__dirname, '../data/JMdict_b.xml');
 const OUT_PATH = path.join(__dirname, '../data/vocab-v3.jsonl');
 
-const OLLAMA_URL = process.env.OLLAMA_BASE_URL || 'http://localhost:11434';
-const EMBED_MODEL = 'qwen3-embedding:latest';
+
+import 'dotenv/config';
 const CONCURRENCY = 5;
 const RETRIES = 3;
 const RETRY_DELAY = 500; // ms

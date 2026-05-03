@@ -1,10 +1,16 @@
 /**
  * index.js
  * 
- * This file is the ENTRY POINT of your program.
- * That means: this is where everything starts when you run:
+ * This file is the ENTRY POINT
+ * This is where everything starts when you run:
  * 
  *    node src/index.js
+ * 
+ *    package.json -> 
+ * 
+ *   "main": "src/index.js",
+ *      "scripts": {
+ *      "start": "node --max-old-space-size=6144 src/index.js",
  * 
  * It creates a command-line interface (CLI) where the user can type input,
  * and it sends that input into your interpreter pipeline.
@@ -16,15 +22,9 @@ import 'dotenv/config';
 // Built-in Node.js module for reading user input from the terminal
 import readline from 'readline';
 
-// This is YOUR pipeline function (defined elsewhere)
 // It takes input → processes it → returns a streamed response
 import { interpret } from './interpreter.js';
 
-
-// ─────────────────────────────────────────────
-// Terminal color codes (ANSI escape codes)
-// These just make text look nicer in the terminal
-// ─────────────────────────────────────────────
 
 const RESET  = '\x1b[0m';  // Reset color back to normal
 const CYAN   = '\x1b[36m'; // Cyan text
@@ -35,7 +35,7 @@ const DIM    = '\x1b[2m';  // Dim/faded text
 
 
 // ─────────────────────────────────────────────
-// Prints the startup banner (UI decoration)
+// Print startup banner
 // ─────────────────────────────────────────────
 function banner() {
   console.log(`
@@ -51,7 +51,7 @@ ${CYAN}╔═══════════════════════�
 
 
 // ─────────────────────────────────────────────
-// MAIN FUNCTION (program starts here)
+// MAIN FUNCTION - Program start
 // ─────────────────────────────────────────────
 async function main() {
 
@@ -61,9 +61,9 @@ async function main() {
   // Create a "readline interface"
   // This lets us read input from the terminal (like a chat prompt)
   const rl = readline.createInterface({
-    input:    process.stdin,   // where input comes from (keyboard)
-    output:   process.stdout,  // where output goes (terminal)
-    terminal: process.stdin.isTTY, // whether we're in an interactive terminal
+    input:    process.stdin,   // where input comes from 
+    output:   process.stdout,  // where output goes
+    terminal: process.stdin.isTTY, // whether interactive terminal
   });
 
 
@@ -92,7 +92,6 @@ async function main() {
   while (true) {
 
     let rawInput;
-
     try {
       // Wait for user to type something
       rawInput = await ask();
@@ -143,7 +142,7 @@ async function main() {
 
       // Show "Thinking..." while waiting (only in interactive terminal)
       if (process.stdin.isTTY) {
-        process.stdout.write(`${DIM}Thinking...${RESET}\r`);
+        process.stdout.write(`${DIM}Thinking...${RESET}`);
       }
 
       // Call your pipeline → returns an async stream of text chunks
