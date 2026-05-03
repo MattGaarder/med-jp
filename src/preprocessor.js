@@ -177,20 +177,20 @@ function generateVariants(chunkSegment) {
 }
 
 function evaluateVariants({
-  variant,
-  vMeta,
-  chunkSegment,
-  exactMatchIndex,
-  fuse
-}) {
-  const isOriginal = vMeta.isOriginal;
-  let hasHighConfidenceExact = false;
-  let candidates = [];
-  const variantType = isOriginal ? 'exact' 
-    : (vMeta.isRepair ? 'exact:repair' 
-    : (vMeta.isPhonetic ? 'exact:phonetic'
-    : (vMeta.isDoubling ? 'exact:doubling' 
-    : (vMeta.isWkNorm ? 'normalized' : 'aggressive:exact'))));
+    variant,
+    vMeta,
+    chunkSegment,
+    exactMatchIndex,
+    fuse
+  }) {
+    const isOriginal = vMeta.isOriginal;
+    let hasHighConfidenceExact = false;
+    let candidates = [];
+    const variantType = isOriginal ? 'exact' 
+      : (vMeta.isRepair ? 'exact:repair' 
+      : (vMeta.isPhonetic ? 'exact:phonetic'
+      : (vMeta.isDoubling ? 'exact:doubling' 
+      : (vMeta.isWkNorm ? 'normalized' : 'aggressive:exact'))));
   // ─────────────────────────────
   // 1. EXACT
   // ─────────────────────────────
@@ -277,6 +277,7 @@ function evaluateExact({
   }
   return { candidates, hasHighConfidenceExact };
 }
+
 function evaluateFuzzy({
     variant,
     fuzzyType,
@@ -417,8 +418,9 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
 
     if (candidates.length > 0) {
       // ── DEDUPLICATE ──────────────────────────────────────────────
-      // Prevent multiple variations of the same word (e.g. yuragu vs yuragu:repair)
-      // from filling the top pool, allowing room for other words (like drug).
+      candidates.sort((a, b) => b.adjustedScore - a.adjustedScore);
+
+
       const idSeen = new Set();
       candidates = candidates.filter(c => {
         if (c.id && idSeen.has(c.id)) return false;
@@ -426,7 +428,35 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
         return true;
       });
 
-      candidates.sort((a, b) => b.adjustedScore - a.adjustedScore);
+      const TOP_N = 5;
+
+      const bestCandidate = candidates[0];
+      const secondBestCandidate = candidates[1];
+
+      console.log(`\n[Chunk: "${chunkSegment}"]`);
+      console.log("------------------");
+      candidates.slice(0, TOP_N).forEach((c, i) => {
+        const delta = (bestCandidate.adjustedScore - c.adjustedScore).toFixed(2);
+        console.log(
+          `${c.id.toString().padEnd(8)} ${c.item.padEnd(12)} ${c.type.padEnd(30)} ${c.adjustedScore.toFixed(2).toString().padEnd(6)} (-${delta}) ${c.meaning}`
+        );
+      });
+
+
+
+      let rawMargin = 0;
+
+      if (bestCandidate && secondBestCandidate) {
+        const len = (hiraOrigin?.length || bestCandidate.item?.length || 1);
+        rawMargin = (bestCandidate.adjustedScore - secondBestCandidate.adjustedScore) / Math.max(len, 1);
+      }
+
+      // Ignore margin for tiny chunks (VERY IMPORTANT)
+      const lenForGate = (hiraOrigin?.length || 1);
+      const margin = rawMargin * Math.min(1, lenForGate / 5);
+      // Smooth confidence signal (0 → 1)
+      const confidence = Math.tanh(margin / 10);
+
 
       // ── EXACT-MATCH SAFETY CLAMP ──────────────────────────────────
       // If the original input has an exact dictionary match with reasonable
@@ -476,6 +506,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
         meta: {
           winner,
           candidates: candidates,
+          margin,
           competition: candidates.slice(0, 5).map(c => ({
             item: c.root ? `${c.item}(->${c.root})` : c.item,
             type: c.type,
@@ -500,6 +531,12 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
   function segmentChunkWithBeam(rawChunk, includeTrace = false) {
     const hiraChunk = wanakana.toHiragana(rawChunk, { passRomaji: false });
     if (hiraChunk.length === 0) return [];
+
+    // ── EARLY WHOLE-CHUNK CHECK ─────────────────────────
+    const fullEval = evaluateChunkSegmentCandidate(rawChunk, hiraChunk);
+    if (fullEval.meta?.winner && fullEval.meta.winner.adjustedScore > 1400) {
+      return [fullEval]; // skip segmentation entirely
+    }
 
     // I want to segment Japanese text in kana space, but still recover the exact romaji substring that produced each segment.
     const hiraToRaw = new Uint8Array(hiraChunk.length + 1);
@@ -529,8 +566,10 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       const results = [];
       const l = prefix.length;
 
-      const BASE_SEGMENT_COST = 100; // Increased from 45 to heavily penalize over-fragmentation
-      const SHORT_PENALTY = Math.max(0, (4 - prefix.length) * 40); // More aggressive short penalty
+      const BASE_SEGMENT_COST = 150; // Increased from 45 to heavily penalize over-fragmentatio
+
+      // Smooth penalty instead of hard cutoff
+      const SHORT_PENALTY = 120 / (l + 1);
 
       // 1. Text / deinflect candidate
       const textEval = evaluateChunkSegmentCandidate(romaji, prefix);
@@ -538,21 +577,71 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       if (textEval.decision !== 'passthrough' && textEval.decision !== 'passthrough:low_confidence' && textEval.decision !== 'skipped (too short)') {
         // Path Cost = MaxPossiblePoints (2000) - ActualPoints
         // This allows the Beam Search (Dijkstra) to work with a minimization goal.
-        let pathCost = 2000;
+      const winner = textEval.meta?.winner;
+      if (winner) {
+        const rawScore = winner.adjustedScore || 0;
+        const len = Math.max(prefix.length, 1);
 
-        if (textEval.meta?.winner) {
-          pathCost = Math.max(0, 2000 - textEval.meta.winner.adjustedScore);
+        let effectiveScore = rawScore;
+        // ── LENGTH BOOST ─────────────────────────
+        const lengthBoost = rawScore > 1100
+          ? Math.pow(len, 0.6)
+          : 1;
+        effectiveScore *= lengthBoost;
 
-          // Extra bonus for high-confidence medical terms
-          if (textEval.meta.winner.freqScore >= 80) {
-            pathCost = Math.max(0, pathCost - 150);
-          }
+        // Only apply length boost if it's a strong match
+        if (rawScore > 1100) {
+          effectiveScore *= Math.pow(len, 0.6);
         }
-
-        if (textEval.decision === 'particle') pathCost -= 50;
-
-        results.push({ eval: textEval, cost: pathCost + SHORT_PENALTY + BASE_SEGMENT_COST });
-      } else {
+        // ── STABILITY ────────────────────────────
+        const margin = textEval.meta.margin || 0;
+        const stability = Math.tanh(margin / 10);
+        const stabilityMultiplier = (0.75 + 0.5 * stability);
+        effectiveScore *= stabilityMultiplier;
+        // ── FREQUENCY BOOST ──────────────────────
+        let freqBoost = 0;
+        if (winner.freqScore >= 80) {
+          freqBoost = 100;
+          effectiveScore += freqBoost;
+        }
+        // ── COST CONVERSION ──────────────────────
+        let baseCost = 3000 - effectiveScore;
+        // ── ANTI-FRAGMENTATION ───────────────────
+        const antiFragmentBonus = len * 15;
+        baseCost -= antiFragmentBonus;
+        // ── PARTICLE BONUS ───────────────────────
+        let particleBonus = 0;
+        if (textEval.decision === 'particle') {
+          particleBonus = 50;
+          baseCost -= particleBonus;
+        }
+        const finalCost = baseCost + SHORT_PENALTY + BASE_SEGMENT_COST;
+        // ── 🔍 DEBUG TRACE ───────────────────────
+        console.log(`\n[CostTrace: "${prefix}" → ${winner.item}]`);
+        console.log({
+          rawScore,
+          len,
+          lengthBoost: lengthBoost.toFixed(3),
+          afterLength: (rawScore * lengthBoost).toFixed(2),
+          margin: margin.toFixed(3),
+          stability: stability.toFixed(3),
+          stabilityMultiplier: stabilityMultiplier.toFixed(3),
+          afterStability: effectiveScore.toFixed(2),
+          freqBoost,
+          effectiveScore: effectiveScore.toFixed(2),
+          baseCost: (3000 - effectiveScore).toFixed(2),
+          antiFragmentBonus,
+          particleBonus,
+          SHORT_PENALTY: SHORT_PENALTY.toFixed(2),
+          BASE_SEGMENT_COST,
+          FINAL_COST: finalCost.toFixed(2)
+        });
+        results.push({
+          eval: textEval,
+          cost: finalCost
+        });
+      }
+    } else {
         // Low confidence passthrough - Make this extremely expensive to force dictionary matches
         // Scaling cost high ensures that even a deinflected match with a typo is cheaper than two passthrough chunks.
         let cost = 8000 - (l * 50);
@@ -570,6 +659,9 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
           let peelCost = 2000;
           if (stemEval.meta?.winner) {
             peelCost = Math.max(0, 2000 - stemEval.meta.winner.adjustedScore);
+            const margin = stemEval.meta.margin || 0;
+            const stability = Math.tanh(margin / 10);
+            peelCost *= (1 + (1 - stability) * 0.15);
           }
           // Grammar peel bonus: reward finding a real word + grammar structure
           // We provide a "Togetherness Boost" of -150 to keep these together.
@@ -629,7 +721,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       // 1. Hard limit on beam width (Reduced from 20 to 5 for latency)
       // 2. Cost threshold: drop anything significantly worse than the best candidate
       const bestCost = candidatesForI[0]?.cost || Infinity;
-      topPaths[i] = candidatesForI.slice(0, 5).filter(c => c.cost < (bestCost + 800));
+      topPaths[i] = candidatesForI.slice(0, 5).filter(c => c.cost < (bestCost + 300));
     }
 
     if (topPaths[hiraChunk.length].length === 0) return [];
