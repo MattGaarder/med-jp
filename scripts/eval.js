@@ -20,7 +20,7 @@
  *   node scripts/eval.js --no-llm          # skip Ollama, RAG + preprocessing only
  */
 
-import fs   from 'fs';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
@@ -28,34 +28,34 @@ const require = createRequire(import.meta.url);
 const XLSX = require('xlsx');
 
 import { buildPrompt } from '../src/promptBuilder.js';
-import { generate }    from '../src/ollamaClient.js';
+import { generate } from '../src/ollamaClient.js';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname  = path.dirname(__filename);
+const __dirname = path.dirname(__filename);
 
 const CASES_PATH = path.join(__dirname, '../eval/cases.json');
-const EVAL_DIR   = path.join(__dirname, '../eval');
+const EVAL_DIR = path.join(__dirname, '../eval');
 
 // ─── CLI flags ────────────────────────────────────────────────────────────────
 
-const args       = process.argv.slice(2);
-const skipLLM    = args.includes('--no-llm');
-const filterArg  = args.find(a => a.startsWith('--cases='));
-const filterIds  = filterArg ? new Set(filterArg.split('=')[1].split(',')) : null;
+const args = process.argv.slice(2);
+const skipLLM = args.includes('--no-llm');
+const filterArg = args.find(a => a.startsWith('--cases='));
+const filterIds = filterArg ? new Set(filterArg.split('=')[1].split(',')) : null;
 
 // ─── Timestamp for output filenames ──────────────────────────────────────────
 
-const now       = new Date();
-const ts        = now.toISOString().slice(0, 16).replace(':', '-'); // 2026-04-03T16-45
-const mdPath    = path.join(EVAL_DIR, `report-${ts}.md`);
-const jsonPath  = path.join(EVAL_DIR, `report-${ts}.json`);
+const now = new Date();
+const ts = now.toISOString().slice(0, 16).replace(':', '-'); // 2026-04-03T16-45
+const mdPath = path.join(EVAL_DIR, `report-${ts}.md`);
+const jsonPath = path.join(EVAL_DIR, `report-${ts}.json`);
 
 // ─── Console capture ─────────────────────────────────────────────────────────
 // We redirect console.log during each pipeline call to intercept the
 // per-token [debug] lines emitted by preprocessor.js without modifying it.
 
 let _captureLines = null;
-const _origLog    = console.log.bind(console);
+const _origLog = console.log.bind(console);
 
 function startCapture() {
   _captureLines = [];
@@ -83,7 +83,7 @@ function mdTable(headers, rows) {
       .replace(/\|/g, '\\|')      // Escape pipes
       .replace(/\n/g, '<br>');    // Replace newlines with <br>
   };
-  
+
   const sep = headers.map(h => '-'.repeat(Math.max(h.length, 3)));
   const fmt = row => `| ${row.map(sanitize).join(' | ')} |`;
   return [fmt(headers), fmt(sep), ...rows.map(fmt)].join('\n');
@@ -102,9 +102,9 @@ async function runCase(caseObj) {
   const caseResult = {
     id,
     label,
-    input,
+    rawInput: input,
     direction: null,
-    preprocessedInput: null,
+    preprocessedOutput: null,
     tokens: [],
     ragHits: [],
     toneHits: [],
@@ -128,41 +128,47 @@ async function runCase(caseObj) {
     caseResult.timings.buildPromptTotal = performance.now() - tBuild0;
     stopCapture();
 
-    caseResult.direction         = direction;
-    caseResult.preprocessedInput = preprocessedInput;
-    caseResult.queryTokens       = queryTokens || [];
-    caseResult.prompt            = prompt;
+    caseResult.direction = direction;
+    caseResult.rawInput = input;
+    caseResult.preprocessedOutput = preprocessedInput;
+    caseResult.queryTokens = queryTokens || [];
+    caseResult.prompt = prompt;
 
-    caseResult.tokens = (tokenTrace ?? []).map(t => ({
-      type:         t.type,
-      surface:      t.surface,
-      input:        t.input || t.surface,
-      output:       t.output,
-      base:         t.base,
-      meaning:      t.meaning,
-      grammar_tags: t.grammar_tags,
-      decision:     t.decision,
-      meta:         t.meta,
+    caseResult.tokens = (tokenTrace ?? []).map((t, idx) => ({
+      index: idx + 1,
+      chunk: t.input || t.surface,
+      preprocessedChunk: t.output,
+      candidate: t.meta?.winner?.item || t.output,
+      candidateMeaning: t.meaning || t.meta?.winner?.meaning || '',
+      rootChunk: t.meta?.rootChunk || '',
+      type: t.type,
+      decision: t.decision,
+      grammar_tags: t.grammar_tags || [],
+      tokenBoost: t.meta?.semanticBoost || 0,
+      costTrace: t.meta?.costTrace || null,
+      contextTrace: t.meta?.contextTrace || null,
+      llmOutput: caseResult.llmOutput || '(skipped)',
+      meta: t.meta,
     }));
 
     caseResult.ragHits = (ragHits ?? []).map(({ score, semanticScore, item }) => ({
-      score:          +(score ?? 0).toFixed(4),
-      semanticScore:  +(semanticScore ?? 0).toFixed(4),
-      romaji:         item?.romaji   ?? '',
-      kana:           item?.kana     ?? '',
-      kanji:          item?.kanji    ?? '',
-      domain:         item?.domain   ?? '',
-      source:         item?.source   ?? 'semantic',
-      meanings:       (item?.meanings ?? []).slice(0, 3),
-      tags:           item?.tags     ?? [],
-      frequency:      +(item?.frequency ?? 0).toFixed(3),
+      score: +(score ?? 0).toFixed(4),
+      semanticScore: +(semanticScore ?? 0).toFixed(4),
+      romaji: item?.romaji ?? '',
+      kana: item?.kana ?? '',
+      kanji: item?.kanji ?? '',
+      domain: item?.domain ?? '',
+      source: item?.source ?? 'semantic',
+      meanings: (item?.meanings ?? []).slice(0, 3),
+      tags: item?.tags ?? [],
+      frequency: +(item?.frequency ?? 0).toFixed(3),
     }));
 
     caseResult.toneHits = (toneHits ?? []).map(({ score, item }) => ({
-      score:    +(score ?? 0).toFixed(4),
-      romaji:   item?.romaji   ?? '',
-      kana:     item?.kana     ?? '',
-      kanji:    item?.kanji    ?? '',
+      score: +(score ?? 0).toFixed(4),
+      romaji: item?.romaji ?? '',
+      kana: item?.kana ?? '',
+      kanji: item?.kanji ?? '',
       meanings: (item?.meanings ?? []).slice(0, 3),
     }));
 
@@ -187,6 +193,9 @@ async function runCase(caseObj) {
     } else {
       caseResult.llmOutput = '(skipped — --no-llm flag)';
     }
+
+    // Sync to tokens for Excel/JSON flat view
+    caseResult.tokens.forEach(t => t.llmOutput = caseResult.llmOutput);
 
   } catch (err) {
     stopCapture();
@@ -250,16 +259,16 @@ function renderMarkdown(results, runMeta) {
     lines.push(`**Input:** \`${r.input}\`  `);
     lines.push(`**Direction:** ${r.direction ?? '—'}  `);
     lines.push(`**Preprocessed:** \`${r.preprocessedInput ?? '—'}\`  `);
-    
+
     // ── RAG Query Tokens ──
     if (r.queryTokens && r.queryTokens.length > 0) {
-       lines.push(`**RAG Query Tokens:** \`[${r.queryTokens.join(', ')}]\`  `);
+      lines.push(`**RAG Query Tokens:** \`[${r.queryTokens.join(', ')}]\`  `);
     }
 
     // ── LLM output (Moved up per user request) ──
     lines.push(`#### LLM Output\n`);
     lines.push(`> ${r.llmOutput ?? '—'}\n`);
-    
+
     lines.push(`**Duration:** ${r.durationMs}ms\n`);
 
     if (r.error) {
@@ -270,32 +279,32 @@ function renderMarkdown(results, runMeta) {
     // ── Preprocessor token table & Flips ──
     lines.push(`#### Preprocessor Token Trace\n`);
     if (r.tokens.length > 0) {
-      
+
       // Look for flip events first
       r.tokens.forEach(t => {
-         if (t.meta && t.meta.flipEvent) {
-            const f = t.meta.flipEvent;
-            lines.push(`> ⭐ **FLIP TRIGGERED** for token \`[${t.surface || f.oldItem}]\`!`);
-            lines.push(`> - **Old Target:** \`${f.oldItem}\` *(score: ${f.oldScore.toFixed(1)}, cos: ${f.oldCos?.toFixed(3) || 'N/A'})*`);
-            lines.push(`> - **New Target:** \`${f.newItem}\` *(cos: ${f.newCos.toFixed(3)}, boost: +${f.boost})*`);
-            lines.push(`> - **Context:** ${f.contextDesc}\n`);
-         }
+        if (t.meta && t.meta.flipEvent) {
+          const f = t.meta.flipEvent;
+          lines.push(`> ⭐ **FLIP TRIGGERED** for token \`[${t.chunk || f.oldItem}]\`!`);
+          lines.push(`> - **Old Target:** \`${f.oldItem}\` *(score: ${f.oldScore.toFixed(1)}, cos: ${f.oldCos?.toFixed(3) || 'N/A'})*`);
+          lines.push(`> - **New Target:** \`${f.newItem}\` *(cos: ${f.newCos.toFixed(3)}, boost: +${f.boost})*`);
+          lines.push(`> - **Context:** ${f.contextDesc}\n`);
+        }
       });
 
       lines.push(mdTable(
         ['Input token', 'Output token', 'Definition', 'Decision', 'Semantic Boost', 'Extra Info'],
         r.tokens.map(t => {
           if (t.type === 'grammar') {
-              const metaId = t.meta?.grammar_obj?.grammar_id || '—';
-              const meaning = t.meaning || '—';
-              return [
-                `\`${t.surface}\``,
-                `\`${t.output}\``,
-                meaning,
-                `**🟢 GRAMMAR**`,
-                '—',
-                `ID: \`${metaId}\`<br>Tags: *${t.grammar_tags?.join(', ') || '—'}*`
-              ];
+            const metaId = t.meta?.grammar_obj?.grammar_id || '—';
+            const meaning = t.meaning || '—';
+            return [
+              `\`${t.chunk}\``,
+              `\`${t.preprocessedChunk}\``,
+              t.candidateMeaning || '—',
+              `**🟢 GRAMMAR**`,
+              '—',
+              `ID: \`${metaId}\`<br>Tags: *${t.grammar_tags?.join(', ') || '—'}*`
+            ];
           }
 
           const winner = t.meta?.winner || t.meta?.candidates?.[0];
@@ -306,31 +315,31 @@ function renderMarkdown(results, runMeta) {
           let extra = '';
           if (t.meta && t.meta.candidates && t.meta.candidates.length > 0) {
             extra = t.meta.candidates.slice(0, 10).map(c => {
-                const typeLabel = c.type.startsWith('repair') ? `🛠️ ${c.type}` : c.type;
-                const boostInfo = c.semanticBoost ? ` (boost: **${c.semanticBoost}**)` : '';
-                const rootInfo = c.root ? ` (root: *${c.root}*)` : '';
-                const freqVal  = (c.freqScore ?? 0).toFixed(1);
-                const scoreVal = (c.adjustedScore ?? 0).toFixed(1);
-                const breakdown = c.breakdown ? `<br>&nbsp;&nbsp;*Breakdown: ${c.breakdown}*` : '';
-                const cMeaning = c.meaning ? ` *(${c.meaning})*` : '';
-                
-                return `• **${c.item || ''}**${rootInfo}${cMeaning} [${typeLabel}]<br>&nbsp;&nbsp;Score: **${scoreVal}**${boostInfo} | Points: ${freqVal}${breakdown}`;
+              const typeLabel = c.type.startsWith('repair') ? `🛠️ ${c.type}` : c.type;
+              const boostInfo = c.semanticBoost ? ` (boost: **${c.semanticBoost}**)` : '';
+              const rootInfo = c.root ? ` (root: *${c.root}*)` : '';
+              const freqVal = (c.freqScore ?? 0).toFixed(1);
+              const scoreVal = (c.adjustedScore ?? 0).toFixed(1);
+              const breakdown = c.breakdown ? `<br>&nbsp;&nbsp;*Breakdown: ${c.breakdown}*` : '';
+              const cMeaning = c.meaning ? ` *(${c.meaning})*` : '';
+
+              return `• **${c.item || ''}**${rootInfo}${cMeaning} [${typeLabel}]<br>&nbsp;&nbsp;Score: **${scoreVal}**${boostInfo} | Points: ${freqVal}${breakdown}`;
             }).join('<br>');
           }
 
           // Winner's deinflection path
           if (t.meta && t.meta.reasons) {
-              const chainStr = t.meta.reasons.map(chain => 
-                  chain.map(rid => DEINFLECT_REASONS[rid] || rid).join(' → ')
-              ).join(' | ');
-              if (extra) extra += '<br>';
-              extra += `*Rules: ${chainStr} (w:${t.meta.ruleWeight || 1.0})*`;
+            const chainStr = t.meta.reasons.map(chain =>
+              chain.map(rid => DEINFLECT_REASONS[rid] || rid).join(' → ')
+            ).join(' | ');
+            if (extra) extra += '<br>';
+            extra += `*Rules: ${chainStr} (w:${t.meta.ruleWeight || 1.0})*`;
           }
 
           return [
-            `\`${t.surface || t.input}\``,
-            `\`${t.output}\``,
-            meaning,
+            `\`${t.chunk}\``,
+            `\`${t.preprocessedChunk}\``,
+            t.candidateMeaning || '—',
             `**${t.decision}**`,
             contextStr,
             extra || '—'
@@ -458,7 +467,7 @@ async function main() {
     }
 
     const shortTs = ts.slice(5); // e.g. 04-25T13-56
-    
+
     // 1. Run History (Accumulate)
     const historyRow = {
       Timestamp: runMeta.timestamp,
@@ -483,7 +492,8 @@ async function main() {
     const summaryData = results.map((r, i) => ({
       ID: r.id,
       Direction: r.direction,
-      Input: r.input,
+      RawInput: r.rawInput,
+      Preprocessed: r.preprocessedOutput,
       Result: r.error ? `ERR: ${r.error}` : r.llmOutput,
       Time_ms: r.durationMs,
       Tokens: r.tokens.length,
@@ -495,19 +505,39 @@ async function main() {
     const tokenData = [];
     results.forEach(r => {
       r.tokens.forEach(t => {
-        const win = t.meta?.winner || t.meta?.candidates?.[0];
-        const candidateList = (t.meta?.candidates || []).slice(0, 5).map(c => `${c.item}(${c.adjustedScore.toFixed(0)})`).join(', ');
+        const candidateList = (t.meta?.competition || []).slice(0, 5)
+          .map(c => `${c.item}(adj:${c.adj}, cos:${c.cos}, bst:+${c.boost})`)
+          .join('; ');
+
         tokenData.push({
           Case: r.id,
-          RAG_Query: r.queryTokens.join(', '),
-          Token: t.surface || t.input,
-          Type: t.type || '',
+          Index: t.index,
+          Chunk: t.chunk,
+          Preprocessed: t.preprocessedChunk,
+          Candidate: t.candidate,
+          Meaning: t.candidateMeaning,
+          RootChunk: t.rootChunk,
+          Type: t.type,
           Decision: t.decision,
-          Winner: win?.item || '',
-          Score: win?.adjustedScore || 0,
-          Boost: t.meta?.semanticBoost || 0,
-          Meaning: t.meaning || win?.meaning || '',
-          Alternative_Candidates: candidateList
+          TokenScore: t.meta?.winner?.adjustedScore || 0,
+          SemanticBoost: t.meta?.semanticBoost || 0,
+          CosineSim: t.meta?.winner?.cosSim || 0,
+          // Flattened CostTrace columns
+          RawScore: t.costTrace?.rawScore || 0,
+          // ...
+          SemanticScore: t.costTrace?.semanticScore || 0,
+          LengthBoost: t.costTrace?.lengthBoost || 1,
+          Stability: t.costTrace?.stability || 1,
+          FinalCost: t.costTrace?.FINAL_COST || 0,
+          // Flattened ContextTrace
+          ContextFlipped: t.contextTrace?.isFlipped ? 'YES' : 'no',
+          ContextBoost: t.contextTrace?.boost || 0,
+          ContextWords: (t.contextTrace?.contextWords || []).join(', '),
+          ContextCandidates: (t.contextTrace?.candidates || []).map(c => `${c.item}(${c.score})`).join('; '),
+          // LLM Output
+          LLM_Output: r.llmOutput || '',
+          RAG_Query: r.queryTokens.join(', '),
+          Alternatives: candidateList
         });
       });
     });

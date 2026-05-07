@@ -1,0 +1,2915 @@
+{
+  "meta": {
+    "timestamp": "2026-05-06T12:05:25.533Z",
+    "skipLLM": true,
+    "totalMs": 136744
+  },
+  "results": [
+    {
+      "id": "case-07-slow-movement",
+      "label": "Motor symptoms / Restlessness",
+      "rawInput": "JAP: hoka no hito ni ugoitari hanshitari no ga osokute kitdukaremashitaka ochitsukuganaku mata ha sowasowa takusan ogoitemasuka",
+      "direction": "JAP→ENG",
+      "preprocessedOutput": "hoka   no   hito   ni   ugoitari   hanshi   no   ga   osokute   kitdukaremashitaka   ochitsukuganaku   mata   wa   sowasowa   takusan   ogoitemasuka",
+      "tokens": [
+        {
+          "index": 1,
+          "chunk": "hoka",
+          "preprocessedChunk": "hoka",
+          "candidate": "hoka",
+          "candidateMeaning": "another place",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 18368,
+              "entry": {
+                "id": 18368,
+                "pos": [
+                  "n, adj-no, adv"
+                ],
+                "tags": "ichi1, uk",
+                "freq": 0.2,
+                "romaji": "hoka",
+                "meaning": "another place",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "hoka",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": {
+                "total": 140,
+                "freq": 100,
+                "priority": 40,
+                "clinical": 0,
+                "mesh": 0
+              },
+              "adjustedScore": 1140,
+              "breakdown": "[exact: 1000] [Points: +140 (f100+p40)]",
+              "meaning": "another place"
+            },
+            "candidates": [
+              {
+                "id": 18368,
+                "entry": {
+                  "id": 18368,
+                  "pos": [
+                    "n, adj-no, adv"
+                  ],
+                  "tags": "ichi1, uk",
+                  "freq": 0.2,
+                  "romaji": "hoka",
+                  "meaning": "another place",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "hoka",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 140,
+                  "freq": 100,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1140,
+                "breakdown": "[exact: 1000] [Points: +140 (f100+p40)]",
+                "meaning": "another place",
+                "cosSim": 0.565834646775207,
+                "semanticBoost": 0,
+                "finalScore": 1140
+              }
+            ],
+            "margin": 0,
+            "competition": [
+              {
+                "item": "hoka",
+                "type": "exact",
+                "adj": "1140.00",
+                "cos": "0.00",
+                "boost": "0"
+              }
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 3,
+          "chunk": "の",
+          "preprocessedChunk": "no",
+          "candidate": "no",
+          "candidateMeaning": "particle",
+          "rootChunk": "",
+          "decision": "particle",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "index": 4,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 5,
+          "chunk": "hito",
+          "preprocessedChunk": "hito",
+          "candidate": "hito",
+          "candidateMeaning": "person",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 54504,
+              "entry": {
+                "id": 54504,
+                "pos": [
+                  "n"
+                ],
+                "tags": "ichi1, uk",
+                "freq": 0.2,
+                "romaji": "hito",
+                "meaning": "person",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "hito",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": {
+                "total": 140,
+                "freq": 100,
+                "priority": 40,
+                "clinical": 0,
+                "mesh": 0
+              },
+              "adjustedScore": 1060,
+              "breakdown": "[exact: 1000] [Points: +140 (f100+p40)] [Utility: -80]",
+              "meaning": "person",
+              "cosSim": 0.5683724306372274,
+              "semanticBoost": 0,
+              "finalScore": 1060
+            },
+            "candidates": [
+              {
+                "id": 54504,
+                "entry": {
+                  "id": 54504,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "ichi1, uk",
+                  "freq": 0.2,
+                  "romaji": "hito",
+                  "meaning": "person",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "hito",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 140,
+                  "freq": 100,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1060,
+                "breakdown": "[exact: 1000] [Points: +140 (f100+p40)] [Utility: -80]",
+                "meaning": "person",
+                "cosSim": 0.5683724306372274,
+                "semanticBoost": 0,
+                "finalScore": 1060
+              },
+              {
+                "id": 167084,
+                "entry": {
+                  "id": 167084,
+                  "pos": [
+                    "pref, num"
+                  ],
+                  "tags": "spec1",
+                  "freq": 0.2,
+                  "romaji": "hito",
+                  "meaning": "one",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "hito",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 50,
+                  "freq": 0,
+                  "priority": 50,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 970,
+                "breakdown": "[exact: 1000] [Points: +50 (p50)] [Utility: -80]",
+                "meaning": "one",
+                "cosSim": 0.5796616344839103,
+                "semanticBoost": 0,
+                "finalScore": 970
+              },
+              {
+                "id": 45186,
+                "entry": {
+                  "id": 45186,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "hito",
+                  "meaning": "bandit",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "hito",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 920,
+                "breakdown": "[exact: 1000] [Utility: -80]",
+                "meaning": "bandit",
+                "cosSim": 0.6090809379306191,
+                "semanticBoost": 0,
+                "finalScore": 920
+              },
+              {
+                "id": 57979,
+                "entry": {
+                  "id": 57979,
+                  "pos": [
+                    "n, vs"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "hito",
+                  "meaning": "condemning",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "hito",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 920,
+                "breakdown": "[exact: 1000] [Utility: -80]",
+                "meaning": "condemning",
+                "cosSim": 0.5168330028213548,
+                "semanticBoost": 0,
+                "finalScore": 920
+              },
+              {
+                "id": 64622,
+                "entry": {
+                  "id": 64622,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "hito",
+                  "meaning": "way of spending",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "hito",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 920,
+                "breakdown": "[exact: 1000] [Utility: -80]",
+                "meaning": "way of spending",
+                "cosSim": 0.5443421632791176,
+                "semanticBoost": 0,
+                "finalScore": 920
+              }
+            ],
+            "margin": 18,
+            "competition": [
+              {
+                "item": "hito",
+                "type": "exact",
+                "adj": "1060.00",
+                "cos": "0.57",
+                "boost": "0"
+              },
+              {
+                "item": "hito",
+                "type": "exact",
+                "adj": "970.00",
+                "cos": "0.58",
+                "boost": "0"
+              },
+              {
+                "item": "hito",
+                "type": "exact",
+                "adj": "920.00",
+                "cos": "0.61",
+                "boost": "0"
+              },
+              {
+                "item": "hito",
+                "type": "exact",
+                "adj": "920.00",
+                "cos": "0.52",
+                "boost": "0"
+              },
+              {
+                "item": "hito",
+                "type": "exact",
+                "adj": "920.00",
+                "cos": "0.54",
+                "boost": "0"
+              }
+            ],
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 6,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 7,
+          "chunk": "に",
+          "preprocessedChunk": "ni",
+          "candidate": "ni",
+          "candidateMeaning": "particle",
+          "rootChunk": "",
+          "decision": "particle",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "index": 8,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 9,
+          "chunk": "ugoitari",
+          "preprocessedChunk": "ugoitari",
+          "candidate": "ugoitari",
+          "candidateMeaning": "to move",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "deinflect:ugoku",
+          "grammar_tags": [
+            "Such things as (tari)"
+          ],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 42180,
+              "entry": {
+                "id": 42180,
+                "pos": [
+                  "v5k, vi"
+                ],
+                "tags": "ichi1",
+                "freq": 0.2,
+                "romaji": "ugoku",
+                "meaning": "to move",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "ugoitari",
+              "root": "ugoku",
+              "type": "deinflect",
+              "distance": 0.04,
+              "freqScore": {
+                "total": 140,
+                "freq": 100,
+                "priority": 40,
+                "clinical": 0,
+                "mesh": 0
+              },
+              "adjustedScore": 1035.984,
+              "breakdown": "[deinflect: 900] [Points: +138 (f100+p40) * 0.99decay] [Typo: -2]",
+              "meaning": "to move",
+              "meta": {
+                "reasons": [
+                  [
+                    7
+                  ]
+                ],
+                "type": 2,
+                "ruleWeight": 1
+              },
+              "cosSim": 0.579643622858123,
+              "semanticBoost": 0,
+              "finalScore": 1035.984
+            },
+            "candidates": [
+              {
+                "id": 42180,
+                "entry": {
+                  "id": 42180,
+                  "pos": [
+                    "v5k, vi"
+                  ],
+                  "tags": "ichi1",
+                  "freq": 0.2,
+                  "romaji": "ugoku",
+                  "meaning": "to move",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "ugoitari",
+                "root": "ugoku",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": {
+                  "total": 140,
+                  "freq": 100,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1035.984,
+                "breakdown": "[deinflect: 900] [Points: +138 (f100+p40) * 0.99decay] [Typo: -2]",
+                "meaning": "to move",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.579643622858123,
+                "semanticBoost": 0,
+                "finalScore": 1035.984
+              },
+              {
+                "id": 17661,
+                "entry": {
+                  "id": 17661,
+                  "pos": [
+                    "v1, vi, suf"
+                  ],
+                  "tags": "ichi1, news2, nf34, uk",
+                  "freq": 0.4416666666666666,
+                  "romaji": "sugiru",
+                  "meaning": "to pass through",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j2000"
+                },
+                "item": "ugoitari",
+                "root": "sugiru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.13333333333333333,
+                "freqScore": {
+                  "total": 130,
+                  "freq": 90,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 886.9777777777779,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Points: +109 (f90+p40) * 0.84decay] [Typo: -22]",
+                "meaning": "to pass through",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.6284760812362163,
+                "semanticBoost": 0,
+                "finalScore": 886.9777777777779
+              },
+              {
+                "id": 42177,
+                "entry": {
+                  "id": 42177,
+                  "pos": [
+                    "v5s, vt"
+                  ],
+                  "tags": "ichi1, news1, nf18",
+                  "freq": 0.825,
+                  "romaji": "ugokasu",
+                  "meaning": "to move",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "ugoittari",
+                "root": "ugokasu",
+                "type": "deinflect:doubling:fuzzy_stem",
+                "distance": 0.18285714285714286,
+                "freqScore": {
+                  "total": 170,
+                  "freq": 100,
+                  "priority": 70,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 877.0458775510203,
+                "breakdown": "[deinflect:doubling:fuzzy_stem: 800] [Points: +119 (f100+p70) * 0.70decay] [Typo: -42]",
+                "meaning": "to move",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.6095156625671729,
+                "semanticBoost": 0,
+                "finalScore": 877.0458775510203
+              },
+              {
+                "id": 17663,
+                "entry": {
+                  "id": 17663,
+                  "pos": [
+                    "v5s, vt, suf"
+                  ],
+                  "tags": "ichi1, news2, nf31, dated",
+                  "freq": 0.5041666666666667,
+                  "romaji": "sugosu",
+                  "meaning": "to spend time",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j3000"
+                },
+                "item": "ugoittari",
+                "root": "sugosu",
+                "type": "deinflect:doubling:fuzzy_stem",
+                "distance": 0.15,
+                "freqScore": {
+                  "total": 120,
+                  "freq": 80,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 867.575,
+                "breakdown": "[deinflect:doubling:fuzzy_stem: 800] [Points: +96 (f80+p40) * 0.80decay] [Typo: -28]",
+                "meaning": "to spend time",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.6128370451302823,
+                "semanticBoost": 0,
+                "finalScore": 867.575
+              },
+              {
+                "id": 55619,
+                "entry": {
+                  "id": 55619,
+                  "pos": [
+                    "v5r, vt"
+                  ],
+                  "tags": "ichi1, news2, nf45",
+                  "freq": 0.21250000000000002,
+                  "romaji": "kugiru",
+                  "meaning": "to divide",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j5000"
+                },
+                "item": "ugoittari",
+                "root": "kugiru",
+                "type": "deinflect:doubling:fuzzy_stem",
+                "distance": 0.13333333333333333,
+                "freqScore": {
+                  "total": 100,
+                  "freq": 60,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 861.7777777777778,
+                "breakdown": "[deinflect:doubling:fuzzy_stem: 800] [Points: +84 (f60+p40) * 0.84decay] [Typo: -22]",
+                "meaning": "to divide",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.5431167597268158,
+                "semanticBoost": 0,
+                "finalScore": 861.7777777777778
+              },
+              {
+                "id": 40434,
+                "entry": {
+                  "id": 40434,
+                  "pos": [
+                    "v1, vi"
+                  ],
+                  "tags": "ichi1, news2, nf25",
+                  "freq": 0.6291666666666667,
+                  "romaji": "toorisugiru",
+                  "meaning": "to go past",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j3000"
+                },
+                "item": "ugoitari",
+                "root": "toorisugiru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.18333333333333332,
+                "freqScore": {
+                  "total": 120,
+                  "freq": 80,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 841.6861111111111,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Points: +84 (f80+p40) * 0.70decay] [Typo: -42]",
+                "meaning": "to go past",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.603118330425811,
+                "semanticBoost": 0,
+                "finalScore": 841.6861111111111
+              },
+              {
+                "id": 57270,
+                "entry": {
+                  "id": 57270,
+                  "pos": [
+                    "v1, vi"
+                  ],
+                  "tags": "news1, nf18",
+                  "freq": 0.725,
+                  "romaji": "ikisugiru",
+                  "meaning": "to go too far",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ugoitari",
+                "root": "ikisugiru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.16333333333333333,
+                "freqScore": {
+                  "total": 94,
+                  "freq": 64,
+                  "priority": 30,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 838.0833777777779,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Points: +71 (f64+p30) * 0.76decay] [Typo: -33]",
+                "meaning": "to go too far",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.5615713044331871,
+                "semanticBoost": 0,
+                "finalScore": 838.0833777777779
+              },
+              {
+                "id": 13961,
+                "entry": {
+                  "id": 13961,
+                  "pos": [
+                    "v1"
+                  ],
+                  "tags": "spec1, uk",
+                  "freq": 0.2,
+                  "romaji": "shisugiru",
+                  "meaning": "to overdo",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ugoitari",
+                "root": "shisugiru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.16333333333333333,
+                "freqScore": {
+                  "total": 50,
+                  "freq": 0,
+                  "priority": 50,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 804.6477777777778,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Points: +38 (p50) * 0.76decay] [Typo: -33]",
+                "meaning": "to overdo",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.6145968771163342,
+                "semanticBoost": 0,
+                "finalScore": 804.6477777777778
+              },
+              {
+                "id": 79269,
+                "entry": {
+                  "id": 79269,
+                  "pos": [
+                    "v1, vt"
+                  ],
+                  "tags": "news2, nf32",
+                  "freq": 0.38333333333333336,
+                  "romaji": "iisugiru",
+                  "meaning": "to talk or say too much",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ugoitari",
+                "root": "iisugiru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.15333333333333332,
+                "freqScore": {
+                  "total": 36,
+                  "freq": 36,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 798.993511111111,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Points: +28 (f36) * 0.79decay] [Typo: -29]",
+                "meaning": "to talk or say too much",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.5670661777131997,
+                "semanticBoost": 0,
+                "finalScore": 798.993511111111
+              },
+              {
+                "id": 33270,
+                "entry": {
+                  "id": 33270,
+                  "pos": [
+                    "v1, vt"
+                  ],
+                  "tags": "news2, nf25, spec2",
+                  "freq": 0.5791666666666667,
+                  "romaji": "tabesugiru",
+                  "meaning": "to overeat",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ugoitari",
+                "root": "tabesugiru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.17333333333333334,
+                "freqScore": {
+                  "total": 50,
+                  "freq": 50,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 798.9244444444445,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Points: +36 (f50) * 0.73decay] [Typo: -38]",
+                "meaning": "to overeat",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.5087416160025996,
+                "semanticBoost": 0,
+                "finalScore": 798.9244444444445
+              },
+              {
+                "id": 31348,
+                "entry": {
+                  "id": 31348,
+                  "pos": [
+                    "v1, vi"
+                  ],
+                  "tags": "news2, nf47, spec2",
+                  "freq": 0.12083333333333338,
+                  "romaji": "desugiru",
+                  "meaning": "to stick out too much",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ugoitari",
+                "root": "desugiru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.15333333333333332,
+                "freqScore": {
+                  "total": 6,
+                  "freq": 6,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 775.3415111111111,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Points: +5 (f6) * 0.79decay] [Typo: -29]",
+                "meaning": "to stick out too much",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.5475657943777031,
+                "semanticBoost": 0,
+                "finalScore": 775.3415111111111
+              },
+              {
+                "id": 195835,
+                "entry": {
+                  "id": 195835,
+                  "pos": [
+                    "v1, vt"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "yakisugiru",
+                  "meaning": "to overcook",
+                  "domain": "photography",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ugoitari",
+                "root": "yakisugiru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.17333333333333334,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 762.4444444444445,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Typo: -38]",
+                "meaning": "to overcook",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.5493249678824713,
+                "semanticBoost": 0,
+                "finalScore": 762.4444444444445
+              },
+              {
+                "id": 64327,
+                "entry": {
+                  "id": 64327,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "juugoutai",
+                  "meaning": "polymer",
+                  "domain": "chemistry",
+                  "mesh": [
+                    {
+                      "matched_term": "polymer",
+                      "mesh_descriptor": "Polymers",
+                      "tree_numbers": [
+                        "D05.750",
+                        "D25.720",
+                        "J01.637.051.720"
+                      ],
+                      "domains": [
+                        "mesh_drug"
+                      ],
+                      "match_type": "exact_synonym",
+                      "confidence": 0.75
+                    }
+                  ],
+                  "meshDomains": [
+                    "mesh_drug"
+                  ],
+                  "commonWords": null
+                },
+                "item": "juugoutai",
+                "type": "fuzzy",
+                "distance": 0.29,
+                "freqScore": {
+                  "total": 70,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 70
+                },
+                "adjustedScore": 631.892,
+                "breakdown": "[fuzzy: 800] [Points: +17 (m70) * 0.24decay] [Typo: -105] [Len: -80]",
+                "meaning": "polymer",
+                "cosSim": 0.46797440677463514,
+                "semanticBoost": 0,
+                "finalScore": 631.892
+              },
+              {
+                "id": 3761,
+                "entry": {
+                  "id": 3761,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "gai1",
+                  "freq": 0.2,
+                  "romaji": "gitarisuto",
+                  "meaning": "guitarist",
+                  "domain": "music",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "gitarisuto",
+                "type": "fuzzy",
+                "distance": 0.25,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 561.875,
+                "breakdown": "[fuzzy: 800] [Typo: -78] [Len: -160]",
+                "meaning": "guitarist",
+                "cosSim": 0.482038073839713,
+                "semanticBoost": 0,
+                "finalScore": 561.875
+              },
+              {
+                "id": 126429,
+                "entry": {
+                  "id": 126429,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "fugoutaikei",
+                  "meaning": "code",
+                  "domain": "computing",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "fugoutaikei",
+                "type": "fuzzy",
+                "distance": 0.27,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 468.875,
+                "breakdown": "[fuzzy: 800] [Typo: -91] [Len: -240]",
+                "meaning": "code",
+                "cosSim": 0.4606966818392042,
+                "semanticBoost": 0,
+                "finalScore": 468.875
+              },
+              {
+                "id": 48380,
+                "entry": {
+                  "id": 48380,
+                  "pos": [
+                    "v1"
+                  ],
+                  "tags": "ichi1, news2, nf31",
+                  "freq": 0.5041666666666667,
+                  "romaji": "mukuiru",
+                  "meaning": "to reward",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ukoitari",
+                "root": "mukuiru",
+                "type": "aggressive:deinflect:fuzzy_stem",
+                "distance": 0.13333333333333333,
+                "freqScore": {
+                  "total": 78,
+                  "freq": 38,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 443.29777777777775,
+                "breakdown": "[aggressive:deinflect:fuzzy_stem: 400] [Points: +66 (f38+p40) * 0.84decay] [Typo: -22]",
+                "meaning": "to reward",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.5635123428802475,
+                "semanticBoost": 0,
+                "finalScore": 443.29777777777775
+              },
+              {
+                "id": 34391,
+                "entry": {
+                  "id": 34391,
+                  "pos": [
+                    "v1, vi"
+                  ],
+                  "tags": "ichi1, news2, nf35",
+                  "freq": 0.42083333333333334,
+                  "romaji": "tsukiru",
+                  "meaning": "to be used up",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ukoitari",
+                "root": "tsukiru",
+                "type": "aggressive:deinflect:fuzzy_stem",
+                "distance": 0.14333333333333334,
+                "freqScore": {
+                  "total": 70,
+                  "freq": 30,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 431.3764444444445,
+                "breakdown": "[aggressive:deinflect:fuzzy_stem: 400] [Points: +57 (f30+p40) * 0.82decay] [Typo: -26]",
+                "meaning": "to be used up",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.5493216500596857,
+                "semanticBoost": 0,
+                "finalScore": 431.3764444444445
+              },
+              {
+                "id": 182940,
+                "entry": {
+                  "id": 182940,
+                  "pos": [
+                    "v1, vt"
+                  ],
+                  "tags": "rare",
+                  "freq": 0.1,
+                  "romaji": "koiru",
+                  "meaning": "to love",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ukoitari",
+                "root": "koiru",
+                "type": "aggressive:deinflect:fuzzy_stem",
+                "distance": 0.12333333333333332,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 380.9861111111111,
+                "breakdown": "[aggressive:deinflect:fuzzy_stem: 400] [Typo: -19]",
+                "meaning": "to love",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.5673027835806772,
+                "semanticBoost": 0,
+                "finalScore": 380.9861111111111
+              },
+              {
+                "id": 43943,
+                "entry": {
+                  "id": 43943,
+                  "pos": [
+                    "v1, vi"
+                  ],
+                  "tags": "news2, nf38",
+                  "freq": 0.25833333333333336,
+                  "romaji": "moetsukiru",
+                  "meaning": "to burn out",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ukoitari",
+                "root": "moetsukiru",
+                "type": "aggressive:deinflect:fuzzy_stem",
+                "distance": 0.17333333333333334,
+                "freqScore": {
+                  "total": 24,
+                  "freq": 24,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 379.95484444444446,
+                "breakdown": "[aggressive:deinflect:fuzzy_stem: 400] [Points: +18 (f24) * 0.73decay] [Typo: -38]",
+                "meaning": "to burn out",
+                "meta": {
+                  "reasons": [
+                    [
+                      7
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.5046149797879287,
+                "semanticBoost": 0,
+                "finalScore": 379.95484444444446
+              },
+              {
+                "id": 60397,
+                "entry": {
+                  "id": 60397,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "news2, nf38",
+                  "freq": 0.25833333333333336,
+                  "romaji": "okotari",
+                  "meaning": "negligence",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "okotari",
+                "type": "aggressive:fuzzy",
+                "distance": 0.25,
+                "freqScore": {
+                  "total": 24,
+                  "freq": 24,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 252.375,
+                "breakdown": "[aggressive:fuzzy: 400] [Points: +11 (f24) * 0.44decay] [Typo: -78] [Len: -80]",
+                "meaning": "negligence",
+                "cosSim": 0.5089555749211606,
+                "semanticBoost": 0,
+                "finalScore": 252.375
+              },
+              {
+                "id": 42718,
+                "entry": {
+                  "id": 42718,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "ichi1",
+                  "freq": 0.2,
+                  "romaji": "tsukiatari",
+                  "meaning": "end of a street, hallway, etc.",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j2000"
+                },
+                "item": "tsukiatari",
+                "type": "aggressive:fuzzy",
+                "distance": 0.29,
+                "freqScore": {
+                  "total": 130,
+                  "freq": 90,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 166.478,
+                "breakdown": "[aggressive:fuzzy: 400] [Points: +32 (f90+p40) * 0.24decay] [Typo: -105] [Len: -160]",
+                "meaning": "end of a street, hallway, etc.",
+                "cosSim": 0.544139157733447,
+                "semanticBoost": 0,
+                "finalScore": 166.478
+              },
+              {
+                "id": 66348,
+                "entry": {
+                  "id": 66348,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "news2, nf30",
+                  "freq": 0.425,
+                  "romaji": "sougoudaigaku",
+                  "meaning": "multi-faculty university",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sougoudaigaku",
+                "type": "aggressive:fuzzy",
+                "distance": 0.29,
+                "freqScore": {
+                  "total": 40,
+                  "freq": 40,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": -95.40100000000001,
+                "breakdown": "[aggressive:fuzzy: 400] [Points: +10 (f40) * 0.24decay] [Typo: -105] [Len: -400]",
+                "meaning": "multi-faculty university",
+                "cosSim": 0.5184994926757461,
+                "semanticBoost": 0,
+                "finalScore": -95.40100000000001
+              },
+              {
+                "id": 169773,
+                "entry": {
+                  "id": 169773,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "erugoodoriron",
+                  "meaning": "ergodic theory",
+                  "domain": "mathematics",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "erugoodoriron",
+                "type": "aggressive:fuzzy",
+                "distance": 0.29,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": -105.125,
+                "breakdown": "[aggressive:fuzzy: 400] [Typo: -105] [Len: -400]",
+                "meaning": "ergodic theory",
+                "cosSim": 0.5256257396491824,
+                "semanticBoost": 0,
+                "finalScore": -105.125
+              },
+              {
+                "id": 63489,
+                "entry": {
+                  "id": 63489,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "hist",
+                  "freq": 0.1,
+                  "romaji": "kougaitaisakukihonhou",
+                  "meaning": "Environmental Pollution Prevention Act",
+                  "domain": "law",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "kougaitaisakukihonhou",
+                "type": "fuzzy",
+                "distance": 0.29,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": -345.125,
+                "breakdown": "[fuzzy: 800] [Typo: -105] [Len: -1040]",
+                "meaning": "Environmental Pollution Prevention Act",
+                "cosSim": 0.4920577685841831,
+                "semanticBoost": 0,
+                "finalScore": -345.125
+              },
+              {
+                "id": 6124,
+                "entry": {
+                  "id": 6124,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "sukoaringupojishon",
+                  "meaning": "scoring position",
+                  "domain": "baseball",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sukoaringupojishon",
+                "type": "aggressive:fuzzy",
+                "distance": 0.27,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": -491.125,
+                "breakdown": "[aggressive:fuzzy: 400] [Typo: -91] [Len: -800]",
+                "meaning": "scoring position",
+                "cosSim": 0.5781422317128015,
+                "semanticBoost": 0,
+                "finalScore": -491.125
+              }
+            ],
+            "margin": 29.80124444444441,
+            "competition": [
+              {
+                "item": "ugoitari(->ugoku)",
+                "type": "deinflect",
+                "adj": "1035.98",
+                "cos": "0.58",
+                "boost": "0"
+              },
+              {
+                "item": "ugoitari(->sugiru)",
+                "type": "deinflect:fuzzy_stem",
+                "adj": "886.98",
+                "cos": "0.63",
+                "boost": "0"
+              },
+              {
+                "item": "ugoittari(->ugokasu)",
+                "type": "deinflect:doubling:fuzzy_stem",
+                "adj": "877.05",
+                "cos": "0.61",
+                "boost": "0"
+              },
+              {
+                "item": "ugoittari(->sugosu)",
+                "type": "deinflect:doubling:fuzzy_stem",
+                "adj": "867.58",
+                "cos": "0.61",
+                "boost": "0"
+              },
+              {
+                "item": "ugoittari(->kugiru)",
+                "type": "deinflect:doubling:fuzzy_stem",
+                "adj": "861.78",
+                "cos": "0.54",
+                "boost": "0"
+              }
+            ],
+            "reasons": [
+              [
+                7
+              ]
+            ],
+            "type": 2,
+            "ruleWeight": 1,
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 10,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 11,
+          "chunk": "hanshi",
+          "preprocessedChunk": "hanshi",
+          "candidate": "hanshi",
+          "candidateMeaning": "Japanese calligraphy paper approx. 25cm by 35cm",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 44873,
+              "entry": {
+                "id": 44873,
+                "pos": [
+                  "n"
+                ],
+                "tags": "news2, nf32",
+                "freq": 0.38333333333333336,
+                "romaji": "hanshi",
+                "meaning": "Japanese calligraphy paper approx. 25cm by 35cm",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": null
+              },
+              "item": "hanshi",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": {
+                "total": 36,
+                "freq": 36,
+                "priority": 0,
+                "clinical": 0,
+                "mesh": 0
+              },
+              "adjustedScore": 1036,
+              "breakdown": "[exact: 1000] [Points: +36 (f36)]",
+              "meaning": "Japanese calligraphy paper approx. 25cm by 35cm",
+              "cosSim": 0.4990540686832994,
+              "semanticBoost": 0,
+              "finalScore": 1036
+            },
+            "candidates": [
+              {
+                "id": 44873,
+                "entry": {
+                  "id": 44873,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "news2, nf32",
+                  "freq": 0.38333333333333336,
+                  "romaji": "hanshi",
+                  "meaning": "Japanese calligraphy paper approx. 25cm by 35cm",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "hanshi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 36,
+                  "freq": 36,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1036,
+                "breakdown": "[exact: 1000] [Points: +36 (f36)]",
+                "meaning": "Japanese calligraphy paper approx. 25cm by 35cm",
+                "cosSim": 0.4990540686832994,
+                "semanticBoost": 0,
+                "finalScore": 1036
+              },
+              {
+                "id": 63914,
+                "entry": {
+                  "id": 63914,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "news2, nf36, hist",
+                  "freq": 0.3,
+                  "romaji": "hanshi",
+                  "meaning": "retainer of a daimyo",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "hanshi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 28,
+                  "freq": 28,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1028,
+                "breakdown": "[exact: 1000] [Points: +28 (f28)]",
+                "meaning": "retainer of a daimyo",
+                "cosSim": 0.47933331204645846,
+                "semanticBoost": 0,
+                "finalScore": 1028
+              },
+              {
+                "id": 44796,
+                "entry": {
+                  "id": 44796,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "hanshi",
+                  "meaning": "judge advocate",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "hanshi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "judge advocate",
+                "cosSim": 0.5376336131968122,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 44871,
+                "entry": {
+                  "id": 44871,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "hanshi",
+                  "meaning": "half-dead",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "hanshi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "half-dead",
+                "cosSim": 0.5649930094209201,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 139949,
+                "entry": {
+                  "id": 139949,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "hanshi",
+                  "meaning": "fencing master of the top rank",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "hanshi",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "fencing master of the top rank",
+                "cosSim": 0.4611995973745626,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              }
+            ],
+            "margin": 1.5999999999999999,
+            "competition": [
+              {
+                "item": "hanshi",
+                "type": "exact",
+                "adj": "1036.00",
+                "cos": "0.50",
+                "boost": "0"
+              },
+              {
+                "item": "hanshi",
+                "type": "exact",
+                "adj": "1028.00",
+                "cos": "0.48",
+                "boost": "0"
+              },
+              {
+                "item": "hanshi",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.54",
+                "boost": "0"
+              },
+              {
+                "item": "hanshi",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.56",
+                "boost": "0"
+              },
+              {
+                "item": "hanshi",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.46",
+                "boost": "0"
+              }
+            ],
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 12,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 13,
+          "chunk": "の",
+          "preprocessedChunk": "no",
+          "candidate": "no",
+          "candidateMeaning": "particle",
+          "rootChunk": "",
+          "decision": "particle",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "index": 14,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 15,
+          "chunk": "が",
+          "preprocessedChunk": "ga",
+          "candidate": "ga",
+          "candidateMeaning": "particle",
+          "rootChunk": "",
+          "decision": "particle",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "index": 16,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 17,
+          "chunk": "osokute",
+          "preprocessedChunk": "osokute",
+          "candidate": "osokute",
+          "candidateMeaning": "slow",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "deinflect:osoi",
+          "grammar_tags": [
+            "Te-form"
+          ],
+          "tokenBoost": 61,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 39380,
+              "entry": {
+                "id": 39380,
+                "pos": [
+                  "adj-i"
+                ],
+                "tags": "ichi1, news1, nf18",
+                "freq": 0.825,
+                "romaji": "osoi",
+                "meaning": "slow",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "osokute",
+              "root": "osoi",
+              "type": "deinflect",
+              "distance": 0.04,
+              "freqScore": {
+                "total": 170,
+                "freq": 100,
+                "priority": 70,
+                "clinical": 0,
+                "mesh": 0
+              },
+              "adjustedScore": 1065.552,
+              "breakdown": "[deinflect: 900] [Points: +168 (f100+p70) * 0.99decay] [Typo: -2]",
+              "meaning": "slow",
+              "meta": {
+                "reasons": [
+                  [
+                    25
+                  ]
+                ],
+                "type": 4,
+                "ruleWeight": 1
+              },
+              "cosSim": 0.6228726001437781,
+              "semanticBoost": 61,
+              "finalScore": 1126.552
+            },
+            "candidates": [
+              {
+                "id": 39380,
+                "entry": {
+                  "id": 39380,
+                  "pos": [
+                    "adj-i"
+                  ],
+                  "tags": "ichi1, news1, nf18",
+                  "freq": 0.825,
+                  "romaji": "osoi",
+                  "meaning": "slow",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "osokute",
+                "root": "osoi",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": {
+                  "total": 170,
+                  "freq": 100,
+                  "priority": 70,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1065.552,
+                "breakdown": "[deinflect: 900] [Points: +168 (f100+p70) * 0.99decay] [Typo: -2]",
+                "meaning": "slow",
+                "meta": {
+                  "reasons": [
+                    [
+                      25
+                    ]
+                  ],
+                  "type": 4,
+                  "ruleWeight": 1
+                },
+                "cosSim": 0.6228726001437781,
+                "semanticBoost": 61,
+                "finalScore": 1126.552
+              },
+              {
+                "id": 37709,
+                "entry": {
+                  "id": 37709,
+                  "pos": [
+                    "n, vs, vt"
+                  ],
+                  "tags": "ichi1, news1, nf08",
+                  "freq": 1,
+                  "romaji": "sokutei",
+                  "meaning": "measurement",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j4000"
+                },
+                "item": "sokutei",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": {
+                  "total": 140,
+                  "freq": 70,
+                  "priority": 70,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 888.7755102040817,
+                "breakdown": "[fuzzy: 800] [Points: +114 (f70+p70) * 0.82decay] [Typo: -26]",
+                "meaning": "measurement",
+                "cosSim": 0.5813824002525095,
+                "semanticBoost": 0,
+                "finalScore": 888.7755102040817
+              },
+              {
+                "id": 143422,
+                "entry": {
+                  "id": 143422,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "sokutei",
+                  "meaning": "planta",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sokutei",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 774.4897959183673,
+                "breakdown": "[fuzzy: 800] [Typo: -26]",
+                "meaning": "planta",
+                "cosSim": 0.47313807869539404,
+                "semanticBoost": 0,
+                "finalScore": 774.4897959183673
+              },
+              {
+                "id": 86223,
+                "entry": {
+                  "id": 86223,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "news2, nf28",
+                  "freq": 0.4666666666666666,
+                  "romaji": "sokuteiki",
+                  "meaning": "measuring instrument",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sokuteiki",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": {
+                  "total": 44,
+                  "freq": 44,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 650.4081632653061,
+                "breakdown": "[fuzzy: 800] [Points: +36 (f44) * 0.82decay] [Typo: -26] [Len: -160]",
+                "meaning": "measuring instrument",
+                "cosSim": 0.5660056062500206,
+                "semanticBoost": 0,
+                "finalScore": 650.4081632653061
+              },
+              {
+                "id": 77202,
+                "entry": {
+                  "id": 77202,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "sokuteiki",
+                  "meaning": "ship's log",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sokuteiki",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 614.4897959183673,
+                "breakdown": "[fuzzy: 800] [Typo: -26] [Len: -160]",
+                "meaning": "ship's log",
+                "cosSim": 0.51536203832375,
+                "semanticBoost": 0,
+                "finalScore": 614.4897959183673
+              },
+              {
+                "id": 20260,
+                "entry": {
+                  "id": 20260,
+                  "pos": [
+                    "adj-na"
+                  ],
+                  "tags": "news2, nf37",
+                  "freq": 0.2791666666666666,
+                  "romaji": "kisokuteki",
+                  "meaning": "systematic",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "kisokuteki",
+                "type": "fuzzy",
+                "distance": 0.16285714285714284,
+                "freqScore": {
+                  "total": 26,
+                  "freq": 26,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 546.6406857142857,
+                "breakdown": "[fuzzy: 800] [Points: +20 (f26) * 0.76decay] [Typo: -33] [Len: -240]",
+                "meaning": "systematic",
+                "cosSim": 0.46650939495348853,
+                "semanticBoost": 0,
+                "finalScore": 546.6406857142857
+              },
+              {
+                "id": 188534,
+                "entry": {
+                  "id": 188534,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "sokuteihansha",
+                  "meaning": "plantar reflex",
+                  "domain": "physiology",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sokuteihansha",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 294.48979591836735,
+                "breakdown": "[fuzzy: 800] [Typo: -26] [Len: -480]",
+                "meaning": "plantar reflex",
+                "cosSim": 0.4905423428901323,
+                "semanticBoost": 0,
+                "finalScore": 294.48979591836735
+              },
+              {
+                "id": 130310,
+                "entry": {
+                  "id": 130310,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "sokuteikinmakuen",
+                  "meaning": "plantar fasciitis",
+                  "domain": "medicine",
+                  "mesh": [
+                    {
+                      "matched_term": "plantar",
+                      "mesh_descriptor": "Fasciitis, Plantar",
+                      "tree_numbers": [
+                        "C05.321.600",
+                        "C05.360.350"
+                      ],
+                      "domains": [
+                        "mesh_disease"
+                      ],
+                      "match_type": "exact_synonym",
+                      "confidence": 0.95
+                    }
+                  ],
+                  "meshDomains": [
+                    "mesh_disease"
+                  ],
+                  "commonWords": null
+                },
+                "item": "sokuteikinmakuen",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": {
+                  "total": 160,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 80,
+                  "mesh": 80
+                },
+                "adjustedScore": 185.1020408163265,
+                "breakdown": "[fuzzy: 800] [Points: +131 (c80+m80) * 0.82decay] [Typo: -26] [Len: -720]",
+                "meaning": "plantar fasciitis",
+                "cosSim": 0.47059553051236797,
+                "semanticBoost": 0,
+                "finalScore": 185.1020408163265
+              }
+            ],
+            "margin": 35.355297959183645,
+            "competition": [
+              {
+                "item": "osokute(->osoi)",
+                "type": "deinflect",
+                "adj": "1126.55",
+                "cos": "0.62",
+                "boost": "61"
+              },
+              {
+                "item": "sokutei",
+                "type": "fuzzy",
+                "adj": "888.78",
+                "cos": "0.58",
+                "boost": "0"
+              },
+              {
+                "item": "sokutei",
+                "type": "fuzzy",
+                "adj": "774.49",
+                "cos": "0.47",
+                "boost": "0"
+              },
+              {
+                "item": "sokuteiki",
+                "type": "fuzzy",
+                "adj": "650.41",
+                "cos": "0.57",
+                "boost": "0"
+              },
+              {
+                "item": "sokuteiki",
+                "type": "fuzzy",
+                "adj": "614.49",
+                "cos": "0.52",
+                "boost": "0"
+              }
+            ],
+            "reasons": [
+              [
+                25
+              ]
+            ],
+            "type": 4,
+            "ruleWeight": 1,
+            "semanticBoost": 61,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 18,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 19,
+          "chunk": "きtづかれましたか",
+          "preprocessedChunk": "kitdukaremashitaka",
+          "candidate": "kitdukaremashitaka",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "passthrough:pruned",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 20,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 21,
+          "chunk": "おちつくがなく",
+          "preprocessedChunk": "ochitsukuganaku",
+          "candidate": "ochitsukuganaku",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "passthrough:pruned",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 22,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 23,
+          "chunk": "mata",
+          "preprocessedChunk": "mata",
+          "candidate": "mata",
+          "candidateMeaning": "again",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 49273,
+              "entry": {
+                "id": 49273,
+                "pos": [
+                  "adv, conj, pref"
+                ],
+                "tags": "ichi1, news1, nf19, uk",
+                "freq": 0.8041666666666667,
+                "romaji": "mata",
+                "meaning": "again",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "mata",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": {
+                "total": 170,
+                "freq": 100,
+                "priority": 70,
+                "clinical": 0,
+                "mesh": 0
+              },
+              "adjustedScore": 1170,
+              "breakdown": "[exact: 1000] [Points: +170 (f100+p70)]",
+              "meaning": "again",
+              "cosSim": 0.5801955529535106,
+              "semanticBoost": 0,
+              "finalScore": 1170
+            },
+            "candidates": [
+              {
+                "id": 49273,
+                "entry": {
+                  "id": 49273,
+                  "pos": [
+                    "adv, conj, pref"
+                  ],
+                  "tags": "ichi1, news1, nf19, uk",
+                  "freq": 0.8041666666666667,
+                  "romaji": "mata",
+                  "meaning": "again",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "mata",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 170,
+                  "freq": 100,
+                  "priority": 70,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1170,
+                "breakdown": "[exact: 1000] [Points: +170 (f100+p70)]",
+                "meaning": "again",
+                "cosSim": 0.5801955529535106,
+                "semanticBoost": 0,
+                "finalScore": 1170
+              },
+              {
+                "id": 24534,
+                "entry": {
+                  "id": 24534,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "ichi1, news2, nf25",
+                  "freq": 0.6291666666666667,
+                  "romaji": "mata",
+                  "meaning": "groin",
+                  "domain": null,
+                  "mesh": [
+                    {
+                      "matched_term": "groin",
+                      "mesh_descriptor": "Groin",
+                      "tree_numbers": [
+                        "A01.923.047.365"
+                      ],
+                      "domains": [
+                        "mesh_anatomy"
+                      ],
+                      "match_type": "exact_phrase",
+                      "confidence": 0.9
+                    }
+                  ],
+                  "meshDomains": [
+                    "mesh_anatomy"
+                  ],
+                  "commonWords": "j6000"
+                },
+                "item": "mata",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 90,
+                  "freq": 50,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1090,
+                "breakdown": "[exact: 1000] [Points: +90 (f50+p40)]",
+                "meaning": "groin",
+                "cosSim": 0.6284724107260445,
+                "semanticBoost": 0,
+                "finalScore": 1090
+              },
+              {
+                "id": 115116,
+                "entry": {
+                  "id": 115116,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "mata",
+                  "meaning": "vowel in the Siddham script",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "mata",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 0,
+                  "freq": 0,
+                  "priority": 0,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "vowel in the Siddham script",
+                "cosSim": 0.5176879305504303,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              }
+            ],
+            "margin": 16,
+            "competition": [
+              {
+                "item": "mata",
+                "type": "exact",
+                "adj": "1170.00",
+                "cos": "0.58",
+                "boost": "0"
+              },
+              {
+                "item": "mata",
+                "type": "exact",
+                "adj": "1090.00",
+                "cos": "0.63",
+                "boost": "0"
+              },
+              {
+                "item": "mata",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.52",
+                "boost": "0"
+              }
+            ],
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 24,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 25,
+          "chunk": "は",
+          "preprocessedChunk": "wa",
+          "candidate": "wa",
+          "candidateMeaning": "particle",
+          "rootChunk": "",
+          "decision": "particle",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "index": 26,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 27,
+          "chunk": "sowasowa",
+          "preprocessedChunk": "sowasowa",
+          "candidate": "sowasowa",
+          "candidateMeaning": "restlessly",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 611,
+              "entry": {
+                "id": 611,
+                "pos": [
+                  "adv, adv-to, vs"
+                ],
+                "tags": "ichi1, on-mim",
+                "freq": 0.2,
+                "romaji": "sowasowa",
+                "meaning": "restlessly",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": null
+              },
+              "item": "sowasowa",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": {
+                "total": 40,
+                "freq": 0,
+                "priority": 40,
+                "clinical": 0,
+                "mesh": 0
+              },
+              "adjustedScore": 1040,
+              "breakdown": "[exact: 1000] [Points: +40 (p40)]",
+              "meaning": "restlessly"
+            },
+            "candidates": [
+              {
+                "id": 611,
+                "entry": {
+                  "id": 611,
+                  "pos": [
+                    "adv, adv-to, vs"
+                  ],
+                  "tags": "ichi1, on-mim",
+                  "freq": 0.2,
+                  "romaji": "sowasowa",
+                  "meaning": "restlessly",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sowasowa",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 40,
+                  "freq": 0,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1040,
+                "breakdown": "[exact: 1000] [Points: +40 (p40)]",
+                "meaning": "restlessly",
+                "cosSim": 0.5769085769725658,
+                "semanticBoost": 0,
+                "finalScore": 1040
+              }
+            ],
+            "margin": 0,
+            "competition": [
+              {
+                "item": "sowasowa",
+                "type": "exact",
+                "adj": "1040.00",
+                "cos": "0.00",
+                "boost": "0"
+              }
+            ]
+          }
+        },
+        {
+          "index": 28,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 29,
+          "chunk": "takusan",
+          "preprocessedChunk": "takusan",
+          "candidate": "takusan",
+          "candidateMeaning": "a lot",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 38787,
+              "entry": {
+                "id": 38787,
+                "pos": [
+                  "adj-no, adj-na, n, adv, n-suf"
+                ],
+                "tags": "ichi1, news2, nf43, uk",
+                "freq": 0.25416666666666665,
+                "romaji": "takusan",
+                "meaning": "a lot",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "takusan",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": {
+                "total": 140,
+                "freq": 100,
+                "priority": 40,
+                "clinical": 0,
+                "mesh": 0
+              },
+              "adjustedScore": 1140,
+              "breakdown": "[exact: 1000] [Points: +140 (f100+p40)]",
+              "meaning": "a lot"
+            },
+            "candidates": [
+              {
+                "id": 38787,
+                "entry": {
+                  "id": 38787,
+                  "pos": [
+                    "adj-no, adj-na, n, adv, n-suf"
+                  ],
+                  "tags": "ichi1, news2, nf43, uk",
+                  "freq": 0.25416666666666665,
+                  "romaji": "takusan",
+                  "meaning": "a lot",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "takusan",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": {
+                  "total": 140,
+                  "freq": 100,
+                  "priority": 40,
+                  "clinical": 0,
+                  "mesh": 0
+                },
+                "adjustedScore": 1140,
+                "breakdown": "[exact: 1000] [Points: +140 (f100+p40)]",
+                "meaning": "a lot",
+                "cosSim": 0.6493818091991285,
+                "semanticBoost": 148,
+                "finalScore": 1288
+              }
+            ],
+            "margin": 0,
+            "competition": [
+              {
+                "item": "takusan",
+                "type": "exact",
+                "adj": "1140.00",
+                "cos": "0.00",
+                "boost": "0"
+              }
+            ]
+          }
+        },
+        {
+          "index": 30,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 31,
+          "chunk": "おごいてますか",
+          "preprocessedChunk": "ogoitemasuka",
+          "candidate": "ogoitemasuka",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "passthrough:pruned",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        }
+      ],
+      "ragHits": [],
+      "toneHits": [
+        {
+          "score": 0.6661,
+          "romaji": "deshouka",
+          "kana": "でしょうか",
+          "kanji": "",
+          "meanings": [
+            "don't you think?",
+            "indicates question"
+          ]
+        }
+      ],
+      "glossaryInjected": "TONE HINT:\n- deshouka: don't you think?",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nTONE HINT:\n- deshouka: don't you think?\n\nInput: hoka   no   hito   ni   ugoitari   hanshi   no   ga   osokute   kitdukaremashitaka   ochitsukuganaku   mata   wa   sowasowa   takusan   ogoitemasuka\nOutput: /no_think",
+      "llmOutput": "(skipped — --no-llm flag)",
+      "durationMs": 136744,
+      "timings": {
+        "preprocess": 128104.780417,
+        "ensureANN": 2961.1002499999886,
+        "embedding": 5585.003457999992,
+        "ragSearch": 28.480999999999767,
+        "rerank": 26.044499999989057,
+        "promptAssembly": 0.03258300002198666,
+        "total": 136742.58504200002,
+        "buildPromptTotal": 136743.056292
+      },
+      "error": null,
+      "queryTokens": [
+        "hoka",
+        "hito",
+        "ugoku",
+        "hanshi",
+        "osoi",
+        "takusan"
+      ]
+    }
+  ]
+}

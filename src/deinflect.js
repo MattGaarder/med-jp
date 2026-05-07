@@ -167,6 +167,8 @@ const deinflectRuleData = [
   ['くありません', 'い', WordType.Initial, WordType.IAdj, [Reason.PoliteNegative], 1.0],
   ['ざるをえない', '', WordType.IAdj, WordType.IrrealisStem, [Reason.ZaruWoEnai], 1.0],
   ['ざるを得ない', '', WordType.IAdj, WordType.IrrealisStem, [Reason.ZaruWoEnai], 1.0],
+  ['てませんでした', '', WordType.Initial, WordType.TaTeStem, [Reason.PolitePastNegative, Reason.Continuous], 1.0],
+  ['でませんでした', '', WordType.Initial, WordType.DaDeStem, [Reason.PolitePastNegative, Reason.Continuous], 1.0],
   ['ませんでした', '', WordType.Initial, WordType.MasuStem, [Reason.PolitePastNegative], 1.0],
   ['てらっしゃい', '', WordType.Initial, WordType.TaTeStem, [Reason.Respectful, Reason.Continuous, Reason.Imperative], 1.0],
   ['てらっしゃい', 'てらっしゃる', WordType.MasuStem, WordType.GodanVerb, [Reason.MasuStem], 1.0],
@@ -203,6 +205,8 @@ const deinflectRuleData = [
   ['のたまう', 'のたまう', WordType.TaTeStem, WordType.GodanVerb, [], 1.0],
   ['のたもう', 'のたもう', WordType.TaTeStem, WordType.GodanVerb, [], 1.0],
   ['ましょう', '', WordType.Initial, WordType.MasuStem, [Reason.PoliteVolitional], 1.0],
+  ['てました', '', WordType.Initial, WordType.TaTeStem, [Reason.PolitePast, Reason.Continuous], 1.0],
+  ['でました', '', WordType.Initial, WordType.DaDeStem, [Reason.PolitePast, Reason.Continuous], 1.0],
   // -------------- 3 --------------
   ['いたす', '', WordType.GodanVerb, WordType.MasuStem, [Reason.Humble], 1.0],
   ['いたす', '', WordType.GodanVerb, WordType.NounVS, [Reason.SuruNoun, Reason.Humble], 1.0],
@@ -317,7 +321,10 @@ const deinflectRuleData = [
   ['ませんでした', '', WordType.Initial, WordType.MasuStem, [Reason.PolitePastNegative], 1.0],
   ['ましょうか', '', WordType.Initial, WordType.MasuStem, [Reason.PoliteVolitional], 1.0],
   ['ましたか', '', WordType.Initial, WordType.MasuStem, [Reason.PolitePast], 1.0],
-  ['ましょう', '', WordType.Initial, WordType.MasuStem, [Reason.PoliteVolitional], 1.0],
+  ['てますか', '', WordType.Initial, WordType.TaTeStem, [Reason.Polite, Reason.Continuous], 1.0],
+  ['でますか', '', WordType.Initial, WordType.DaDeStem, [Reason.Polite, Reason.Continuous], 1.0],
+  ['てます', '', WordType.Initial, WordType.TaTeStem, [Reason.Polite, Reason.Continuous], 1.0],
+  ['でます', '', WordType.Initial, WordType.DaDeStem, [Reason.Polite, Reason.Continuous], 1.0],
   ['ました', '', WordType.Initial, WordType.MasuStem, [Reason.PolitePast], 1.0],
   ['ません', '', WordType.Initial, WordType.MasuStem, [Reason.PoliteNegative], 1.0],
   ['ますか', '', WordType.Initial, WordType.MasuStem, [Reason.Polite], 1.0],
@@ -415,6 +422,102 @@ const deinflectRuleData = [
 ];
 
 const deinflectRuleGroups = [];
+
+/**
+ * Generate all valid chained verb/adjective suffixes by reverse-engineering
+ * the deinflection rules in the inflection direction.
+ *
+ * Deinflection: word ends in `from` (type fromType) → strip, add `to` (type toType)
+ * Inflection (reverse): word has type toType, ends in `to` → strip, add `from` (type fromType)
+ *
+ * Suffixes grow RIGHTWARD: stem + layer1 + layer2 + ...
+ * e.g. 食べ + られ + ません = taberaremasen
+ *
+ * BFS seeds from rules attaching to dictionary forms, then chains layers.
+ */
+export function getCanonicalSuffixes() {
+  const MAX_DEPTH = 3;
+  const MAX_SUFFIX_LEN = 8;
+
+  const rules = deinflectRuleData.map(([from, to, fromType, toType, reasons, weight]) => ({
+    from, to, fromType, toType, reasons, weight: weight ?? 1.0
+  }));
+
+  // Virtual rules for the hardcoded ichidan る-stripping in deinflect().
+  // In deinflect(), MasuStem/TaTeStem/IrrealisStem candidates get る appended
+  // to recover IchidanVerb/KuruVerb. In inflection direction, this means
+  // IchidanVerb/KuruVerb can strip る to produce these stem types.
+  rules.push(
+    { from: '', to: 'る', fromType: WordType.MasuStem, toType: WordType.IchidanVerb | WordType.KuruVerb, reasons: [], weight: 1.0 },
+    { from: '', to: 'る', fromType: WordType.TaTeStem, toType: WordType.IchidanVerb | WordType.KuruVerb, reasons: [], weight: 1.0 },
+    { from: '', to: 'る', fromType: WordType.IrrealisStem, toType: WordType.IchidanVerb | WordType.KuruVerb, reasons: [], weight: 1.0 },
+  );
+
+  const FINAL_TYPES = WordType.IchidanVerb | WordType.GodanVerb | WordType.IAdj
+    | WordType.KuruVerb | WordType.SuruVerb | WordType.SpecialSuruVerb | WordType.NounVS;
+
+  const suffixes = new Set();
+  const visited = new Set();  // (suffix + '|' + type) to prevent cycles
+  const queue = [];
+
+  // Seed: rules whose toType overlaps a FINAL dictionary type
+  for (const rule of rules) {
+    if (!(rule.toType & FINAL_TYPES)) continue;
+    if (rule.from === rule.to) continue;
+
+    const suffix = rule.from;
+    const key = suffix + '|' + rule.fromType;
+    if (visited.has(key)) continue;
+    visited.add(key);
+
+    if (suffix.length >= 2) {
+      suffixes.add(wanakana.toRomaji(suffix));
+    }
+
+    // Don't chain further from Initial — it's the terminal surface form
+    if (rule.fromType & WordType.Initial) continue;
+    queue.push({ suffix, type: rule.fromType, depth: 1 });
+  }
+
+  // BFS: chain additional inflection layers
+  let head = 0;
+  while (head < queue.length) {
+    const { suffix: prevSuffix, type: prevType, depth } = queue[head++];
+    if (depth >= MAX_DEPTH) continue;
+
+    for (const rule of rules) {
+      if (!(rule.toType & prevType)) continue;
+      if (rule.from === rule.to) continue;
+
+      // Inflection direction: find rule.to at the END of prevSuffix, replace with rule.from
+      let compoundSuffix;
+      if (rule.to.length === 0) {
+        // Rule appends — no existing ending consumed
+        compoundSuffix = prevSuffix + rule.from;
+      } else if (prevSuffix.endsWith(rule.to)) {
+        // Replace the tail
+        compoundSuffix = prevSuffix.slice(0, -rule.to.length) + rule.from;
+      } else {
+        continue;
+      }
+
+      if (compoundSuffix.length > MAX_SUFFIX_LEN) continue;
+
+      const key = compoundSuffix + '|' + rule.fromType;
+      if (visited.has(key)) continue;
+      visited.add(key);
+
+      if (compoundSuffix.length >= 2) {
+        suffixes.add(wanakana.toRomaji(compoundSuffix));
+      }
+
+      if (rule.fromType & WordType.Initial) continue;
+      queue.push({ suffix: compoundSuffix, type: rule.fromType, depth: depth + 1 });
+    }
+  }
+
+  return Array.from(suffixes);
+}
 
 function getDeinflectRuleGroups() {
   if (!deinflectRuleGroups.length) {

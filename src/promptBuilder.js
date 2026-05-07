@@ -1,11 +1,7 @@
 /**
  * promptBuilder.js
- * Constructs direction-specific prompts from raw prefixed input.
+ * Constructs direction-specific prompts from raw input.
  * Applies preprocessing and adds /no_think directive for Qwen3.
- *
- * Supported prefixes:
- *   ENG:  → Translate broken English to formal clinical Japanese
- *   JAP:  → Translate broken Japanese / romaji to professional English
  */
 
 import { performance } from 'node:perf_hooks';
@@ -14,14 +10,17 @@ import { fileURLToPath } from 'url';
 import { preprocessJapTrace, preprocessEng, rerankTrace } from './preprocessor.js';
 import { loadIndex, searchANN, getIndex } from './load-index.js';
 import Database from 'better-sqlite3';
+import { GRAM_POS, isMedicalDomain } from './config/linguistics.js';
 import 'dotenv/config';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const OLLAMA_URL = process.env.OLLAMA_BASE_URL;
+const EMBED_MODEL = process.env.EMBED_MODEL;
 // ─────────────────────────────────────────────
 // RAG: HNSW ANN Index + SQLite Lookup 
 // ─────────────────────────────────────────────
-
 const DB_PATH  = path.join(__dirname, '../data/vocab.db');
 
 let db         = null;   // better-sqlite3 connection
@@ -38,11 +37,6 @@ function logStep(label, data = null) {
     console.dir(data, { depth: 4, colors: true });
   }
 }
-function logTime(label, start) {
-  if (!DEBUG) return;
-  const duration = (performance.now() - start).toFixed(2);
-  console.log(`\x1b[90m[Timing] ${label}: ${duration}ms\x1b[0m`);
-}
 
 function isLogNoiseToken(t) {
   return (
@@ -52,7 +46,6 @@ function isLogNoiseToken(t) {
     (t.output && t.output.length <= 1)
   );
 }
-
 
 /**
  * One-time startup: load the HNSW binary index from disk.
@@ -77,9 +70,6 @@ async function ensureANN() {
   })();
   return annInitPromise;
 }
-
-const OLLAMA_URL = process.env.OLLAMA_BASE_URL;
-const EMBED_MODEL = process.env.EMBED_MODEL;
 
 // Embeddings (Semantic Understanding): text → Ollama → vector embedding
 async function getSentenceEmbedding(text) {
@@ -106,22 +96,15 @@ async function getSentenceEmbedding(text) {
  * @param {Set}      [anchorTokens] - forwarded to searchANN for anchor boost
  */
 
-function ragSearch(queryText, embedding, topK = 10, anchorTokens = new Set()) {
-  const annHits = searchANN(embedding, queryText, topK, anchorTokens);
-  logStep('ANN RAW HITS',
-    annHits.slice(0, 3).map(h => ({
-      id: h.id,
-      romaji: h.item?.romaji,
-      score: h.score,
-      semantic: h.semanticScore
-    }))
-  );
+function ragSearch(embedding, topK = 5, anchorTokens = new Set()) {
+  const annHits = searchANN(embedding, topK, anchorTokens);
+
   const stmt = db.prepare(
     'SELECT romaji, kanji, kana, domain, pos, tags, freq, primary_meaning, secondary_meanings ' +
     'FROM vocab WHERE id = ?'
   );
   // ─────────────────────────────────────────────
-  // 1. Hydrate results from SQLite
+  // Hydrate results from SQLite
   // ─────────────────────────────────────────────
   const hydrated = annHits.map(({ score, semanticScore, item }) => {
     const id = item?.id;
@@ -162,14 +145,14 @@ function ragSearch(queryText, embedding, topK = 10, anchorTokens = new Set()) {
     return true;
   });
 
-  logStep('ANN DEDUPED HITS',
-    deduped.slice(0, 5).map(h => ({
-      romaji: h.item?.romaji,
-      meaning: h.item?.meanings?.[0],
-      score: h.score,
-      semantic: h.semanticScore
-    }))
-  );
+  // logStep('ANN DEDUPED HITS',
+  //   deduped.slice(0, 5).map(h => ({
+  //     romaji: h.item?.romaji,
+  //     meaning: h.item?.meanings?.[0],
+  //     score: h.score,
+  //     semantic: h.semanticScore
+  //   }))
+  // );
   return deduped;
 }
 
@@ -195,31 +178,7 @@ function getContentOverlap(item, contentTokens) {
 }
 
 
-// ─────────────────────────────────────────────
-// Grammatical Particle Gloss (Commonly skipped tokens)
-// ─────────────────────────────────────────────
 
-const PARTICLE_GLOSS = {
-  'ha': 'marks the topic of the sentence',
-  'ga': 'marks the grammatical subject',
-  'no': 'indicates possessive or relationship (of)',
-  'ni': 'marks target, location, time, or indirect object',
-  'wo': 'marks the direct object of the verb',
-  'he': 'marks destination or direction (to)',
-  'mo': 'means also or too',
-  'to': 'means and / with, or marks a quotation',
-  'de': 'marks location of action, or means (by way of)',
-};
-
-// JMdict specialist domain tags — expanded to full English words in v3 schema.
-const MEDICAL_DOMAINS = new Set([
-  'medicine', 'anatomy', 'pharmacology', 'physiology', 'biochemistry', 
-  'dentistry', 'genetics', 'orthopaedics', 'psychiatric', 'psychiatry', 'surgery', 
-  'pathology', 'biology', 'embryology', 'psychology', 'psychoanalysis',
-  'veterinary', 'ent', 'ophthalmology', 'dermatology', 'gastroenterology', 'melaena', 'stool',
-  'med', 'anat', 'pharm', 'dent', 'surg', 'pathol', 'physiol',
-  'biochem', 'biol', 'embryo', 'psy',
-]);
 
 
 // ─────────────────────────────────────────────
@@ -329,7 +288,6 @@ export async function buildPrompt(rawInput) {
     .filter(t => !isLogNoiseToken(t))
     .map(t => {
       const top = t.meta?.candidates?.[0];
-
       return {
         input: t.input,
         output: t.output,
@@ -367,14 +325,6 @@ export async function buildPrompt(rawInput) {
   //          adj-i, adj-na, adj-pn, adj-no (all adjective types).
   // We strip: particles, conjunctions, copulas, auxiliaries, adverbs (discourse-level, not clinical),
   //           pronouns, interjections, suffixes, prefixes, classifiers.
-  const GRAM_POS = new Set([
-    'prt','conj','cop','cop-da','aux','aux-v','aux-adj',
-    'int','exp',
-    'adv','adv-to',           // adverbs: "a little", "continuously" — not medical glossary words
-    'pn',                     // pronouns: itsu (when?), kore (this)
-    'n-suf','n-pref',         // suffixes/prefixes used as grammatical morphemes
-    'ctr',                    // counter words
-  ]);
 
   /**
    * Filter a list of romaji content tokens to keep only those whose
@@ -386,15 +336,14 @@ export async function buildPrompt(rawInput) {
    */
   function filterContentTokensByPos(tokens) {
     if (!db) return tokens;
-    // pos column is a CSV string: 'n, vs, vt'. We check the first token.
     const stmt = db.prepare(
       'SELECT pos FROM vocab WHERE romaji = ? ORDER BY freq DESC LIMIT 1'
     );
     return tokens.filter(tok => {
       const row = stmt.get(tok);
       if (!row || !row.pos) return true; 
-      const primaryPos = row.pos.split(',')[0].trim();
-      return !GRAM_POS.has(primaryPos);
+      const allPos = row.pos.split(',').map(p => p.trim());
+      return allPos.some(p => !GRAM_POS.has(p));
     });
   }
 
@@ -418,11 +367,8 @@ export async function buildPrompt(rawInput) {
 
   let glossaryStr = '';
   let toneStr     = '';
-  let grammarStr  = '';
-  let verbStr     = '';
-  let ragHits     = [];     // medical hits — exposed for eval
-  let toneHits    = [];     // tone/sentiment hits — exposed for eval
-  let deepContextHits = []; // deep semantic hits for reranking
+  let ragHits     = [];     
+  let toneHits    = [];     
   let finalContentTokens = [];
   const tAnnStart = performance.now();
   const ready = await ensureANN();
@@ -435,14 +381,6 @@ export async function buildPrompt(rawInput) {
     // embedding model the actual dictionary entries being considered.
     let medQueryText = preprocessedInput;
     if (direction === 'JAP→ENG' && tokenTrace.length > 0) {
-      const BLACKLIST = new Set([
-        'sensei', 'shonichi', 'genki', 'aru', 'koto', 'demo', 'to', 'go', 'kyou', 'ima',
-        'yokunaru', 'naru', 'taberu', 'omoimasu', 'omou', 'omoidasu',
-        'nai', 'kara', 'desu', 'masu', 'da', 'suru',
-        'nado', 'toki', 'sou', 'shite', 'jaa', 'mama', 'nara',
-        'kore', 'sore', 'are', 'dore', 'kono', 'sono', 'ano', 'dono',
-        'nani', 'nan', 'ichi', 'ni', 'san', 'yon', 'go', 'roku', 'nana', 'hachi', 'kyuu', 'juu'
-      ]);
       
       const trackedTokens = [];
       const seenRomaji = new Set();
@@ -451,17 +389,6 @@ export async function buildPrompt(rawInput) {
         if (t.decision === 'particle' || t.decision?.startsWith('skipped') || t.output.length <= 1) continue;
         if (t.decision?.startsWith('passthrough') && !t.meta?.candidates?.length) continue;
 
-        // ── QUERY POLLUTION FIX ──────────────────────────────────────
-        // Only use the WINNER, not runner-ups.
-        // Including losing candidates (like "kokkai" when the winner is "kokain")
-        // dilutes the query embedding with noise, creating a feedback loop where
-        // wrong words reinforce themselves.
-        //
-        // Additionally, only include HIGH-CONFIDENCE winners:
-        //   - exact matches (base 1000+)
-        //   - deinflections (base 900+)
-        //   - fuzzy matches only if score > 900 (very close match)
-        // This prevents fuzzy hallucinations from polluting the query.
         const winner = t.meta?.candidates?.[0];
         if (!winner) continue;
 
@@ -475,14 +402,14 @@ export async function buildPrompt(rawInput) {
         if (!isHighConfidence) continue;
 
         const r = (winner.root || winner.item || '').toLowerCase();
-        if (r.length <= 1 || BLACKLIST.has(r)) continue;
+        if (r.length <= 1) continue;
         seenRomaji.add(r);
 
         // Check clinical relevance
         const row = db.prepare("SELECT domain, tags FROM vocab WHERE romaji = ? ORDER BY freq DESC LIMIT 1").get(r);
         let priority = 3;
         if (row) {
-          if (row.domain && MEDICAL_DOMAINS.has(row.domain)) priority = 1;
+          if (isMedicalDomain(row.domain)) priority = 1;
           else priority = 2;
         }
         trackedTokens.push({ romaji: r, priority, originalIndex: idx });
@@ -498,7 +425,7 @@ export async function buildPrompt(rawInput) {
           if (t.decision === 'particle' || t.decision?.startsWith('skip') || t.output.length <= 1) continue;
           
           const r = (t.output || '').toLowerCase();
-          if (r.length <= 1 || BLACKLIST.has(r)) continue;
+          if (r.length <= 1) continue;
           
           trackedTokens.push({ romaji: r, priority: 3, originalIndex: idx });
           if (trackedTokens.length >= 5) break; 
@@ -572,7 +499,7 @@ export async function buildPrompt(rawInput) {
             item: cand.item,
           });
         }
-        logStep(`EXPANSION: ${t.input}`, tokenExpansions);
+        // logStep(`EXPANSION: ${t.input}`, tokenExpansions);
       }
 
       logStep('EMBED QUERY EXPANSION', {
@@ -599,12 +526,11 @@ export async function buildPrompt(rawInput) {
     timings.embedding = tEmbedEnd - tEmbedStart;
 
     // ── 3. Medical glossary hits ───────────────────────────────────────────
-    
     if (medEmbed) {
       const anchorSet = new Set(finalContentTokens);
       const tSearchStart = performance.now();
       // Retrieve 20 neighbors — focused depth, less noise than previous 50
-      const rawMed = ragSearch(medEmbed, medQueryText, 10, anchorSet);
+      const rawMed = ragSearch(medEmbed, 10, anchorSet);
       const tSearchEnd = performance.now();
       timings.ragSearch = tSearchEnd - tSearchStart;
       console.log(`\n\x1b[90m[Perf] RAG total: ${(tSearchEnd - tEmbedStart).toFixed(2)}ms (Embed: ${(tEmbedEnd - tEmbedStart).toFixed(2)}ms, Search: ${(tSearchEnd - tSearchStart).toFixed(2)}ms)\x1b[0m`);
@@ -625,7 +551,7 @@ export async function buildPrompt(rawInput) {
                 ORDER BY freq DESC 
                 LIMIT 1
               `).get(c.item);
-              if (row && row.domain && MEDICAL_DOMAINS.has(row.domain)) {
+              if (row && isMedicalDomain(row.domain)) {
                 // ✅ KEY FIX: dedupe by ID (fallback safe)
                 const key = row.id ?? `${row.romaji}::${row.primary_meaning}`;
                 if (seenIds.has(key)) return;
@@ -653,12 +579,12 @@ export async function buildPrompt(rawInput) {
       
       // Combine direct hits (priority) with RAG hits
       const combined = [...directMedHits, ...rawMed];
-      logStep('COMBINED HITS (pre-filter)', combined.slice(0, 3).map(h => ({
-        romaji: h.item.romaji,
-        score: h.score,
-        semantic: h.semanticScore,
-        domain: h.item.domain
-      })));
+      // logStep('COMBINED HITS (pre-filter)', combined.slice(0, 3).map(h => ({
+      //   romaji: h.item.romaji,
+      //   score: h.score,
+      //   semantic: h.semanticScore,
+      //   domain: h.item.domain
+      // })));
 
       const seenAllIds = new Set();
 
@@ -674,15 +600,11 @@ export async function buildPrompt(rawInput) {
       const filteredMed = dedupCombined
         .filter(h => {
           const domainRaw = h.item.domain;
-          const domain = domainRaw ? domainRaw.toLowerCase().split(',')[0].trim() : null;
-
+          const isClinical = isMedicalDomain(domainRaw);
           const overlap = finalContentTokens.length > 0
             ? getContentOverlap(h.item, finalContentTokens)
             : 0;
-
           const primaryMeaning = (h.item.meanings?.[0] ?? '').toLowerCase();
-
-          const isClinical = domain && MEDICAL_DOMAINS.has(domain);
           const isDirect   = directMedHits.includes(h);
           const isCommon   = h.item.tags && h.item.tags.some(t => /nf0[1-3]/.test(t));
 
@@ -710,7 +632,7 @@ export async function buildPrompt(rawInput) {
             romaji: h.item.romaji,
             semantic: h.semanticScore,
             overlap,
-            domain,
+            domain: domainRaw,
             keep,
             reason
           });
@@ -719,25 +641,12 @@ export async function buildPrompt(rawInput) {
         .filter(({ item }) => {
           const primary = (item.meanings?.[0] ?? '').toLowerCase().trim();
           if (!primary) return true;
-          const stems = ['medicin', 'medicatt', 'pill', 'prescript', 'drug', 'pharmacy', 'hospital', 'treatment'];
-          const foundStem = stems.find(s => primary.includes(s));
-          if (foundStem) {
-            if (seenMeanings.has(foundStem)) return false;
-            seenMeanings.add(foundStem);
-          } else {
-            if (seenMeanings.has(primary)) return false;
-            seenMeanings.add(primary);
-          }
+          if (seenMeanings.has(primary)) return false;
+          seenMeanings.add(primary);
           return true;
         })
         .sort((a, b) => b.score - a.score);
  
-        logStep('FILTERED RESULTS (post-filter, pre-sort)', filteredMed.map(h => ({
-          romaji: h.item.romaji,
-          score: h.score,
-          semantic: h.semanticScore,
-          meanings: h.item.meanings?.[0]
-        })));
 
       const dedupMed = filteredMed.slice(0, 5);
       logStep('FILTER SUMMARY', {
@@ -753,7 +662,6 @@ export async function buildPrompt(rawInput) {
         preview: filterLog.slice(0, 3) // optional
       });
       ragHits = dedupMed;
-      deepContextHits = dedupMed;  // Use filtered hits for reranking, not noisy raw results
 
       if (dedupMed.length > 0) {
         const lines = dedupMed.map(({ item }) => {
@@ -765,18 +673,9 @@ export async function buildPrompt(rawInput) {
       }
     }
 
-    // ── 4. Grammar & Morphological Hints ──────────────────────────────────
-    // REMOVED: The LLM already understands Japanese grammar natively.
-    // Injecting grammar/tense annotations was actively misleading the model
-    // (e.g., たって as "no matter how" when it's 立って, こと as "should").
-    // Grammar tags remain in the token trace for evaluation reporting only.
-
-    // ── 5. Tone / pragmatic context ── single top-1 hit from full-sentence query
-    // Captures hedging, urgency, or uncertainty cues orthogonal to medical vocab.
-    // Labelled differently so the LLM knows it is context, not a term to translate.
     if (toneEmbed) {
       const medRomaji  = new Set(ragHits.map(h => h.item.romaji));
-      const rawTone    = ragSearch(toneEmbed, preprocessedInput, 9);
+      const rawTone    = ragSearch(toneEmbed, 9);
       
       const uniqueTone = rawTone
         .filter(h => !medRomaji.has(h.item.romaji))

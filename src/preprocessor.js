@@ -10,17 +10,14 @@ import Fuse from 'fuse.js';
 import Database from 'better-sqlite3';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { deinflect, WordType, interpretReasonChains } from './deinflect.js';
+import { deinflect, WordType, interpretReasonChains, getCanonicalSuffixes } from './deinflect.js';
 import { calculateScore, calculateSegmentScore } from './config/linguistics.js';
 import { loadGrammarAnchors, peelGrammarSuffix, collapseGrammarTokens } from './grammarPeel.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const DB_PATH = join(__dirname, '..', 'data', 'vocab.db');
-// 953 Lines
-// ─────────────────────────────────────────────────────────────────
-// Fuse.js configuration
-// ─────────────────────────────────────────────────────────────────
+const db = new Database(DB_PATH, { readonly: true });
 
 const FUSE_OPTIONS = {
   includeScore: true,
@@ -30,8 +27,32 @@ const FUSE_OPTIONS = {
   shouldSort: true,
 };
 
+const CANONICAL_SUFFIXES = getCanonicalSuffixes().map(s => ({
+  romaji: s,
+  reversed: s.split('').reverse().join('')
+}));
+
+const suffixFuse = new Fuse(CANONICAL_SUFFIXES, {
+  keys: ['reversed'],
+  includeMatches: true,
+  includeScore: true,
+  threshold: 0.25,
+  location: 0,
+  distance: 3,
+  minMatchCharLength: 2
+});
+
+
+
+const prefixStmt = db.prepare('SELECT 1 FROM vocab WHERE kana LIKE ? LIMIT 1');
+
+function hasDictionaryPrefix(hiraStem) {
+  if (hiraStem.length < 2) return false;
+  return !!prefixStmt.get(hiraStem + '%');
+}
+
 // ─────────────────────────────────────────────────────────────────
-// Linguistic Transformers
+// Transformers
 // ─────────────────────────────────────────────────────────────────
 
 function wkNormalize(text) {
@@ -52,17 +73,17 @@ function toRomajiSafe(hiragana) {
   }
 }
 
-function mapPosToVerbClass(posTag) {
-  if (!posTag) return 0;
-  const tags = posTag.split(',').map(t => t.trim());
+function mapPosToVerbClass(posInput) {
+  if (!posInput) return 0;
+  const tags = Array.isArray(posInput) 
+    ? posInput.flatMap(t => t.split(',')).map(t => t.trim())
+    : posInput.split(',').map(t => t.trim());
   let mask = 0;
-  const ALL_STEMS = WordType.Initial | WordType.TaTeStem | WordType.DaDeStem | WordType.MasuStem | WordType.IrrealisStem;
   for (const t of tags) {
-    if (t === 'v1') mask |= (WordType.IchidanVerb | ALL_STEMS);
-    if (t.startsWith('v5')) mask |= (WordType.GodanVerb | ALL_STEMS);
-    if (t === 'vk') mask |= (WordType.KuruVerb | ALL_STEMS);
-    if (t === 'vs') mask |= (WordType.SuruVerb | WordType.NounVS | ALL_STEMS);
-    if (t === 'vz') mask |= (WordType.SuruVerb | ALL_STEMS);
+    if (t === 'v1') mask |= WordType.IchidanVerb;
+    if (t.startsWith('v5')) mask |= WordType.GodanVerb;
+    if (t === 'vk') mask |= WordType.KuruVerb;
+    if (t === 'vs' || t === 'vz') mask |= (WordType.SuruVerb | WordType.NounVS);
     if (t === 'adj-i') mask |= WordType.IAdj;
   }
   return mask;
@@ -102,17 +123,6 @@ function handleSpecialCases(chunkSegment, hiraOrigin) {
       meta: { type: 'particle' }
     };
   }
-  if (chunkSegment.length < 2) {
-    return {
-      surface: hiraOrigin || chunkSegment,
-      output: chunkSegment,
-      base: chunkSegment,
-      meaning: '',
-      grammar_tags: [],
-      type: 'text',
-      decision: 'skipped (too short)'
-    };
-  }
   return null;
 }
 
@@ -147,7 +157,7 @@ function generateVariants(chunkSegment) {
     }
   }
   // ── 2. Consonant Doubling ─────────────────────────────
-  const CONSONANTS_TO_DOUBLE = 'kstpbcgdrfvmzn';
+  const CONSONANTS_TO_DOUBLE = 'kstpcn';
   for (let i = 0; i < chunkSegment.length - 1; i++) {
     const char = chunkSegment[i];
     const next = chunkSegment[i + 1];
@@ -266,6 +276,7 @@ function evaluateExact({
     if (score > 1000) hasHighConfidenceExact = true;
     candidates.push({
       id: entry.id,
+      entry, // Store full entry for semantic scoring in beam search
       item: variant,
       type: variantType,
       distance: 0.0,
@@ -303,6 +314,7 @@ function evaluateFuzzy({
 
       candidates.push({
         id: wordData.id,
+        entry: wordData,
         item,
         type: fuzzyType,
         distance: res.score,
@@ -351,9 +363,7 @@ function evaluateDeinflect({
       }
     }
     for (const { entry: wordData, type: mType, dist } of stemMatches) {
-      const isMatch = wordData.pos.some(tag =>
-        (mapPosToVerbClass(tag) & c.type) !== 0
-      );
+      const isMatch = (mapPosToVerbClass(wordData.pos) & c.type) !== 0;
       if (!isMatch) continue;
       const steps = (c.reasonChains?.[0]?.length) || 1;
       const totalDist = 0.02 + (steps * 0.02) + (dist * 0.5);
@@ -369,11 +379,12 @@ function evaluateDeinflect({
       }
       candidates.push({
         id: wordData.id,
+        entry: wordData,
         item: variant,
         root: wordData.romaji,
         type: mType,
         distance: totalDist,
-        freqScore: calculateScore(wordData),
+        freqScore: calculateScore(wordData).total,
         adjustedScore: score,
         breakdown,
         meaning: wordData.meaning,
@@ -387,6 +398,42 @@ function evaluateDeinflect({
   }
   return { candidates, hasHighConfidenceExact };
 }
+// ─────────────────────────────────────────────────────────────────
+// Fragment Validation
+// ─────────────────────────────────────────────────────────────────
+
+/**
+ * Determines if a candidate fragment is "garbage" or linguistically implausible.
+ * Beam search should fix bad wholes, not bad pieces.
+ */
+function isBadFragment(evalResult) {
+  if (!evalResult) return true;
+  
+  // 🔥 Particles are always valid, even if short
+  if (evalResult.decision === 'particle') return false;
+
+  const winner = evalResult.meta?.winner || evalResult;
+  const type = winner.type || '';
+  const score = winner.adjustedScore || 0;
+  const distance = winner.distance || 0;
+  const len = evalResult.input?.length || winner.item?.length || 0;
+
+  // 1. Only prune 1-character non-exact matches (extremely noisy)
+  // Japanese 2-char words (e.g. じゃ, ねこ) are very common.
+  if (len <= 1 && type !== 'exact') return true;
+
+  // 2. High-distance fuzzy matches on short tokens are unreliable
+  if (len <= 3 && distance > 0.2 && type.includes('fuzzy')) return true;
+
+  // 3. Low score relative to length
+  if (score < 700 && type !== 'exact') return true;
+  
+  // 4. Deinflected garbage
+  if (type.includes('deinflect') && distance > 0.6) return true;
+
+  return false;
+}
+
 // ─────────────────────────────────────────────────────────────────
 // Preprocessor Engine Factory
 // ─────────────────────────────────────────────────────────────────
@@ -466,7 +513,7 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
         const ceiling = bestExact.adjustedScore;
         let clamped = false;
         for (const c of candidates) {
-          if (c.type === 'fuzzy' && c.adjustedScore > ceiling) {
+          if (c.type !== 'exact' && c.adjustedScore > ceiling) {
             c.adjustedScore = ceiling - 1;
             clamped = true;
           }
@@ -510,7 +557,9 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
           competition: candidates.slice(0, 5).map(c => ({
             item: c.root ? `${c.item}(->${c.root})` : c.item,
             type: c.type,
-            adj: c.adjustedScore.toFixed(4)
+            adj: c.adjustedScore.toFixed(2),
+            cos: (c.cosSim || 0).toFixed(2),
+            boost: (c.semanticBoost || 0).toFixed(0)
           })),
           ...winner.meta
         }
@@ -532,9 +581,14 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
     const hiraChunk = wanakana.toHiragana(rawChunk, { passRomaji: false });
     if (hiraChunk.length === 0) return [];
 
-    // ── EARLY WHOLE-CHUNK CHECK ─────────────────────────
+    // ── 1. PRE-BEAM VERB GATE ──────────────────────────────────────────
+    const gateResult = detectStrongVerbMatch(rawChunk);
+    if (gateResult) return gateResult;
+
+    // ── 2. EARLY WHOLE-CHUNK CHECK (Beam Eligibility Gate) ─────────────
+    // If the whole chunk is already high-confidence, don't try to repair it.
     const fullEval = evaluateChunkSegmentCandidate(rawChunk, hiraChunk);
-    if (fullEval.meta?.winner && fullEval.meta.winner.adjustedScore > 1400) {
+    if (fullEval.meta?.winner && fullEval.meta.winner.adjustedScore > 1100) {
       return [fullEval]; // skip segmentation entirely
     }
 
@@ -554,6 +608,60 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
     const BEAM_WIDTH = 3;
     const globalEvalCache = new Map();
 
+    function detectStrongVerbMatch(rawChunk) {
+      const romaji = rawChunk.toLowerCase();
+      const reversed = romaji.split('').reverse().join('');
+      const results = suffixFuse.search(reversed);
+      
+      let matchedSuffix = "";
+      let correctedRomaji = romaji;
+      let suffixScore = 0;
+
+      if (results.length > 0 && results[0].score < 0.25) {
+        const match = results[0];
+        const canonicalRomaji = match.item.romaji;
+        suffixScore = match.score;
+        
+        let noisySuffixLen = 0;
+        if (match.matches && match.matches[0].indices) {
+          const lastIndex = match.matches[0].indices[match.matches[0].indices.length - 1][1];
+          noisySuffixLen = lastIndex + 1;
+        } else {
+          noisySuffixLen = canonicalRomaji.length;
+        }
+
+        const stem = romaji.slice(0, -noisySuffixLen);
+        const hiraStem = wanakana.toHiragana(stem);
+        if (stem.length >= 2 && hasDictionaryPrefix(hiraStem)) {
+          matchedSuffix = canonicalRomaji;
+          correctedRomaji = stem + canonicalRomaji;
+        }
+      }
+
+      // Final normalization to Hiragana before deinflection
+      const correctedHira = wanakana.toHiragana(correctedRomaji);
+      const evalResult = evaluateChunkSegmentCandidate(correctedRomaji, correctedHira);
+      
+      const winner = evalResult.meta?.winner;
+      if (!winner) return null;
+
+      const steps = (winner.meta?.reasons?.[0]?.length) || 0;
+      const ruleWeight = winner.meta?.ruleWeight || 1.0;
+      const baseWordLen = winner.root ? winner.root.length : winner.item.length;
+
+      const isStrong = 
+        ruleWeight > 0.7 && 
+        baseWordLen >= 3 && 
+        steps <= 4 && 
+        winner.adjustedScore > 1000;
+
+      if (isStrong) {
+        console.log(`[Verb Gate Triggered] "${rawChunk}" -> corrected: "${correctedRomaji}" (score: ${suffixScore.toFixed(2)}) -> base: "${winner.root || winner.item}" (score: ${winner.adjustedScore.toFixed(2)}, suffix: ${matchedSuffix || 'exact'})`);
+        return [evalResult];
+      }
+      return null;
+    }
+
     function evaluatePrefix(j, i) {
       const prefix = hiraChunk.slice(j, i);
       // Precise raw romaji extraction
@@ -566,86 +674,85 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       const results = [];
       const l = prefix.length;
 
-      const BASE_SEGMENT_COST = 150; // Increased from 45 to heavily penalize over-fragmentatio
+      const BASE_SEGMENT_COST = 150; 
 
       // Smooth penalty instead of hard cutoff
       const SHORT_PENALTY = 120 / (l + 1);
 
       // 1. Text / deinflect candidate
+
+
+      // 1. Text / deinflect candidate
       const textEval = evaluateChunkSegmentCandidate(romaji, prefix);
+      let addedMatch = false;
 
-      if (textEval.decision !== 'passthrough' && textEval.decision !== 'passthrough:low_confidence' && textEval.decision !== 'skipped (too short)') {
-        // Path Cost = MaxPossiblePoints (2000) - ActualPoints
-        // This allows the Beam Search (Dijkstra) to work with a minimization goal.
-      const winner = textEval.meta?.winner;
-      if (winner) {
-        const rawScore = winner.adjustedScore || 0;
-        const len = Math.max(prefix.length, 1);
-
-        let effectiveScore = rawScore;
-        // ── LENGTH BOOST ─────────────────────────
-        const lengthBoost = rawScore > 1100
-          ? Math.pow(len, 0.6)
-          : 1;
-        effectiveScore *= lengthBoost;
-
-        // Only apply length boost if it's a strong match
-        if (rawScore > 1100) {
-          effectiveScore *= Math.pow(len, 0.6);
-        }
-        // ── STABILITY ────────────────────────────
-        const margin = textEval.meta.margin || 0;
-        const stability = Math.tanh(margin / 10);
-        const stabilityMultiplier = (0.75 + 0.5 * stability);
-        effectiveScore *= stabilityMultiplier;
-        // ── FREQUENCY BOOST ──────────────────────
-        let freqBoost = 0;
-        if (winner.freqScore >= 80) {
-          freqBoost = 100;
-          effectiveScore += freqBoost;
-        }
-        // ── COST CONVERSION ──────────────────────
-        let baseCost = 3000 - effectiveScore;
-        // ── ANTI-FRAGMENTATION ───────────────────
-        const antiFragmentBonus = len * 15;
-        baseCost -= antiFragmentBonus;
-        // ── PARTICLE BONUS ───────────────────────
-        let particleBonus = 0;
-        if (textEval.decision === 'particle') {
-          particleBonus = 50;
-          baseCost -= particleBonus;
-        }
-        const finalCost = baseCost + SHORT_PENALTY + BASE_SEGMENT_COST;
-        // ── 🔍 DEBUG TRACE ───────────────────────
-        console.log(`\n[CostTrace: "${prefix}" → ${winner.item}]`);
-        console.log({
-          rawScore,
-          len,
-          lengthBoost: lengthBoost.toFixed(3),
-          afterLength: (rawScore * lengthBoost).toFixed(2),
-          margin: margin.toFixed(3),
-          stability: stability.toFixed(3),
-          stabilityMultiplier: stabilityMultiplier.toFixed(3),
-          afterStability: effectiveScore.toFixed(2),
-          freqBoost,
-          effectiveScore: effectiveScore.toFixed(2),
-          baseCost: (3000 - effectiveScore).toFixed(2),
-          antiFragmentBonus,
-          particleBonus,
-          SHORT_PENALTY: SHORT_PENALTY.toFixed(2),
-          BASE_SEGMENT_COST,
-          FINAL_COST: finalCost.toFixed(2)
-        });
+      if (textEval.decision === 'particle') {
         results.push({
           eval: textEval,
-          cost: finalCost
+          cost: 100 + SHORT_PENALTY 
         });
+        addedMatch = true;
+      } else if (textEval.meta?.winner && !isBadFragment(textEval)) {
+        const winner = textEval.meta.winner;
+        const rawScore = winner.adjustedScore || 0;
+        const len = Math.max(prefix.length, 1);
+        const semanticScore = calculateScore(winner.entry || winner);
+
+        let effectiveScore = rawScore + semanticScore;
+
+        if (rawScore > 1100) {
+          effectiveScore *= Math.pow(len, 0.7);
+        }
+        if (winner.type === 'exact') {
+          effectiveScore += 400 + (len * 50);
+        }
+        if (winner.type !== 'exact') {
+          effectiveScore -= (200 + (300 / len));
+        }
+
+        const margin = textEval.meta.margin || 0;
+        const stability = (textEval.meta.candidates?.length > 1)
+          ? Math.tanh(margin / 10)
+          : 1.0;
+        
+        effectiveScore *= (0.75 + 0.5 * stability);
+
+        if (effectiveScore >= 800 || winner.type === 'exact') {
+          const finalCost = (4500 - effectiveScore) + SHORT_PENALTY + BASE_SEGMENT_COST;
+          
+          textEval.meta = {
+            ...textEval.meta,
+            costTrace: { effectiveScore: effectiveScore.toFixed(2) },
+            rootChunk: rawChunk
+          };
+
+          results.push({
+            eval: textEval,
+            cost: finalCost
+          });
+          addedMatch = true;
+        }
       }
-    } else {
-        // Low confidence passthrough - Make this extremely expensive to force dictionary matches
-        // Scaling cost high ensures that even a deinflected match with a typo is cheaper than two passthrough chunks.
-        let cost = 8000 - (l * 50);
-        results.push({ eval: textEval, cost: cost + SHORT_PENALTY });
+
+      // FALLBACK: Always allow a passthrough if no high-quality match exists
+      if (!addedMatch) {
+        let passthroughEval = textEval;
+        if (textEval.meta?.winner) {
+          // If we had a winner but it was "bad", downgrade to passthrough
+          passthroughEval = {
+            surface: prefix,
+            output: romaji,
+            base: romaji,
+            meaning: '',
+            grammar_tags: [],
+            type: 'text',
+            decision: 'passthrough:pruned'
+          };
+        }
+        results.push({
+          eval: passthroughEval,
+          cost: 8000 - (l * 50) + SHORT_PENALTY
+        });
       }
 
       // 2. Grammar suffix peel candidates
@@ -718,10 +825,10 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       candidatesForI.sort((a, b) => a.cost - b.cost);
 
       // BEAM PRUNING:
-      // 1. Hard limit on beam width (Reduced from 20 to 5 for latency)
+      // 1. Hard limit on beam width
       // 2. Cost threshold: drop anything significantly worse than the best candidate
       const bestCost = candidatesForI[0]?.cost || Infinity;
-      topPaths[i] = candidatesForI.slice(0, 5).filter(c => c.cost < (bestCost + 300));
+      topPaths[i] = candidatesForI.slice(0, BEAM_WIDTH).filter(c => c.cost < (bestCost + 500));
     }
 
     if (topPaths[hiraChunk.length].length === 0) return [];
@@ -767,6 +874,16 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
 
       if (neighborContext.size === 0) return tok;
 
+      const contextTrace = {
+        contextWords: Array.from(neighborContext),
+        candidates: tok.meta.candidates.slice(0, 5).map(c => ({
+          item: c.item,
+          score: (c.adjustedScore || 0).toFixed(1),
+          meaning: c.meaning || 'N/A'
+        })),
+        isFlipped: false
+      };
+
       // Re-score candidates with context overlap
       const rescored = tok.meta.candidates.map(c => {
         let contextBoost = 0;
@@ -782,17 +899,24 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       const newWinner = rescored[0];
       const oldWinner = tok.meta.candidates[0];
 
+      if (newWinner.item !== oldWinner.item && newWinner.contextBoost > 0) {
+        contextTrace.isFlipped = true;
+        contextTrace.flipFrom = oldWinner.item;
+        contextTrace.flipTo = newWinner.item;
+        contextTrace.boost = newWinner.contextBoost;
+      }
+
       if (includeTrace) {
         console.log(`\n\x1b[35m[Context Pass]\x1b[0m Evaluating token: \x1b[1m${tok.surface || tok.output}\x1b[0m`);
-        console.log(`  Context words drawn from ±3 neighbors: [${Array.from(neighborContext).slice(0, 10).join(', ')}]`);
+        console.log(`  Context words drawn from ±3 neighbors: [${contextTrace.contextWords.slice(0, 10).join(', ')}]`);
         console.log(`  Candidates considered:`);
-        tok.meta.candidates.slice(0, 3).forEach(c => {
-          console.log(`    - ${c.item} (score: ${(c.adjustedScore || 0).toFixed(1)}) -> meaning: ${c.meaning || 'N/A'}`);
+        contextTrace.candidates.slice(0, 3).forEach(c => {
+          console.log(`    - ${c.item} (score: ${c.score}) -> meaning: ${c.meaning}`);
         });
 
-        if (newWinner.item !== oldWinner.item && newWinner.contextBoost > 0) {
+        if (contextTrace.isFlipped) {
           console.log(`  \x1b[32m⭐ FLIP TRIGGERED!\x1b[0m`);
-          console.log(`  ${newWinner.item} beat ${oldWinner.item} by gaining +${newWinner.contextBoost} context points because its meaning overlapped with neighbors!`);
+          console.log(`  ${contextTrace.flipTo} beat ${contextTrace.flipFrom} by gaining +${contextTrace.boost} context points because its meaning overlapped with neighbors!`);
         }
       }
 
@@ -814,12 +938,13 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
             winner: newWinner,
             contextBoost: newWinner.contextBoost,
             contextResurrected: true,
-            previousWinner: oldWinner.item
+            previousWinner: oldWinner.item,
+            contextTrace
           }
         };
       }
 
-      return tok;
+      return { ...tok, meta: { ...tok.meta, contextTrace } };
     });
 
     if (includeTrace && winningPath.length > 1) {
@@ -1057,6 +1182,13 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
             semanticBoost: winner.semanticBoost,
             isResurrected: isResurrected,
             previousWinner: isResurrected ? initialWinner.item : null,
+            competition: candidates.slice(0, 5).map(c => ({
+              item: c.root ? `${c.item}(->${c.root})` : c.item,
+              type: c.type,
+              adj: c.finalScore.toFixed(2),
+              cos: (c.cosSim || 0).toFixed(2),
+              boost: (c.semanticBoost || 0).toFixed(0)
+            })),
             flipEvent
           }
         };
@@ -1073,7 +1205,7 @@ export function preprocessEng(text) {
 }
 
 console.log('[preprocessor] Initializing from vocab.db with deinflector and grammar indices...');
-const db = new Database(DB_PATH, { readonly: true });
+// const db = new Database(DB_PATH, { readonly: true });
 
 const allEntries = db.prepare('SELECT id, romaji, pos, tags, freq, primary_meaning, domain, mesh_annotations, mesh_domains, common_words FROM vocab').all();
 const exactMatchIndex = new Map();

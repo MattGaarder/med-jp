@@ -4,11 +4,9 @@ import * as wanakana from 'wanakana';
 
 const input = 'ogoitemasuka';
 const hira = wanakana.toHiragana(input);
-console.log('Input:', input, 'Hiragana:', hira);
-
 const results = deinflect(hira);
 
-console.log('Deinflection results:');
+console.log(`Deinflect results for ${input}:`);
 results.forEach(r => {
-    console.log(`- Word: ${r.word} (${wanakana.toRomaji(r.word)}), Type: ${r.type}, Reasons: ${JSON.stringify(r.reasonChains)}`);
+    console.log(`- Word: ${r.word}, Type: ${r.type}, Reasons: ${JSON.stringify(r.reasonChains)}`);
 });

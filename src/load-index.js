@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import hnswlib from 'hnswlib-node';
 const { HierarchicalNSW } = hnswlib;
+import { calculateScore } from './config/linguistics.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,8 +11,7 @@ const __dirname = path.dirname(__filename);
 const HNSW_INDEX_PATH = path.join(__dirname, '../data/hnsw.index');
 const METADATA_PATH   = path.join(__dirname, '../data/metadata.json');
 
-// Reusable state singleton for the runtime server
-let index = null;
+let hnswIndex = null;
 let metadataMap = null;
 let indexConfig = null;
 
@@ -20,11 +20,11 @@ let indexConfig = null;
  * Must be called once on boot before searching.
  */
 export function getIndex() {
-  return index;
+  return hnswIndex;
 }
 
 export function loadIndex() {
-  if (index !== null) return;
+  if (hnswIndex !== null) return;
   
   console.log('Loading HNSW metadata...');
   
@@ -38,48 +38,26 @@ export function loadIndex() {
   metadataMap = parsed.entries;
 
   console.log(`Loading HNSW native binary (${indexConfig.dimensions} dims)...`);
-  index = new HierarchicalNSW(indexConfig.space, indexConfig.dimensions);
+  hnswIndex = new HierarchicalNSW(indexConfig.space, indexConfig.dimensions);
   
   // Read index block entirely from disk
-  index.readIndexSync(HNSW_INDEX_PATH);
+  hnswIndex.readIndexSync(HNSW_INDEX_PATH);
   
   console.log(`Successfully mapped ${indexConfig.totalIndexed} entries into active RAG memory via ANN.`);
 }
 
 /**
- * Performs blazing fast approximate nearest neighbor semantic search.
- * Mimics original hybrid search signature.
+ * Performs blazing fast approximate nearest neighbor search with hybrid reranking.
  * 
- * @param {string} queryText - Optional text query for hybrid matching
- * @param {number[]} queryEmbedding - The embedding array for spatial matching
- * @param {number} topK - Return limits
- * @returns {Array} - The top K results matching { item, score } contract.
+ * @param {number[]} queryEmbedding - The embedding vector for spatial matching.
+ * @param {number}   topK           - Number of results to return.
+ * @param {Set}      [anchorTokens] - Romaji tokens from the query used for anchor boosting.
+ * @returns {Array<{id, item, score, semanticScore}>} - The ranked and scored results.
  */
-// JMdict specialist domain tags — expanded to full English words in v3 schema.
-const MEDICAL_DOMAINS = new Set([
-  'medicine', 'anatomy', 'pharmacology', 'physiology', 'biochemistry', 
-  'dentistry', 'genetics', 'orthopaedics', 'psychiatry', 'surgery', 
-  'pathology', 'biology', 'embryology', 'psychiatry', 'psychology',
-  'med', 'anat', 'pharm', 'dent', 'surg', 'pathol', 'physiol',
-  'biochem', 'biol', 'embryo', 'psy',
-]);
+export function searchANN(queryEmbedding, topK = 3, anchorTokens = new Set()) {
+  if (!hnswIndex) throw new Error('Index not loaded. Call loadIndex() first.');
 
-
-/**
- * Performs approximate nearest-neighbour search with frequency + domain reranking.
- *
- * @param {string}   queryText      - for logging only
- * @param {number[]} queryEmbedding - embedding vector
- * @param {number}   topK           - number of results to return
- * @param {Set}      [anchorTokens] - romaji tokens from the query; hits whose
- *                                    romaji matches an anchor token get a bonus
- * @returns {Array<{item, score}>}
- */
-export function searchANN(queryText, queryEmbedding, topK = 3, anchorTokens = new Set()) {
-  if (!index) throw new Error('Index not loaded. Call loadIndex() first.');
-
-  const fetchSize = Math.min(topK * 4, indexConfig.totalIndexed);
-  const hnswResults = index.searchKnn(queryEmbedding, fetchSize);
+  const hnswResults = hnswIndex.searchKnn(queryEmbedding, topK);
 
   const results = [];
   for (let i = 0; i < hnswResults.neighbors.length; i++) {
@@ -88,24 +66,19 @@ export function searchANN(queryText, queryEmbedding, topK = 3, anchorTokens = ne
     const item     = metadataMap[id];
 
     const semanticScore = 1 - (distance / 2);            // [0, 1]
-    const freqScore     = item.frequency ?? 0.1;          // [0.1, 1.0]
+    
+    // 1. Unified Linguistic Confidence (Dictionary Priority + Frequency + Domain)
+    const linguisticPoints = calculateScore(item);
+    const dictConfidence = linguisticPoints.total / 1000; // Normalized boost [0, 0.4+]
 
-    // Anchor boost: if the hit's romaji is one of the tokens the user actually
-    // said, push it to the top. This ensures memai (dizziness) is always
-    // retrieved when the user typed memai, regardless of other cosine competition.
+    // 2. Anchor boost (Runtime match to user input)
     const anchorBoost  = anchorTokens.has(item.romaji) ? 0.20 : 0;
 
-    // Field boost: JMdict specialist clinical terminology gets a smaller bonus.
-    const isMedDomain  = (Array.isArray(item.tags) && item.tags.some(t => MEDICAL_DOMAINS.has(t))) ||
-                         (item.domain && MEDICAL_DOMAINS.has(item.domain));
-    const domainBoost  = isMedDomain ? 0.10 : 0;
-
-
-    // Scores can exceed 1.0 intentionally — we only use them for ranking.
-    const finalScore = (0.8 * semanticScore) + (0.2 * freqScore) + anchorBoost + domainBoost;
-    results.push({ id, item, score: finalScore, semanticScore }); // expose raw for threshold filtering
+    // 3. Final Aggregation
+    // Semantic similarity is primary (70%), Dictionary confidence is the tie-breaker (30%).
+    const finalScore = (0.7 * semanticScore) + (0.3 * dictConfidence) + anchorBoost;
+    results.push({ id, item, score: finalScore, semanticScore }); 
   }
-
   results.sort((a, b) => b.score - a.score);
   return results.slice(0, topK);
 }
