@@ -34,6 +34,8 @@ const RED    = '\x1b[31m'; // Red text
 const DIM    = '\x1b[2m';  // Dim/faded text
 
 
+import { clearLogs, enableGlobalIntercept } from './logger.js';
+
 // ─────────────────────────────────────────────
 // Print startup banner
 // ─────────────────────────────────────────────
@@ -54,6 +56,9 @@ ${CYAN}╔═══════════════════════�
 // MAIN FUNCTION - Program start
 // ─────────────────────────────────────────────
 async function main() {
+  // Clear any existing logs and capture all pipeline output to pipeline.log
+  clearLogs();
+  enableGlobalIntercept();
 
   // Show banner when program starts
   banner();

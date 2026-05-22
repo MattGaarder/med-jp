@@ -1,0 +1,5110 @@
+{
+  "meta": {
+    "timestamp": "2026-05-20T15:13:29.274Z",
+    "skipLLM": true,
+    "totalMs": 14170
+  },
+  "results": [
+    {
+      "id": "case-02-nausea",
+      "label": "Improved condition vs persistent nausea/dizziness",
+      "rawInput": "JAP: sensei. konichi taicho yokunatta genki aru to demo omoimasu memai ga kibun warukute taberarenakatta",
+      "direction": "JAP→ENG",
+      "preprocessedOutput": "sensei .   kounichi   taichou   yokunatta   genki   aru   tou   demo   omoimasu   memai   ga   kibun   warukute   taberarenakatta",
+      "tokens": [
+        {
+          "index": 1,
+          "chunk": "sensei",
+          "preprocessedChunk": "sensei",
+          "candidate": "sensei",
+          "candidateMeaning": "teacher",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 36111,
+              "entry": {
+                "id": 36111,
+                "pos": [
+                  "n, n-suf"
+                ],
+                "tags": "ichi1, news1, nf02, hon, fam, joc, arch",
+                "freq": 1,
+                "romaji": "sensei",
+                "meaning": "teacher",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "sensei",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 170,
+              "adjustedScore": 1170,
+              "breakdown": "[exact: 1000] [Lex: +170 (1.00d)]",
+              "meaning": "teacher",
+              "scoreObj": {
+                "total": 1170,
+                "lexical": 170,
+                "confidence": 1170,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 100,
+                  "priority": 70,
+                  "semantic": 0,
+                  "tier": 1000,
+                  "decay": 1,
+                  "typoPenalty": 0,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[exact: 1000] [Lex: +170 (1.00d)]"
+              },
+              "cosSim": 0.5530297454260136,
+              "semanticBoost": 0,
+              "finalScore": 1170
+            },
+            "candidates": [
+              {
+                "id": 36111,
+                "entry": {
+                  "id": 36111,
+                  "pos": [
+                    "n, n-suf"
+                  ],
+                  "tags": "ichi1, news1, nf02, hon, fam, joc, arch",
+                  "freq": 1,
+                  "romaji": "sensei",
+                  "meaning": "teacher",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "sensei",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 170,
+                "adjustedScore": 1170,
+                "breakdown": "[exact: 1000] [Lex: +170 (1.00d)]",
+                "meaning": "teacher",
+                "scoreObj": {
+                  "total": 1170,
+                  "lexical": 170,
+                  "confidence": 1170,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 100,
+                    "priority": 70,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +170 (1.00d)]"
+                },
+                "cosSim": 0.5530297454260136,
+                "semanticBoost": 0,
+                "finalScore": 1170
+              },
+              {
+                "id": 36110,
+                "entry": {
+                  "id": 36110,
+                  "pos": [
+                    "n, vs, vt, adj-no"
+                  ],
+                  "tags": "news1, nf06",
+                  "freq": 0.975,
+                  "romaji": "sensei",
+                  "meaning": "head start",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sensei",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 118,
+                "adjustedScore": 1118,
+                "breakdown": "[exact: 1000] [Lex: +118 (1.00d)]",
+                "meaning": "head start",
+                "scoreObj": {
+                  "total": 1118,
+                  "lexical": 118,
+                  "confidence": 1118,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 88,
+                    "priority": 30,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +118 (1.00d)]"
+                },
+                "cosSim": 0.57811993794226,
+                "semanticBoost": 0,
+                "finalScore": 1118
+              },
+              {
+                "id": 36272,
+                "entry": {
+                  "id": 36272,
+                  "pos": [
+                    "n, vs, vt"
+                  ],
+                  "tags": "news1, nf16",
+                  "freq": 0.7666666666666667,
+                  "romaji": "sensei",
+                  "meaning": "oath",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sensei",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 98,
+                "adjustedScore": 1098,
+                "breakdown": "[exact: 1000] [Lex: +98 (1.00d)]",
+                "meaning": "oath",
+                "scoreObj": {
+                  "total": 1098,
+                  "lexical": 98,
+                  "confidence": 1098,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 68,
+                    "priority": 30,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +98 (1.00d)]"
+                },
+                "cosSim": 0.5833233809530946,
+                "semanticBoost": 0,
+                "finalScore": 1098
+              },
+              {
+                "id": 36282,
+                "entry": {
+                  "id": 36282,
+                  "pos": [
+                    "n, vs, adj-no"
+                  ],
+                  "tags": "news2, nf25, spec2",
+                  "freq": 0.5791666666666667,
+                  "romaji": "sensei",
+                  "meaning": "despotism",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sensei",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 50,
+                "adjustedScore": 1050,
+                "breakdown": "[exact: 1000] [Lex: +50 (1.00d)]",
+                "meaning": "despotism",
+                "scoreObj": {
+                  "total": 1050,
+                  "lexical": 50,
+                  "confidence": 1050,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 50,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +50 (1.00d)]"
+                },
+                "cosSim": 0.564227458443209,
+                "semanticBoost": 0,
+                "finalScore": 1050
+              },
+              {
+                "id": 36112,
+                "entry": {
+                  "id": 36112,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "sensei",
+                  "meaning": "ancient sage esp. Confucius",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sensei",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "ancient sage esp. Confucius",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.5860515487649929,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 113718,
+                "entry": {
+                  "id": 113718,
+                  "pos": [
+                    "n, adj-no"
+                  ],
+                  "tags": "rare",
+                  "freq": 0.1,
+                  "romaji": "sensei",
+                  "meaning": "recessiveness",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sensei",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "recessiveness",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.5947060363020575,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 173503,
+                "entry": {
+                  "id": 173503,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "sensei",
+                  "meaning": "autocracy",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sensei",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "autocracy",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.538008376091692,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 185888,
+                "entry": {
+                  "id": 185888,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "sensei",
+                  "meaning": "cicada singing",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sensei",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "cicada singing",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.419145082341981,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 199133,
+                "entry": {
+                  "id": 199133,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "abbr",
+                  "freq": 0.1,
+                  "romaji": "sensei",
+                  "meaning": "astrology",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "sensei",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "astrology",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.5939389761128379,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              }
+            ],
+            "margin": 10.4,
+            "competition": [
+              {
+                "item": "sensei",
+                "type": "exact",
+                "adj": "1170.00",
+                "cos": "0.55",
+                "boost": "0"
+              },
+              {
+                "item": "sensei",
+                "type": "exact",
+                "adj": "1118.00",
+                "cos": "0.58",
+                "boost": "0"
+              },
+              {
+                "item": "sensei",
+                "type": "exact",
+                "adj": "1098.00",
+                "cos": "0.58",
+                "boost": "0"
+              },
+              {
+                "item": "sensei",
+                "type": "exact",
+                "adj": "1050.00",
+                "cos": "0.56",
+                "boost": "0"
+              },
+              {
+                "item": "sensei",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.59",
+                "boost": "0"
+              }
+            ],
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 2,
+          "chunk": ".",
+          "preprocessedChunk": ".",
+          "candidate": ".",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 3,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 4,
+          "chunk": "konichi",
+          "preprocessedChunk": "kounichi",
+          "candidate": "kounichi",
+          "candidateMeaning": "resistance against Japanese aggression",
+          "rootChunk": "konichi",
+          "type": "text",
+          "decision": "exact:repair",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": {
+            "effectiveScore": "1979.50",
+            "frequency": 62,
+            "priority": 30,
+            "semantic": 0,
+            "tier": 950,
+            "decay": 1,
+            "typoPenalty": 0,
+            "lengthPenalty": 400,
+            "exactBonus": 800,
+            "wholeWordBonus": 475.48875021634683,
+            "stabilityBonus": 62.01409923240418,
+            "fragmentPenalty": 0
+          },
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 25626,
+              "entry": {
+                "id": 25626,
+                "pos": [
+                  "n"
+                ],
+                "tags": "news1, nf19",
+                "freq": 0.7041666666666667,
+                "romaji": "kounichi",
+                "meaning": "resistance against Japanese aggression",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": null
+              },
+              "item": "kounichi",
+              "type": "exact:repair",
+              "distance": 0,
+              "freqScore": 92,
+              "adjustedScore": 962,
+              "breakdown": "[exact:repair: 950] [Lex: +92 (1.00d)] [Len: -80]",
+              "meaning": "resistance against Japanese aggression",
+              "scoreObj": {
+                "total": 962,
+                "lexical": 92,
+                "confidence": 962,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 62,
+                  "priority": 30,
+                  "semantic": 0,
+                  "tier": 950,
+                  "decay": 1,
+                  "typoPenalty": 0,
+                  "lengthPenalty": 80,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[exact:repair: 950] [Lex: +92 (1.00d)] [Len: -80]"
+              },
+              "cosSim": 0.5826693280003028,
+              "semanticBoost": 0,
+              "finalScore": 962
+            },
+            "candidates": [
+              {
+                "id": 25626,
+                "entry": {
+                  "id": 25626,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "news1, nf19",
+                  "freq": 0.7041666666666667,
+                  "romaji": "kounichi",
+                  "meaning": "resistance against Japanese aggression",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "kounichi",
+                "type": "exact:repair",
+                "distance": 0,
+                "freqScore": 92,
+                "adjustedScore": 962,
+                "breakdown": "[exact:repair: 950] [Lex: +92 (1.00d)] [Len: -80]",
+                "meaning": "resistance against Japanese aggression",
+                "scoreObj": {
+                  "total": 962,
+                  "lexical": 92,
+                  "confidence": 962,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 62,
+                    "priority": 30,
+                    "semantic": 0,
+                    "tier": 950,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 80,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact:repair: 950] [Lex: +92 (1.00d)] [Len: -80]"
+                },
+                "cosSim": 0.5826693280003028,
+                "semanticBoost": 0,
+                "finalScore": 962
+              },
+              {
+                "id": 48619,
+                "entry": {
+                  "id": 48619,
+                  "pos": [
+                    "n, vs, vi"
+                  ],
+                  "tags": "news1, nf03",
+                  "freq": 1,
+                  "romaji": "hounichi",
+                  "meaning": "visit to Japan",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "hounichi",
+                "type": "aggressive:fuzzy",
+                "distance": 0.125,
+                "freqScore": 124,
+                "adjustedScore": 887.03125,
+                "breakdown": "[aggressive:fuzzy: 800] [Lex: +107 (0.86d)] [Typo: -20]",
+                "meaning": "visit to Japan",
+                "scoreObj": {
+                  "total": 887.03125,
+                  "lexical": 124,
+                  "confidence": 887.03125,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 94,
+                    "priority": 30,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.859375,
+                    "typoPenalty": 19.53125,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Lex: +107 (0.86d)] [Typo: -20]"
+                },
+                "cosSim": 0.6118474802376309,
+                "semanticBoost": 23,
+                "finalScore": 910.03125
+              },
+              {
+                "id": 82798,
+                "entry": {
+                  "id": 82798,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "spec1",
+                  "freq": 0.2,
+                  "romaji": "donichi",
+                  "meaning": "weekend",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "donichi",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 50,
+                "adjustedScore": 815.3061224489796,
+                "breakdown": "[aggressive:fuzzy: 800] [Lex: +41 (0.82d)] [Typo: -26]",
+                "meaning": "weekend",
+                "scoreObj": {
+                  "total": 815.3061224489796,
+                  "lexical": 50,
+                  "confidence": 815.3061224489796,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 50,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.8163265306122449,
+                    "typoPenalty": 25.51020408163265,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Lex: +41 (0.82d)] [Typo: -26]"
+                },
+                "cosSim": 0.48707957509666,
+                "semanticBoost": 0,
+                "finalScore": 815.3061224489796
+              },
+              {
+                "id": 61878,
+                "entry": {
+                  "id": 61878,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "news2, nf36",
+                  "freq": 0.3,
+                  "romaji": "komichi",
+                  "meaning": "path",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "komichi",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 28,
+                "adjustedScore": 797.3469387755102,
+                "breakdown": "[fuzzy: 800] [Lex: +23 (0.82d)] [Typo: -26]",
+                "meaning": "path",
+                "scoreObj": {
+                  "total": 797.3469387755102,
+                  "lexical": 28,
+                  "confidence": 797.3469387755102,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 28,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.8163265306122449,
+                    "typoPenalty": 25.51020408163265,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[fuzzy: 800] [Lex: +23 (0.82d)] [Typo: -26]"
+                },
+                "cosSim": 0.5773284461478435,
+                "semanticBoost": 0,
+                "finalScore": 797.3469387755102
+              },
+              {
+                "id": 31797,
+                "entry": {
+                  "id": 31797,
+                  "pos": [
+                    "n, adv"
+                  ],
+                  "tags": "ichi1, news1, nf04",
+                  "freq": 1,
+                  "romaji": "shonichi",
+                  "meaning": "first day",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j6000"
+                },
+                "item": "shonichi",
+                "type": "aggressive:fuzzy",
+                "distance": 0.16285714285714284,
+                "freqScore": 120,
+                "adjustedScore": 778.202693877551,
+                "breakdown": "[aggressive:fuzzy: 800] [Lex: +91 (0.76d)] [Typo: -33] [Len: -80]",
+                "meaning": "first day",
+                "scoreObj": {
+                  "total": 778.202693877551,
+                  "lexical": 120,
+                  "confidence": 778.202693877551,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 50,
+                    "priority": 70,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.7612979591836735,
+                    "typoPenalty": 33.15306122448979,
+                    "lengthPenalty": 80,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Lex: +91 (0.76d)] [Typo: -33] [Len: -80]"
+                },
+                "cosSim": 0.6115167652968602,
+                "semanticBoost": 18,
+                "finalScore": 796.202693877551
+              },
+              {
+                "id": 189149,
+                "entry": {
+                  "id": 189149,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "donichi",
+                  "meaning": "degree day",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "donichi",
+                "type": "aggressive:fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 0,
+                "adjustedScore": 774.4897959183673,
+                "breakdown": "[aggressive:fuzzy: 800] [Typo: -26]",
+                "meaning": "degree day",
+                "scoreObj": {
+                  "total": 774.4897959183673,
+                  "lexical": 0,
+                  "confidence": 774.4897959183673,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.8163265306122449,
+                    "typoPenalty": 25.51020408163265,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Typo: -26]"
+                },
+                "cosSim": 0.5975099943129019,
+                "semanticBoost": 0,
+                "finalScore": 774.4897959183673
+              },
+              {
+                "id": 4705,
+                "entry": {
+                  "id": 4705,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "gai1, abbr",
+                  "freq": 0.2,
+                  "romaji": "konbini",
+                  "meaning": "convenience store",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "konbini",
+                "type": "aggressive:fuzzy",
+                "distance": 0.2857142857142857,
+                "freqScore": 0,
+                "adjustedScore": 697.9591836734694,
+                "breakdown": "[aggressive:fuzzy: 800] [Typo: -102]",
+                "meaning": "convenience store",
+                "scoreObj": {
+                  "total": 697.9591836734694,
+                  "lexical": 0,
+                  "confidence": 697.9591836734694,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.26530612244897966,
+                    "typoPenalty": 102.0408163265306,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Typo: -102]"
+                },
+                "cosSim": 0.6397298082899157,
+                "semanticBoost": 17,
+                "finalScore": 714.9591836734694
+              },
+              {
+                "id": 4450,
+                "entry": {
+                  "id": 4450,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "gai1",
+                  "freq": 0.2,
+                  "romaji": "koniide",
+                  "meaning": "stratovolcano",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "koniide",
+                "type": "aggressive:fuzzy",
+                "distance": 0.2857142857142857,
+                "freqScore": 0,
+                "adjustedScore": 697.9591836734694,
+                "breakdown": "[aggressive:fuzzy: 800] [Typo: -102]",
+                "meaning": "stratovolcano",
+                "scoreObj": {
+                  "total": 697.9591836734694,
+                  "lexical": 0,
+                  "confidence": 697.9591836734694,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.26530612244897966,
+                    "typoPenalty": 102.0408163265306,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Typo: -102]"
+                },
+                "cosSim": 0.5033615980847825,
+                "semanticBoost": 0,
+                "finalScore": 697.9591836734694
+              },
+              {
+                "id": 26625,
+                "entry": {
+                  "id": 26625,
+                  "pos": [
+                    "int"
+                  ],
+                  "tags": "ichi1, uk",
+                  "freq": 0.2,
+                  "romaji": "konnichiha",
+                  "meaning": "hello",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "konnichiha",
+                "type": "aggressive:fuzzy",
+                "distance": 0.125,
+                "freqScore": 40,
+                "adjustedScore": 654.84375,
+                "breakdown": "[aggressive:fuzzy: 800] [Lex: +34 (0.86d)] [Typo: -20] [Len: -160]",
+                "meaning": "hello",
+                "scoreObj": {
+                  "total": 654.84375,
+                  "lexical": 40,
+                  "confidence": 654.84375,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.859375,
+                    "typoPenalty": 19.53125,
+                    "lengthPenalty": 160,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Lex: +34 (0.86d)] [Typo: -20] [Len: -160]"
+                },
+                "cosSim": 0.6182490103432495,
+                "semanticBoost": 34,
+                "finalScore": 688.84375
+              },
+              {
+                "id": 26627,
+                "entry": {
+                  "id": 26627,
+                  "pos": [
+                    "adj-na"
+                  ],
+                  "tags": "news1, nf23",
+                  "freq": 0.6208333333333332,
+                  "romaji": "konnichiteki",
+                  "meaning": "modern",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "konnichiteki",
+                "type": "aggressive:fuzzy",
+                "distance": 0.125,
+                "freqScore": 84,
+                "adjustedScore": 532.65625,
+                "breakdown": "[aggressive:fuzzy: 800] [Lex: +72 (0.86d)] [Typo: -20] [Len: -320]",
+                "meaning": "modern",
+                "scoreObj": {
+                  "total": 532.65625,
+                  "lexical": 84,
+                  "confidence": 532.65625,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 54,
+                    "priority": 30,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.859375,
+                    "typoPenalty": 19.53125,
+                    "lengthPenalty": 320,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Lex: +72 (0.86d)] [Typo: -20] [Len: -320]"
+                },
+                "cosSim": 0.6594267766281844,
+                "semanticBoost": 111,
+                "finalScore": 643.65625
+              },
+              {
+                "id": 19967,
+                "entry": {
+                  "id": 19967,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "ichi1",
+                  "freq": 0.2,
+                  "romaji": "ikunichi",
+                  "meaning": "for how many days",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "ikunichi",
+                "type": "fuzzy:doubling",
+                "distance": 0.25,
+                "freqScore": 40,
+                "adjustedScore": 639.375,
+                "breakdown": "[fuzzy:doubling: 700] [Lex: +18 (0.44d)] [Typo: -78]",
+                "meaning": "for how many days",
+                "scoreObj": {
+                  "total": 639.375,
+                  "lexical": 40,
+                  "confidence": 639.375,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 700,
+                    "decay": 0.4375,
+                    "typoPenalty": 78.125,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[fuzzy:doubling: 700] [Lex: +18 (0.44d)] [Typo: -78]"
+                },
+                "cosSim": 0.5718776637233174,
+                "semanticBoost": 0,
+                "finalScore": 639.375
+              },
+              {
+                "id": 117427,
+                "entry": {
+                  "id": 117427,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "spec1",
+                  "freq": 0.2,
+                  "romaji": "juugonichi",
+                  "meaning": "15th day of the month",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "juugonichi",
+                "type": "aggressive:fuzzy",
+                "distance": 0.06,
+                "freqScore": 50,
+                "adjustedScore": 603.88,
+                "breakdown": "[aggressive:fuzzy: 800] [Lex: +48 (0.97d)] [Typo: -5] [Len: -240]",
+                "meaning": "15th day of the month",
+                "scoreObj": {
+                  "total": 603.88,
+                  "lexical": 50,
+                  "confidence": 603.88,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 50,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.9676,
+                    "typoPenalty": 4.5,
+                    "lengthPenalty": 240,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Lex: +48 (0.97d)] [Typo: -5] [Len: -240]"
+                },
+                "cosSim": 0.5752797865565347,
+                "semanticBoost": 0,
+                "finalScore": 603.88
+              },
+              {
+                "id": 4700,
+                "entry": {
+                  "id": 4700,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "gai1, abbr",
+                  "freq": 0.2,
+                  "romaji": "konbi",
+                  "meaning": "combination",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "konbi",
+                "type": "aggressive:fuzzy",
+                "distance": 0.2857142857142857,
+                "freqScore": 0,
+                "adjustedScore": 537.9591836734694,
+                "breakdown": "[aggressive:fuzzy: 800] [Typo: -102] [Len: -160]",
+                "meaning": "combination",
+                "scoreObj": {
+                  "total": 537.9591836734694,
+                  "lexical": 0,
+                  "confidence": 537.9591836734694,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.26530612244897966,
+                    "typoPenalty": 102.0408163265306,
+                    "lengthPenalty": 160,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Typo: -102] [Len: -160]"
+                },
+                "cosSim": 0.5565552225807807,
+                "semanticBoost": 0,
+                "finalScore": 537.9591836734694
+              },
+              {
+                "id": 4702,
+                "entry": {
+                  "id": 4702,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "gai1",
+                  "freq": 0.2,
+                  "romaji": "konbinaato",
+                  "meaning": "industrial complex",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "konbinaato",
+                "type": "aggressive:fuzzy",
+                "distance": 0.2857142857142857,
+                "freqScore": 0,
+                "adjustedScore": 457.9591836734694,
+                "breakdown": "[aggressive:fuzzy: 800] [Typo: -102] [Len: -240]",
+                "meaning": "industrial complex",
+                "scoreObj": {
+                  "total": 457.9591836734694,
+                  "lexical": 0,
+                  "confidence": 457.9591836734694,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.26530612244897966,
+                    "typoPenalty": 102.0408163265306,
+                    "lengthPenalty": 240,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Typo: -102] [Len: -240]"
+                },
+                "cosSim": 0.5519695726449033,
+                "semanticBoost": 0,
+                "finalScore": 457.9591836734694
+              },
+              {
+                "id": 159326,
+                "entry": {
+                  "id": 159326,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "spec1",
+                  "freq": 0.2,
+                  "romaji": "nijuugonichi",
+                  "meaning": "25th day of the month",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "nijuugonichi",
+                "type": "aggressive:fuzzy",
+                "distance": 0.1,
+                "freqScore": 50,
+                "adjustedScore": 433,
+                "breakdown": "[aggressive:fuzzy: 800] [Lex: +45 (0.91d)] [Typo: -13] [Len: -400]",
+                "meaning": "25th day of the month",
+                "scoreObj": {
+                  "total": 433,
+                  "lexical": 50,
+                  "confidence": 433,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 50,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.9099999999999999,
+                    "typoPenalty": 12.500000000000002,
+                    "lengthPenalty": 400,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Lex: +45 (0.91d)] [Typo: -13] [Len: -400]"
+                },
+                "cosSim": 0.5450630459595616,
+                "semanticBoost": 0,
+                "finalScore": 433
+              },
+              {
+                "id": 180423,
+                "entry": {
+                  "id": 180423,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "bokkonchiini",
+                  "meaning": "bocconcini",
+                  "domain": "food, cooking",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "bokkonchiini",
+                "type": "fuzzy:doubling",
+                "distance": 0.165,
+                "freqScore": 0,
+                "adjustedScore": 345.96875,
+                "breakdown": "[fuzzy:doubling: 700] [Typo: -34] [Len: -320]",
+                "meaning": "bocconcini",
+                "scoreObj": {
+                  "total": 345.96875,
+                  "lexical": 0,
+                  "confidence": 345.96875,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 700,
+                    "decay": 0.754975,
+                    "typoPenalty": 34.03125,
+                    "lengthPenalty": 320,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[fuzzy:doubling: 700] [Typo: -34] [Len: -320]"
+                },
+                "cosSim": 0.5530335861796961,
+                "semanticBoost": 0,
+                "finalScore": 345.96875
+              },
+              {
+                "id": 4635,
+                "entry": {
+                  "id": 4635,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "gai1",
+                  "freq": 0.2,
+                  "romaji": "konchinentaru",
+                  "meaning": "continental",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "konchinentaru",
+                "type": "fuzzy",
+                "distance": 0.14285714285714285,
+                "freqScore": 0,
+                "adjustedScore": 294.48979591836735,
+                "breakdown": "[fuzzy: 800] [Typo: -26] [Len: -480]",
+                "meaning": "continental",
+                "scoreObj": {
+                  "total": 294.48979591836735,
+                  "lexical": 0,
+                  "confidence": 294.48979591836735,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.8163265306122449,
+                    "typoPenalty": 25.51020408163265,
+                    "lengthPenalty": 480,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[fuzzy: 800] [Typo: -26] [Len: -480]"
+                },
+                "cosSim": 0.5181663407382976,
+                "semanticBoost": 0,
+                "finalScore": 294.48979591836735
+              },
+              {
+                "id": 93735,
+                "entry": {
+                  "id": 93735,
+                  "pos": [
+                    "exp, v5s"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "shonichiwodasu",
+                  "meaning": "to achieve one's first victory after a string of losses",
+                  "domain": "sumo",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "shonichiwodasu",
+                "type": "aggressive:fuzzy",
+                "distance": 0.16285714285714284,
+                "freqScore": 0,
+                "adjustedScore": 206.84693877551024,
+                "breakdown": "[aggressive:fuzzy: 800] [Typo: -33] [Len: -560]",
+                "meaning": "to achieve one's first victory after a string of losses",
+                "scoreObj": {
+                  "total": 206.84693877551024,
+                  "lexical": 0,
+                  "confidence": 206.84693877551024,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.7612979591836735,
+                    "typoPenalty": 33.15306122448979,
+                    "lengthPenalty": 560,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Typo: -33] [Len: -560]"
+                },
+                "cosSim": 0.5700838509260108,
+                "semanticBoost": 0,
+                "finalScore": 206.84693877551024
+              },
+              {
+                "id": 124288,
+                "entry": {
+                  "id": 124288,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "shikkounichijihyouji",
+                  "meaning": "expiry date indication",
+                  "domain": "computing",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "shikkounichijihyouji",
+                "type": "aggressive:fuzzy",
+                "distance": 0.08,
+                "freqScore": 0,
+                "adjustedScore": -168,
+                "breakdown": "[aggressive:fuzzy: 800] [Typo: -8] [Len: -960]",
+                "meaning": "expiry date indication",
+                "scoreObj": {
+                  "total": -168,
+                  "lexical": 0,
+                  "confidence": -168,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.9424,
+                    "typoPenalty": 8,
+                    "lengthPenalty": 960,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[aggressive:fuzzy: 800] [Typo: -8] [Len: -960]"
+                },
+                "cosSim": 0.5556780453290159,
+                "semanticBoost": 0,
+                "finalScore": -168
+              }
+            ],
+            "margin": 14.993749999999999,
+            "competition": [
+              {
+                "item": "kounichi",
+                "type": "exact:repair",
+                "adj": "962.00",
+                "cos": "0.58",
+                "boost": "0"
+              },
+              {
+                "item": "hounichi",
+                "type": "aggressive:fuzzy",
+                "adj": "910.03",
+                "cos": "0.61",
+                "boost": "23"
+              },
+              {
+                "item": "donichi",
+                "type": "aggressive:fuzzy",
+                "adj": "815.31",
+                "cos": "0.49",
+                "boost": "0"
+              },
+              {
+                "item": "komichi",
+                "type": "fuzzy",
+                "adj": "797.35",
+                "cos": "0.58",
+                "boost": "0"
+              },
+              {
+                "item": "shonichi",
+                "type": "aggressive:fuzzy",
+                "adj": "796.20",
+                "cos": "0.61",
+                "boost": "18"
+              }
+            ],
+            "costTrace": {
+              "effectiveScore": "1979.50",
+              "frequency": 62,
+              "priority": 30,
+              "semantic": 0,
+              "tier": 950,
+              "decay": 1,
+              "typoPenalty": 0,
+              "lengthPenalty": 400,
+              "exactBonus": 800,
+              "wholeWordBonus": 475.48875021634683,
+              "stabilityBonus": 62.01409923240418,
+              "fragmentPenalty": 0
+            },
+            "rootChunk": "konichi",
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 5,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 6,
+          "chunk": "taicho",
+          "preprocessedChunk": "taichou",
+          "candidate": "taichou",
+          "candidateMeaning": "ebb tide",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "deinflect:taichou",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 72899,
+              "entry": {
+                "id": 72899,
+                "pos": [
+                  "n, vs"
+                ],
+                "tags": "news2, nf25",
+                "freq": 0.5291666666666667,
+                "romaji": "taichou",
+                "meaning": "ebb tide",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": null
+              },
+              "item": "taichou",
+              "root": "taichou",
+              "type": "deinflect",
+              "distance": 0.04,
+              "freqScore": 50,
+              "adjustedScore": 997.28,
+              "breakdown": "[deinflect: 950] [Lex: +49 (0.99d)] [Typo: -2]",
+              "meaning": "ebb tide",
+              "scoreObj": {
+                "total": 997.28,
+                "lexical": 50,
+                "confidence": 997.28,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 50,
+                  "priority": 0,
+                  "semantic": 0,
+                  "tier": 950,
+                  "decay": 0.9856,
+                  "typoPenalty": 2,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[deinflect: 950] [Lex: +49 (0.99d)] [Typo: -2]"
+              },
+              "meta": {
+                "reasons": [],
+                "type": 61695,
+                "ruleWeight": 1,
+                "grammar": {
+                  "isValidClassMatch": true,
+                  "ruleWeight": 1,
+                  "steps": 1,
+                  "fuzzyStemDistance": 0,
+                  "stemExists": true
+                }
+              },
+              "cosSim": 0.579899184505176,
+              "semanticBoost": 0,
+              "finalScore": 997.28
+            },
+            "candidates": [
+              {
+                "id": 72899,
+                "entry": {
+                  "id": 72899,
+                  "pos": [
+                    "n, vs"
+                  ],
+                  "tags": "news2, nf25",
+                  "freq": 0.5291666666666667,
+                  "romaji": "taichou",
+                  "meaning": "ebb tide",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "taichou",
+                "root": "taichou",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 50,
+                "adjustedScore": 997.28,
+                "breakdown": "[deinflect: 950] [Lex: +49 (0.99d)] [Typo: -2]",
+                "meaning": "ebb tide",
+                "scoreObj": {
+                  "total": 997.28,
+                  "lexical": 50,
+                  "confidence": 997.28,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 50,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 950,
+                    "decay": 0.9856,
+                    "typoPenalty": 2,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect: 950] [Lex: +49 (0.99d)] [Typo: -2]"
+                },
+                "meta": {
+                  "reasons": [],
+                  "type": 61695,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.579899184505176,
+                "semanticBoost": 0,
+                "finalScore": 997.28
+              },
+              {
+                "id": 72887,
+                "entry": {
+                  "id": 72887,
+                  "pos": [
+                    "n, vs, vi"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "taichou",
+                  "meaning": "leaving one's office",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "taichou",
+                "root": "taichou",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 0,
+                "adjustedScore": 948,
+                "breakdown": "[deinflect: 950] [Typo: -2]",
+                "meaning": "leaving one's office",
+                "scoreObj": {
+                  "total": 948,
+                  "lexical": 0,
+                  "confidence": 948,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 950,
+                    "decay": 0.9856,
+                    "typoPenalty": 2,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect: 950] [Typo: -2]"
+                },
+                "meta": {
+                  "reasons": [],
+                  "type": 61695,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.557957458178175,
+                "semanticBoost": 0,
+                "finalScore": 948
+              }
+            ],
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "competition": [
+              {
+                "item": "taichou(->taichou)",
+                "type": "deinflect",
+                "adj": "997.28",
+                "cos": "0.58",
+                "boost": "0"
+              },
+              {
+                "item": "taichou(->taichou)",
+                "type": "deinflect",
+                "adj": "948.00",
+                "cos": "0.56",
+                "boost": "0"
+              }
+            ],
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 7,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 8,
+          "chunk": "yokunatta",
+          "preprocessedChunk": "yokunatta",
+          "candidate": "yokunatta",
+          "candidateMeaning": "to become better",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "deinflect:yokunaru",
+          "grammar_tags": [
+            "Past tense"
+          ],
+          "tokenBoost": 246,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 94187,
+              "entry": {
+                "id": 94187,
+                "pos": [
+                  "exp, v5r"
+                ],
+                "tags": "uk",
+                "freq": 0.1,
+                "romaji": "yokunaru",
+                "meaning": "to become better",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": null
+              },
+              "item": "yokunatta",
+              "root": "yokunaru",
+              "type": "deinflect",
+              "distance": 0.04,
+              "freqScore": 0,
+              "adjustedScore": 948,
+              "breakdown": "[deinflect: 950] [Typo: -2]",
+              "meaning": "to become better",
+              "scoreObj": {
+                "total": 948,
+                "lexical": 0,
+                "confidence": 948,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 0,
+                  "priority": 0,
+                  "semantic": 0,
+                  "tier": 950,
+                  "decay": 0.9856,
+                  "typoPenalty": 2,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[deinflect: 950] [Typo: -2]"
+              },
+              "meta": {
+                "reasons": [
+                  [
+                    17
+                  ]
+                ],
+                "type": 2,
+                "ruleWeight": 0.9,
+                "grammar": {
+                  "isValidClassMatch": true,
+                  "ruleWeight": 0.9,
+                  "steps": 1,
+                  "fuzzyStemDistance": 0,
+                  "stemExists": true
+                }
+              },
+              "cosSim": 0.6932299973862576,
+              "semanticBoost": 246,
+              "finalScore": 1194
+            },
+            "candidates": [
+              {
+                "id": 94187,
+                "entry": {
+                  "id": 94187,
+                  "pos": [
+                    "exp, v5r"
+                  ],
+                  "tags": "uk",
+                  "freq": 0.1,
+                  "romaji": "yokunaru",
+                  "meaning": "to become better",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "yokunatta",
+                "root": "yokunaru",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 0,
+                "adjustedScore": 948,
+                "breakdown": "[deinflect: 950] [Typo: -2]",
+                "meaning": "to become better",
+                "scoreObj": {
+                  "total": 948,
+                  "lexical": 0,
+                  "confidence": 948,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 950,
+                    "decay": 0.9856,
+                    "typoPenalty": 2,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect: 950] [Typo: -2]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 0.9,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.6932299973862576,
+                "semanticBoost": 246,
+                "finalScore": 1194
+              },
+              {
+                "id": 50528,
+                "entry": {
+                  "id": 50528,
+                  "pos": [
+                    "v5t, vi"
+                  ],
+                  "tags": "ichi1, news2, nf41",
+                  "freq": 0.2958333333333334,
+                  "romaji": "yakudatsu",
+                  "meaning": "to be useful",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j5000"
+                },
+                "item": "yokunatta",
+                "root": "yakudatsu",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.1511111111111111,
+                "freqScore": 100,
+                "adjustedScore": 850.9056790123457,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +79 (0.79d)] [Typo: -29]",
+                "meaning": "to be useful",
+                "scoreObj": {
+                  "total": 850.9056790123457,
+                  "lexical": 100,
+                  "confidence": 850.9056790123457,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 60,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.7944888888888888,
+                    "typoPenalty": 28.543209876543216,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +79 (0.79d)] [Typo: -29]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 0.9,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0.2222222222222222,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.6067663532870758,
+                "semanticBoost": 0,
+                "finalScore": 850.9056790123457
+              },
+              {
+                "id": 51427,
+                "entry": {
+                  "id": 51427,
+                  "pos": [
+                    "v5r, vi"
+                  ],
+                  "tags": "news2, nf36, spec1",
+                  "freq": 0.4,
+                  "romaji": "yokubaru",
+                  "meaning": "to be greedy",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "yokunatta",
+                "root": "yokubaru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.18285714285714286,
+                "freqScore": 78,
+                "adjustedScore": 812.731493877551,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +55 (0.70d)] [Typo: -42]",
+                "meaning": "to be greedy",
+                "scoreObj": {
+                  "total": 812.731493877551,
+                  "lexical": 78,
+                  "confidence": 812.731493877551,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 28,
+                    "priority": 50,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.699069387755102,
+                    "typoPenalty": 41.795918367346935,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +55 (0.70d)] [Typo: -42]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.9,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 0.9,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0.2857142857142857,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.6351185367394365,
+                "semanticBoost": 0,
+                "finalScore": 812.731493877551
+              }
+            ],
+            "semanticBoost": 246,
+            "isResurrected": false,
+            "previousWinner": null,
+            "competition": [
+              {
+                "item": "yokunatta(->yokunaru)",
+                "type": "deinflect",
+                "adj": "1194.00",
+                "cos": "0.69",
+                "boost": "246"
+              },
+              {
+                "item": "yokunatta(->yakudatsu)",
+                "type": "deinflect:fuzzy_stem",
+                "adj": "850.91",
+                "cos": "0.61",
+                "boost": "0"
+              },
+              {
+                "item": "yokunatta(->yokubaru)",
+                "type": "deinflect:fuzzy_stem",
+                "adj": "812.73",
+                "cos": "0.64",
+                "boost": "0"
+              }
+            ],
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 9,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 10,
+          "chunk": "genki",
+          "preprocessedChunk": "genki",
+          "candidate": "genki",
+          "candidateMeaning": "lively",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 233,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 23883,
+              "entry": {
+                "id": 23883,
+                "pos": [
+                  "adj-na, n"
+                ],
+                "tags": "ichi1, news1, nf06",
+                "freq": 1,
+                "romaji": "genki",
+                "meaning": "lively",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "genki",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 170,
+              "adjustedScore": 1170,
+              "breakdown": "[exact: 1000] [Lex: +170 (1.00d)]",
+              "meaning": "lively",
+              "scoreObj": {
+                "total": 1170,
+                "lexical": 170,
+                "confidence": 1170,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 100,
+                  "priority": 70,
+                  "semantic": 0,
+                  "tier": 1000,
+                  "decay": 1,
+                  "typoPenalty": 0,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[exact: 1000] [Lex: +170 (1.00d)]"
+              },
+              "cosSim": 0.6775264189265946,
+              "semanticBoost": 233,
+              "finalScore": 1403
+            },
+            "candidates": [
+              {
+                "id": 23883,
+                "entry": {
+                  "id": 23883,
+                  "pos": [
+                    "adj-na, n"
+                  ],
+                  "tags": "ichi1, news1, nf06",
+                  "freq": 1,
+                  "romaji": "genki",
+                  "meaning": "lively",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "genki",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 170,
+                "adjustedScore": 1170,
+                "breakdown": "[exact: 1000] [Lex: +170 (1.00d)]",
+                "meaning": "lively",
+                "scoreObj": {
+                  "total": 1170,
+                  "lexical": 170,
+                  "confidence": 1170,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 100,
+                    "priority": 70,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +170 (1.00d)]"
+                },
+                "cosSim": 0.6775264189265946,
+                "semanticBoost": 233,
+                "finalScore": 1403
+              },
+              {
+                "id": 23936,
+                "entry": {
+                  "id": 23936,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "genki",
+                  "meaning": "standard for weights and measures",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "genki",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "standard for weights and measures",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.6261807079666307,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 53731,
+                "entry": {
+                  "id": 53731,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "genki",
+                  "meaning": "affectation",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "genki",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "affectation",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.4828460613075338,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 99964,
+                "entry": {
+                  "id": 99964,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "hist",
+                  "freq": 0.1,
+                  "romaji": "genki",
+                  "meaning": "Genki era 1570.4.23-1573.7.28",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "genki",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "Genki era 1570.4.23-1573.7.28",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.5016520431223316,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 167565,
+                "entry": {
+                  "id": 167565,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "genki",
+                  "meaning": "decalescence",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "genki",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "decalescence",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.5455489899277555,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 176229,
+                "entry": {
+                  "id": 176229,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "genki",
+                  "meaning": "epoch",
+                  "domain": "astronomy",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "genki",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "epoch",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.632839448518871,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 198457,
+                "entry": {
+                  "id": 198457,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "rare",
+                  "freq": 0.1,
+                  "romaji": "genki",
+                  "meaning": "primordium",
+                  "domain": "embryology",
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "genki",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "primordium",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.5612184852224806,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              }
+            ],
+            "margin": 34,
+            "competition": [
+              {
+                "item": "genki",
+                "type": "exact",
+                "adj": "1403.00",
+                "cos": "0.68",
+                "boost": "233"
+              },
+              {
+                "item": "genki",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.63",
+                "boost": "0"
+              },
+              {
+                "item": "genki",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.48",
+                "boost": "0"
+              },
+              {
+                "item": "genki",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.50",
+                "boost": "0"
+              },
+              {
+                "item": "genki",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.55",
+                "boost": "0"
+              }
+            ],
+            "semanticBoost": 233,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 11,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 12,
+          "chunk": "aru",
+          "preprocessedChunk": "aru",
+          "candidate": "aru",
+          "candidateMeaning": "to be",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 27301,
+              "entry": {
+                "id": 27301,
+                "pos": [
+                  "v5r-i, vi, aux-v"
+                ],
+                "tags": "ichi1, news1, nf05, nf23, spec1, uk",
+                "freq": 0.8208333333333332,
+                "romaji": "aru",
+                "meaning": "to be",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "aru",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 220,
+              "adjustedScore": 1220,
+              "breakdown": "[exact: 1000] [Lex: +220 (1.00d)]",
+              "meaning": "to be",
+              "scoreObj": {
+                "total": 1220,
+                "lexical": 220,
+                "confidence": 1220,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 100,
+                  "priority": 120,
+                  "semantic": 0,
+                  "tier": 1000,
+                  "decay": 1,
+                  "typoPenalty": 0,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[exact: 1000] [Lex: +220 (1.00d)]"
+              },
+              "cosSim": 0.5728341134845871,
+              "semanticBoost": 0,
+              "finalScore": 1220
+            },
+            "candidates": [
+              {
+                "id": 27301,
+                "entry": {
+                  "id": 27301,
+                  "pos": [
+                    "v5r-i, vi, aux-v"
+                  ],
+                  "tags": "ichi1, news1, nf05, nf23, spec1, uk",
+                  "freq": 0.8208333333333332,
+                  "romaji": "aru",
+                  "meaning": "to be",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "aru",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 220,
+                "adjustedScore": 1220,
+                "breakdown": "[exact: 1000] [Lex: +220 (1.00d)]",
+                "meaning": "to be",
+                "scoreObj": {
+                  "total": 1220,
+                  "lexical": 220,
+                  "confidence": 1220,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 100,
+                    "priority": 120,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +220 (1.00d)]"
+                },
+                "cosSim": 0.5728341134845871,
+                "semanticBoost": 0,
+                "finalScore": 1220
+              },
+              {
+                "id": 55101,
+                "entry": {
+                  "id": 55101,
+                  "pos": [
+                    "adj-pn"
+                  ],
+                  "tags": "ichi1, news2, nf37, uk",
+                  "freq": 0.3791666666666666,
+                  "romaji": "aru",
+                  "meaning": "a certain ...",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "aru",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 66,
+                "adjustedScore": 1066,
+                "breakdown": "[exact: 1000] [Lex: +66 (1.00d)]",
+                "meaning": "a certain ...",
+                "scoreObj": {
+                  "total": 1066,
+                  "lexical": 66,
+                  "confidence": 1066,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 26,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +66 (1.00d)]"
+                },
+                "cosSim": 0.5592793520845648,
+                "semanticBoost": 0,
+                "finalScore": 1066
+              },
+              {
+                "id": 158385,
+                "entry": {
+                  "id": 158385,
+                  "pos": [
+                    "num"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "aru",
+                  "meaning": "two",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "aru",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "two",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.5719172993857807,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              },
+              {
+                "id": 176416,
+                "entry": {
+                  "id": 176416,
+                  "pos": [
+                    "exp"
+                  ],
+                  "tags": "joc, col",
+                  "freq": 0.1,
+                  "romaji": "aru",
+                  "meaning": "be",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "aru",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "be",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.5434062948709251,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              }
+            ],
+            "margin": 30.8,
+            "competition": [
+              {
+                "item": "aru",
+                "type": "exact",
+                "adj": "1220.00",
+                "cos": "0.57",
+                "boost": "0"
+              },
+              {
+                "item": "aru",
+                "type": "exact",
+                "adj": "1066.00",
+                "cos": "0.56",
+                "boost": "0"
+              },
+              {
+                "item": "aru",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.57",
+                "boost": "0"
+              },
+              {
+                "item": "aru",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.54",
+                "boost": "0"
+              }
+            ],
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 13,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 14,
+          "chunk": "to",
+          "preprocessedChunk": "tou",
+          "candidate": "tou",
+          "candidateMeaning": "to ask",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "deinflect:tou",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 50323,
+              "entry": {
+                "id": 50323,
+                "pos": [
+                  "v5u-s, vt"
+                ],
+                "tags": "ichi1, news1, nf02",
+                "freq": 1,
+                "romaji": "tou",
+                "meaning": "to ask",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j5000"
+              },
+              "item": "tou",
+              "root": "tou",
+              "type": "deinflect",
+              "distance": 0.04,
+              "freqScore": 130,
+              "adjustedScore": 1076.128,
+              "breakdown": "[deinflect: 950] [Lex: +128 (0.99d)] [Typo: -2]",
+              "meaning": "to ask",
+              "scoreObj": {
+                "total": 1076.128,
+                "lexical": 130,
+                "confidence": 1076.128,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 60,
+                  "priority": 70,
+                  "semantic": 0,
+                  "tier": 950,
+                  "decay": 0.9856,
+                  "typoPenalty": 2,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[deinflect: 950] [Lex: +128 (0.99d)] [Typo: -2]"
+              },
+              "meta": {
+                "reasons": [],
+                "type": 61695,
+                "ruleWeight": 1,
+                "grammar": {
+                  "isValidClassMatch": true,
+                  "ruleWeight": 1,
+                  "steps": 1,
+                  "fuzzyStemDistance": 0,
+                  "stemExists": true
+                }
+              }
+            },
+            "candidates": [
+              {
+                "id": 50323,
+                "entry": {
+                  "id": 50323,
+                  "pos": [
+                    "v5u-s, vt"
+                  ],
+                  "tags": "ichi1, news1, nf02",
+                  "freq": 1,
+                  "romaji": "tou",
+                  "meaning": "to ask",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j5000"
+                },
+                "item": "tou",
+                "root": "tou",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 130,
+                "adjustedScore": 1076.128,
+                "breakdown": "[deinflect: 950] [Lex: +128 (0.99d)] [Typo: -2]",
+                "meaning": "to ask",
+                "scoreObj": {
+                  "total": 1076.128,
+                  "lexical": 130,
+                  "confidence": 1076.128,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 60,
+                    "priority": 70,
+                    "semantic": 0,
+                    "tier": 950,
+                    "decay": 0.9856,
+                    "typoPenalty": 2,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect: 950] [Lex: +128 (0.99d)] [Typo: -2]"
+                },
+                "meta": {
+                  "reasons": [],
+                  "type": 61695,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.5840209852518726,
+                "semanticBoost": 0,
+                "finalScore": 1076.128
+              }
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 16,
+          "chunk": "demo",
+          "preprocessedChunk": "demo",
+          "candidate": "demo",
+          "candidateMeaning": "but",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 728,
+              "entry": {
+                "id": 728,
+                "pos": [
+                  "conj, prt, pref"
+                ],
+                "tags": "spec1",
+                "freq": 0.2,
+                "romaji": "demo",
+                "meaning": "but",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j5000"
+              },
+              "item": "demo",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 110,
+              "adjustedScore": 1110,
+              "breakdown": "[exact: 1000] [Lex: +110 (1.00d)]",
+              "meaning": "but",
+              "scoreObj": {
+                "total": 1110,
+                "lexical": 110,
+                "confidence": 1110,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 60,
+                  "priority": 50,
+                  "semantic": 0,
+                  "tier": 1000,
+                  "decay": 1,
+                  "typoPenalty": 0,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[exact: 1000] [Lex: +110 (1.00d)]"
+              },
+              "cosSim": 0.5491117770006141,
+              "semanticBoost": 0,
+              "finalScore": 1110
+            },
+            "candidates": [
+              {
+                "id": 728,
+                "entry": {
+                  "id": 728,
+                  "pos": [
+                    "conj, prt, pref"
+                  ],
+                  "tags": "spec1",
+                  "freq": 0.2,
+                  "romaji": "demo",
+                  "meaning": "but",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j5000"
+                },
+                "item": "demo",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 110,
+                "adjustedScore": 1110,
+                "breakdown": "[exact: 1000] [Lex: +110 (1.00d)]",
+                "meaning": "but",
+                "scoreObj": {
+                  "total": 1110,
+                  "lexical": 110,
+                  "confidence": 1110,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 60,
+                    "priority": 50,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +110 (1.00d)]"
+                },
+                "cosSim": 0.5491117770006141,
+                "semanticBoost": 0,
+                "finalScore": 1110
+              },
+              {
+                "id": 7431,
+                "entry": {
+                  "id": 7431,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "gai1, ichi1, abbr",
+                  "freq": 0.30000000000000004,
+                  "romaji": "demo",
+                  "meaning": "demonstration",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "demo",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 40,
+                "adjustedScore": 1040,
+                "breakdown": "[exact: 1000] [Lex: +40 (1.00d)]",
+                "meaning": "demonstration",
+                "scoreObj": {
+                  "total": 1040,
+                  "lexical": 40,
+                  "confidence": 1040,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +40 (1.00d)]"
+                },
+                "cosSim": 0.5513950095664043,
+                "semanticBoost": 0,
+                "finalScore": 1040
+              }
+            ],
+            "margin": 14,
+            "competition": [
+              {
+                "item": "demo",
+                "type": "exact",
+                "adj": "1110.00",
+                "cos": "0.55",
+                "boost": "0"
+              },
+              {
+                "item": "demo",
+                "type": "exact",
+                "adj": "1040.00",
+                "cos": "0.55",
+                "boost": "0"
+              }
+            ],
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 17,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 18,
+          "chunk": "omoimasu",
+          "preprocessedChunk": "omoimasu",
+          "candidate": "omoimasu",
+          "candidateMeaning": "to think",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "deinflect:omou",
+          "grammar_tags": [
+            "Polite/Formal form"
+          ],
+          "tokenBoost": 169,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 55343,
+              "entry": {
+                "id": 55343,
+                "pos": [
+                  "v5u, vt"
+                ],
+                "tags": "ichi1, news1, nf02",
+                "freq": 1,
+                "romaji": "omou",
+                "meaning": "to think",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "omoimasu",
+              "root": "omou",
+              "type": "deinflect",
+              "distance": 0.04,
+              "freqScore": 170,
+              "adjustedScore": 1115.552,
+              "breakdown": "[deinflect: 950] [Lex: +168 (0.99d)] [Typo: -2]",
+              "meaning": "to think",
+              "scoreObj": {
+                "total": 1115.552,
+                "lexical": 170,
+                "confidence": 1115.552,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 100,
+                  "priority": 70,
+                  "semantic": 0,
+                  "tier": 950,
+                  "decay": 0.9856,
+                  "typoPenalty": 2,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[deinflect: 950] [Lex: +168 (0.99d)] [Typo: -2]"
+              },
+              "meta": {
+                "reasons": [
+                  [
+                    13
+                  ]
+                ],
+                "type": 2,
+                "ruleWeight": 0.8,
+                "grammar": {
+                  "isValidClassMatch": true,
+                  "ruleWeight": 0.8,
+                  "steps": 1,
+                  "fuzzyStemDistance": 0,
+                  "stemExists": true
+                }
+              },
+              "cosSim": 0.664146471712497,
+              "semanticBoost": 169,
+              "finalScore": 1284.552
+            },
+            "candidates": [
+              {
+                "id": 55343,
+                "entry": {
+                  "id": 55343,
+                  "pos": [
+                    "v5u, vt"
+                  ],
+                  "tags": "ichi1, news1, nf02",
+                  "freq": 1,
+                  "romaji": "omou",
+                  "meaning": "to think",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "omoimasu",
+                "root": "omou",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 170,
+                "adjustedScore": 1115.552,
+                "breakdown": "[deinflect: 950] [Lex: +168 (0.99d)] [Typo: -2]",
+                "meaning": "to think",
+                "scoreObj": {
+                  "total": 1115.552,
+                  "lexical": 170,
+                  "confidence": 1115.552,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 100,
+                    "priority": 70,
+                    "semantic": 0,
+                    "tier": 950,
+                    "decay": 0.9856,
+                    "typoPenalty": 2,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect: 950] [Lex: +168 (0.99d)] [Typo: -2]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      13
+                    ]
+                  ],
+                  "type": 2,
+                  "ruleWeight": 0.8,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 0.8,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.664146471712497,
+                "semanticBoost": 169,
+                "finalScore": 1284.552
+              },
+              {
+                "id": 28539,
+                "entry": {
+                  "id": 28539,
+                  "pos": [
+                    "v5s, vt"
+                  ],
+                  "tags": "ichi1, news1, nf15",
+                  "freq": 0.8875,
+                  "romaji": "omoidasu",
+                  "meaning": "to recall",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "omoidasu",
+                "type": "fuzzy",
+                "distance": 0.125,
+                "freqScore": 170,
+                "adjustedScore": 926.5625,
+                "breakdown": "[fuzzy: 800] [Lex: +146 (0.86d)] [Typo: -20]",
+                "meaning": "to recall",
+                "scoreObj": {
+                  "total": 926.5625,
+                  "lexical": 170,
+                  "confidence": 926.5625,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 100,
+                    "priority": 70,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.859375,
+                    "typoPenalty": 19.53125,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[fuzzy: 800] [Lex: +146 (0.86d)] [Typo: -20]"
+                },
+                "cosSim": 0.6330966502507629,
+                "semanticBoost": 0,
+                "finalScore": 926.5625
+              },
+              {
+                "id": 28832,
+                "entry": {
+                  "id": 28832,
+                  "pos": [
+                    "v1, vt"
+                  ],
+                  "tags": "ichi1, news2, nf26",
+                  "freq": 0.6083333333333334,
+                  "romaji": "kokoromiru",
+                  "meaning": "to try",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j5000"
+                },
+                "item": "omoimasu",
+                "root": "kokoromiru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.17333333333333334,
+                "freqScore": 100,
+                "adjustedScore": 835.4044444444445,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +73 (0.73d)] [Typo: -38]",
+                "meaning": "to try",
+                "scoreObj": {
+                  "total": 835.4044444444445,
+                  "lexical": 100,
+                  "confidence": 835.4044444444445,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 60,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.7296,
+                    "typoPenalty": 37.55555555555556,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +73 (0.73d)] [Typo: -38]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      13
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0.26666666666666666,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.526334858885997,
+                "semanticBoost": 0,
+                "finalScore": 835.4044444444445
+              },
+              {
+                "id": 61697,
+                "entry": {
+                  "id": 61697,
+                  "pos": [
+                    "v1, vt"
+                  ],
+                  "tags": "news2, nf36",
+                  "freq": 0.3,
+                  "romaji": "omoiukaberu",
+                  "meaning": "to remember",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "omoimasu",
+                "root": "omoiukaberu",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.12333333333333332,
+                "freqScore": 28,
+                "adjustedScore": 805.152911111111,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +24 (0.86d)] [Typo: -19]",
+                "meaning": "to remember",
+                "scoreObj": {
+                  "total": 805.152911111111,
+                  "lexical": 28,
+                  "confidence": 805.152911111111,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 28,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.8631,
+                    "typoPenalty": 19.013888888888886,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +24 (0.86d)] [Typo: -19]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      13
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0.16666666666666666,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.6233146497235911,
+                "semanticBoost": 0,
+                "finalScore": 805.152911111111
+              },
+              {
+                "id": 193448,
+                "entry": {
+                  "id": 193448,
+                  "pos": [
+                    "exp, v1"
+                  ],
+                  "tags": "spec1",
+                  "freq": 0.2,
+                  "romaji": "yousuwomiru",
+                  "meaning": "to wait and see",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "omoimasu",
+                "root": "yousuwomiru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.18333333333333332,
+                "freqScore": 50,
+                "adjustedScore": 792.8611111111111,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +35 (0.70d)] [Typo: -42]",
+                "meaning": "to wait and see",
+                "scoreObj": {
+                  "total": 792.8611111111111,
+                  "lexical": 50,
+                  "confidence": 792.8611111111111,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 50,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.6975,
+                    "typoPenalty": 42.013888888888886,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +35 (0.70d)] [Typo: -42]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      13
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0.2866666666666666,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.5818119550356978,
+                "semanticBoost": 0,
+                "finalScore": 792.8611111111111
+              },
+              {
+                "id": 28551,
+                "entry": {
+                  "id": 28551,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "ichi1, spec1",
+                  "freq": 0.30000000000000004,
+                  "romaji": "omoitsuki",
+                  "meaning": "idea",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "omoitsuki",
+                "type": "fuzzy",
+                "distance": 0.25,
+                "freqScore": 90,
+                "adjustedScore": 681.25,
+                "breakdown": "[fuzzy: 800] [Lex: +39 (0.44d)] [Typo: -78] [Len: -80]",
+                "meaning": "idea",
+                "scoreObj": {
+                  "total": 681.25,
+                  "lexical": 90,
+                  "confidence": 681.25,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 90,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.4375,
+                    "typoPenalty": 78.125,
+                    "lengthPenalty": 80,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[fuzzy: 800] [Lex: +39 (0.44d)] [Typo: -78] [Len: -80]"
+                },
+                "cosSim": 0.6241079994056262,
+                "semanticBoost": 0,
+                "finalScore": 681.25
+              },
+              {
+                "id": 28547,
+                "entry": {
+                  "id": 28547,
+                  "pos": [
+                    "v5s, vt"
+                  ],
+                  "tags": "ichi1, news2, nf43",
+                  "freq": 0.25416666666666665,
+                  "romaji": "omoinaosu",
+                  "meaning": "to re-think",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "omoinaosu",
+                "type": "fuzzy",
+                "distance": 0.25,
+                "freqScore": 54,
+                "adjustedScore": 665.5,
+                "breakdown": "[fuzzy: 800] [Lex: +24 (0.44d)] [Typo: -78] [Len: -80]",
+                "meaning": "to re-think",
+                "scoreObj": {
+                  "total": 665.5,
+                  "lexical": 54,
+                  "confidence": 665.5,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 14,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.4375,
+                    "typoPenalty": 78.125,
+                    "lengthPenalty": 80,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[fuzzy: 800] [Lex: +24 (0.44d)] [Typo: -78] [Len: -80]"
+                },
+                "cosSim": 0.6484523572299213,
+                "semanticBoost": 0,
+                "finalScore": 665.5
+              },
+              {
+                "id": 28553,
+                "entry": {
+                  "id": 28553,
+                  "pos": [
+                    "v5s, vt"
+                  ],
+                  "tags": "news2, nf43",
+                  "freq": 0.15416666666666662,
+                  "romaji": "omoikaesu",
+                  "meaning": "to re-think",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "omoikaesu",
+                "type": "fuzzy",
+                "distance": 0.25,
+                "freqScore": 14,
+                "adjustedScore": 648,
+                "breakdown": "[fuzzy: 800] [Lex: +6 (0.44d)] [Typo: -78] [Len: -80]",
+                "meaning": "to re-think",
+                "scoreObj": {
+                  "total": 648,
+                  "lexical": 14,
+                  "confidence": 648,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 14,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.4375,
+                    "typoPenalty": 78.125,
+                    "lengthPenalty": 80,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[fuzzy: 800] [Lex: +6 (0.44d)] [Typo: -78] [Len: -80]"
+                },
+                "cosSim": 0.6175107579685325,
+                "semanticBoost": 0,
+                "finalScore": 648
+              },
+              {
+                "id": 28535,
+                "entry": {
+                  "id": 28535,
+                  "pos": [
+                    "v1, vt"
+                  ],
+                  "tags": "news2, nf36",
+                  "freq": 0.3,
+                  "romaji": "omoitsumeru",
+                  "meaning": "to think hard",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "omoitsumeru",
+                "type": "fuzzy",
+                "distance": 0.25,
+                "freqScore": 28,
+                "adjustedScore": 494.125,
+                "breakdown": "[fuzzy: 800] [Lex: +12 (0.44d)] [Typo: -78] [Len: -240]",
+                "meaning": "to think hard",
+                "scoreObj": {
+                  "total": 494.125,
+                  "lexical": 28,
+                  "confidence": 494.125,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 28,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.4375,
+                    "typoPenalty": 78.125,
+                    "lengthPenalty": 240,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[fuzzy: 800] [Lex: +12 (0.44d)] [Typo: -78] [Len: -240]"
+                },
+                "cosSim": 0.6490409737257299,
+                "semanticBoost": 0,
+                "finalScore": 494.125
+              }
+            ],
+            "margin": 37.797899999999984,
+            "competition": [
+              {
+                "item": "omoimasu(->omou)",
+                "type": "deinflect",
+                "adj": "1284.55",
+                "cos": "0.66",
+                "boost": "169"
+              },
+              {
+                "item": "omoidasu",
+                "type": "fuzzy",
+                "adj": "926.56",
+                "cos": "0.63",
+                "boost": "0"
+              },
+              {
+                "item": "omoimasu(->kokoromiru)",
+                "type": "deinflect:fuzzy_stem",
+                "adj": "835.40",
+                "cos": "0.53",
+                "boost": "0"
+              },
+              {
+                "item": "omoimasu(->omoiukaberu)",
+                "type": "deinflect:fuzzy_stem",
+                "adj": "805.15",
+                "cos": "0.62",
+                "boost": "0"
+              },
+              {
+                "item": "omoimasu(->yousuwomiru)",
+                "type": "deinflect:fuzzy_stem",
+                "adj": "792.86",
+                "cos": "0.58",
+                "boost": "0"
+              }
+            ],
+            "reasons": [
+              [
+                13
+              ]
+            ],
+            "type": 2,
+            "ruleWeight": 0.8,
+            "grammar": {
+              "isValidClassMatch": true,
+              "ruleWeight": 0.8,
+              "steps": 1,
+              "fuzzyStemDistance": 0,
+              "stemExists": true
+            },
+            "semanticBoost": 169,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 19,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 20,
+          "chunk": "memai",
+          "preprocessedChunk": "memai",
+          "candidate": "memai",
+          "candidateMeaning": "dizziness",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 53500,
+              "entry": {
+                "id": 53500,
+                "pos": [
+                  "n"
+                ],
+                "tags": "ichi1, uk",
+                "freq": 0.2,
+                "romaji": "memai",
+                "meaning": "dizziness",
+                "domain": null,
+                "mesh": [
+                  {
+                    "matched_term": "dizziness",
+                    "mesh_descriptor": "Dizziness",
+                    "tree_numbers": [
+                      "C23.888.592.763.237"
+                    ],
+                    "domains": [
+                      "mesh_disease"
+                    ],
+                    "match_type": "exact_phrase",
+                    "confidence": 0.9
+                  }
+                ],
+                "meshDomains": [
+                  "mesh_disease"
+                ],
+                "commonWords": null
+              },
+              "item": "memai",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 140,
+              "adjustedScore": 1140,
+              "breakdown": "[exact: 1000] [Lex: +140 (1.00d)]",
+              "meaning": "dizziness",
+              "scoreObj": {
+                "total": 1140,
+                "lexical": 140,
+                "confidence": 1140,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 0,
+                  "priority": 40,
+                  "semantic": 100,
+                  "tier": 1000,
+                  "decay": 1,
+                  "typoPenalty": 0,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[exact: 1000] [Lex: +140 (1.00d)]"
+              }
+            },
+            "candidates": [
+              {
+                "id": 53500,
+                "entry": {
+                  "id": 53500,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "ichi1, uk",
+                  "freq": 0.2,
+                  "romaji": "memai",
+                  "meaning": "dizziness",
+                  "domain": null,
+                  "mesh": [
+                    {
+                      "matched_term": "dizziness",
+                      "mesh_descriptor": "Dizziness",
+                      "tree_numbers": [
+                        "C23.888.592.763.237"
+                      ],
+                      "domains": [
+                        "mesh_disease"
+                      ],
+                      "match_type": "exact_phrase",
+                      "confidence": 0.9
+                    }
+                  ],
+                  "meshDomains": [
+                    "mesh_disease"
+                  ],
+                  "commonWords": null
+                },
+                "item": "memai",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 140,
+                "adjustedScore": 1140,
+                "breakdown": "[exact: 1000] [Lex: +140 (1.00d)]",
+                "meaning": "dizziness",
+                "scoreObj": {
+                  "total": 1140,
+                  "lexical": 140,
+                  "confidence": 1140,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 40,
+                    "semantic": 100,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +140 (1.00d)]"
+                },
+                "cosSim": 0.5643283454154497,
+                "semanticBoost": 0,
+                "finalScore": 1140
+              }
+            ],
+            "margin": 0,
+            "competition": [
+              {
+                "item": "memai",
+                "type": "exact",
+                "adj": "1140.00",
+                "cos": "0.00",
+                "boost": "0"
+              }
+            ]
+          }
+        },
+        {
+          "index": 21,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 22,
+          "chunk": "が",
+          "preprocessedChunk": "ga",
+          "candidate": "ga",
+          "candidateMeaning": "particle",
+          "rootChunk": "",
+          "decision": "particle",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "type": "particle"
+          }
+        },
+        {
+          "index": 23,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 24,
+          "chunk": "kibun",
+          "preprocessedChunk": "kibun",
+          "candidate": "kibun",
+          "candidateMeaning": "feeling",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "exact",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 20215,
+              "entry": {
+                "id": 20215,
+                "pos": [
+                  "n"
+                ],
+                "tags": "ichi1, news1, nf03",
+                "freq": 1,
+                "romaji": "kibun",
+                "meaning": "feeling",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j3000"
+              },
+              "item": "kibun",
+              "type": "exact",
+              "distance": 0,
+              "freqScore": 150,
+              "adjustedScore": 1150,
+              "breakdown": "[exact: 1000] [Lex: +150 (1.00d)]",
+              "meaning": "feeling",
+              "scoreObj": {
+                "total": 1150,
+                "lexical": 150,
+                "confidence": 1150,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 80,
+                  "priority": 70,
+                  "semantic": 0,
+                  "tier": 1000,
+                  "decay": 1,
+                  "typoPenalty": 0,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[exact: 1000] [Lex: +150 (1.00d)]"
+              },
+              "cosSim": 0.5460378249049795,
+              "semanticBoost": 0,
+              "finalScore": 1150
+            },
+            "candidates": [
+              {
+                "id": 20215,
+                "entry": {
+                  "id": 20215,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "ichi1, news1, nf03",
+                  "freq": 1,
+                  "romaji": "kibun",
+                  "meaning": "feeling",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j3000"
+                },
+                "item": "kibun",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 150,
+                "adjustedScore": 1150,
+                "breakdown": "[exact: 1000] [Lex: +150 (1.00d)]",
+                "meaning": "feeling",
+                "scoreObj": {
+                  "total": 1150,
+                  "lexical": 150,
+                  "confidence": 1150,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 80,
+                    "priority": 70,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000] [Lex: +150 (1.00d)]"
+                },
+                "cosSim": 0.5460378249049795,
+                "semanticBoost": 0,
+                "finalScore": 1150
+              },
+              {
+                "id": 72794,
+                "entry": {
+                  "id": 72794,
+                  "pos": [
+                    "n"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "kibun",
+                  "meaning": "strange news",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "kibun",
+                "type": "exact",
+                "distance": 0,
+                "freqScore": 0,
+                "adjustedScore": 1000,
+                "breakdown": "[exact: 1000]",
+                "meaning": "strange news",
+                "scoreObj": {
+                  "total": 1000,
+                  "lexical": 0,
+                  "confidence": 1000,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 1000,
+                    "decay": 1,
+                    "typoPenalty": 0,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[exact: 1000]"
+                },
+                "cosSim": 0.5956049417738566,
+                "semanticBoost": 0,
+                "finalScore": 1000
+              }
+            ],
+            "margin": 30,
+            "competition": [
+              {
+                "item": "kibun",
+                "type": "exact",
+                "adj": "1150.00",
+                "cos": "0.55",
+                "boost": "0"
+              },
+              {
+                "item": "kibun",
+                "type": "exact",
+                "adj": "1000.00",
+                "cos": "0.60",
+                "boost": "0"
+              }
+            ],
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "flipEvent": null
+          }
+        },
+        {
+          "index": 25,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 26,
+          "chunk": "warukute",
+          "preprocessedChunk": "warukute",
+          "candidate": "warukute",
+          "candidateMeaning": "bad",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "deinflect:warui",
+          "grammar_tags": [
+            "Te-form"
+          ],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 13399,
+              "entry": {
+                "id": 13399,
+                "pos": [
+                  "adj-i, int"
+                ],
+                "tags": "ichi1, news2, nf48",
+                "freq": 0.15000000000000002,
+                "romaji": "warui",
+                "meaning": "bad",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "warukute",
+              "root": "warui",
+              "type": "deinflect",
+              "distance": 0.04,
+              "freqScore": 140,
+              "adjustedScore": 1085.984,
+              "breakdown": "[deinflect: 950] [Lex: +138 (0.99d)] [Typo: -2]",
+              "meaning": "bad",
+              "scoreObj": {
+                "total": 1085.984,
+                "lexical": 140,
+                "confidence": 1085.984,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 100,
+                  "priority": 40,
+                  "semantic": 0,
+                  "tier": 950,
+                  "decay": 0.9856,
+                  "typoPenalty": 2,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[deinflect: 950] [Lex: +138 (0.99d)] [Typo: -2]"
+              },
+              "meta": {
+                "reasons": [
+                  [
+                    25
+                  ]
+                ],
+                "type": 4,
+                "ruleWeight": 1,
+                "grammar": {
+                  "isValidClassMatch": true,
+                  "ruleWeight": 1,
+                  "steps": 1,
+                  "fuzzyStemDistance": 0,
+                  "stemExists": true
+                }
+              }
+            },
+            "candidates": [
+              {
+                "id": 13399,
+                "entry": {
+                  "id": 13399,
+                  "pos": [
+                    "adj-i, int"
+                  ],
+                  "tags": "ichi1, news2, nf48",
+                  "freq": 0.15000000000000002,
+                  "romaji": "warui",
+                  "meaning": "bad",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "warukute",
+                "root": "warui",
+                "type": "deinflect",
+                "distance": 0.04,
+                "freqScore": 140,
+                "adjustedScore": 1085.984,
+                "breakdown": "[deinflect: 950] [Lex: +138 (0.99d)] [Typo: -2]",
+                "meaning": "bad",
+                "scoreObj": {
+                  "total": 1085.984,
+                  "lexical": 140,
+                  "confidence": 1085.984,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 100,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 950,
+                    "decay": 0.9856,
+                    "typoPenalty": 2,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect: 950] [Lex: +138 (0.99d)] [Typo: -2]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      25
+                    ]
+                  ],
+                  "type": 4,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.6207411250521632,
+                "semanticBoost": 55,
+                "finalScore": 1140.984
+              }
+            ]
+          }
+        },
+        {
+          "index": 27,
+          "chunk": " ",
+          "preprocessedChunk": " ",
+          "candidate": " ",
+          "candidateMeaning": "",
+          "rootChunk": "",
+          "type": "punctuation",
+          "decision": "punctuation",
+          "grammar_tags": [],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)"
+        },
+        {
+          "index": 28,
+          "chunk": "taberarenakatta",
+          "preprocessedChunk": "taberarenakatta",
+          "candidate": "taberarenakatta",
+          "candidateMeaning": "to eat",
+          "rootChunk": "",
+          "type": "text",
+          "decision": "deinflect:taberu",
+          "grammar_tags": [
+            "Potential / Passive",
+            "Negative",
+            "Past tense"
+          ],
+          "tokenBoost": 0,
+          "costTrace": null,
+          "contextTrace": null,
+          "llmOutput": "(skipped — --no-llm flag)",
+          "meta": {
+            "winner": {
+              "id": 33268,
+              "entry": {
+                "id": 33268,
+                "pos": [
+                  "v1, vt"
+                ],
+                "tags": "ichi1, news2, nf25",
+                "freq": 0.6291666666666667,
+                "romaji": "taberu",
+                "meaning": "to eat",
+                "domain": null,
+                "mesh": null,
+                "meshDomains": [],
+                "commonWords": "j1000"
+              },
+              "item": "taberarenakatta",
+              "root": "taberu",
+              "type": "deinflect",
+              "distance": 0.08,
+              "freqScore": 140,
+              "adjustedScore": 1073.936,
+              "breakdown": "[deinflect: 950] [Lex: +132 (0.94d)] [Typo: -8]",
+              "meaning": "to eat",
+              "scoreObj": {
+                "total": 1073.936,
+                "lexical": 140,
+                "confidence": 1073.936,
+                "segmentation": 0,
+                "components": {
+                  "frequency": 100,
+                  "priority": 40,
+                  "semantic": 0,
+                  "tier": 950,
+                  "decay": 0.9424,
+                  "typoPenalty": 8,
+                  "lengthPenalty": 0,
+                  "exactBonus": 0,
+                  "wholeWordBonus": 0,
+                  "stabilityBonus": 0,
+                  "fragmentPenalty": 0
+                },
+                "breakdown": "[deinflect: 950] [Lex: +132 (0.94d)] [Typo: -8]"
+              },
+              "meta": {
+                "reasons": [
+                  [
+                    9,
+                    18,
+                    17
+                  ]
+                ],
+                "type": 9,
+                "ruleWeight": 1,
+                "grammar": {
+                  "isValidClassMatch": true,
+                  "ruleWeight": 1,
+                  "steps": 3,
+                  "fuzzyStemDistance": 0,
+                  "stemExists": true
+                }
+              },
+              "cosSim": 0.5993686867882702,
+              "semanticBoost": 0,
+              "finalScore": 1073.936
+            },
+            "candidates": [
+              {
+                "id": 33268,
+                "entry": {
+                  "id": 33268,
+                  "pos": [
+                    "v1, vt"
+                  ],
+                  "tags": "ichi1, news2, nf25",
+                  "freq": 0.6291666666666667,
+                  "romaji": "taberu",
+                  "meaning": "to eat",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "taberarenakatta",
+                "root": "taberu",
+                "type": "deinflect",
+                "distance": 0.08,
+                "freqScore": 140,
+                "adjustedScore": 1073.936,
+                "breakdown": "[deinflect: 950] [Lex: +132 (0.94d)] [Typo: -8]",
+                "meaning": "to eat",
+                "scoreObj": {
+                  "total": 1073.936,
+                  "lexical": 140,
+                  "confidence": 1073.936,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 100,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 950,
+                    "decay": 0.9424,
+                    "typoPenalty": 8,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect: 950] [Lex: +132 (0.94d)] [Typo: -8]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      9,
+                      18,
+                      17
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 3,
+                    "fuzzyStemDistance": 0,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.5993686867882702,
+                "semanticBoost": 0,
+                "finalScore": 1073.936
+              },
+              {
+                "id": 161818,
+                "entry": {
+                  "id": 161818,
+                  "pos": [
+                    "v1, vi, adj-pn"
+                  ],
+                  "tags": "",
+                  "freq": 0.1,
+                  "romaji": "taberareru",
+                  "meaning": "to be able to eat",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "taberarenakatta",
+                "root": "taberareru",
+                "type": "deinflect",
+                "distance": 0.06,
+                "freqScore": 0,
+                "adjustedScore": 945.5,
+                "breakdown": "[deinflect: 950] [Typo: -5]",
+                "meaning": "to be able to eat",
+                "scoreObj": {
+                  "total": 945.5,
+                  "lexical": 0,
+                  "confidence": 945.5,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 950,
+                    "decay": 0.9676,
+                    "typoPenalty": 4.5,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect: 950] [Typo: -5]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      18,
+                      17
+                    ]
+                  ],
+                  "type": 9,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 2,
+                    "fuzzyStemDistance": 0,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.6717875784736692,
+                "semanticBoost": 0,
+                "finalScore": 945.5
+              },
+              {
+                "id": 33268,
+                "entry": {
+                  "id": 33268,
+                  "pos": [
+                    "v1, vt"
+                  ],
+                  "tags": "ichi1, news2, nf25",
+                  "freq": 0.6291666666666667,
+                  "romaji": "taberu",
+                  "meaning": "to eat",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j1000"
+                },
+                "item": "taberarenakatta",
+                "root": "taberu",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.20500000000000002,
+                "freqScore": 140,
+                "adjustedScore": 834.51725,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +87 (0.62d)] [Typo: -53]",
+                "meaning": "to eat",
+                "scoreObj": {
+                  "total": 834.51725,
+                  "lexical": 140,
+                  "confidence": 834.51725,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 100,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.621775,
+                    "typoPenalty": 52.53125000000001,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +87 (0.62d)] [Typo: -53]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      22,
+                      18,
+                      17
+                    ]
+                  ],
+                  "type": 3,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 3,
+                    "fuzzyStemDistance": 0.25,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.5993686867882702,
+                "semanticBoost": 0,
+                "finalScore": 834.51725
+              },
+              {
+                "id": 323,
+                "entry": {
+                  "id": 323,
+                  "pos": [
+                    "v1, vi, aux-v"
+                  ],
+                  "tags": "ichi1, uk",
+                  "freq": 0.2,
+                  "romaji": "kutabireru",
+                  "meaning": "to get tired",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": "j5000"
+                },
+                "item": "taberarenakatta",
+                "root": "kutabireru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.22499999999999998,
+                "freqScore": 100,
+                "adjustedScore": 791.15625,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +54 (0.54d)] [Typo: -63]",
+                "meaning": "to get tired",
+                "scoreObj": {
+                  "total": 791.15625,
+                  "lexical": 100,
+                  "confidence": 791.15625,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 60,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.544375,
+                    "typoPenalty": 63.28124999999999,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +54 (0.54d)] [Typo: -63]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      22,
+                      18,
+                      17
+                    ]
+                  ],
+                  "type": 3,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 3,
+                    "fuzzyStemDistance": 0.29,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.5328810981968667,
+                "semanticBoost": 0,
+                "finalScore": 791.15625
+              },
+              {
+                "id": 53827,
+                "entry": {
+                  "id": 53827,
+                  "pos": [
+                    "v5u, vi"
+                  ],
+                  "tags": "ichi1, uk",
+                  "freq": 0.2,
+                  "romaji": "tamerau",
+                  "meaning": "to hesitate",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "taberarenakatta",
+                "root": "tamerau",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.20500000000000002,
+                "freqScore": 40,
+                "adjustedScore": 772.33975,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +25 (0.62d)] [Typo: -53]",
+                "meaning": "to hesitate",
+                "scoreObj": {
+                  "total": 772.33975,
+                  "lexical": 40,
+                  "confidence": 772.33975,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.621775,
+                    "typoPenalty": 52.53125000000001,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +25 (0.62d)] [Typo: -53]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      22,
+                      18,
+                      17
+                    ]
+                  ],
+                  "type": 3,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 3,
+                    "fuzzyStemDistance": 0.25,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.607799740697116,
+                "semanticBoost": 0,
+                "finalScore": 772.33975
+              },
+              {
+                "id": 80146,
+                "entry": {
+                  "id": 80146,
+                  "pos": [
+                    "adj-i"
+                  ],
+                  "tags": "news2, nf42",
+                  "freq": 0.175,
+                  "romaji": "ukabarenai",
+                  "meaning": "turning in one's grave",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "taberarenakatta",
+                "root": "ukabarenai",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.18636363636363637,
+                "freqScore": 16,
+                "adjustedScore": 767.5844214876033,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +11 (0.69d)] [Typo: -43]",
+                "meaning": "turning in one's grave",
+                "scoreObj": {
+                  "total": 767.5844214876033,
+                  "lexical": 16,
+                  "confidence": 767.5844214876033,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 16,
+                    "priority": 0,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.6874173553719009,
+                    "typoPenalty": 43.414256198347104,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +11 (0.69d)] [Typo: -43]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      17
+                    ]
+                  ],
+                  "type": 4,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 1,
+                    "fuzzyStemDistance": 0.2927272727272727,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.5258711257062654,
+                "semanticBoost": 0,
+                "finalScore": 767.5844214876033
+              },
+              {
+                "id": 321,
+                "entry": {
+                  "id": 321,
+                  "pos": [
+                    "v5r, vi"
+                  ],
+                  "tags": "ichi1, derog",
+                  "freq": 0.2,
+                  "romaji": "kutabaru",
+                  "meaning": "to kick the bucket",
+                  "domain": null,
+                  "mesh": null,
+                  "meshDomains": [],
+                  "commonWords": null
+                },
+                "item": "taberarenakatta",
+                "root": "kutabaru",
+                "type": "deinflect:fuzzy_stem",
+                "distance": 0.22499999999999998,
+                "freqScore": 40,
+                "adjustedScore": 758.49375,
+                "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +22 (0.54d)] [Typo: -63]",
+                "meaning": "to kick the bucket",
+                "scoreObj": {
+                  "total": 758.49375,
+                  "lexical": 40,
+                  "confidence": 758.49375,
+                  "segmentation": 0,
+                  "components": {
+                    "frequency": 0,
+                    "priority": 40,
+                    "semantic": 0,
+                    "tier": 800,
+                    "decay": 0.544375,
+                    "typoPenalty": 63.28124999999999,
+                    "lengthPenalty": 0,
+                    "exactBonus": 0,
+                    "wholeWordBonus": 0,
+                    "stabilityBonus": 0,
+                    "fragmentPenalty": 0
+                  },
+                  "breakdown": "[deinflect:fuzzy_stem: 800] [Lex: +22 (0.54d)] [Typo: -63]"
+                },
+                "meta": {
+                  "reasons": [
+                    [
+                      22,
+                      18,
+                      17
+                    ]
+                  ],
+                  "type": 3,
+                  "ruleWeight": 1,
+                  "grammar": {
+                    "isValidClassMatch": true,
+                    "ruleWeight": 1,
+                    "steps": 3,
+                    "fuzzyStemDistance": 0.29,
+                    "stemExists": true
+                  }
+                },
+                "cosSim": 0.6112658051545553,
+                "semanticBoost": 0,
+                "finalScore": 758.49375
+              }
+            ],
+            "semanticBoost": 0,
+            "isResurrected": false,
+            "previousWinner": null,
+            "competition": [
+              {
+                "item": "taberarenakatta(->taberu)",
+                "type": "deinflect",
+                "adj": "1073.94",
+                "cos": "0.60",
+                "boost": "0"
+              },
+              {
+                "item": "taberarenakatta(->taberareru)",
+                "type": "deinflect",
+                "adj": "945.50",
+                "cos": "0.67",
+                "boost": "0"
+              },
+              {
+                "item": "taberarenakatta(->taberu)",
+                "type": "deinflect:fuzzy_stem",
+                "adj": "834.52",
+                "cos": "0.60",
+                "boost": "0"
+              },
+              {
+                "item": "taberarenakatta(->kutabireru)",
+                "type": "deinflect:fuzzy_stem",
+                "adj": "791.16",
+                "cos": "0.53",
+                "boost": "0"
+              },
+              {
+                "item": "taberarenakatta(->tamerau)",
+                "type": "deinflect:fuzzy_stem",
+                "adj": "772.34",
+                "cos": "0.61",
+                "boost": "0"
+              }
+            ],
+            "flipEvent": null
+          }
+        }
+      ],
+      "ragHits": [],
+      "toneHits": [
+        {
+          "score": 0.5749,
+          "romaji": "taichou",
+          "kana": "たいちょう",
+          "kanji": "体調",
+          "meanings": [
+            "physical condition",
+            "state of health",
+            "shape"
+          ]
+        }
+      ],
+      "glossaryInjected": "TONE HINT:\n- taichou: physical condition",
+      "prompt": "TASK:\nTranslate the following Japanese (romaji) dialogue into natural English.\n\nYou are an interpreter. The speaker may be a Japanese patient describing symptoms or a doctor asking screening questions.\n\nRULES:\n- Use FIRST PERSON (\"I\", \"my\", \"I feel\") when the speaker is a patient. \n- Use natural medical questioning (\"Have you...\", \"Do you fee...\") when the speaker is a doctor.\n- Translate faithfully. Do NOT add information that is not present.\n- If input is unnatural or fragmented, reconstruct into natural English meaning using standard Japanese grammar.\n- CLINICAL PRIORITY: If a term is ambiguous, prioritize the most clinical or medical interpretation (e.g., \"gein\" as \"cause\", not \"performance\").\n- Output ONLY the English sentence — no labels, no explanation, no Japanese.\n\nEXAMPLES:\nInput: mune itai\nOutput: I have chest pain.\n\nInput: arerugi nai\nOutput: I have no allergies.\n\nInput: zutsu hidoisugite ugokenai\nOutput: My headache is so bad I can't move.\n\n\n\nTONE HINT:\n- taichou: physical condition\n\nInput: sensei .   kounichi   taichou   yokunatta   genki   aru   tou   demo   omoimasu   memai   ga   kibun   warukute   taberarenakatta\nOutput: /no_think",
+      "llmOutput": "(skipped — --no-llm flag)",
+      "durationMs": 14170,
+      "timings": {
+        "preprocess": 5066.5225,
+        "ensureANN": 2718.9589590000005,
+        "embedding": 6306.441417,
+        "ragSearch": 16.94604199999958,
+        "rerank": 36.64587500000016,
+        "promptAssembly": 0.030832999998892774,
+        "total": 14168.591124999999,
+        "buildPromptTotal": 14168.9735
+      },
+      "error": null,
+      "queryTokens": [
+        "sensei",
+        "kounichi",
+        "taichou",
+        "yokunaru",
+        "genki",
+        "aru",
+        "tou",
+        "demo",
+        "omou",
+        "memai"
+      ]
+    }
+  ]
+}

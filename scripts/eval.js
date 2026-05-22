@@ -27,6 +27,11 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const XLSX = require('xlsx');
 
+import { clearLogs, enableGlobalIntercept } from '../src/logger.js';
+// Clear logs and enable global console interception for the evaluation script
+clearLogs();
+enableGlobalIntercept();
+
 import { buildPrompt } from '../src/promptBuilder.js';
 import { generate } from '../src/ollamaClient.js';
 

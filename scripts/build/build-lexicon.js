@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import readline from 'readline';
 import { XMLParser } from 'fast-xml-parser';
 import * as wanakana from 'wanakana';
-import { calculateScore } from '../../src/config/linguistics.js';
+import { calculateCandidateScore } from '../../src/config/linguistics.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -237,11 +237,11 @@ async function main() {
         }
       }
       
-      // Use the centralized engine for the persistent baseline score
-      const freqScore = calculateScore({ 
+      const scoreObj = calculateCandidateScore({ 
         tags: Array.from(prioritySet),
         domain: fullDomainStr
       });
+      const freqScore = scoreObj.lexical;
       
       // Clean meanings: strip punctuation like () but keep the content inside them.
       const cleanMeanings = meanings

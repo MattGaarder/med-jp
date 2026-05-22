@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import hnswlib from 'hnswlib-node';
 const { HierarchicalNSW } = hnswlib;
-import { calculateScore } from './config/linguistics.js';
+import { calculateCandidateScore } from './config/linguistics.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -68,8 +68,8 @@ export function searchANN(queryEmbedding, topK = 3, anchorTokens = new Set()) {
     const semanticScore = 1 - (distance / 2);            // [0, 1]
     
     // 1. Unified Linguistic Confidence (Dictionary Priority + Frequency + Domain)
-    const linguisticPoints = calculateScore(item);
-    const dictConfidence = linguisticPoints.total / 1000; // Normalized boost [0, 0.4+]
+    const scoreObj = calculateCandidateScore(item, { type: 'semantic' });
+    const dictConfidence = scoreObj.lexical / 1000; // Normalized boost [0, 0.4+]
 
     // 2. Anchor boost (Runtime match to user input)
     const anchorBoost  = anchorTokens.has(item.romaji) ? 0.20 : 0;

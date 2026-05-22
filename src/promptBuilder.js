@@ -27,15 +27,13 @@ let db         = null;   // better-sqlite3 connection
 let annReady   = false;  // HNSW index loaded flag
 let annInitPromise = null;
 
+import { logSection } from './logger.js';
+
 const DEBUG = true;
 
 function logStep(label, data = null) {
   if (!DEBUG) return;
-  const time = new Date().toISOString().split('T')[1].slice(0, 12);
-  console.log(`\x1b[36m[${time}] ${label}\x1b[0m`);
-  if (data !== null) {
-    console.dir(data, { depth: 4, colors: true });
-  }
+  logSection(label, data);
 }
 
 function isLogNoiseToken(t) {
@@ -176,9 +174,6 @@ function getContentOverlap(item, contentTokens) {
   }
   return 0;
 }
-
-
-
 
 
 // ─────────────────────────────────────────────
