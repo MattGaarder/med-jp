@@ -814,116 +814,6 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
     };
   }
 
-  function applyNeighborContextPass(winningPath, includeTrace = false) {
-        // ── NEIGHBOR-CONTEXT SECOND PASS ─────────────────────────────────
-    const CONTEXT_WINDOW = 3;
-    const CONTEXT_BOOST = 200;
-
-    // Build a context set for each position from neighboring winners' meanings/domains
-    winningPath = winningPath.map((tok, idx) => {
-      if (!tok.meta?.candidates || tok.meta.candidates.length <= 1) return tok;
-      if (tok.decision === 'particle' || tok.decision?.startsWith('skipped')) return tok;
-
-      // Collect meaning words and domains from ±3 neighbors
-      const neighborContext = new Set();
-      for (let offset = -CONTEXT_WINDOW; offset <= CONTEXT_WINDOW; offset++) {
-        if (offset === 0) continue;
-        const neighbor = winningPath[idx + offset];
-        if (!neighbor || !neighbor.meaning) continue;
-
-        // Add meaning words (split on common separators)
-        neighbor.meaning.toLowerCase().split(/[\s,();/]+/).forEach(w => {
-          if (w.length > 2) neighborContext.add(w);
-        });
-
-        // Add domain signals from neighbor's candidate data
-        if (neighbor.meta?.candidates) {
-          for (const c of neighbor.meta.candidates.slice(0, 3)) {
-            if (c.meaning) {
-              c.meaning.toLowerCase().split(/[\s,();/]+/).forEach(w => {
-                if (w.length > 2) neighborContext.add(w);
-              });
-            }
-          }
-        }
-      }
-
-      if (neighborContext.size === 0) return tok;
-
-      const contextTrace = {
-        contextWords: Array.from(neighborContext),
-        candidates: tok.meta.candidates.slice(0, 5).map(c => ({
-          item: c.item,
-          score: (c.adjustedScore || 0).toFixed(1),
-          meaning: c.meaning || 'N/A'
-        })),
-        isFlipped: false
-      };
-
-      // Re-score candidates with context overlap
-      const rescored = tok.meta.candidates.map(c => {
-        let contextBoost = 0;
-        if (c.meaning) {
-          const mWords = c.meaning.toLowerCase().split(/[\s,();/]+/);
-          const overlap = mWords.filter(w => w.length > 2 && neighborContext.has(w)).length;
-          if (overlap > 0) contextBoost = CONTEXT_BOOST * Math.min(overlap, 3);
-        }
-        return { ...c, contextBoost, contextScore: (c.adjustedScore || 0) + contextBoost };
-      });
-
-      rescored.sort((a, b) => b.contextScore - a.contextScore);
-      const newWinner = rescored[0];
-      const oldWinner = tok.meta.candidates[0];
-
-      if (newWinner.item !== oldWinner.item && newWinner.contextBoost > 0) {
-        contextTrace.isFlipped = true;
-        contextTrace.flipFrom = oldWinner.item;
-        contextTrace.flipTo = newWinner.item;
-        contextTrace.boost = newWinner.contextBoost;
-      }
-
-      if (includeTrace) {
-        console.log(`\n\x1b[35m[Context Pass]\x1b[0m Evaluating token: \x1b[1m${tok.surface || tok.output}\x1b[0m`);
-        console.log(`  Context words drawn from ±3 neighbors: [${contextTrace.contextWords.slice(0, 10).join(', ')}]`);
-        console.log(`  Candidates considered:`);
-        contextTrace.candidates.slice(0, 3).forEach(c => {
-          console.log(`    - ${c.item} (score: ${c.score}) -> meaning: ${c.meaning}`);
-        });
-
-        if (contextTrace.isFlipped) {
-          console.log(`  \x1b[32m⭐ FLIP TRIGGERED!\x1b[0m`);
-          console.log(`  ${contextTrace.flipTo} beat ${contextTrace.flipFrom} by gaining +${contextTrace.boost} context points because its meaning overlapped with neighbors!`);
-        }
-      }
-
-      // Only change winner if the context boost actually flipped the ranking
-      if (newWinner.item !== oldWinner.item && newWinner.contextBoost > 0) {
-        const grammar_tags = interpretReasonChains(newWinner.meta?.reasons || []);
-        return {
-          ...tok,
-          output: newWinner.item,
-          base: newWinner.root || newWinner.item,
-          meaning: newWinner.meaning,
-          grammar_tags,
-          decision: newWinner.type.startsWith('deinflect') || newWinner.type.includes('deinflect')
-            ? `${newWinner.type}:${newWinner.root || newWinner.item}`
-            : newWinner.type,
-          meta: {
-            ...tok.meta,
-            candidates: rescored,
-            winner: newWinner,
-            contextBoost: newWinner.contextBoost,
-            contextResurrected: true,
-            previousWinner: oldWinner.item,
-            contextTrace
-          }
-        };
-      }
-      return { ...tok, meta: { ...tok.meta, contextTrace } };
-    });
-    return winningPath;
-  }
-
   function traceBeamResults({
     rawChunk,
     hiraChunk,
@@ -979,8 +869,6 @@ export function createPreprocessor({ vocabulary = [], exactMatchIndex = new Map(
       hiraChunk,
       hiraToRaw
     });
-
-    winningPath = applyNeighborContextPass(winningPath, includeTrace);
 
     if (includeTrace && winningPath.length > 1) {
       traceBeamResults({
